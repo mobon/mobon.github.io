@@ -30,7 +30,7 @@ iOS14 타겟팅된 앱은 IDFA 식별자를 얻기 위해서는 ATT Framework를
 ```
 
 ### ATTrackingManager 코드 적용
-1.2.7버전 부터는 IDFA값의 사용을 위한 권한 요청을 직접 진행해 주셔야 합니다. 해당 부분은 아래 코드를 참조 하시면 됩니다. 
+1.2.7 버전 부터는 IDFA값의 사용을 위한 권한 요청을 직접 진행해 주셔야 합니다. 해당 부분은 아래 코드를 참조 하시면 됩니다. 
 ```swift
 if #available(iOS 14, *) {
     ATTrackingManager.requestTrackingAuthorization { (status) in
@@ -56,7 +56,8 @@ else {
   -ObjC
   -all_Load
 ```
-
+여기에서 '$(inherited)'의 경우 부모 프로젝트의 설정값을 상속 받겠다는 의미이여, 신규 프로젝트의 경우 기본으로 설정되어 있습니다.
+오래된 프로젝트 또는 임의로 수정한 경우 해당 값이 누락되어 있을 수 있으며, 이로 인해 앱 빌드에 실패할 수 있습니다.
 
 ## Objective-C 프로젝트
 ---
