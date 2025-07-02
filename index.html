@@ -20,7 +20,20 @@
     table tr {
       background-color: #00000000 !important;
     }
-    </style>
+  </style>
+
+  <style>
+    /* 리스트 간격 좁히기 */
+    .markdown-section ul ul {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding-left: 20px; /* 들여쓰기는 유지할 경우 */
+    }
+    
+    .markdown-section li {
+      margin-bottom: 4px;
+    }
+  </style>
 </head>
 
 <body>
@@ -30,7 +43,7 @@
       name: 'SDK 가이드',
       loadSidebar: true,
       auto2top: true,
-      subMaxLevel: 2,
+      subMaxLevel: 1,
       sidebarDisplayLevel: 0,
       search: "auto"
     }
@@ -43,6 +56,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 
 </body>
 </html>
