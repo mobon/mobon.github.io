@@ -35,7 +35,6 @@ pod 'MobWithADSDK'
 ---
 SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다. 
 
-
 ### 기본 프레임워크
 - MobWithADSDKFramework.xcframework와 CouOffsiteAds.xcframework를 다운로드 받습니다.  
 - 다운로드 받은 두 Framwork를 앱 프로젝트의 General > Embeded Binaries 항목으로 끌어서 놓습니다.
@@ -59,3 +58,7 @@ SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다.
 - 본 프레임워크는 PangleSDK를 활용하여 광고를 표시하기도 합니다. 
 자세한 사항은 [여기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-ios)를 눌러 UnitySDK의 설치 가이드를 따르시면 됩니다.
 - PangleSDK 버전은 7.1.1.1에 최적화 되어 있습니다.
+
+
+### Other Linker 설정
+수동 설치시 반드시 [여기(Other Linker 설정)](/iOS/installation_other?id=other-linker-설정)을 참고하여 Other Linker 값을 수정해 주셔야 합니다.
