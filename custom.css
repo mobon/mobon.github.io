@@ -1,0 +1,48 @@
+/* 테이블 행 배경색 제거 */
+table tr {
+    background-color: #00000000 !important;
+}
+  
+/* 리스트 간격 좁히기 */
+.markdown-section ul ul {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-left: 10px;
+}
+
+.markdown-section li {
+    margin-bottom: 2px;
+}
+
+
+/* h2 제목의 위쪽 여백 조절 */
+.markdown-section h2 {
+    margin-top: 60px !important; /* 원래 값보다 줄이기 (기본은 보통 24~32px) */
+    margin-bottom: 4px !important; /* 필요시 아래 여백도 같이 조정 */
+}
+
+/* h2 제목의 위쪽 여백 조절 */
+.markdown-section h3 {
+    margin-top: 40px !important;
+    margin-bottom: 4px !important;
+}
+
+
+/* hX 다음에 오는 hr 간격 조절 */
+.markdown-section h2 + hr,
+.markdown-section h3 + hr {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+/* hr 전체 기본 마진 설정 */
+.markdown-section hr {
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+
+/* 기타 기존 style */
+.content {
+    overflow: auto;
+}

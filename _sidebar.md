@@ -10,7 +10,9 @@
 
 - iOS
   - [Getting Started](iOS/getStarted.md)
-  - [SDK Installation](iOS/installation.md)
+  - SDK Installation
+    - [SDK 설치](iOS/installation_base.md)
+    - [프로젝트 설정](iOS/installation_other.md)
   - [Ad formats](iOS/usage.md)
     - [Banner](iOS/banner.md)
     - [Native Ad](iOS/nativeAd.md)
