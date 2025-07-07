@@ -26,6 +26,7 @@
   - SDK Installation
     - [SDK 설치](iOS/installation_base.md)
     - [프로젝트 설정](iOS/installation_other.md)
+    - [SDK 초기화](iOS/installation_init.md)
   - [Ad formats](iOS/usage.md)
     - [Banner AD](iOS/banner.md)
     - [Native AD](iOS/nativeAd.md)
