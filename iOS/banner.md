@@ -108,7 +108,8 @@ mobWithAdView = MobWithAdView.init(CGRect(x: 0, y: 100, width: width, height: he
 
 ## MobWithADViewDelegate
 ---
-광고 수신 성공 또는 실패, 광고 클릭등 상황 발생시 응답을 받고자 하는 경우, MobWithADViewDelegate를 아래와 같이 추가하여 적용하면 됩니다. 
+MobWithAdView의 콜백 이벤트들은 MobWithADViewDelegate를 통해 전달 됩니다.
+delegate의 등록은 아래를 참고 하시면 됩니다.
 
 ```swift
 class ViewController: UIViewController, MobWithADViewDelegate {
@@ -121,10 +122,11 @@ class ViewController: UIViewController, MobWithADViewDelegate {
 }
 ```
 
-### Delegate 함수 및 설명
+### mobWithAdViewDidReceivedAd()
+광고를 수신한 경우 전달 됩니다
 
-| 함수명                              | 설명 |
-| :----                             | :--- |
-| mobWithAdViewDidReceivedAd()      | 광고를 수신한 경우 전달 됩니다 |
-| mobWithAdViewDidFailToReceiveAd() | 광고를 수신하지 못한 경우 전달 됩니다 |
-| mobWithAdViewClickedAd()          | 광고를 클릭한 경우 전달 됩니다 |
+### mobWithAdViewDidFailToReceiveAd()
+광고를 수신하지 못한 경우 전달 됩니다
+
+### mobWithAdViewClickedAd()
+광고를 클릭한 경우 전달 됩니다
