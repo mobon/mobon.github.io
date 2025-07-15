@@ -1,5 +1,15 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.57 (2025.07.15) <!-- {docsify-ignore} -->
+---
+- Passback setAGHeaders Context Null 로직 수정
+
+## 1.0.56 (2025.07.15) <!-- {docsify-ignore} -->
+---
+- 스크립트 광고 매체 추가 (메조미디어, 아크로스, NHN)
+- 안드로이드 15 대응 (샘플 UI 수정)
+- 기능 정리 및 최적화
+
 ## 1.0.55 (2025.06.26) <!-- {docsify-ignore} -->
 ---
 - 안드로이드 15 Edge TO Edge (스테이터스 바와 전면, 리워드 광고가 겹치는 현상 수정)
