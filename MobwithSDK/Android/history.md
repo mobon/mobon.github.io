@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.58 (2025.07.28) <!-- {docsify-ignore} -->
+---
+- Imp, Click Tracker 이슈 수정
+- API Header SDK 정보 추가 (SDK version, os, 매체 App Version)
+
 ## 1.0.57 (2025.07.15) <!-- {docsify-ignore} -->
 ---
 - Passback setAGHeaders Context Null 로직 수정
