@@ -161,8 +161,8 @@ implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리
 ```java
 MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
 ```
--build.gradle 설정
-DT Exchange SDK를 implementation 해야 합니다. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)
+- build.gradle 설정  
+  DT Exchange SDK를 build.gradle에 implementation 해야 합니다. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)
 ```groovy
 implementation 'com.fyber:marketplace-sdk:8.3.8'
 ```
