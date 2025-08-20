@@ -20,6 +20,7 @@ MobWithADSDK.standard.initSDK(coupangSubId: "{전달받은 쿠팡 Sub ID}")     
 MobWithADSDK.standard.setUnityGameId(gameId: "{전달받은 Unity Game ID}")    // 유니티 SDK를 사용하는 경우에만 설정
 MobWithADSDK.standard.setLevelPlaySDKAppKey("{전달받은 LevelPlay AppKey}")  // LevelPlay SDK를 사용하는 경우에만 설정
 MobWithADSDK.standard.setPangleAppId(appId: "{전달받은 Pangle App ID}")     // Pangle SDK를 사용하는 경우에만 설정
+MobWithADSDK.standard.setDTExchangeAppID(appId: "{전달받은 DT Exchange App ID}")    // DT Exchange SDK를 사용하는 경우에만 설정
 ```
 * 가급적 앱 실행 초기에 초기화 하는 것을 권장드립니다.  
 * initSDK() 만 필수로 적용해 주시면 됩니다.
