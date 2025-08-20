@@ -153,11 +153,16 @@ implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리
 
 
 ## DT Exchange SDK 추가
-- DT Exchange 광고를 송출하기 위해 링크를 참고하여 주세요. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)  
+- DT Exchange 광고를 송출하기 위해 링크를 참고하여 주세요.  
 [DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)
 - AppKey 설정  
   DT Exchange SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 
 ```java
 MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
+```
+-build.gradle 설정
+DT Exchange SDK를 implementation 해야 합니다. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)
+```groovy
+implementation 'com.fyber:marketplace-sdk:8.3.8'
 ```
