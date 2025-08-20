@@ -56,8 +56,13 @@ SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다.
 
 ### PangleSDK
 - 본 프레임워크는 PangleSDK를 활용하여 광고를 표시하기도 합니다. 
-자세한 사항은 [여기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-ios)를 눌러 UnitySDK의 설치 가이드를 따르시면 됩니다.
+자세한 사항은 [여기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-ios)를 눌러 PangleSDK 설치 가이드를 따르시면 됩니다.
 - PangleSDK 버전은 7.1.1.1에 최적화 되어 있습니다.
+  
+### DT Exchange SDK
+- 본 프레임워크는 DT Exchange SDK를 활용하여 광고를 표시하기도 합니다. 
+자세한 사항은 [여기](https://developer.digitalturbine.com/hc/en-us/articles/360010915618-Integrating-the-iOS-SDK)를 눌러 DT Exchange SDK의 설치 가이드를 따르시면 됩니다.
+- DT Exchange SDK 버전은 8.3.8에 최적화 되어 있습니다.
 
 
 ### Other Linker 설정
