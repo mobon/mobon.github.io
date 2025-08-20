@@ -17,7 +17,7 @@ allprojects {
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.58'
+    implementation 'io.github.mobon:mobwithSDK:1.0.59'
 }
 ```
 
@@ -150,3 +150,14 @@ implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리
 1. 안드로이드 스튜디오 -> 터미널 -> .\gradlew app:dependencies --configuration debugRuntimeClasspath 입력
 2. 결과 로그에서 "(*)", "->", "conflict", "requested" 같은 키워드는 중복되었다는 의미
 3. 중복된 implementation 제거
+
+
+## DT Exchange SDK 추가
+- DT Exchange 광고를 송출하기 위해 링크를 참고하여 주세요. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)  
+[DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)
+- AppKey 설정  
+  DT Exchange SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
+
+```java
+MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
+```
