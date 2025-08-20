@@ -1,5 +1,11 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.59 (2025.08.19) <!-- {docsify-ignore} -->
+---
+- 신규 광고 SDK 추가 (DT Exchange)
+- 리워드 광고 시 destroy Excaption 예외 처리
+- 기능 정리 및 최적화 작업
+
 ## 1.0.58 (2025.07.28) <!-- {docsify-ignore} -->
 ---
 - Imp, Click Tracker 이슈 수정
