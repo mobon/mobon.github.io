@@ -21,6 +21,21 @@ nativeAdView.loadAd()
 
 ```
 
+####파라메터 
+----
+| 파라메터 | 설명 |
+| ----:| :----|
+| bannerUnitId      | 발급받은 광고 지면 ID를 설정 합니다. |
+| adContainerView   | 광고 View를 표시할 RootView입니다. 현재는 사용하지 않는 AppLovin 미디에이션을 위해 필요합니다.  |
+| nativeAdRootView  | Native AD를 표시하기 위한 RootView, 아래 하위 View를 포함하는 View.  |
+| adImageView       | 광고 이미지를 표시할 ImageView. Tag값을 설정해 주셔야 합니다.  |
+| logoImageView     | 광고주 로고 이미지를 표시할 ImageView. Tag값을 설정해 주셔야 합니다. |
+| titleLabel        | 광고 Title을 표시할 Label. Tag값을 설정해 주셔야 합니다.  |
+| descriptionLabel  | 광고에 대한 설명등 부가적인 내용이 표시될 Label. Tag값을 설정해 주셔야 합니다.  |
+| gotoSiteButton    | 광고 랜딩 페이지로 이동을 위한 Button. Tag값을 설정해 주셔야 합니다.  |
+| infoLogoImageView | 광고 Info Logo 이미지를 표시할 ImageView. Tag값을 설정해 주셔야 합니다.  |
+
+
 ### performAdClicked()
 gotoSiteButton을 통한 광고 클릭을 발생시킬 수 없는 경우 별도로 버튼을 만들어 아래 예시와 같이 해당 함수를 호출하여 광고 클릭 이벤트를 발생시킬 수 있습니다.
 ```swift
