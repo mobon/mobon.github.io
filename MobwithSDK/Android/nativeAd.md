@@ -4,11 +4,11 @@ MobwithNativeAdView는 사용자가 직접 뷰를 설정하고,
 설정된 뷰를 SDK에서 전달받아 각각의 View에 광고 데이터를 설정해주는 기능만 담당하는 AdView입니다.
 
 ### 광고 로드 방법 
-([아래 MobwithNativeAdView 파라미터 정의 참조](#mobwithnativeadview-파라미터-정의))
+([MobwithNativeAdView 파라미터 정의 참조](#mobwithnativeadview-파라미터-정의))
 
 ```java
 ....
-        nativeAdView = new MobwithNativeAdView(
+nativeAdView = new MobwithNativeAdView(
                         this,
                         YOUR_UNIT_ID,
                         (FrameLayout) findViewById(R.id.adview_container),
@@ -23,8 +23,8 @@ MobwithNativeAdView는 사용자가 직접 뷰를 설정하고,
                         R.id.imageViewInfo);
 
         // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-        nativeAdView.setUnitId(YOUR_UNIT_ID);
-        nativeAdView.setAdListener(new iBannerCallback() {
+nativeAdView.setUnitId(YOUR_UNIT_ID);
+nativeAdView.setAdListener(new iBannerCallback() {
         @Override
         public void onLoadedAdInfo ( boolean result, String errorStr){
             if (result) {
@@ -38,9 +38,9 @@ MobwithNativeAdView는 사용자가 직접 뷰를 설정하고,
         public void onAdClicked() {
             LogPrint.d("MobwithNativeAdView - Ad Clicked");
         }
-        });
+});
 
-        nativeAdView.loadAd();
+nativeAdView.loadAd();
 ....
 ```
 
@@ -68,7 +68,7 @@ MobwithNativeAdView는 사용자가 직접 뷰를 설정하고,
 ### 광고 클릭 버튼을 사용하지 못하는 경우 
 ```java
 ....
-        nativeAdView.performAdClicked();
+nativeAdView.performAdClicked();
 ....
 ```
 
