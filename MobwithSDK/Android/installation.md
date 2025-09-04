@@ -47,15 +47,38 @@ android:usesCleartextTraffic="true"
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk)  
 - MobWithSDK는 Adfit SDK 3.15.2버전에 최적화 되어 있습니다.  
-- 경우에 따라서는 가이드에 안내된 "com.kakao.adfit:ads-base:3.15.2"가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
+- 경우에 따라서는 가이드에 안내된 아래의 라이브러리가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
   (해당되는 경우 별도로 안내됩니다.)
-
+1. "com.kakao.adfit:ads-base:3.15.2"          //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+2. "com.adop.sdk.adapter:pangle:5.2.1.1.3"    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+3. "com.adop.sdk.partners:admobbidding:1.0.2" //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+- 참고사항
+```groovy
+dependencies {
+    ...
+    implementation 'ad.helper.openbidding:admob-obh:3.25.0'
+    implementation 'com.adop.sdk:bidmad-androidx:3.25.0'
+    implementation 'com.adop.sdk.adapter:adfit:3.19.5.0'            //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+    implementation 'com.adop.sdk.adapter:admixer:1.0.9.0'
+    implementation 'com.adop.sdk.adapter:admob:24.4.0.1'
+    implementation 'com.adop.sdk.adapter:adpopcorn:3.8.2.0'
+    implementation 'com.adop.sdk.adapter:applovin:13.3.1.0'
+    implementation 'com.adop.sdk.adapter:coupang:1.0.0.5'
+    implementation 'com.adop.sdk.adapter:fyber:8.3.7.0'
+    implementation 'com.adop.sdk.adapter:ortb:1.0.1'
+    implementation 'com.adop.sdk.adapter:pangle:7.2.0.6.0'          //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+    implementation 'com.adop.sdk.adapter:taboola:4.0.8.0'
+    implementation 'com.adop.sdk.adapter:unityads:4.15.0.0'
+    implementation 'com.adop.sdk.adapter:vungle:7.5.0.0'
+    implementation 'com.adop.sdk.partners:admobbidding:1.1.0'       //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+}
+```
 ## ADOP BidMad SDK 추가
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85)  
 - MobWithSDK는 ADOP BidMad SDK 3.18.0 버전에 최적화 되어 있습니다.  
 - SDK 세팅 부분만 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
-
+- 
 ## Coupang SDK 추가
 - Gradle 설정 
 1.  먼저 프로젝트 단위의 Gradle에 아래를 참고하여 CoupangSDK를 가져오기 위한 저장소를 추가해줍니다.
@@ -163,6 +186,7 @@ MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
 ```
 - build.gradle 설정  
   DT Exchange SDK를 build.gradle에 implementation 해야 합니다. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)
+
 ```groovy
 implementation 'com.fyber:marketplace-sdk:8.3.8'
 ```
