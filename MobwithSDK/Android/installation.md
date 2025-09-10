@@ -79,8 +79,9 @@ dependencies {
   ...
 }
 ```
-- 프로젝트에서 Proguard를 적용하고 있다면 아래의 룰을 추가하세요.
-```properties
+- 프로젝트에서 Proguard를 적용하고 있다면 아래의 룰을 추가하세요.  
+
+```groovy
 -keep class com.adop.sdk.** { *; }
 -keep class ad.helper.openbidding.** { *; }
 -keep class com.adop.sdk.adapter.**{ *; }
