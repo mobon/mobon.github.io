@@ -56,29 +56,72 @@ android:usesCleartextTraffic="true"
 - MobWithSDK는 ADOP BidMad SDK 3.18.0 버전에 최적화 되어 있습니다.  
 - SDK 세팅 부분만 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
 - 참고사항
-1. "com.adop.sdk.adapter:adfit:3.19.5.0"       //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-2. "com.adop.sdk.adapter:pangle:5.2.1.1.3"    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-3. "com.adop.sdk.partners:admobbidding:1.0.2" //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+1. "com.adop.sdk.adapter:adfit:{version}"       //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+2. "com.adop.sdk.adapter:pangle:{version}"    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+3. "com.adop.sdk.partners:admobbidding:{version}" //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
 
 ```groovy
 dependencies {
   ...
-  implementation 'ad.helper.openbidding:admob-obh:3.25.0'
-  implementation 'com.adop.sdk:bidmad-androidx:3.25.0'
-  implementation 'com.adop.sdk.adapter:adfit:3.19.5.0'            //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-  implementation 'com.adop.sdk.adapter:admixer:1.0.9.0'
-  implementation 'com.adop.sdk.adapter:admob:24.4.0.1'
-  implementation 'com.adop.sdk.adapter:adpopcorn:3.8.2.0'
-  implementation 'com.adop.sdk.adapter:applovin:13.3.1.0'
-  implementation 'com.adop.sdk.adapter:coupang:1.0.0.5'
-  implementation 'com.adop.sdk.adapter:fyber:8.3.7.0'
-  implementation 'com.adop.sdk.adapter:ortb:1.0.1'
-  implementation 'com.adop.sdk.adapter:pangle:7.2.0.6.0'          //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-  implementation 'com.adop.sdk.adapter:taboola:4.0.8.0'
-  implementation 'com.adop.sdk.adapter:unityads:4.15.0.0'
-  implementation 'com.adop.sdk.adapter:vungle:7.5.0.0'
-  implementation 'com.adop.sdk.partners:admobbidding:1.1.0'       //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+  implementation 'ad.helper.openbidding:admob-obh:3.18.0'
+  implementation 'com.adop.sdk:bidmad-androidx:3.18.0'
+  implementation 'com.adop.sdk.adapter:adfit:3.12.15.2'        //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+  implementation 'com.adop.sdk.adapter:admob:22.0.0.6'
+  implementation 'com.adop.sdk.adapter:adpie:1.13.6.0'
+  implementation 'com.adop.sdk.adapter:adpopcorn:3.6.3.0'
+  implementation 'com.adop.sdk.adapter:criteo:6.0.0.2'
+  implementation 'com.adop.sdk.adapter:fyber:8.2.3.4'
+  implementation 'com.adop.sdk.adapter:pangle:5.2.1.1.3'       //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+  implementation 'com.adop.sdk.adapter:pubmatic:2.7.1.4'
+  implementation 'com.adop.sdk.adapter:unityads:4.6.1.5'
+  implementation 'com.adop.sdk.adapter:vungle:6.12.1.3'
+  implementation 'com.adop.sdk.partners:admobbidding:1.0.2'    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
+  ...
 }
+```
+- 프로젝트에서 Proguard를 적용하고 있다면 아래의 룰을 추가하세요.
+```properties
+-keep class com.adop.sdk.** { *; }
+-keep class ad.helper.openbidding.** { *; }
+-keep class com.adop.sdk.adapter.**{ *; }
+-keepnames class * implements java.io.Serializable
+-keepclassmembers class * implements java.io.Serializable {
+    static final long serialVersionUID;
+    private static final java.io.ObjectStreamField[] serialPersistentFields;
+    !static !transient <fields>;
+    private void writeObject(java.io.ObjectOutputStream);
+    private void readObject(java.io.ObjectInputStream);
+    java.lang.Object writeReplace();
+    java.lang.Object readResolve();
+}
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
+# Pangle
+-keep class com.bytedance.sdk.** { *; }
+-keep class com.bykv.vk.openvk.component.video.api.** { *; }
+
+# Tapjoy
+-keep class com.tapjoy.** { *; }
+-keep class com.moat.** { *; }
+-keepattributes JavascriptInterface
+-keepattributes *Annotation*
+-keep class * extends java.util.ListResourceBundle {
+protected Object[][] getContents();
+}
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+public static final *** NULL;
+}
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+@com.google.android.gms.common.annotation.KeepName *;
+}
+-keepnames class * implements android.os.Parcelable {
+public static final ** CREATOR;
+}
+-keep class com.google.android.gms.ads.identifier.** { *; }
+-dontwarn com.tapjoy.**
 ```
 
 ## Coupang SDK 추가
