@@ -73,3 +73,55 @@ nativeAdView.performAdClicked();
 ```
 
 위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.
+
+### 서브 레이아웃 기능
+- 필요에 따라 직광고의 layout과 네트워크 광고의 layout을 다르게 쓰기 위한 기능입니다.
+- 사용법은 위와 동일하지만 MobwithNativeAdView 생성 시 파라미터가 다릅니다. 아래는 예시 입니다.
+```java
+....
+nativeAdView = new MobwithNativeAdView(
+                        this,
+                        YOUR_UNIT_ID,
+                        (FrameLayout) findViewById(R.id.adview_container),
+                        new NativeAdViewItemModel(  //직광고 native layout
+                            R.layout.custom_native_ad_view,
+                            R.id.mediaContainerView,
+                            R.id.imageViewAD,
+                            R.id.imageViewLogo,
+                            R.id.textViewTitle,
+                            R.id.textViewDesc,
+                            R.id.buttonGo,
+                            R.id.infoViewLayout,
+                            R.id.imageViewInfo
+                        ),
+                        new NativeAdViewItemModel(  //네트워크 광고 native layout
+                            R.layout.custom_native_ad_view_2,
+                            R.id.mediaContainerView,
+                            R.id.imageViewAD,
+                            R.id.imageViewLogo,
+                            R.id.textViewTitle,
+                            R.id.textViewDesc,
+                            R.id.buttonGo,
+                            R.id.infoViewLayout,
+                            R.id.imageViewInfo
+                        )
+);
+nativeAdView.setUnitId(YOUR_UNIT_ID);
+nativeAdView.setAdListener(new iBannerCallback() {
+  @Override
+  public void onLoadedAdInfo ( boolean result, String errorStr){
+    if (result) {
+      LogPrint.d("MobwithNativeAdView - Loaded AD Success");
+    } else {
+      LogPrint.d("MobwithNativeAdView - Loaded AD with error : " + errorStr);
+    }
+  }
+
+  @Override
+  public void onAdClicked() {
+    LogPrint.d("MobwithNativeAdView - Ad Clicked");
+  }
+});
+nativeAdView.loadAd();
+....
+```

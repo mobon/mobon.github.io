@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.60 (2025.09.11) <!-- {docsify-ignore} -->
+---
+- NativeAdView 서브 레이아웃 기능 추가
+- 코드 정리 및 최적화 작업
+
 ## 1.0.59 (2025.08.19) <!-- {docsify-ignore} -->
 ---
 - 신규 광고 SDK 추가 (DT Exchange)
