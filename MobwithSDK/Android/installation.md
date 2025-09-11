@@ -17,7 +17,7 @@ allprojects {
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.60'
+    implementation 'io.github.mobon:mobwithSDK:1.0.61'
 }
 ```
 
@@ -46,84 +46,20 @@ android:usesCleartextTraffic="true"
 ## ADFIT SDK 추가
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk)  
-- MobWithSDK는 Adfit SDK 3.15.2버전에 최적화 되어 있습니다.  
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK 3.15.2 버전</span>에 최적화 되어 있습니다.  
 - 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-base:3.15.2")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
   (해당되는 경우 별도로 안내됩니다.)
 
 ## ADOP BidMad SDK 추가
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85)  
-- MobWithSDK는 ADOP BidMad SDK 3.18.0 버전에 최적화 되어 있습니다.  
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.18.** 버전</span>에 최적화 되어 있습니다.  
 - SDK 세팅 부분만 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
-- 참고사항
-1. "com.adop.sdk.adapter:adfit:{version}"       //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-2. "com.adop.sdk.adapter:pangle:{version}"    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-3. "com.adop.sdk.partners:admobbidding:{version}" //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-
-```groovy
-dependencies {
-  ...
-  implementation 'ad.helper.openbidding:admob-obh:3.18.0'
-  implementation 'com.adop.sdk:bidmad-androidx:3.18.0'
-  implementation 'com.adop.sdk.adapter:adfit:3.12.15.2'        //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-  implementation 'com.adop.sdk.adapter:admob:22.0.0.6'
-  implementation 'com.adop.sdk.adapter:adpie:1.13.6.0'
-  implementation 'com.adop.sdk.adapter:adpopcorn:3.6.3.0'
-  implementation 'com.adop.sdk.adapter:criteo:6.0.0.2'
-  implementation 'com.adop.sdk.adapter:fyber:8.2.3.4'
-  implementation 'com.adop.sdk.adapter:pangle:5.2.1.1.3'       //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-  implementation 'com.adop.sdk.adapter:pubmatic:2.7.1.4'
-  implementation 'com.adop.sdk.adapter:unityads:4.6.1.5'
-  implementation 'com.adop.sdk.adapter:vungle:6.12.1.3'
-  implementation 'com.adop.sdk.partners:admobbidding:1.0.2'    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
-  ...
-}
-```
-- 프로젝트에서 Proguard를 적용하고 있다면 아래의 룰을 추가하세요.  
-
-```groovy
--keep class com.adop.sdk.** { *; }
--keep class ad.helper.openbidding.** { *; }
--keep class com.adop.sdk.adapter.**{ *; }
--keepnames class * implements java.io.Serializable
--keepclassmembers class * implements java.io.Serializable {
-    static final long serialVersionUID;
-    private static final java.io.ObjectStreamField[] serialPersistentFields;
-    !static !transient <fields>;
-    private void writeObject(java.io.ObjectOutputStream);
-    private void readObject(java.io.ObjectInputStream);
-    java.lang.Object writeReplace();
-    java.lang.Object readResolve();
-}
--keepclassmembers class * {
-    @android.webkit.JavascriptInterface <methods>;
-}
-
-# Pangle
--keep class com.bytedance.sdk.** { *; }
--keep class com.bykv.vk.openvk.component.video.api.** { *; }
-
-# Tapjoy
--keep class com.tapjoy.** { *; }
--keep class com.moat.** { *; }
--keepattributes JavascriptInterface
--keepattributes *Annotation*
--keep class * extends java.util.ListResourceBundle {
-protected Object[][] getContents();
-}
--keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
-public static final *** NULL;
-}
--keepnames @com.google.android.gms.common.annotation.KeepName class *
--keepclassmembernames class * {
-@com.google.android.gms.common.annotation.KeepName *;
-}
--keepnames class * implements android.os.Parcelable {
-public static final ** CREATOR;
-}
--keep class com.google.android.gms.ads.identifier.** { *; }
--dontwarn com.tapjoy.**
-```
+- 참고사항  
+ADOP Bidmad 이외 다른 광고 SDK를 사용 시 라이브러리 충돌이 될 수 있으니 아래 사항 참고 바랍니다.  
+&nbsp;- "com.adop.sdk.adapter:adfit:{version}"       //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.  
+&nbsp;- "com.adop.sdk.adapter:pangle:{version}"    //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.  
+&nbsp;- "com.adop.sdk.partners:admobbidding:{version}" //pangle 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.
 
 ## Coupang SDK 추가
 - Gradle 설정 

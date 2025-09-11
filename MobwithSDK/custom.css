@@ -41,7 +41,6 @@ table tr {
     margin-bottom: 8px;
 }
 
-
 /* 기타 기존 style - 이거 적용시 사이드바 메뉴 선택시 스크롤이 먹지 않는 문제가 생긴다. */
 /* .content {
     overflow: auto;

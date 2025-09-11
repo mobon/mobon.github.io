@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.61 (2025.09.11) <!-- {docsify-ignore} -->
+---
+- BugFix
+
 ## 1.0.60 (2025.09.11) <!-- {docsify-ignore} -->
 ---
 - NativeAdView 서브 레이아웃 기능 추가
