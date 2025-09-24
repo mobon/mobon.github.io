@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.62 (2025.09.24) <!-- {docsify-ignore} -->
+---
+- AdFit NativeAdView 기능 추가
+- 코드 정리 및 최적화 작업
+
 ## 1.0.61 (2025.09.11) <!-- {docsify-ignore} -->
 ---
 - BugFix
