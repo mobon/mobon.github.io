@@ -7,6 +7,7 @@ Deployment Target: iOS 14.0 이상
 
 MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에서 MobWithAD SDK를 사용하시려면 반드시 최신 버전의 Xcode를 사용해주세요.
 
+* 1.2.25 버전부터 ADOP BidMadSDK 지원시 충돌 문제로 인해 시뮬레이터에서의 실행이 제한되는점 참고 부탁드립니다.
 
 ## 지면번호 / App Key 등
 ---
@@ -16,7 +17,9 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 
 ## 최신 버전 및 변경사항
 ---
-- 최신버전 : 1.2.24
+- 최신버전 : 1.2.25
 - 변경사항
-  - DT Exchange SDK 미디에이션 추가
-  - 마이너 오류 수정
+  - ADOP BidMad SDK 미디에이션 추가
+  - AdFit SDK의 NativeAd 미디에이션 추가
+  - 시뮬레이터용 빌드 제거
+  - 기타 오류 수정

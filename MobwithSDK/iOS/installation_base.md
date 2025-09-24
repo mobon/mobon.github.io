@@ -21,7 +21,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'MobWithAD'
 
 // 특정 버전 지정시
-pod 'MobWithAD', '1.2.24'
+pod 'MobWithAD', '1.2.25'
 
 // source 지정 없이 사용이 필요한 경우
 // 단, 최신 버전 SDK 업데이트 및 특정 버전의 경우 지원되지 않을 수 있습니다.
@@ -63,6 +63,11 @@ SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다.
 - 본 프레임워크는 DT Exchange SDK를 활용하여 광고를 표시하기도 합니다. 
 자세한 사항은 [여기](https://developer.digitalturbine.com/hc/en-us/articles/360010915618-Integrating-the-iOS-SDK)를 눌러 DT Exchange SDK의 설치 가이드를 따르시면 됩니다.
 - DT Exchange SDK 버전은 8.3.8에 최적화 되어 있습니다.
+
+### ADOP BidMad SDK
+- 본 프레임워크는 ADOP BidMad SDK를 활용하여 광고를 표시하기도 합니다. 
+자세한 사항은 [여기](https://github.com/bidmad/Bidmad-iOS)를 눌러 ADOP BidMad SDK의 설치 가이드를 따르시면 됩니다.
+- ADOP BidMad SDK 버전은 6.13.3에 최적화 되어 있습니다.
 
 
 ### Other Linker 설정

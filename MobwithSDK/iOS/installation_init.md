@@ -25,3 +25,5 @@ MobWithADSDK.standard.setDTExchangeAppID(appId: "{전달받은 DT Exchange App I
 * 가급적 앱 실행 초기에 초기화 하는 것을 권장드립니다.  
 * initSDK() 만 필수로 적용해 주시면 됩니다.
 * 미디에이션 하기로 결정한 광고라도 위에서 키값을 적용하지 않은 경우 광고가 표시되지 않을 수 있습니다.
+* ADOP BidMad SDK를 사용하시는 경우 앱의 info.plist에 AppDomain과 AppKey를 설정해야 합니다.  
+  자세한 사항은 [[여기](https://github.com/bidmad/Bidmad-iOS?tab=readme-ov-file#bidmadsdk-interface-guide)] 를 참고하시기 바랍니다.

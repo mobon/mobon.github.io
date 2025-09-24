@@ -36,6 +36,13 @@ nativeAdView.loadAd()
 | infoLogoImageView | 광고 Info Logo 이미지를 표시할 ImageView. Tag값을 설정해 주셔야 합니다.  |
 
 
+#### <B> ADOP BidMad SDK 를 사용하는 경우 주의 사항 </B>
+ADOP의 BidMad SDK에서 NativeAd를 사용하는 경우 'BIDMADNativeAdView'를 사용할 것을 요구합니다.  
+이에 대응하기 위하여 Mobwith SDK에서 BidMad SDK를 이용하여 NativeAd를 송출하고자 하는 경우,   nativeAdRootView를 'BIDMADNativeAdView'로 생성하여 전달해 주셔야 합니다.  
+[[참고 - BidMad SDK iOS Native Ad 레이아웃 세팅 가이드](https://github.com/bidmad/Bidmad-iOS/wiki/Native-Ad-Layout-Setting-Guide-%5BKOR%5D)] 
+
+
+
 ### performAdClicked()
 gotoSiteButton을 통한 광고 클릭을 발생시킬 수 없는 경우 별도로 버튼을 만들어 아래 예시와 같이 해당 함수를 호출하여 광고 클릭 이벤트를 발생시킬 수 있습니다.
 ```swift
