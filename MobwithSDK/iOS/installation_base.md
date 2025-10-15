@@ -6,7 +6,7 @@
 pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git'
 
 // 특정 버전 지정시
-pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.24'
+pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.26'
 ```
 
 만약 ':git', ':tag' 등을 사용 할 수 없는 경우 아래를 참고하시기 바랍니다.  
@@ -21,10 +21,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'MobWithAD'
 
 // 특정 버전 지정시
-pod 'MobWithAD', '1.2.25'
+pod 'MobWithAD', '1.2.26'
 
 // source 지정 없이 사용이 필요한 경우
 // 단, 최신 버전 SDK 업데이트 및 특정 버전의 경우 지원되지 않을 수 있습니다.
+// 해당 방식으로 업데이트되지 않은 최신 버전의 사용이 필요한 경우 별도로 문의 바랍니다.
 pod 'MobWithADSDK'
 ```
 
@@ -68,6 +69,11 @@ SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다.
 - 본 프레임워크는 ADOP BidMad SDK를 활용하여 광고를 표시하기도 합니다. 
 자세한 사항은 [여기](https://github.com/bidmad/Bidmad-iOS)를 눌러 ADOP BidMad SDK의 설치 가이드를 따르시면 됩니다.
 - ADOP BidMad SDK 버전은 6.13.3에 최적화 되어 있습니다.
+
+### InMobi SDK
+- 본 프레임워크는 InMobi SDK를 활용하여 광고를 표시하기도 합니다. 
+자세한 사항은 [여기](https://support.inmobi.com/monetize/getting-started)를 눌러 InMobi SDK의 설치 가이드를 따르시면 됩니다.
+- InMobi SDK 버전은 10.8.6에 최적화 되어 있습니다.
 
 
 ### Other Linker 설정

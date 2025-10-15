@@ -17,9 +17,7 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 
 ## 최신 버전 및 변경사항
 ---
-- 최신버전 : 1.2.25
+- 최신버전 : 1.2.26
 - 변경사항
-  - ADOP BidMad SDK 미디에이션 추가
-  - AdFit SDK의 NativeAd 미디에이션 추가
-  - 시뮬레이터용 빌드 제거
+  - InMobi SDK 미디에이션 추가
   - 기타 오류 수정
