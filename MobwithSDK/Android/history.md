@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.63 (2025.10.15) <!-- {docsify-ignore} -->
+---
+- 신규 SDK 추가 (Inmobi)
+- BugFix (AdFit)
+
 ## 1.0.62 (2025.09.24) <!-- {docsify-ignore} -->
 ---
 - AdFit NativeAdView 기능 추가
