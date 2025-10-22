@@ -47,8 +47,9 @@ android:usesCleartextTraffic="true"
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk)  
 - MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK 3.15.2 버전</span>에 최적화 되어 있습니다.  
-- 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-base:3.15.2")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
-  (해당되는 경우 별도로 안내됩니다.)
+- 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-family:3.15.2")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
+  (해당되는 경우 별도로 안내됩니다.)  
+- NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
 
 ## ADOP BidMad SDK 추가
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
@@ -171,4 +172,23 @@ MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
 
 ```groovy
 implementation 'com.fyber:marketplace-sdk:8.3.8'
+```
+
+## Inmobi SDK 추가
+- Inmobi 광고를 송출하기 위해 링크를 참고하여 주세요.  
+  [DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)
+- AppKey 설정  
+  Inmobi SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
+- NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
+
+```java
+MobwithSDK.getInstance().setInMobiAppKey("전달 받은 AppKey");
+```
+- build.gradle 설정  
+  Inmobi SDK를 build.gradle에 implementation 해야 합니다.  
+(com.unity3d.ads-mediation:inmobi-adapter:4.3.29, com.inmobi.monetization:inmobi-ads-kotlin:10.8.2 버전에 최적화 되어 있습니다.)
+
+```groovy
+implementation 'com.unity3d.ads-mediation:inmobi-adapter:4.3.29'
+implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
 ```
