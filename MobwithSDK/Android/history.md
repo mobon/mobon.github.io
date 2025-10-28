@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.64 (2025.10.28) <!-- {docsify-ignore} -->
+---
+- BugFix
+
 ## 1.0.63 (2025.10.15) <!-- {docsify-ignore} -->
 ---
 - 신규 SDK 추가 (Inmobi)
