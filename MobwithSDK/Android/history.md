@@ -2,7 +2,7 @@
 
 ## 1.0.64 (2025.10.28) <!-- {docsify-ignore} -->
 ---
-- BugFix
+- BugFix (AdFit)
 
 ## 1.0.63 (2025.10.15) <!-- {docsify-ignore} -->
 ---
