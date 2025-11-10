@@ -176,7 +176,7 @@ implementation 'com.fyber:marketplace-sdk:8.3.8'
 
 ## Inmobi SDK 추가
 - Inmobi 광고를 송출하기 위해 링크를 참고하여 주세요.  
-  [DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)
+  [Inmobi SDK 바로가기](https://support.inmobi.com/monetize/getting-started)
 - AppKey 설정  
   Inmobi SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 - NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
