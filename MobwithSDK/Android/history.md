@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.65 (2025.11.11) <!-- {docsify-ignore} -->
+---
+- BugFix (WHOWHO)
+
 ## 1.0.64 (2025.10.28) <!-- {docsify-ignore} -->
 ---
 - BugFix (AdFit)
