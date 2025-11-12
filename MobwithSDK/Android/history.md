@@ -1,5 +1,13 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.67 (2025.11.12) <!-- {docsify-ignore} -->
+---
+- BugFix (Inmobi Init 에러 수정, DTExchange 에러 수정)
+
+## 1.0.66 (2025.11.12) <!-- {docsify-ignore} -->
+---
+- BugFix (Adfit AdInfoIcon 대응)
+
 ## 1.0.65 (2025.11.11) <!-- {docsify-ignore} -->
 ---
 - BugFix (WHOWHO)
