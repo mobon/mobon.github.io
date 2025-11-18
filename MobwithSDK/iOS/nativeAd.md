@@ -17,6 +17,8 @@ var nativeAdView = MMNativeAdView(bannerUnitId: mediaCode,
                                   gotoSiteButton: goButton,
                                   infoLogoImageView: infoLogoImageView)
 nativeAdView.adDelegate = self
+nativeAdView.rootViewController = self        // 미디에이션 적용된 일부 광고 SDK의 경우 rootViewController를 설정하지 않으면 광고가 표시되지 않을 수 있습니다.
+
 nativeAdView.loadAd()
 
 ```
@@ -38,8 +40,10 @@ nativeAdView.loadAd()
 
 #### <B> ADOP BidMad SDK 를 사용하는 경우 주의 사항 </B>
 ADOP의 BidMad SDK에서 NativeAd를 사용하는 경우 'BIDMADNativeAdView'를 사용할 것을 요구합니다.  
-이에 대응하기 위하여 Mobwith SDK에서 BidMad SDK를 이용하여 NativeAd를 송출하고자 하는 경우,   nativeAdRootView를 'BIDMADNativeAdView'로 생성하여 전달해 주셔야 합니다.  
-[[참고 - BidMad SDK iOS Native Ad 레이아웃 세팅 가이드](https://github.com/bidmad/Bidmad-iOS/wiki/Native-Ad-Layout-Setting-Guide-%5BKOR%5D)] 
+이에 대응하기 위하여 Mobwith SDK에서 BidMad SDK를 이용하여 NativeAd를 송출하고자 하는 경우,   
+nativeAdRootView를 'BIDMADNativeAdView'로 생성하여 전달해 주셔야 합니다.  
+[[참고 - BidMad SDK iOS Native Ad 레이아웃 세팅 가이드](https://github.com/bidmad/Bidmad-iOS/wiki/Native-Ad-Layout-Setting-Guide-%5BKOR%5D)]   
+* 만약 nativeAdRootView를 BIDMADNativeAdView로 생성하지 않은 경우 ADOP의 광고는 광고 수신여부와 무관하게 No Fill로 처리되니 주의 바랍니다.
 
 
 
@@ -54,6 +58,10 @@ nativeAdView.performAdClicked()
 
 ### adDelegate 
 콜백을 받기 위한 Delegate는 [MobWithADViewDelegate](/iOS/banner?id=mobwithadviewdelegate)를 사용합니다.  
+
+### rootViewController  
+미디에이션 하고 있는 일부 외부 SDK의 경우 NativeAd에도 rootViewController를 설정할 것을 요구 합니다.  
+관련 광고의 경우 실제 광고를 수신해도 rootViewController가 설정되지 않은 경우 광고를 받지 못한 것으로 취급되니 주의 바랍니다.
 
 <br><br>
 
