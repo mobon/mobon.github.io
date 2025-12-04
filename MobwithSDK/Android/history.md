@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.68 (2025.12.04) <!-- {docsify-ignore} -->
+---
+- BugFix
+
 ## 1.0.67 (2025.11.12) <!-- {docsify-ignore} -->
 ---
 - BugFix (Inmobi Init 에러 수정, DTExchange 에러 수정)
