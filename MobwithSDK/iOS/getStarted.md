@@ -2,7 +2,7 @@
 
 ## 지원환경
 ---
-Deployment Target: iOS 14.0 이상  
+Deployment Target: iOS 15.6 이상  
 최신 버전의 Xcode (Xcode 16.0 / Swift 5.3)  
 
 MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에서 MobWithAD SDK를 사용하시려면 반드시 최신 버전의 Xcode를 사용해주세요.
@@ -17,6 +17,7 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 
 ## 최신 버전 및 변경사항
 ---
-- 최신버전 : 1.2.30
+- 최신버전 : 1.2.31
 - 변경사항
-  - NativeAd 광고 설정시 Action Button이 없는 경우 랜딩을 하지 못하는 문제 수정
+  - AdMob 3rd Party 미디에이션을 위한 기능 추가
+  - 마이너 오류 수정 및 기능 개선
