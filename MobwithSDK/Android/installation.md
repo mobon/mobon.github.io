@@ -17,7 +17,7 @@ allprojects {
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.68'
+    implementation 'io.github.mobon:mobwithSDK:1.0.69'
 }
 ```
 
@@ -46,8 +46,8 @@ android:usesCleartextTraffic="true"
 ## ADFIT SDK 추가
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk)  
-- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK 3.15.2 버전</span>에 최적화 되어 있습니다.  
-- 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-family:3.15.2")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK com.kakao.adfit:ads-base:3.21.10 버전</span>에 최적화 되어 있습니다.  
+- 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-base:3.21.10")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
   (해당되는 경우 별도로 안내됩니다.)  
 - NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
 

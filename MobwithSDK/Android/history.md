@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.69 (2025.12.31) <!-- {docsify-ignore} -->
+---
+- Script 광고 고도화
+- BannerWithArticle Article 클릭 이벤트 추가
+
 ## 1.0.68 (2025.12.04) <!-- {docsify-ignore} -->
 ---
 - BugFix
