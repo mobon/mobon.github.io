@@ -1,7 +1,7 @@
 ## Frame Banner AD <!-- {docsify-ignore} -->
 
-MobwithFrameBannerView는 광고주 측으로부터 제공 받는 주요 에셋들을 배치하여 노출하는 형태의 광고 입니다.,  
-지정된 프레임 형태의 광고로 구성되어 있습니다..
+MobwithFrameBannerView는 광고주 측으로부터 제공 받는 주요 에셋들을 배치하여 노출하는 형태의 광고 입니다.  
+지정된 프레임 형태의 광고로 구성되어 있습니다.
 
 ### 광고 로드 방법
 ([MobwithFrameBannerView 파라미터 정의 참조](#MobwithFrameBannerView-파라미터-정의))
