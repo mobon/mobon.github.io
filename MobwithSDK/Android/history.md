@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.70 (2026.01.08) <!-- {docsify-ignore} -->
+---
+- Smart Frame Banner AD 기능 추가
+
 ## 1.0.69 (2025.12.31) <!-- {docsify-ignore} -->
 ---
 - Script 광고 고도화

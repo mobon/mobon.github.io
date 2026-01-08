@@ -1,10 +1,9 @@
 ## 최신 버전 및 변경사항
 ---
-### 최신버전 : 1.0.69
+### 최신버전 : 1.0.70
 
 ### 변경사항
-- Script 광고 고도화
-- BannerWithArticle Article 클릭 이벤트 추가
+- Smart Frame Banner AD 기능 추가
 
 ## 지원환경
 ---

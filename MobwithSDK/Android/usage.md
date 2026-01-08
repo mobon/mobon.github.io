@@ -53,6 +53,6 @@ NativeLoaderAdView 광고의 사용법을 안내 합니다.
 ### [Smart AD](/Android/smartAd.md)
 스마트 광고(카테고리 타게팅)의 사용법을 안내합니다.
 
-[//]: # (### [Frame AD]&#40;/Android/frameBannerAd.md&#41;)
+### [Frame AD](/Android/frameBannerAd.md)
 
-[//]: # (프레임 광고의 사용법을 안내합니다.)
+프레임 광고의 사용법을 안내합니다.

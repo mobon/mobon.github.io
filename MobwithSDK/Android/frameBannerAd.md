@@ -4,7 +4,7 @@ MobwithFrameBannerView는 광고주 측으로부터 제공 받는 주요 에셋�
 지정된 프레임 형태의 광고로 구성되어 있습니다..
 
 ### 광고 로드 방법
-([MobwithNativeAdView 파라미터 정의 참조](#mobwithnativeadview-파라미터-정의))
+([MobwithFrameBannerView 파라미터 정의 참조](#MobwithFrameBannerView-파라미터-정의))
 
 ```java
 ....
@@ -64,4 +64,53 @@ frameBannerView.loadAd();
 | infoLogoViewContainerID | 광고 Info Logo를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. AppLovin 미디에이션을 위해 사용한다.                                                                               |
 |   infoLogoImageViewID   | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID                                                                                                                       |
 
+### 서브 레이아웃 기능
+- 필요에 따라 직광고의 layout과 네트워크 광고의 layout을 다르게 쓰기 위한 기능입니다.
+- 사용법은 위와 동일하지만 MobwithNativeAdView 생성 시 파라미터가 다릅니다. 아래는 예시 입니다.
+```java
+....
+MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(this,
+        mUnitId,
+        containerView,
+        new NativeAdViewItemModel(
+                R.layout.custom_native_ad_view,
+                R.id.mediaContainerView,
+                R.id.imageViewAD,
+                R.id.imageViewLogo,
+                R.id.textViewTitle,
+                R.id.textViewDesc,
+                R.id.buttonGo,
+                R.id.infoViewLayout,
+                R.id.imageViewInfo
+        ),
+        new NativeAdViewItemModel(
+                R.layout.custom_native_ad_view_2,
+                R.id.mediaContainerView,
+                R.id.imageViewAD,
+                R.id.imageViewLogo,
+                R.id.textViewTitle,
+                R.id.textViewDesc,
+                R.id.buttonGo,
+                R.id.infoViewLayout,
+                R.id.imageViewInfo
+        ));
+
+mobwithFrameBannerView.setUnitId(YOUR_UNIT_ID);
+mobwithFrameBannerView.setAdListener(new iBannerCallback() {
+  @Override
+  public void onLoadedAdInfo ( boolean result, String errorStr){
+    if (result) {
+      LogPrint.d("MobwithFrameBannerView - Loaded AD Success");
+    } else {
+      LogPrint.d("MobwithFrameBannerView - Loaded AD with error : " + errorStr);
+    }
+  }
+
+  @Override
+  public void onAdClicked() {
+    LogPrint.d("MobwithFrameBannerView - Ad Clicked");
+  }
+});
+mobwithFrameBannerView.loadAd();
+....
 ```
