@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.70 (2026.01.12) <!-- {docsify-ignore} -->
+---
+- BugFix
+
 ## 1.0.70 (2026.01.08) <!-- {docsify-ignore} -->
 ---
 - Smart Frame Banner AD 기능 추가
