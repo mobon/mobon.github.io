@@ -40,6 +40,9 @@ frameBannerView.setAdListener(new iBannerCallback() {
         }
 });
 
+//카테고리 타겟팅을 위한 설정
+frameBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("업체코드", "카테고리 대분류", "카테고리 중분류", "카테고리 소분류"));
+
 frameBannerView.loadAd();
 ....
 ```
