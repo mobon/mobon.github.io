@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.72 (2026.01.13) <!-- {docsify-ignore} -->
+---
+- BugFix
+
 ## 1.0.71 (2026.01.12) <!-- {docsify-ignore} -->
 ---
 - BugFix
