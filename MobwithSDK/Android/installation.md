@@ -17,7 +17,7 @@ allprojects {
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.71'
+    implementation 'io.github.mobon:mobwithSDK:1.0.73'
 }
 ```
 
@@ -192,3 +192,25 @@ MobwithSDK.getInstance().setInMobiAppKey("전달 받은 AppKey");
 implementation 'com.unity3d.ads-mediation:inmobi-adapter:4.3.29'
 implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
 ```
+
+## Admob Mediation SDK 추가
+- Admob Mediation 광고를 송출하기 위해 링크를 참고하여 주세요.
+  [Admob SDK Guide 바로가기](https://developers.google.com/admob/android/choose-networks?hl=ko&_gl=1*d0p0ke*_up*MQ..*_ga*MTY4MTA1NTI2OC4xNzY4NDQxMDE0*_ga_SM8HXJ53K2*czE3Njg0NDEwMTQkbzEkZzAkdDE3Njg0NDEwMTQkajYwJGwwJGgw)
+- build.gradle 설정  
+  Admob SDK를 build.gradle에 implementation 해야 합니다.
+  (com.google.android.gms:play-services-ads:24.9.0 버전에 최적화 되어있습니다.)
+```groovy
+  implementation("com.google.android.gms:play-services-ads:24.9.0")
+```
+- Menifast 설정
+```xml
+<manifest>
+  <application>
+    <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+    <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="SAMPLE_APP_ID"/>
+  </application>
+  </manifest>
+```
+

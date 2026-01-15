@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.73 (2026.01.15) <!-- {docsify-ignore} -->
+---
+- Admob mediation SDK 추가
+
 ## 1.0.72 (2026.01.13) <!-- {docsify-ignore} -->
 ---
 - BugFix
