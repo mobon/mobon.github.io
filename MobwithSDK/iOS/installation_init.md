@@ -23,9 +23,12 @@ MobWithADSDK.standard.setLevelPlaySDKAppKey("{전달받은 LevelPlay AppKey}")  
 MobWithADSDK.standard.setPangleAppId(appId: "{전달받은 Pangle App ID}")     // Pangle SDK를 사용하는 경우에만 설정
 MobWithADSDK.standard.setDTExchangeAppID(appId: "{전달받은 DT Exchange App ID}")    // DT Exchange SDK를 사용하는 경우에만 설정
 MobWithADSDK.standard.setInMobiAccountId(accountId: "{전달받은 InMobi Account ID}") // InMobi SDK를 사용하는 경우에만 설정
+
+MobWithADSDK.standard.appId = "{App Store App ID}"    // 앱스토어 등록시 발급된 App ID 입력, CaulySDK 사용시 필수로 적용하셔야 합니다.
 ```
 * 가급적 앱 실행 초기에 초기화 하는 것을 권장드립니다.  
 * initSDK() 만 필수로 적용해 주시면 됩니다.
 * 미디에이션 하기로 결정한 광고라도 위에서 키값을 적용하지 않은 경우 광고가 표시되지 않을 수 있습니다.
 * ADOP BidMad SDK를 사용하시는 경우 앱의 info.plist에 AppDomain과 AppKey를 설정해야 합니다.  
   자세한 사항은 [[여기](https://github.com/bidmad/Bidmad-iOS?tab=readme-ov-file#bidmadsdk-interface-guide)] 를 참고하시기 바랍니다.
+* AppStore App Id의 경우 https://apps.apple.com/kr/app/id{App Store ID} 와 같은 url을 참고하시면 됩니다.
