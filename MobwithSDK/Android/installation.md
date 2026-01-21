@@ -193,6 +193,26 @@ implementation 'com.unity3d.ads-mediation:inmobi-adapter:4.3.29'
 implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
 ```
 
+## Cauly SDK 추가
+- Cauly 광고를 송출하기 위해 링크를 참고하여 주세요.  
+  [Cauly SDK 바로가기](https://cauly.gitbook.io/cauly/android/project-build-setting)
+
+- build.gradle 설정  
+  Cauly SDK를 build.gradle에 implementation 해야 합니다.
+
+```groovy
+allprojects {
+  repositories {
+      maven { url 'https://cauly.github.io/cauly-sdk-android-maven/maven-repo' }     
+  }
+}
+```
+
+```groovy
+implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
+implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
+```
+
 ## Admob Mediation SDK 추가
 - Admob Mediation 광고를 송출하기 위해 링크를 참고하여 주세요.
   [Admob SDK Guide 바로가기](https://developers.google.com/admob/android/choose-networks?hl=ko&_gl=1*d0p0ke*_up*MQ..*_ga*MTY4MTA1NTI2OC4xNzY4NDQxMDE0*_ga_SM8HXJ53K2*czE3Njg0NDEwMTQkbzEkZzAkdDE3Njg0NDEwMTQkajYwJGwwJGgw)
@@ -214,3 +234,4 @@ implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
   </manifest>
 ```
 
+implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
