@@ -199,6 +199,7 @@ implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
 
 - build.gradle 설정  
   Cauly SDK를 build.gradle에 implementation 해야 합니다.
+  (com.fsn.cauly:cauly-sdk:3.5.41 버전에 최적화 되어 있습니다.)
 
 ```groovy
 allprojects {
@@ -210,7 +211,6 @@ allprojects {
 
 ```groovy
 implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
-implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
 ```
 
 ## Admob Mediation SDK 추가
