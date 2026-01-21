@@ -234,4 +234,3 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
   </manifest>
 ```
 
-implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
