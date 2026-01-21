@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.74 (2026.01.21) <!-- {docsify-ignore} -->
+---
+- Script 광고 비율 조정 기능 추가
+- Cauly SDK 추가 (Banner)
+
 ## 1.0.73 (2026.01.15) <!-- {docsify-ignore} -->
 ---
 - Admob mediation SDK 추가

@@ -8,6 +8,10 @@ MobWithBannerView banner = new MobwithBannerView(this)
                                       .setBannerUnitId(YOUR_UNIT_ID)
                                       .setInterval(60);
 
+//스크립트 광고의 사이즈를 조절하는 기능입니다. (선택사항)
+//사용중인 Container의 Height dp 값을 입력하면 비율에 맞게 광고 크기가 설정됩니다.
+banner.setAdScale(80);
+
 // 배너뷰의 리스너를 등록합니다.
 banner.setAdListener(new iBannerCallback() {
   @Override
