@@ -31,4 +31,5 @@ MobWithADSDK.standard.appId = "{App Store App ID}"    // 앱스토어 등록시 
 * 미디에이션 하기로 결정한 광고라도 위에서 키값을 적용하지 않은 경우 광고가 표시되지 않을 수 있습니다.
 * ADOP BidMad SDK를 사용하시는 경우 앱의 info.plist에 AppDomain과 AppKey를 설정해야 합니다.  
   자세한 사항은 [[여기](https://github.com/bidmad/Bidmad-iOS?tab=readme-ov-file#bidmadsdk-interface-guide)] 를 참고하시기 바랍니다.
-* AppStore App Id의 경우 https://apps.apple.com/kr/app/id{App Store ID} 와 같은 url을 참고하시면 됩니다.
+* AppStore App Id의 경우 https://apps.apple.com/kr/app/id{App Store ID} 와 같은 url을 참고하시거나,
+  [AppstoreConnect](https://appstoreconnect.apple.com/)에서 해당 앱의 앱정보 -> 일반정보 -> Apple ID 값을 넣어 주시면 됩니다.
