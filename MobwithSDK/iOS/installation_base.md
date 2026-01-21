@@ -79,5 +79,15 @@ SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다.
 - InMobi SDK 버전은 10.8.6에 최적화 되어 있습니다.
 
 
+### Google AdMob SDK
+- 본 프레임워크는 AdMob SDK를 활용하여 광고를 표시하기도 합니다. 
+자세한 사항은 [여기](https://developers.google.com/admob/ios/quick-start?hl=ko)를 눌러 AdMob SDK의 설치 가이드를 따르시면 됩니다.
+- InMobi SDK 버전은 12.6.0에 최적화 되어 있습니다.
+- AdMob SDK 사용시 설정해야 하는 Application ID는 전달 받은 값을 사용하면 됩니다.
+
+
+
+
+
 ### Other Linker 설정
 수동 설치시 반드시 [여기(Other Linker 설정)](/iOS/installation_other?id=other-linker-설정)을 참고하여 Other Linker 값을 수정해 주셔야 합니다.
