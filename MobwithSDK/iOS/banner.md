@@ -77,6 +77,16 @@ mobWithAdView.fillMode = true
 ...
 ```
 
+### fitToHeight
+fitToHeight를 true로 설정하시면 일부 광고 소스에 대해 MobWithAdView를 생성 할때 제공된 height 값을 기준으로 사이즈를 비율에 맞게 조절합니다.  
+이때, 부모 View 비율에 따라 좌우에 여백이 생길 수 있는점 참고 바랍니다.
+기본값은 false 입니다.  
+``` swift
+...
+mobWithAdView.fitToHeight = true
+...
+```
+
 ### AdFit 비즈보드 이용시
 비즈보드 광고의 경우 기본으로 여백이 할당 되도록 구현되어 있습니다.  따라서 광고 뷰 생성 및 로드를 하기전 아래의 코드를 참고하여 필요에 따라 여백을 설정해줄 필요가 있습니다.
 ``` swift
