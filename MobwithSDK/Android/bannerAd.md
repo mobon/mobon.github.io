@@ -142,3 +142,11 @@ android:orientation="vertical"
 />
 ....
 ```
+
+### 7) Script 광고 비율 조정 기능
+Script형 배너 광고 사용 중 사용자가 정한 Container 크기에 맞춰서 광고 사이즈를 조절하는 기능 
+주의사항 : ContainerLayout의 높이값(dp)를 지정해주세요.
+
+```java
+banner.setAdScale(80);  //80dp 높이에 맞춰 Script형 배너 광고의 높이가 설정됨.
+```
