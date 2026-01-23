@@ -12,6 +12,19 @@ MobWithAD SDK는 ATS 활성화 상태에서도 정상적으로 동작하도록 �
 </dict>
 ```
 
+## GADApplicationIdentifier
+AdMob SDK 미디에이션 적용에 따라 GADApplicationIdentifier 설정이 필요합니다.  
+아래를 참고하셔서 GADApplicationIdentifier값을 추가해 주시면 됩니다.
+
+```swift
+<key>GADApplicationIdentifier</key>
+<!-- Sample AdMob app ID: ca-app-pub-3940256099942544~1458002511 -->
+<string>SAMPLE_APP_ID</string>
+```
+* AdMob SDK를 사용하지 않는 경우라도 AdMob SDK 초기화 문제로 인해 해당 값을 설정하는 것이 필요하며,
+  실제 해당 광고를 사용하지 않기 때문에 위 Sample Application Id 값을 적용해 주시면 됩니다.
+  
+
 
 ## Always Embed Swift Standard Libraries 값을 Yes로 설정
 ---
