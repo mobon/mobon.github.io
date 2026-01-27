@@ -6,7 +6,7 @@
 pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git'
 
 // 특정 버전 지정시
-pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.35'
+pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.37'
 ```
 
 만약 ':git', ':tag' 등을 사용 할 수 없는 경우 아래를 참고하시기 바랍니다.  
@@ -21,7 +21,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'MobWithAD'
 
 // 특정 버전 지정시
-pod 'MobWithAD', '1.2.35'
+pod 'MobWithAD', '1.2.37'
 
 // source 지정 없이 사용이 필요한 경우
 // 단, 최신 버전 SDK 업데이트 및 특정 버전의 경우 지원되지 않을 수 있습니다.
