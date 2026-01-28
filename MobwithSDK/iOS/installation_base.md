@@ -6,7 +6,7 @@
 pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git'
 
 // 특정 버전 지정시
-pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.35'
+pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.37'
 ```
 
 만약 ':git', ':tag' 등을 사용 할 수 없는 경우 아래를 참고하시기 바랍니다.  
@@ -21,7 +21,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'MobWithAD'
 
 // 특정 버전 지정시
-pod 'MobWithAD', '1.2.35'
+pod 'MobWithAD', '1.2.37'
 
 // source 지정 없이 사용이 필요한 경우
 // 단, 최신 버전 SDK 업데이트 및 특정 버전의 경우 지원되지 않을 수 있습니다.
@@ -31,6 +31,18 @@ pod 'MobWithADSDK'
 
 * 1.2.35 버전 부터는 Cauly SDK를 사용하고 있으며, 사용중인 버전은 3.1.22 입니다.  
  만약, Cauly SDK를 프로젝트에 이미 포함하고 있다면 충돌할 가능성이 있으니 참고 바랍니다.
+
+ ### AdMob SDK 미디에이션 사용시
+ 1.2.36 버전 부터는 AdMob SDK 미디에이션용 어댑터를 자동으로 추가하지 않습니다.
+ [[여기](https://developers.google.com/admob/ios/choose-networks?hl=ko&_gl=1*1mnsgrx*_up*MQ..*_ga*MTMwNjAwMzAyLjE3NjkxMzE3MTQ.*_ga_SM8HXJ53K2*czE3NjkxMzE3MTQkbzEkZzAkdDE3NjkxMzE3MTQkajYwJGwwJGgw)]에서 사용하기로 협의된 외부 광고 SDK에 대한 어댑터 적용 방법을 확인하여 아래와 같이 pod에 추가해 주셔야 합니다.
+```swift
+// DTExchange, InMobi, IronSource LevelPlay, Moloco, Pangle를 사용하 경우에 대한 예시 입니다.
+pod 'GoogleMobileAdsMediationFyber'
+pod 'GoogleMobileAdsMediationInMobi'
+pod 'GoogleMobileAdsMediationIronSource'
+pod 'GoogleMobileAdsMediationMoloco'
+pod 'GoogleMobileAdsMediationPangle'
+```
 
 
 <br><br>
@@ -77,6 +89,15 @@ SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다.
 - 본 프레임워크는 InMobi SDK를 활용하여 광고를 표시하기도 합니다. 
 자세한 사항은 [여기](https://support.inmobi.com/monetize/getting-started)를 눌러 InMobi SDK의 설치 가이드를 따르시면 됩니다.
 - InMobi SDK 버전은 10.8.6에 최적화 되어 있습니다.
+
+
+### Google AdMob SDK
+- 본 프레임워크는 AdMob SDK를 활용하여 광고를 표시하기도 합니다. 
+자세한 사항은 [여기](https://developers.google.com/admob/ios/quick-start?hl=ko)를 눌러 AdMob SDK의 설치 가이드를 따르시면 됩니다.
+- InMobi SDK 버전은 12.6.0에 최적화 되어 있습니다.
+- AdMob SDK 사용시 설정해야 하는 Application ID는 전달 받은 값을 사용하면 됩니다.
+
+
 
 
 ### Other Linker 설정
