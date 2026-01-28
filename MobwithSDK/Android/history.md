@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.75 (2026.01.28) <!-- {docsify-ignore} -->
+---
+- BugFix(Inmobi)
+
 ## 1.0.74 (2026.01.21) <!-- {docsify-ignore} -->
 ---
 - Script 광고 비율 조정 기능 추가
