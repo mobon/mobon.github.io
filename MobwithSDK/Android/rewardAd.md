@@ -4,11 +4,8 @@
 ### 광고 로드 방법
 
 ```java
+//광고 객체 생성 시 Activity를 전달해주시는 걸 권장합니다.
 MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this).setUnitId("YOUR_UNIT_ID").build();
-
-// 영상형, 배너형 선택.  true로 설정시 영상형으로 광고가 표시되며, false로 설정시 배너형으로 광고가 표시됩니다.
-// 배너형으로 광고 표시를 선택한 경우 영상형 광고를 제공하는 DSP 광고(ex. 유니티, 레벨플레이 등)의 표시가 제한됩니다.
-rewardVideoDialog.setWillCountdown(true);
 
 // 콜백을 받기위한 Listener는 iRewardAdsCallback를 사용합니다.
 rewardVideoDialog.setAdListener(new iRewardAdsCallback() {

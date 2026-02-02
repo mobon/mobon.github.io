@@ -1,5 +1,11 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.76 (2026.02.02) <!-- {docsify-ignore} -->
+---
+- 후후 프리패스 영상광고 송출 기능 추가
+- 리워드 배너 Count 기능 제거
+- ScriptAdapter 로그 제거
+ 
 ## 1.0.75 (2026.01.28) <!-- {docsify-ignore} -->
 ---
 - BugFix(Inmobi)
