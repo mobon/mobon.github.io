@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.78 (2026.02.04) <!-- {docsify-ignore} -->
+---
+- Script 광고(Toast) 클릭 기능 수정
+
 ## 1.0.77 (2026.02.04) <!-- {docsify-ignore} -->
 ---
 - Script 광고 크롬 시스템 로그 제거
