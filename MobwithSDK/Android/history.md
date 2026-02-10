@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.79 (2026.02.10) <!-- {docsify-ignore} -->
+---
+- RewardAdDialog Back 클릭 이벤트 제거
+
 ## 1.0.78 (2026.02.04) <!-- {docsify-ignore} -->
 ---
 - Script 광고(Toast) 클릭 기능 수정
