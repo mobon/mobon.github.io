@@ -13,9 +13,10 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   public void onLoadedAdInfo(boolean result, String errorStr) {
       if (result) {
         // 광고 로딩 성공
-      } 
-      else {
-        // 광고 로딩 실패
+          Toast.makeText(MainActivity.this, "광고 로드 성공(REWARD)", Toast.LENGTH_SHORT).show();
+      } else {
+          //TODO:광고 로드 실패 시 처리 (NO AD 등)
+          Toast.makeText(MainActivity.this, "광고 로드 실패(REWARD)", Toast.LENGTH_SHORT).show();
       }
   }
 

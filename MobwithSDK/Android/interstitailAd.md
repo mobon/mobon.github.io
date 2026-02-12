@@ -14,6 +14,9 @@ interstitialDialog.setAdListener(new iInterstitialCallback() {
       public void run() {
         if (result) {
           Toast.makeText(MainActivity.this, "광고 로드 성공(FULL)", Toast.LENGTH_SHORT).show();
+          } else {
+            //TODO:광고 로드 실패 시 처리 (NO AD 등)
+            Toast.makeText(MainActivity.this, "광고 로드 실패(FULL)", Toast.LENGTH_SHORT).show();
           }
         }
       });
