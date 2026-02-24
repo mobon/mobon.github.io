@@ -6,7 +6,7 @@
 pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git'
 
 // 특정 버전 지정시
-pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.37'
+pod 'MobWithAD', :git => 'https://github.com/mobon/MobWithAD_iOS.git', :tag => '1.2.40'
 ```
 
 만약 ':git', ':tag' 등을 사용 할 수 없는 경우 아래를 참고하시기 바랍니다.  
@@ -21,7 +21,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'MobWithAD'
 
 // 특정 버전 지정시
-pod 'MobWithAD', '1.2.37'
+pod 'MobWithAD', '1.2.40'
 
 // source 지정 없이 사용이 필요한 경우
 // 단, 최신 버전 SDK 업데이트 및 특정 버전의 경우 지원되지 않을 수 있습니다.
@@ -31,6 +31,9 @@ pod 'MobWithADSDK'
 
 * 1.2.35 버전 부터는 Cauly SDK를 사용하고 있으며, 사용중인 버전은 3.1.22 입니다.  
  만약, Cauly SDK를 프로젝트에 이미 포함하고 있다면 충돌할 가능성이 있으니 참고 바랍니다.
+
+* 1.2.40 버전 부터는 AdFit SDK를 내부에 직접 포함하고 있으며 3.21.15 버전을 사용중입니다.
+  만약, 호환되지 않는 다른 버전의 사용이 필요한 경우 별도로 문의 바랍니다.
 
  ### AdMob SDK 미디에이션 사용시
  1.2.36 버전 부터는 AdMob SDK 미디에이션용 어댑터를 자동으로 추가하지 않습니다.
@@ -52,13 +55,8 @@ pod 'GoogleMobileAdsMediationPangle'
 SDK 수동 설치시 아래 항목들을 모두 적용해 주셔야 합니다. 
 
 ### 기본 프레임워크
-- MobWithADSDKFramework.xcframework, CouOffsiteAds.xcframework, CaulySDK.xcframework를 다운로드 받습니다.  
+- MobWithADSDKFramework.xcframework, CouOffsiteAds.xcframework, CaulySDK.xcframework, AdFitSDK.xcframework를 다운로드 받습니다.  
 - 다운로드 받은 두 Framwork를 앱 프로젝트의 General > Embeded Binaries 항목으로 끌어서 놓습니다.
-
-### AdFitSDK 
-- 본 SDK에서는 AdFitSDK의 비즈보드 템플릿을 활용하도록 되어 있습니다. 따라서 AdFitSDK의 추가가 필요합니다. 
-자세한 사항은 [여기](https://github.com/adfit/adfit-ios-sdk/blob/master/Guide/Install%20SDK.md)를 눌러 AdFitSDK의 설치 가이드를 따르시면 됩니다.
-- AdFitSDK 버전은 3.14.5에 최적화 되어 있습니다.
 
 ### UnitySDK
 - 본 프레임워크는 UnitySDK를 활용하여 광고를 표시하기도 합니다. 
