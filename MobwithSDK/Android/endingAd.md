@@ -49,11 +49,15 @@ endingDialog.setAdListener(new iInterstitialCallback() {
       //엔딩 광고 오픈 실패
     }
   });
+//광고 show() 이전에 광고를 로드 해야합니다.
+endingDialog.load();
 ```
 
 ### 광고 출력 방법
 ```java
-endingDialog.show();
+if(endingDialog.isLoaded()){
+    endingDialog.show();
+}
 ```
 
 ### Click Event KeyCode

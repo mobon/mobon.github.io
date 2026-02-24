@@ -107,7 +107,6 @@ bannerView.destroyAd(); //더 이상 Banner 광고를 사용하지 않는 시점
       if (result) {
         //배너 광고 로딩 성공
         System.out.println("배너 광고로딩");
-
       } else {
         System.out.println("광고실패 : " + errorcode);
         // 광고 로딩 실패시 동작
@@ -132,7 +131,7 @@ bannerView.destroyAd(); //더 이상 Banner 광고를 사용하지 않는 시점
    주의사항 : FullScreenMode를 사용하기 위해선 배너 광고가 들어갈 container view의 높이를 원하는 크기로 커스텀 해야합니다. 자세한 사용법은 아래를 참고 바랍니다.
    
 ```java
-MobwithSDK.getInstance().setFullScreenMode(true); //true : Full Screen Model
+MobwithSDK.getInstance().setFullScreenMode(true);
 ```  
 
 ```xml

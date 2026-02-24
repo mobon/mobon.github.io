@@ -51,5 +51,5 @@ bannerView.loadAd();
 광고 클릭시 onAdClicked() 함수를 통해 광고 클릭 시간을 전달해주며, 해당 값을 사용하여 광고 미노출 시간을 제어하시면 됩니다.  
 만약, 광고 클릭 시간을 별도로 확인이 필요한 경우 아래 함수를 통해 확인 가능 합니다.  
 ```java
-Date clickedTime = MobwithFreePassAdView.getLastAdClickedTime(this)
+Date clickedTime = MobwithFreePassAdView.getLastAdClickedTime(this);
 ```

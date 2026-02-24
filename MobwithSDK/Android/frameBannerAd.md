@@ -22,8 +22,9 @@ frameBannerView = new MobwithFrameBannerView(
                         R.id.infoViewLayout,
                         R.id.imageViewInfo);
 
-        // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
+//각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
 frameBannerView.setUnitId(YOUR_UNIT_ID);
+//광고 요청에 대한 콜백
 frameBannerView.setAdListener(new iBannerCallback() {
         @Override
         public void onLoadedAdInfo ( boolean result, String errorStr){
@@ -42,7 +43,7 @@ frameBannerView.setAdListener(new iBannerCallback() {
 
 //카테고리 타겟팅을 위한 설정
 frameBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("업체코드", "카테고리 대분류", "카테고리 중분류", "카테고리 소분류"));
-
+//광고 로드
 frameBannerView.loadAd();
 ....
 ```
@@ -100,6 +101,9 @@ MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(this,
         ));
 
 mobwithFrameBannerView.setUnitId(YOUR_UNIT_ID);
+//카테고리 타겟팅을 위한 설정
+mobwithFrameBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("업체코드", "카테고리 대분류", "카테고리 중분류", "카테고리 소분류"));
+//광고 요청에 대한 콜백
 mobwithFrameBannerView.setAdListener(new iBannerCallback() {
   @Override
   public void onLoadedAdInfo ( boolean result, String errorStr){
@@ -115,6 +119,7 @@ mobwithFrameBannerView.setAdListener(new iBannerCallback() {
     LogPrint.d("MobwithFrameBannerView - Ad Clicked");
   }
 });
+//광고 로드
 mobwithFrameBannerView.loadAd();
 ....
 ```
