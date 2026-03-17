@@ -5,7 +5,7 @@
 
 ### 광고 로드 방법
 ```java
-InterstitialDialog interstitialDialog = new InterstitialDialog(this).setBackCancel(true).setType(Key.INTERSTITIAL_TYPE.FULL).setUnitId("광고 Unit ID").build();
+InterstitialDialog interstitialDialog = new InterstitialDialog(this).setBackCancel(true).setUnitId("광고 Unit ID").build();
 interstitialDialog.setAdListener(new iInterstitialCallback() {
   @Override
   public void onLoadedAdInfo(boolean result, String errorStr) {
@@ -56,15 +56,23 @@ interstitialDialog.load();
 
 ### 광고 출력 방법
 ```java
-interstitialDialog.show();
+if (interstitialDialog.isLoaded()) {
+    interstitialDialog.show();
+}
 ```
+ 
+[//]: # (### 전면배너 광고 사이즈 별 타입)
 
-### 전면배너 광고 사이즈 별 타입
+[//]: # ()
+[//]: # (| Size  | Type Constant             | Description                                     |)
 
-| Size  | Type Constant             | Description                                     |
-|:-----:|:--------------------------|-------------------------------------------------|
-| NORMAL | INTERSTITIAL_TYPE.NORMAL | 일반 사이즈의 전면 배너 광고 (화면을 꽉 채우지 않음)   |
-| FULL   | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 전면 배너 광고            |
+[//]: # (|:-----:|:--------------------------|-------------------------------------------------|)
+
+[//]: # (| RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입   |)
+
+[//]: # (| NORMAL | INTERSTITIAL_TYPE.NORMAL | 일반 사이즈의 전면 배너 광고 &#40;화면을 꽉 채우지 않음&#41;   |)
+
+[//]: # (| FULL   | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 전면 배너 광고            |)
 
 ### Click Event KeyCode
 | KeyCode  | Description               |

@@ -12,7 +12,7 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   @Override
   public void onLoadedAdInfo(boolean result, String errorStr) {
       if (result) {
-        // 광고 로딩 성공
+          //광고 로딩 성공
           Toast.makeText(MainActivity.this, "광고 로드 성공(REWARD)", Toast.LENGTH_SHORT).show();
       } else {
           //TODO:광고 로드 실패 시 처리 (NO AD 등)
@@ -37,10 +37,9 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
 
   @Override
   public void onClosed() {
-    // 광고 창을 닫은 경우
-      LogPrint.d("RewardAdTestActivity", "onClosed");
-      //만약 광고창이 닫혀도 MobwithRewardVideoDialog에 대한 Log가 남거나 Lifecycle이 동작할 때 아래 함수(distroy())를 호출해주세요.
-      //rewardVideoDialog.distroy();
+        // 광고 창을 닫은 경우
+        // 만약 광고창이 닫혀도 MobwithRewardVideoDialog에 대한 Log가 남거나 Lifecycle이 동작할 때 아래 함수(distroy())를 호출해주세요.
+        rewardVideoDialog.distroy();
   }
 
   @Override
@@ -62,4 +61,18 @@ rewardVideoDialog.load();
 if (rewardVideoDialog.isLoaded()) {
   rewardVideoDialog.show();   //화면에 광고를 표시합니다.
 }
+
 ```
+
+[//]: # (### 광고 사이즈 별 타입)
+
+[//]: # ()
+[//]: # (| Size  | Type Constant             | Description                                     |)
+
+[//]: # (|:-----:|:--------------------------|-------------------------------------------------|)
+
+[//]: # (| RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입   |)
+
+[//]: # (| NORMAL | INTERSTITIAL_TYPE.NORMAL | 일반 사이즈의 전면 배너 광고 &#40;화면을 꽉 채우지 않음&#41;   |)
+
+[//]: # (| FULL   | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 전면 배너 광고            |)
