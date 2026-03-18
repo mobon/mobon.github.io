@@ -7,7 +7,7 @@
 
 ## 지원환경
 ---
-- Minimum SDK Version : Android 23
+- Minimum SDK Version : Android 19
 
 - Compile SDK Version : Android 34
 

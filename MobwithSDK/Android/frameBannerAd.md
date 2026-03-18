@@ -74,7 +74,8 @@ frameBannerView.loadAd();
 - 사용법은 위와 동일하지만 MobwithNativeAdView 생성 시 파라미터가 다릅니다. 아래는 예시 입니다.
 ```java
 ....
-MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(this,
+MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(
+        context,
         mUnitId,
         containerView,
         new NativeAdViewItemModel(
@@ -99,7 +100,6 @@ MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(this,
                 R.id.infoViewLayout,
                 R.id.imageViewInfo
         ));
-
 mobwithFrameBannerView.setUnitId(YOUR_UNIT_ID);
 //카테고리 타겟팅을 위한 설정
 mobwithFrameBannerView.setMobwithAdCategoryModel(new MobwithAdCategoryModel("업체코드", "카테고리 대분류", "카테고리 중분류", "카테고리 소분류"));

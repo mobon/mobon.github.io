@@ -1,11 +1,13 @@
 ## Reward AD <!-- {docsify-ignore} -->
-광고를 본 사용자에게 리워드를 지급하기 위한 광고 입니다.
-
+광고를 본 사용자에게 리워드를 지급하기 위한 광고 입니다.   
+리워드 광고는 광고 load가 성공적으로 완료되면 원하는 시점에 노출(show) 하는 프로세스로 진행됩니다.
 ### 광고 로드 방법
 
 ```java
 //광고 객체 생성 시 Activity를 전달해주시는 걸 권장합니다.
-MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this).setUnitId("YOUR_UNIT_ID").build();
+MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this)
+                .setUnitId("YOUR_UNIT_ID")  //발급받은 광고 UnitId 설정
+                .build();
 
 // 콜백을 받기위한 Listener는 iRewardAdsCallback를 사용합니다.
 rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
@@ -15,7 +17,7 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
           //광고 로딩 성공
           Toast.makeText(MainActivity.this, "광고 로드 성공(REWARD)", Toast.LENGTH_SHORT).show();
       } else {
-          //TODO:광고 로드 실패 시 처리 (NO AD 등)
+          //광고 로딩 실패
           Toast.makeText(MainActivity.this, "광고 로드 실패(REWARD)", Toast.LENGTH_SHORT).show();
       }
   }
@@ -53,7 +55,7 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   }
 });
 
-// 광고 데이터를 로드합니다.
+//광고 show() 이전에 광고를 로드 해야합니다.
 rewardVideoDialog.load();
 
 // onLoadedAdInfo에서 result가 성공일 경우
@@ -64,15 +66,9 @@ if (rewardVideoDialog.isLoaded()) {
 
 ```
 
-[//]: # (### 광고 사이즈 별 타입)
-
-[//]: # ()
-[//]: # (| Size  | Type Constant             | Description                                     |)
-
-[//]: # (|:-----:|:--------------------------|-------------------------------------------------|)
-
-[//]: # (| RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입   |)
-
-[//]: # (| NORMAL | INTERSTITIAL_TYPE.NORMAL | 일반 사이즈의 전면 배너 광고 &#40;화면을 꽉 채우지 않음&#41;   |)
-
-[//]: # (| FULL   | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 전면 배너 광고            |)
+### 광고 사이즈 별 타입
+| Size  | Type Constant            | Description                      |
+|:-----:|:-------------------------|----------------------------------|
+| RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입     |
+| NORMAL | INTERSTITIAL_TYPE.MODAL  | 모달 사이즈의 리워드 배너 광고 (화면을 꽉 채우지 않음) |
+| FULL   | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 리워드 배너 광고        |

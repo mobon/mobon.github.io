@@ -6,7 +6,7 @@
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobwithFreePassAdView bannerView = new MobwithFreePassAdView(this)
+MobwithFreePassAdView bannerView = new MobwithFreePassAdView(context)
                                               .setBannerUnitId(YOUR_UNIT_ID);                                            
 
 // 광고 매체 이름을 지정 합니다.

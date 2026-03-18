@@ -9,11 +9,11 @@ MobwithNativeAdView는 사용자가 직접 뷰를 설정하고,
 ```java
 ....
 nativeAdView = new MobwithNativeAdView(
-                        this,
-                        YOUR_UNIT_ID,
-                        (FrameLayout) findViewById(R.id.adview_container),
-                        R.layout.custom_native_ad_view,
-                        R.id.mediaContainerView,    //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
+                        context,
+                        YOUR_UNIT_ID,       //발급받은 광고 Unit Id
+                        (FrameLayout) findViewById(R.id.adview_container),  //광고를 보여줄 ContainerView(ViewGroup) FrameLayout 사용 권장 
+                        R.layout.custom_native_ad_view, //구현 한 Custom Native Ad 레이아웃 ID
+                        R.id.mediaContainerView,    //광고 Image를 표시할 ImageView를 감싸는 ViewGroup ID (FrameLayout 사용 권장)
                         R.id.imageViewAD,
                         R.id.imageViewLogo,
                         R.id.textViewTitle,
@@ -81,7 +81,7 @@ nativeAdView.performAdClicked();
 ```java
 ....
 nativeAdView = new MobwithNativeAdView(
-                        this,
+                        context,
                         YOUR_UNIT_ID,
                         (FrameLayout) findViewById(R.id.adview_container),
                         new NativeAdViewItemModel(  //직광고 native layout

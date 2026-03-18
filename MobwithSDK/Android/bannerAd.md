@@ -1,11 +1,29 @@
 ## Banner AD <!-- {docsify-ignore} -->
 
+### 배너 광고뷰의 크기 설정
+광고를 띄울 배너 Container(ViewGroup)를 구현해야 합니다. (FrameLayout 권장)
+광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
+따라서 광고를 표시할 뷰의 레이아웃을 아래를 참고하여 설정을 해주어야 광고가 이상없이 출력됩니다.
+```xml
+....
+<FrameLayout
+  android:id="@+id/bannerContainer"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_alignParentBottom="true"
+  android:layout_centerHorizontal="true"
+  android:gravity="center"
+  android:orientation="vertical"
+  />
+....
+```
+
 ### 광고 로드 방법
 ```java
-LinearLayout banner_container = findViewById(R.id.banner_container);
+FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
 MobWithBannerView banner = new MobwithBannerView(this)
-                                      .setBannerUnitId(YOUR_UNIT_ID)
+                                      .setBannerUnitId(YOUR_UNIT_ID);
 
 // 배너뷰의 리스너를 등록합니다.
 banner.setAdListener(new iBannerCallback() {
@@ -14,9 +32,9 @@ banner.setAdListener(new iBannerCallback() {
     if (result) {
       //배너 광고 로딩 성공
       System.out.println("배너 광고로딩");
-      banner_container.removeAllViews();
+       bannerContainer.removeAllViews();
       // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
-      banner_container.addView(banner);
+       bannerContainer.addView(banner);
     } else {
       System.out.println("광고실패 : " + errorcode);
 
@@ -35,23 +53,6 @@ banner.setAdListener(new iBannerCallback() {
 
 // 광고를 호출합니다.
 banner.loadAd();
-```
-
-## 광고뷰의 크기 설정 <!-- {docsify-ignore} -->
-광고의 크기는 노출되는 광고의 크기에 따라 자동으로 변경됩니다.  
-따라서 광고를 표시할 뷰의 레이아웃을 아래를 참고하여 설정을 해주어야 광고가 이상없이 출력됩니다.
-```xml
-....
-<LinearLayout
-  android:id="@+id/banner_container"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:layout_alignParentBottom="true"
-  android:layout_centerHorizontal="true"
-  android:gravity="center"
-  android:orientation="vertical"
-  />
-....
 ```
 
 ### 1) setInterval()
@@ -136,8 +137,8 @@ MobwithSDK.getInstance().setFullScreenMode(true);
 
 ```xml
 ....
-<LinearLayout
-android:id="@+id/banner_container"
+<FrameLayout
+android:id="@+id/bannerContainer"
 android:layout_width="match_parent"
 android:layout_height="원하는 크기로 설정 (ex : 60dp)"
 android:layout_alignParentBottom="true"
