@@ -1,8 +1,8 @@
 ## Multi Point Banner AD <!-- {docsify-ignore} -->
-기능은 MobwithPointBannerView와 동일하나, 하나의 광고만 표시하던 MobwithPointBannerView와 달리,  
-최대 5개의 광고를 좌우 스크롤하여 표시해주는 BannerView 입니다.   
-다만, 포인트 제공 가능 여부등 일부 기능의 경우 SDK 자체적으로 처리해주는 부분이 있으며,  
-해당 부분의 변경이 필요하신 경우 별도로 문의를 해주셔야 합니다.
+해당 광고의 기능은 MobwithPointBannerView와 동일한 기능을 제공하지만, 단일 광고만 표시하는 기존 뷰와 달리 최대 5개의 광고를 좌우 스크롤 형태로 노출하는 BannerView입니다.  
+
+단, 포인트 제공 가능 여부 등 일부 기능은 SDK 내부 로직에 의해 처리됩니다.  
+해당 기능의 변경이 필요한 경우 별도 문의가 필요합니다.
 
 ### 광고 로드 방법
 ```java

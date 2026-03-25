@@ -1,6 +1,6 @@
 ## FreePass AD <!-- {docsify-ignore} -->
-해당 광고뷰는 광고 클릭시 일정기간동안 광고를 보여주지 않도록 하는 상품에 대응하는 AdView 입니다.  
-실제 광고 미노출 기간에 대한 처리는 직접 진행해 주셔야하며, 이에 대해 필요한 기능을 제공 합니다.
+해당 광고뷰는 광고 클릭 시 일정 기간 동안 광고를 노출하지 않는 상품을 지원하기 위한 AdView입니다.  
+실제 광고 미노출 기간에 대한 제어는 개발자가 직접 구현해야 하며, 이를 위한 필요한 기능을 제공합니다.
 
 ### 광고 로드 방법
 ```java
@@ -48,8 +48,11 @@ freePassAdView.setAdListener(new iFreePassBannerCallback() {
 // 광고를 호출합니다.
 bannerView.loadAd();
 ```
-광고 클릭시 onAdClicked() 함수를 통해 광고 클릭 시간을 전달해주며, 해당 값을 사용하여 광고 미노출 시간을 제어하시면 됩니다.  
-만약, 광고 클릭 시간을 별도로 확인이 필요한 경우 아래 함수를 통해 확인 가능 합니다.  
+### 광고 클릭 설정
+광고 클릭 시 onAdClicked() 콜백을 통해 광고 클릭 시간이 전달됩니다.  
+해당 값을 활용하여 광고 미노출 기간을 제어할 수 있습니다.  
+
+또한, 광고 클릭 시간을 별도로 확인해야 하는 경우에는 아래 함수를 통해 조회할 수 있습니다.  
 ```java
-Date clickedTime = MobwithFreePassAdView.getLastAdClickedTime(this);
+Date clickedTime = MobwithFreePassAdView.getLastAdClickedTime(context);
 ```

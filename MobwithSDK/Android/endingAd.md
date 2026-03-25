@@ -1,14 +1,18 @@
 ## Ending AD <!-- {docsify-ignore} -->
-엔딩 광고 배너는 광고 종료버튼이 노출되는 광고 입니다.
-우선 광고 load가 성공적으로 완료되면 원하는 시점에 노출(show) 하는 프로세스로 진행됩니다.
-리스너를 통해 종료 이벤트를 받아서 처리할 수 있습니다.
+엔딩 광고 배너는 종료 버튼이 포함된 형태의 광고입니다.  
+광고 load()가 성공적으로 완료되면, 원하는 시점에 show()를 호출하여 노출할 수 있습니다.  
+또한, 리스너를 통해 종료 이벤트를 전달받아 처리할 수 있습니다.
 
 ### 광고 로드 방법
+엔딩 광고를 요청하려면 EndingDialog 설정이 필요합니다.  
+각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
+아래는 EndingDialog 설정하고 광고를 요청하는 예시 코드입니다.
 ```java
 EndingDialog endingDialog = new EndingDialog(this)
-        .setBackCancel(false)   //뒤로가기 버튼 클릭시 종료 여부
+        .setBackCancel(false)                   //뒤로가기 버튼 클릭시 종료 여부
         .setUnitId(bannerUnitID_Interstitial)   //발급받은 UnitId 설정
         .build();
+
 endingDialog.setAdListener(new iInterstitialCallback() {
   @Override
   public void onLoadedAdInfo(boolean result, String errorStr) {
@@ -17,10 +21,8 @@ endingDialog.setAdListener(new iInterstitialCallback() {
       public void run() {
         if (result) {
             //광고 로드 성공 시
-            Toast.makeText(MainActivity.this, "광고 로드 성공(ENDING)", Toast.LENGTH_SHORT).show();
         } else {
             //광고 로드 실패 시
-            Toast.makeText(MainActivity.this, "광고 로드 실패(ENDING)", Toast.LENGTH_SHORT).show();
         }
       }
     });

@@ -1,10 +1,108 @@
 ## Native AD <!-- {docsify-ignore} -->
 
-MobwithNativeAdView는 사용자가 직접 뷰를 설정하고,  
-설정된 뷰를 SDK에서 전달받아 각각의 View에 광고 데이터를 설정해주는 기능만 담당하는 AdView입니다.
+MobwithNativeAdView는 사용자가 직접 레이아웃을 구성한 후, 해당 뷰를 SDK에 전달하면 각 View에 광고 데이터를 바인딩하는 역할을 수행하는 AdView입니다.
+
+### Native Container 설정
+
+사용자 정의(Custom) 네이티브 레이아웃 설정이 필요합니다.  
+아래는 네이티브 레이아웃을 구성하는 예시 코드입니다.
+
+```xml
+<ConstraintLayout
+android:layout_width="wrap_content"
+android:layout_height="wrap_content" >
+
+    <FrameLayout
+        android:id="@+id/mediaContainerView"
+        android:layout_width="300dp"
+        android:layout_height="220dp"
+        android:background="#ff00ff00"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    </FrameLayout>
+  
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="#ffffccff"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mediaContainerView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints"
+        />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:maxLines="1"
+        android:text="{ Title }"
+        android:textColor="#ff00ff"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toRightOf="@id/imageViewLogo"
+        app:layout_constraintTop_toTopOf="@id/imageViewLogo"
+        app:layout_constraintRight_toLeftOf="@id/buttonGo"
+        app:layout_constraintBottom_toTopOf="@id/textViewDesc"
+        />
+
+    <TextView
+        android:id="@+id/textViewDesc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:maxLines="1"
+        android:text="{ Description }"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/textViewTitle"
+        app:layout_constraintRight_toRightOf="@id/textViewTitle"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        />
+
+    <Button
+        android:id="@+id/buttonGo"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:background="#ccffcc"
+        android:text="바로가기"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageViewLogo"
+        />
+
+
+    <FrameLayout
+        android:id="@+id/infoViewLayout"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:background="#ffffccff"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/imageViewInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</ConstraintLayout>
+
+```
 
 ### 광고 로드 방법 
+- 위에서 설정한 레이아웃을 기준으로, Custom Native Layout에 표시될 데이터를 구성합니다.
 ([MobwithNativeAdView 파라미터 정의 참조](#mobwithnativeadview-파라미터-정의))
+- adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다
+- mediaContainerView는 반드시 GroupView 중 하나로 구성되어야 하며, imageViewAD를 포함하는 구조여야 합니다.  
+  또한, 레이아웃은 FrameLayout 사용을 권장합니다.  
+  이는 미디에이션을 지원하는 외부 SDK 중 Native AD를 제공하는 각 SDK마다 요구하는 규격이 상이하기 때문입니다.
 
 ```java
 ....
@@ -22,8 +120,7 @@ nativeAdView = new MobwithNativeAdView(
                         R.id.infoViewLayout,
                         R.id.imageViewInfo);
 
-        // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-nativeAdView.setUnitId(YOUR_UNIT_ID);
+nativeAdView.setUnitId(YOUR_UNIT_ID);   // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
 nativeAdView.setAdListener(new iBannerCallback() {
         @Override
         public void onLoadedAdInfo ( boolean result, String errorStr){
@@ -43,12 +140,6 @@ nativeAdView.setAdListener(new iBannerCallback() {
 nativeAdView.loadAd();
 ....
 ```
-
-- adview_container에서 아래 각 View의 id를 확인하지 못하게 되는 경우 광고가 제대로 표시되지 않을 수 있으니 주의하시기 바랍니다.
-
-- 위 예시에서 mediaContainerView는 GroupView중 하나 여야 하며, imageViewAD를 포함하고 있는 구조 입니다.  
-  가급적 FrameLayout의 사용을 권장합니다.  
-미디에이션을 지원하는 외부 SDK중 Native AD를 제공하는 SDK 마다 서로 다른 규격을 요구하는 부분 때문이니 주의 바랍니다.
 
 ### MobwithNativeAdView 파라미터 정의
 
@@ -76,8 +167,9 @@ nativeAdView.performAdClicked();
 위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.
 
 ### 서브 레이아웃 기능
-- 필요에 따라 직광고의 layout과 네트워크 광고의 layout을 다르게 쓰기 위한 기능입니다.
-- 사용법은 위와 동일하지만 MobwithNativeAdView 생성 시 파라미터가 다릅니다. 아래는 예시 입니다.
+- 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.
+- 사용 방법은 위와 동일하나, MobwithNativeAdView 생성 시 전달하는 파라미터가 다릅니다.  
+  아래는 이에 대한 예시입니다.
 ```java
 ....
 nativeAdView = new MobwithNativeAdView(

@@ -1,17 +1,8 @@
 ## Smart AD (카테고리 타겟팅) <!-- {docsify-ignore} -->
 카테고리 매핑을 통한 스마트 광고를 사용하시는 경우 setMobwithAdCategoryModel()를 통해서 카테고리 설정이 필요합니다.
 
-### Smart AD 지원 가능한 Ad
-- MobwithBannerView
-- MobwithBannerWithArticleView
-- MobwithFreePassAdView
-- MobwithNativeAdView
-- EndingDialog
-- InterstitialDialog
-
 ### 광고 로드 방법
 ```java
-MobwithBannerView, MobwithBannerWithArticleView, MobwithFreePassAdView, MobwithNativeAdView, EndingDialog, InterstitialDialog
 /**
   업체코드 : 업체코드 값
   대분류코드 : 카테고리 분류 (대)

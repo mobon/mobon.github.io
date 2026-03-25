@@ -67,8 +67,8 @@ if (rewardVideoDialog.isLoaded()) {
 ```
 
 ### 광고 사이즈 별 타입
-| Size  | Type Constant            | Description                      |
-|:-----:|:-------------------------|----------------------------------|
+|  Size  | Type Constant            | Description                      |
+|:------:|:-------------------------|----------------------------------|
 | RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입     |
-| NORMAL | INTERSTITIAL_TYPE.MODAL  | 모달 사이즈의 리워드 배너 광고 (화면을 꽉 채우지 않음) |
-| FULL   | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 리워드 배너 광고        |
+| MODAL  | INTERSTITIAL_TYPE.MODAL  | 모달 사이즈의 리워드 배너 광고 (화면을 꽉 채우지 않음) |
+|  FULL  | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 리워드 배너 광고        |

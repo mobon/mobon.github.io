@@ -1,8 +1,10 @@
 ## Point Banner AD <!-- {docsify-ignore} -->
-해당 광고뷰는 광고 클릭시 리워드를 제공하기 위한 기능 및 UI가 추가된 배너뷰 입니다.     
-리워드 제공에 대한 각 기능들은 직접 구현해 주셔야 하며, 현재는 클릭 또는 노출시 리워드 제공에 대한 기능만 고려된 관계로
-리워드와 관련된 별도의 콜백은 제공되고 있지 않습니다.  
-해당 부분은 광고 로딩 성공과 광고 클릭시 전달되는 콜백 이벤트를 활용하시면 됩니다.
+해당 광고뷰는 광고 클릭 시 리워드를 제공하기 위한 기능 및 UI가 포함된 배너뷰입니다.  
+
+리워드 제공과 관련된 로직은 개발자가 직접 구현해야 하며, 현재는 광고 클릭 또는 노출 시 리워드 제공 시나리오를 기준으로 설계되어 있습니다.
+별도의 리워드 전용 콜백은 제공되지 않습니다.  
+
+관련 처리는 광고 로드 성공 및 광고 클릭 시 전달되는 콜백 이벤트를 활용해 구현하시기 바랍니다.
 
 ### 광고 로드 방법
 ```java
@@ -25,7 +27,6 @@ pointBannerView.setAdListener(new iBannerCallback() {
       if (result) {
       //배너 광고 로딩 성공
       System.out.println("배너 광고로딩");
-      
       //광고를 띄우고자 하는 layout에 배너뷰를 삽입합니다.
       banner_container.addView(bannerView);
     } 
@@ -39,13 +40,10 @@ pointBannerView.setAdListener(new iBannerCallback() {
   }
 
   @Override
-  public void onAdClicked() {
-      if(bannerView != null) {
-          bannerView.setPointEnable(false);
-      }
-      
+  public void onAdClicked(int index, boolean isRewarded) {
       ...
       //실제 리워드 제공을 위한 동작 구현.
+        bannerView.setRewarded(index);
       ...
   }
 

@@ -12,7 +12,7 @@ allprojects {
     }
 }
 ```
-- app build.gradle 에 com.google.android.gms 와 MobWith 라이브러리를 추가합니다.  
+- app build.gradle 에 com.google.android.gms:play-services-ads-identifier 와 최신 버전의 MobWith SDK를 추가합니다.  
 
 ```groovy
 dependencies {
@@ -27,11 +27,13 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-**Android 9 (Pie) 업데이트에 따른 추가설정**
-- targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이 변경되었습니다.  
-  SDK 내 모든 미디에이션 광고가 정상동작하기 위해서는 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.  
-  AndroidManifest.xml 파일에서 application 항목의 속성값으로 usesCleartextTraffic을 true로 설정해야 합니다.  
-  (Android 9 부터 해당값이 default로 false 설정되어 HTTP 통신이 제한됩니다.)
+**Android 9 (Pie) 업데이트에 따른 추가설정**  
+targetSdkVersion 28 이상부터는 네트워크 통신 시 암호화되지 않은 HTTP 통신이 기본적으로 차단됩니다.  
+
+SDK 내 모든 미디에이션 광고가 정상적으로 동작하기 위해서는 HTTP 통신을 허용해야 하며, 설정 방법은 다음과 같습니다.  
+
+- AndroidManifest.xml의 application 태그에 usesCleartextTraffic="true" 속성을 설정합니다.  
+- Android 9(API 28)부터 해당 값의 기본값은 false로, HTTP 통신이 제한됩니다.
 
 ```xml
 <manifest ...>
@@ -46,10 +48,11 @@ android:usesCleartextTraffic="true"
 ## ADFIT SDK 추가
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk)  
-- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK com.kakao.adfit:ads-base:3.21.10 버전</span>에 최적화 되어 있습니다.  
-- 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-base:3.21.10")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
-  (해당되는 경우 별도로 안내됩니다.)  
-- NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK(com.kakao.adfit:ads-base:3.21.10)</span> 버전에 최적화되어 있습니다.
+- 상황에 따라 가이드에 명시된 라이브러리(com.kakao.adfit:ads-base:3.21.10)가 아닌, 다른 버전 또는 타입의 SDK를 추가로 적용해야 할 수 있습니다.  
+(해당되는 경우 별도로 안내됩니다.)
+- NativeAdView 기능 사용 시, R.id.mediaContainerView에는 반드시 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용해야 합니다.  
+(MediaView의 상위 클래스가 FrameLayout이기 때문에, 미디어(이미지, 동영상) 광고가 정상적으로 노출됩니다.)
 
 ## ADOP BidMad SDK 추가
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
@@ -226,7 +229,6 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```xml
 <manifest>
   <application>
-    <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
     <meta-data
         android:name="com.google.android.gms.ads.APPLICATION_ID"
         android:value="SAMPLE_APP_ID"/>
