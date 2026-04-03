@@ -1,8 +1,10 @@
 ## Interstitial AD <!-- {docsify-ignore} -->
-전면 광고는 광고 load()가 성공적으로 완료된 이후, 원하는 시점에 show()를 호출하여 노출하는 방식으로 동작합니다.  
-광고 로드에 성공한 경우, 아래와 같이 호출하여 광고를 화면에 표시할 수 있습니다.
 
 ### 광고 로드 방법
+----
+전면 광고는 광고 load()가 성공적으로 완료된 이후, 원하는 시점에 show()를 호출하여 노출하는 방식으로 동작합니다.  
+광고 로드에 성공한 경우, 아래와 같이 호출하여 광고를 화면에 표시할 수 있습니다.  
+
 전면 광고를 요청하려면 InterstitialDialog 설정이 필요합니다.  
 각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
 아래는 InterstitialDialog 설정하고 광고를 요청하는 예시 코드입니다.
@@ -58,7 +60,19 @@ interstitialDialog.setAdListener(new iInterstitialCallback() {
 interstitialDialog.load();
 ```
 
-### 광고 출력 방법
+### 전면 광고 기능
+| 메서드                                                       | Description           |
+|:----------------------------------------------------------|:----------------------|
+| setUnitId(String unitId)                                  | 발급 받은 UnitId 설정       |
+| load()                                                        | 광고 요청                 |
+| isLoaded()                                                        | 광고 요청 성공 여부           |
+| show()                                                        | 광고 송출                 |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
+| close()                                                 | 광고 닫기                 |
+| setBackCancel(boolean isUse)                          | 뒤로가기 버튼 광고 닫기 여부 설정   |
+
+### 광고 송출
+----
 ```java
 if (interstitialDialog.isLoaded()) {
     interstitialDialog.show();

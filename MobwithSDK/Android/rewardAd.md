@@ -1,8 +1,9 @@
 ## Reward AD <!-- {docsify-ignore} -->
+
+### 광고 로드 방법
 광고를 본 사용자에게 리워드를 지급하기 위한 광고 입니다.   
 리워드 광고는 광고 load가 성공적으로 완료되면 원하는 시점에 노출(show) 하는 프로세스로 진행됩니다.
-### 광고 로드 방법
-
+----
 ```java
 //광고 객체 생성 시 Activity를 전달해주시는 걸 권장합니다.
 MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this)
@@ -57,13 +58,27 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
 
 //광고 show() 이전에 광고를 로드 해야합니다.
 rewardVideoDialog.load();
+```
 
+### 리워드 광고 기능
+| 메서드                                                             | Description           |
+|:----------------------------------------------------------------|:----------------------|
+| setUnitId(String unitId)                                        | 발급 받은 UnitId 설정       |
+| load()                                                          | 광고 요청                 |
+| isLoaded()                                                      | 광고 요청 성공 여부           |
+| show()                                                          | 광고 송출                 |
+| destroy()                                                       | 광고 리소스 해제                 |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
+| close()                                                         | 광고 닫기                 |
+
+### 광고 송출
+----
+```java
 // onLoadedAdInfo에서 result가 성공일 경우
 // isLoaded() 함수를 통해 로드된 광고가 존재하는지 확인 할 수 있습니다.
 if (rewardVideoDialog.isLoaded()) {
-  rewardVideoDialog.show();   //화면에 광고를 표시합니다.
+    rewardVideoDialog.show();
 }
-
 ```
 
 ### 광고 사이즈 별 타입

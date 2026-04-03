@@ -3,6 +3,7 @@
 사용 방법은 아래를 참고하시면 됩니다.
 
 ### 광고 로드 방법
+----
 
 1. MobwithWhoWhoPointBannerBridge 객체를 생성합니다.
 

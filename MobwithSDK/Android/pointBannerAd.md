@@ -7,6 +7,7 @@
 관련 처리는 광고 로드 성공 및 광고 클릭 시 전달되는 콜백 이벤트를 활용해 구현하시기 바랍니다.
 
 ### 광고 로드 방법
+----
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
 

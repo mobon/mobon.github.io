@@ -1,14 +1,15 @@
 ## Frame Banner AD <!-- {docsify-ignore} -->
 
-MobwithFrameBannerView는 광고주로부터 제공받은 주요 에셋들을 배치하여 노출하는 형태의 광고입니다.  
-지정된 프레임 구조로 구성된 배너 광고입니다.  
-
-체크사항: 사용 시 배경색을 흰색으로 설정해 주세요.
-
 ### FrameBannerView Native Container 설정
+----
+
+MobwithFrameBannerView는 광고주로부터 제공받은 주요 에셋들을 배치하여 노출하는 형태의 광고입니다.  
+지정된 프레임 구조로 구성된 배너 광고입니다.   
 
 FrameBannerView는 Sortlist의 FrameAD 외에 직광고 및 네트워크 광고를 노출하기 위해 네이티브 레이아웃 설정이 필요합니다.  
-아래는 네이티브 레이아웃을 설정하는 예시 코드입니다.
+아래는 네이티브 레이아웃을 설정하는 예시 코드입니다.   
+
+##### 체크사항: 사용 시 배경색을 흰색으로 설정해 주세요.
 
 ```xml
 <ConstraintLayout
@@ -100,6 +101,7 @@ android:layout_height="wrap_content" >
 ```
 
 ### 광고 로드 방법
+----
 adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다.  
 mediaContainerView는 반드시 GroupView 중 하나로 구성되어야 하며, imageViewAD를 포함하는 구조여야 합니다.  
 또한, 레이아웃은 FrameLayout 사용을 권장합니다.  
@@ -147,7 +149,15 @@ frameBannerView.loadAd();
 ....
 ```
 
-### MobwithFrameBannerView 파라미터 정의
+### FrameBannerView 기능
+| 메서드                                                       | Description          |
+|:----------------------------------------------------------|:---------------------|
+| setUnitId(String unitId)                                  | 발급 받은 UnitId 설정      |
+| loadAd()                                                        | 광고 요청                |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능       |
+| performAdClicked()                                        | 광고 클릭 이벤트 발생    |
+
+### MobwithFrameBannerView 파라미터 정의 (Native Layout)
 
 |         파라미터 명          | Description                                                                                                                                                |
 |:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -163,6 +173,7 @@ frameBannerView.loadAd();
 |   infoLogoImageViewID   | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID                                                                                                                       |
 
 ### 서브 레이아웃 기능
+----
 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.  
 사용 방법은 위와 동일하나, MobwithNativeAdView 생성 시 전달하는 파라미터가 상이합니다.  
 아래는 이에 대한 예시입니다.

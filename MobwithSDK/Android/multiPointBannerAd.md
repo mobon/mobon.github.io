@@ -48,3 +48,14 @@ pointBannerView.setAdListener(new iMultiPointBannerCallback() {
 // 아래 함수가 호출되지 않으면 UI가 변경되지 않으니 해당 부분 참고 바랍니다.
 bannerView.loadAd();
 ```
+
+### Multi Point Banner AD 기능
+| 메서드                                                             | Description                        |
+|:----------------------------------------------------------------|:-----------------------------------|
+| setBannerUnitIds(String[] unitIds)                              | 발급 받은 UnitId 설정 (최대 5개까지 적용)       |
+| loadAd()                                                        | 광고 요청                              |
+| restart()                                                       | 광고 새로고침 재시작                        |
+| stop()                                                          | 광고 새로고침 중단                         |
+| destroyAd()                                                     | 광고 리소스 해제                          |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능                     |
+| setRewarded(int index)                                          | 특정 인덱스의 배너에 대해 포인트가 지급되었음을 SDK에 전달 |

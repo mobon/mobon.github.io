@@ -185,7 +185,7 @@ implementation 'com.fyber:marketplace-sdk:8.3.8'
 - NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
 
 ```java
-MobwithSDK.getInstance().setInMobiAppKey("전달 받은 AppKey");
+MobwithSDK.getInstance().setInMobiAppKey("전달 받은 AppKey"); 
 ```
 - build.gradle 설정  
   Inmobi SDK를 build.gradle에 implementation 해야 합니다.  

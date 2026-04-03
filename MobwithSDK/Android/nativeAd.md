@@ -1,8 +1,8 @@
 ## Native AD <!-- {docsify-ignore} -->
 
-MobwithNativeAdView는 사용자가 직접 레이아웃을 구성한 후, 해당 뷰를 SDK에 전달하면 각 View에 광고 데이터를 바인딩하는 역할을 수행하는 AdView입니다.
-
 ### Native Container 설정
+----
+MobwithNativeAdView는 사용자가 직접 레이아웃을 구성한 후, 해당 뷰를 SDK에 전달하면 각 View에 광고 데이터를 바인딩하는 역할을 수행하는 AdView입니다.  
 
 사용자 정의(Custom) 네이티브 레이아웃 설정이 필요합니다.  
 아래는 네이티브 레이아웃을 구성하는 예시 코드입니다.
@@ -97,6 +97,7 @@ android:layout_height="wrap_content" >
 ```
 
 ### 광고 로드 방법 
+----
 - 위에서 설정한 레이아웃을 기준으로, Custom Native Layout에 표시될 데이터를 구성합니다.
 ([MobwithNativeAdView 파라미터 정의 참조](#mobwithnativeadview-파라미터-정의))
 - adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다
@@ -141,7 +142,15 @@ nativeAdView.loadAd();
 ....
 ```
 
-### MobwithNativeAdView 파라미터 정의
+### Native AD 기능
+| 메서드                                                             | Description                        |
+|:----------------------------------------------------------------|:-----------------------------------|
+| setUnitId(String unitId)                              | 발급 받은 UnitId 설정       |
+| loadAd()                                                        | 광고 요청                              |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능                     |
+| performAdClicked()                                          | 광고 클릭 이벤트 발생 |
+
+### MobwithNativeAdView 파라미터 정의 (Native Layout)
 
 |         파라미터 명          | Description                                                                                                                                                |
 |:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -157,7 +166,8 @@ nativeAdView.loadAd();
 | infoLogoViewContainerID | 광고 Info Logo를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. AppLovin 미디에이션을 위해 사용한다.                                                                               |
 |   infoLogoImageViewID   | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID                                                                                                                       |
 
-### 광고 클릭 버튼을 사용하지 못하는 경우 
+### 광고 클릭 버튼을 사용하지 못하는 경우
+----
 ```java
 ....
 nativeAdView.performAdClicked();
@@ -167,6 +177,7 @@ nativeAdView.performAdClicked();
 위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.
 
 ### 서브 레이아웃 기능
+----
 - 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.
 - 사용 방법은 위와 동일하나, MobwithNativeAdView 생성 시 전달하는 파라미터가 다릅니다.  
   아래는 이에 대한 예시입니다.
