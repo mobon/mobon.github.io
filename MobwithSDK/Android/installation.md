@@ -130,6 +130,10 @@ MobwithSDK.getInstance().setUnityGameId(this,"{ 전달 받은 GameId }");
 ## IronSource(LevelPlay) SDK 추가
 - IronSource(LevelPlay) 광고를 송출하기 위해 링크를 참고하여 주세요. (8.4.0 버전에 최적화 되어 있습니다.)
 [IronSource(LevelPlay) SDK 바로가기](https://developers.is.com/ironsource-mobile/android/getting-started-android/)
+```groovy
+implementation 'com.ironsource.sdk:mediationsdk:9.2.0'
+implementation 'com.ironsource:adqualitysdk:7.26.2'
+```
 - Getting started와 Adnroid SDK Integration 항목을 참고 하시면 됩니다.
 - AppKey 설정  
 IronSource(LevelPlay) SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
@@ -141,6 +145,18 @@ MobwithSDK.getInstance().setLevelPlayAppKey(this,"{ 전달 받은 AppKey }");
 ## Pangle SDK 추가
 - Pangle 광고를 송출하기 위해 링크를 참고하여 주세요. (7.1.0.4 버전에 최적화 되어 있습니다.)  
 [Pangle SDK 바로가기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-android)
+```groovy
+allprojects {
+    repositories {
+        maven {
+            url 'https://artifact.bytedance.com/repository/pangle'
+        }
+
+    }
+}
+
+implementation 'com.pangle.global:pag-sdk:7.1.0.4'
+```
 - AppKey 설정  
 Pangle SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 
@@ -164,6 +180,9 @@ implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리
 ## DT Exchange SDK 추가
 - DT Exchange 광고를 송출하기 위해 링크를 참고하여 주세요.  
 [DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)
+```groovy
+implementation 'com.fyber:marketplace-sdk:8.3.8'
+```
 - AppKey 설정  
   DT Exchange SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 
@@ -180,6 +199,10 @@ implementation 'com.fyber:marketplace-sdk:8.3.8'
 ## Inmobi SDK 추가
 - Inmobi 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Inmobi SDK 바로가기](https://support.inmobi.com/monetize/getting-started)
+```groovy
+implementation 'com.unity3d.ads-mediation:inmobi-adapter:4.3.29'
+implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
+```
 - AppKey 설정  
   Inmobi SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 - NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
