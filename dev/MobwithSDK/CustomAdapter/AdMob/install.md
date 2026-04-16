@@ -8,8 +8,8 @@ AdMob 3rd Party Adapter를 사용하기 위한 가이드 입니다.
 ### 1. MobWithAdSDK 설치
 다음 링크를 참조하여 프로젝트에 Mobwith Ad SDK를 추가해 줍니다.  
 각 OS별 SDK에서 미디에이션을 위해 추가를 요구하는 부분은 협의된 내용에 따라 적용하시면 됩니다.
-- Android : [[가이드 문서 링크](../../Android/installation.md)]
-- iOS : [[가이드 문서 링크](../../iOS/installation_base.md)]
+- Android : [[가이드 문서 링크](/Android/installation.md)]
+- iOS : [[가이드 문서 링크](/iOS/installation_base.md)]
 
 
 ### 2. AdMob 3rd-Party Adapter SDK 추가
