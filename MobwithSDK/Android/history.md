@@ -1,5 +1,9 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.80 (2026.04.21) <!-- {docsify-ignore} -->
+---
+- 전면배너, 리워드배너 UI 개선
+  
 ## 1.0.79 (2026.02.10) <!-- {docsify-ignore} -->
 ---
 - RewardAdDialog Back 클릭 이벤트 제거
