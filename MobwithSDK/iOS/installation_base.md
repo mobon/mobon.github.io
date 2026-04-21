@@ -28,7 +28,7 @@ MobWithAdSDK와 같은 source를 지정해 주셔야 합니다.
 
 ```
 # AdFit Adapter
-pod 'MobWithAdFitAdapter', '3.21.15.1.3.1'
+pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
 
 # Admob Adapter
 pod 'MobWithAdMobAdapter', '12.14.0.1.3.1'
