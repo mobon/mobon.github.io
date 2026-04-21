@@ -95,48 +95,44 @@ BizBoardTemplate.defaultEdgeInset = UIEdgeInsets.init(top: 0.0, left: 0.0, botto
 ...
 ```
 
-또한, 비즈보드에서 광고 표시를 위해 요구하는 광고 뷰의 사이즈 비율이 있습니다. 아래는 해당 비율로 광고를 적용하기 위한 방법입니다.
-* 1.2.0 버전 부터는 사용자가 지정한 화면 사이즈에 대응 하여 광고가 표시될 수 있도록 개선되었으니 아래는 참고만 하셔도 됩니다.
-
-``` swift
-let width = UIScreen.main.bounds.width
-let height = (view.frame.width - BizBoardTemplate.defaultEdgeInset.left + BizBoardTemplate.defaultEdgeInset.right) / (1029 / 258) 
-            + BizBoardTemplate.defaultEdgeInset.top 
-            + BizBoardTemplate.defaultEdgeInset.bottom 
-
-mobWithAdView = MobWithAdView.init(CGRect(x: 0, y: 100, width: width, height: height),
-                                   type: .BANNER_320x50,
-                                   bannerUnitId: '발급받은 광고 UNIT ID')
-```
-
-광고뷰의 너비 및 높이 설정에 대해 더 자세한 사항은 [**AdFitSDK의 비즈보드 템플릿**](https://github.com/adfit/adfit-ios-sdk/blob/master/Guide/BizBoard%20Ad%20Template.md) 의 [**광고뷰의 너비 및 높이 설정**](https://github.com/adfit/adfit-ios-sdk/blob/master/Guide/BizBoard%20Ad%20Template.md#-4-%EA%B4%91%EA%B3%A0%EB%B7%B0%EC%9D%98-%EB%84%88%EB%B9%84-%EB%B0%8F-%EB%86%92%EC%9D%B4-%EC%84%A4%EC%A0%95)과 해당 항목 아래 [**뷰 타입**](https://github.com/adfit/adfit-ios-sdk/blob/master/Guide/BizBoard%20Ad%20Template.md#2-%EB%B7%B0-%ED%83%80%EC%9E%85-uiview-2)을 참조하시면 됩니다.
-
-
-
 
 
 
 ## MobWithADViewDelegate
 ---
-MobWithAdView의 콜백 이벤트들은 MobWithADViewDelegate를 통해 전달 됩니다.
-delegate의 등록은 아래를 참고 하시면 됩니다.
+MobWithAdView의 콜백 이벤트들은 MobWithADViewDelegate를 통해 전달 됩니다.  
+MobWithADViewDelegate는 아래를 참고 하시면 됩니다.
 
 ```swift
-class ViewController: UIViewController, MobWithADViewDelegate {
+class ViewController: UIViewController {
   .....
   let mobWithAdView = MobWithAdView.init(CGRect(x: 0, y: 100, width: width, height: height),
                                          type: .BANNER_320x50,
                                          bannerUnitId: '발급받은 광고 UNIT ID')
   mobWithAdView.adDelegate = self
   .....
+
 }
+
+
+
+extension ViewController: MobWithADViewDelegate {
+
+  func mobWithAdViewDidReceivedAd() {
+    // 광고 수신 성공
+    printLog(#function)
+  }
+
+  func mobWithAdViewDidFailToReceiveAd() {
+    // 광고 수신 실패
+    printLog(#function)
+  }
+    
+  func mobWithAdViewClickedAd() {
+    // 광고 클릭
+    printLog(#function)
+  }
+
+}
+
 ```
-
-### mobWithAdViewDidReceivedAd()
-광고를 수신한 경우 전달 됩니다
-
-### mobWithAdViewDidFailToReceiveAd()
-광고를 수신하지 못한 경우 전달 됩니다
-
-### mobWithAdViewClickedAd()
-광고를 클릭한 경우 전달 됩니다

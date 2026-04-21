@@ -35,4 +35,9 @@
     - [Reward AD](iOS/rewardAd.md)
   - [History](iOS/history.md)
   
+- Custom Adapter
+  - AdMob 3rd-Party Adapter
+    - [SDK Installation](CustomAdapter/AdMob/install.md)
+    - [광고 설정](CustomAdapter/AdMob/loadAd.md)
+    - [History](CustomAdapter/AdMob/history.md)
   
