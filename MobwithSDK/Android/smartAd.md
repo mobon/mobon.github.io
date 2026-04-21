@@ -16,8 +16,3 @@ MobwithBannerView banner = new MobwithBannerView(this)
      //카테고리 데이터를 설정합니다.
     .setMobwithAdCategoryModel(model);
 ```
-
-### 주의 사항
-----
-Proguard를 적용하는 경우 proguard configuration 파일 수정이 필요합니다.  
-자세한 구현 내용은 샘플 프로젝트의 proguard.cfg  파일 또는 proguard-rules.pro 참고해 주세요.
