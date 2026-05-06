@@ -6,7 +6,7 @@
 ----
 ```java
 //광고 객체 생성 시 Activity를 전달해주시는 걸 권장합니다.
-MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(this)
+MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(activity)     //Activity context를 전달해주셔야 합니다.
                 .setUnitId("YOUR_UNIT_ID")  //발급받은 광고 UnitId 설정
                 .build();
 

@@ -11,7 +11,7 @@
 아래는 EndingDialog 설정하고 광고를 요청하는 예시 코드입니다.
 
 ```java
-EndingDialog endingDialog = new EndingDialog(this)
+EndingDialog endingDialog = new EndingDialog(activity)      //Activity context를 전달해주셔야 합니다.
         .setBackCancel(false)                   //뒤로가기 버튼 클릭시 종료 여부
         .setUnitId(bannerUnitID_Interstitial)   //발급받은 UnitId 설정
         .build();

@@ -1,5 +1,10 @@
 ## Android SDK 히스토리 <!-- {docsify-ignore} -->
 
+## 1.0.81 (2026.05.06) <!-- {docsify-ignore} -->
+---
+- Mixer 병렬 송출 기능
+- 전면배너 UI 최적화
+
 ## 1.0.80 (2026.04.21) <!-- {docsify-ignore} -->
 ---
 - 전면배너, 리워드배너 UI 개선
