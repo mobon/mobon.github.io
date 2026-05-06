@@ -9,7 +9,7 @@
 각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
 아래는 InterstitialDialog 설정하고 광고를 요청하는 예시 코드입니다.
 ```java
-InterstitialDialog interstitialDialog = new InterstitialDialog(this)
+InterstitialDialog interstitialDialog = new InterstitialDialog(activity)    //Activity context를 전달해주셔야 합니다.    
         .setBackCancel(true)    //뒤로가기 버튼 클릭시 종료 여부
         .setUnitId("광고 Unit ID")    //발급받은 UnitId 설정
         .build();
