@@ -17,7 +17,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # MobWithAdSDK 추가
-pod 'MobWithAdSDK', '1.3.2'
+pod 'MobWithAdSDK', '1.3.1'
 
 ```
 
@@ -28,7 +28,7 @@ MobWithAdSDK와 같은 source를 지정해 주셔야 합니다.
 
 ```
 # AdFit Adapter
-pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
+pod 'MobWithAdFitAdapter', '3.21.15.1.3.1'
 
 # Admob Adapter
 pod 'MobWithAdMobAdapter', '12.14.0.1.3.1'

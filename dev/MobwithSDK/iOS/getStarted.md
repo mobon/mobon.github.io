@@ -7,9 +7,7 @@ Deployment Target: iOS 15.6 이상
 
 MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에서 MobWithAD SDK를 사용하시려면 반드시 최신 버전의 Xcode를 사용해주세요.
 
-- 1.3.0 버전부터 미디에이션 기능을 위해 외부 SDK 사용하는 부분을 별도 Adapter SDK로 분리되었으니, 해당 부분 참고 부탁드립니다. 
-- 1.3.0 이상 버전의 경우 일부 중요한 오류 등에 대해 수정된 부분이 있으므로 <b>최소 버전을 1.3.2 이상</b> 으로 설정하시기 바랍니다.
-- 
+- 1.2.25 버전부터 ADOP BidMadSDK 지원시 충돌 문제로 인해 시뮬레이터에서의 실행이 제한되는점 참고 부탁드립니다.
 
 ## 지면번호 / App Key 등
 
@@ -22,8 +20,7 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 
 ---
 
-- 최신버전 : 1.3.2
+- 최신버전 : 1.2.41
 - 변경사항
-  - 미디에이션을 위한 외부 SDK 연동을 별도 Adapter SDK로 분리
-  - 전면 / 리워드 광고 UI 업데이트
+  - AdFit SDK BannerView 추가
 
