@@ -17,7 +17,7 @@ allprojects {
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.81'
+    implementation 'io.github.mobon:mobwithSDK:1.0.82'
 }
 ```
 
@@ -57,7 +57,7 @@ android:usesCleartextTraffic="true"
 ## ADOP BidMad SDK 추가
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85)  
-- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.18.** 버전</span>에 최적화 되어 있습니다.  
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.25.** 버전</span>에 최적화 되어 있습니다.  
 - SDK 세팅 부분만 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
 - 참고사항  
 ADOP Bidmad 이외 다른 광고 SDK를 사용 시 라이브러리 충돌이 될 수 있으니 아래 사항 참고 바랍니다.  

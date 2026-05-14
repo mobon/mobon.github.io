@@ -1,21 +1,26 @@
 ## History <!-- {docsify-ignore} -->
+---
+## [1.0.82] - 2026-05-14 <!-- {docsify-ignore} -->
+- Frame Ad UI 최적화
+- Bidmad SDK 최신화
 
 ## [1.0.81] - 2026-05-06 <!-- {docsify-ignore} -->
----
 - Mixer 병렬 송출 기능
 - 전면배너 UI 최적화
 
 ## [1.0.80] - 2026-04-21 <!-- {docsify-ignore} -->
----
 - 전면배너, 리워드배너 UI 개선
-  
+
 ## [1.0.79] - 2026-02-10) <!-- {docsify-ignore} -->
----
 - RewardAdDialog Back 클릭 이벤트 제거
 
 ## [1.0.78] - 2026-02-04 <!-- {docsify-ignore} -->
----
 - Script 광고(Toast) 클릭 기능 수정
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
 
 ## 1.0.77 (2026.02.04) <!-- {docsify-ignore} -->
 ---
