@@ -15,7 +15,8 @@ var nativeAdView = MMNativeAdView(bannerUnitId: mediaCode,
                                   titleLabel: titleLabel,
                                   descriptionLabel: descLabel,
                                   gotoSiteButton: goButton,
-                                  infoLogoImageView: infoLogoImageView)
+                                  infoLogoImageView: infoLogoImageView,
+                                  mediaView: mediaView)
 nativeAdView.adDelegate = self
 nativeAdView.rootViewController = self        // 미디에이션 적용된 일부 광고 SDK의 경우 rootViewController를 설정하지 않으면 광고가 표시되지 않을 수 있습니다.
 
@@ -36,6 +37,7 @@ nativeAdView.loadAd()
 | descriptionLabel  | 광고에 대한 설명등 부가적인 내용이 표시될 Label. Tag값을 설정해 주셔야 합니다.  |
 | gotoSiteButton    | 광고 랜딩 페이지로 이동을 위한 Button. Tag값을 설정해 주셔야 합니다.  |
 | infoLogoImageView | 광고 Info Logo 이미지를 표시할 ImageView. Tag값을 설정해 주셔야 합니다.  |
+| mediaView         | 일부 외부 SDK 미디에이션시 광고 이미지 및 영상등을 표시할때 사용됩니다.   |
 
 
 #### <B> ADOP BidMad SDK 를 사용하는 경우 주의 사항 </B>

@@ -31,7 +31,7 @@ MobWithAdSDK와 같은 source를 지정해 주셔야 합니다.
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
 
 # Admob Adapter
-pod 'MobWithAdMobAdapter', '12.14.0.1.3.1'
+pod 'MobWithAdMobAdapter', '12.14.0.1.3.4'
 
 # Cauly Adapter
 pod 'MobWithCaulyAdapter', '3.1.22.1.3.1'
@@ -53,6 +53,8 @@ pod 'MobWithPangleAdapter', '7.8.0.4.1.3.1'
 pod 'MobWithBidMadAdapter', '6.13.3.1.3.1'
 pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
 
+pod 'BidmadSDK/core', '= 6.13.3'             # 빌드 오류 대응
+
 ```
 
 ### Adapter의 버전 규칙
@@ -72,6 +74,27 @@ pod 'MobWithAdFitAdapter', '3.21.15.1.3.1'
 
 ### 미디에이션 SDK 별 추가 설정
 아래 수동 설치의 각 SDK별 가이드 문서를 참고하여 추가 설정 항목을 반영해 주셔야 합니다.
+
+
+### BidMad 사용시 빌드 오류 발생시 대응
+BidMad의 미디에이션용 Adapter를 추가하시면, MobWithBidMadAdapter에서 의존성으로 추가해둔 BidMad SDK와 다른 버전을 설치하게 됩니다.
+이를 방지하기 위해 아래를 참고하셔서 특정 빌드로의 사용을 고정하시거나 가급적 최신버전으로 맞추시기 바랍니다.   
+만약, BidMad의 최신버전을 지원하는 MobWithBidMadAdapter가 확인되지 않는 경우 문의 바랍니다.  
+
+```
+...
+
+pod 'MobWithBidMadAdapter', '6.13.3.1.3.1'
+pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
+...
+
+//pod에서 BidMad 관련 설정 마지막 부분에 추가, 미디에이션 대상 SDK의 버전과 동일하게 맞추는 것을 추천
+pod 'BidmadSDK/core', '= 6.13.3'            
+
+```
+
+만약, 위 내용을 추가하기전 pod를 설치 하신 경우 pod 관련된 내용을 초기화 하신뒤 다시 설치하셔야 정상적으로 반영되니 참고 바랍니다.  
+(Pods 폴더 삭제, Podfile.lock 제거, DerivedData 폴더 내용 삭제 등)
 
 
 <br><br>
