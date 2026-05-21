@@ -59,6 +59,15 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
 //광고 show() 이전에 광고를 로드 해야합니다.
 rewardVideoDialog.load();
 ```
+### 광고 송출
+----
+```java
+// onLoadedAdInfo에서 result가 성공일 경우
+// isLoaded() 함수를 통해 로드된 광고가 존재하는지 확인 할 수 있습니다.
+if (rewardVideoDialog.isLoaded()) {
+    rewardVideoDialog.show();
+}
+```
 
 ### 리워드 광고 기능
 | 메서드                                                             | Description           |
@@ -70,20 +79,3 @@ rewardVideoDialog.load();
 | destroy()                                                       | 광고 리소스 해제                 |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
 | close()                                                         | 광고 닫기                 |
-
-### 광고 송출
-----
-```java
-// onLoadedAdInfo에서 result가 성공일 경우
-// isLoaded() 함수를 통해 로드된 광고가 존재하는지 확인 할 수 있습니다.
-if (rewardVideoDialog.isLoaded()) {
-    rewardVideoDialog.show();
-}
-```
-
-### 광고 사이즈 별 타입
-|  Size  | Type Constant            | Description                      |
-|:------:|:-------------------------|----------------------------------|
-| RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입     |
-| MODAL  | INTERSTITIAL_TYPE.MODAL  | 모달 사이즈의 리워드 배너 광고 (화면을 꽉 채우지 않음) |
-|  FULL  | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 리워드 배너 광고        |
