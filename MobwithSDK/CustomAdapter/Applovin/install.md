@@ -35,7 +35,13 @@ AppLovinSdk.getInstance(activity).initialize(initConfigBuilder.build(), new AppL
 
 #### iOS
 ```
-IOS 작성이 필요합니다!
+let initConfig = ALSdkInitializationConfiguration(sdkKey: AdIds.appKey) { builder in
+            builder.mediationProvider = ALMediationProviderMAX
+        }
+        
+        ALSdk.shared().initialize(with: initConfig) { config in
+            self.isInited = true
+        }
 ```
 
 
@@ -46,8 +52,3 @@ IOS 작성이 필요합니다!
 * AppLovin MAX SDK를 설치하지 않은 경우 아래 각 OS별 링크를 통해 AppLovin MAX SDK의 설치 및 광고 설정을 진행해 주셔야 합니다.  
   * Android : [AppLovin MAX Android 가이드 바로가기](https://support.axon.ai/en/max/android/overview/integration)
   * iOS : [AppLovin MAX iOS 가이드 바로가기](https://support.axon.ai/en/max/ios/overview/integration)
-
-
-
-
-

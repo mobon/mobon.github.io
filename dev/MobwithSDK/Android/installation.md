@@ -90,7 +90,7 @@ allprojects {
 implementation 'com.coupang:ads:1.3.0'
 ```
 
-- AdnroidMenifest.xml에서 아래와 같이 applicaion태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.  
+- AdnroidManifests.xml에서 아래와 같이 applicaion태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.  
 
 ```xml
   <application>
@@ -222,7 +222,7 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```groovy
   implementation("com.google.android.gms:play-services-ads:24.9.0")
 ```
-- Menifast 설정
+- Manifast 설정
 ```xml
 <manifest>
   <application>
