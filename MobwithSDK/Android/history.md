@@ -1,5 +1,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
+## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
+- 배너 닫기 버튼 기능 추가
+- Applovin MAX Imp, Click 통계 API 추가
+
 ## [1.0.82] - 2026-05-14 <!-- {docsify-ignore} -->
 - Frame Ad UI 최적화
 - Bidmad SDK 최신화
