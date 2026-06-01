@@ -87,6 +87,17 @@ mobWithAdView.fitToHeight = true
 ...
 ```
 
+
+### useCloseButton
+useCloseButton을 true로 설정하시면 광고에 닫기 버튼이 생성 됩니다.  
+닫기 버튼을 누르는 경우 mobWithAdViewClose() 콜백이 전달되며, 이에 맞춰 적절한 처리를 해주시는 것을 권장 드립니다.
+기본값은 false 입니다.  
+``` swift
+...
+mobWithAdView.useCloseButton = true
+...
+```
+
 ### AdFit 비즈보드 이용시
 비즈보드 광고의 경우 기본으로 여백이 할당 되도록 구현되어 있습니다.  따라서 광고 뷰 생성 및 로드를 하기전 아래의 코드를 참고하여 필요에 따라 여백을 설정해줄 필요가 있습니다.
 ``` swift
@@ -133,6 +144,10 @@ extension ViewController: MobWithADViewDelegate {
     printLog(#function)
   }
 
+  func mobWithAdViewClose(_ banner: MobWithAdView?) {
+    // 광고 닫기 버튼 사용시, 닫기 버튼을 누른 경우
+    printLog(#function)
+  }
 }
 
 ```
