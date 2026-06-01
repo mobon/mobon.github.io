@@ -60,6 +60,14 @@ interstitialDialog.setAdListener(new iInterstitialCallback() {
 interstitialDialog.load();
 ```
 
+### 광고 송출
+----
+```java
+if (interstitialDialog.isLoaded()) {
+    interstitialDialog.show();
+}
+```
+
 ### 전면 광고 기능
 | 메서드                                                       | Description           |
 |:----------------------------------------------------------|:----------------------|
@@ -70,21 +78,6 @@ interstitialDialog.load();
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
 | close()                                                 | 광고 닫기                 |
 | setBackCancel(boolean isUse)                          | 뒤로가기 버튼 광고 닫기 여부 설정   |
-
-### 광고 송출
-----
-```java
-if (interstitialDialog.isLoaded()) {
-    interstitialDialog.show();
-}
-```
- 
-### 전면배너 광고 사이즈 별 타입
-|  Size  | Type Constant            | Description                     |
-|:------:|:-------------------------|---------------------------------|
-| RANDOM | INTERSTITIAL_TYPE.RANDOM | 전체 사이즈와, 모달 사이즈가 랜덤으로 나오는 타입    |
-| MODAL  | INTERSTITIAL_TYPE.MODAL  | 모달 사이즈의 전면 배너 광고 (화면을 꽉 채우지 않음) |
-|  FULL  | INTERSTITIAL_TYPE.FULL   | 전체화면을 꽉 채우는 형태의 전면 배너 광고        |
 
 ### Click Event KeyCode
 | KeyCode  | Description               |

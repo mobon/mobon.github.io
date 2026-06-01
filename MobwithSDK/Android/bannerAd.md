@@ -194,3 +194,16 @@ Script형 배너 광고는 지정된 Container 크기에 맞춰 광고 크기가
 ```java
 banner.setAdScale(80);  //80dp 높이에 맞춰 Script형 배너 광고의 높이가 설정됨.
 ```
+
+### 배너 광고 닫기 기능
+배너 광고 닫기 기능을 지원합니다.
+해당 리스너를 등록하면 배너 좌측 상단에 닫기 버튼이 추가됩니다.
+
+```java
+banner.setCloseBtn(new MobwithBannerView.OnCloseListener() {
+    @Override
+    public void onAdClosed() {
+        //광고 닫기 리스너
+    }
+});
+```

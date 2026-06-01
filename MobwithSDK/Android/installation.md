@@ -87,19 +87,19 @@ allprojects {
   }
 }
 ```
- 2. 다음으로 App단위의 Gradle 파일에 아래와 같이 Coupnag SDK를 Implements 해주시면 됩니다.  
+ 2. 다음으로 App단위의 Gradle 파일에 아래와 같이 Coupang SDK를 Implements 해주시면 됩니다.  
 
 ```groovy
 implementation 'com.coupang:ads:1.3.0'
 ```
 
-- AdnroidMenifest.xml에서 아래와 같이 applicaion태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.  
+- manifests.xml에서 아래와 같이 application태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.  
 
 ```xml
   <application>
     ....
     <meta-data android:name="coupang_ads_sub_id"
-          android:value="{전달 받은 Coupnag Sub ID}"/>
+          android:value="{전달 받은 Coupang Sub ID}"/>
     ....
   </application>
 ```
@@ -156,7 +156,7 @@ allprojects {
 
     }
 }
-implementation 'com.pangle.global:pag-sdk:7.1.0.4'
+implementation 'com.pangle.global:pag-sdk:7.8.5.2'
 ```
 - AppKey 설정  
 Pangle SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
@@ -182,9 +182,6 @@ implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리
 - DT Exchange 광고를 송출하기 위해 링크를 참고하여 주세요.  
 [DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)  
 
-```groovy
-implementation 'com.fyber:marketplace-sdk:8.3.8'
-```
 - AppKey 설정  
   DT Exchange SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 
@@ -195,7 +192,7 @@ MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
   DT Exchange SDK를 build.gradle에 implementation 해야 합니다. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)
 
 ```groovy
-implementation 'com.fyber:marketplace-sdk:8.3.8'
+implementation 'com.fyber:marketplace-sdk:8.4.5'
 ```
 
 ## Inmobi SDK 추가
@@ -203,8 +200,9 @@ implementation 'com.fyber:marketplace-sdk:8.3.8'
   [Inmobi SDK 바로가기](https://support.inmobi.com/monetize/getting-started)
 
 ```groovy
-implementation 'com.unity3d.ads-mediation:inmobi-adapter:4.3.29'
-implementation 'com.inmobi.monetization:inmobi-ads-kotlin:10.8.2'
+implementation 'com.inmobi.monetization:inmobi-ads-kotlin:11.3.0'
+implementation 'com.google.android.gms:play-services-location:21.3.0'
+implementation 'androidx.browser:browser:1.10.0'
 ```
 - AppKey 설정  
   Inmobi SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
@@ -251,7 +249,7 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```groovy
   implementation("com.google.android.gms:play-services-ads:24.9.0")
 ```
-- Menifast 설정
+- Manifasts 설정
 ```xml
 <manifest>
   <application>
