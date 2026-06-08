@@ -1,12 +1,30 @@
-## Android SDK 히스토리 <!-- {docsify-ignore} -->
-
-## 1.0.79 (2026.02.10) <!-- {docsify-ignore} -->
+## History <!-- {docsify-ignore} -->
 ---
+## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
+- 배너 닫기 버튼 기능 추가
+- Applovin MAX Imp, Click 통계 API 추가
+
+## [1.0.82] - 2026-05-14 <!-- {docsify-ignore} -->
+- Frame Ad UI 최적화
+- Bidmad SDK 최신화
+
+## [1.0.81] - 2026-05-06 <!-- {docsify-ignore} -->
+- Mixer 병렬 송출 기능
+- 전면배너 UI 최적화
+
+## [1.0.80] - 2026-04-21 <!-- {docsify-ignore} -->
+- 전면배너, 리워드배너 UI 개선
+
+## [1.0.79] - 2026-02-10) <!-- {docsify-ignore} -->
 - RewardAdDialog Back 클릭 이벤트 제거
 
-## 1.0.78 (2026.02.04) <!-- {docsify-ignore} -->
----
+## [1.0.78] - 2026-02-04 <!-- {docsify-ignore} -->
 - Script 광고(Toast) 클릭 기능 수정
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
 
 ## 1.0.77 (2026.02.04) <!-- {docsify-ignore} -->
 ---
@@ -18,10 +36,10 @@
 - 후후 프리패스 영상광고 송출 기능 추가
 - 리워드 배너 Count 기능 제거
 - ScriptAdapter 로그 제거
- 
+
 ## 1.0.75 (2026.01.28) <!-- {docsify-ignore} -->
 ---
-- BugFix(Inmobi)
+- BugFix (Inmobi)
 
 ## 1.0.74 (2026.01.21) <!-- {docsify-ignore} -->
 ---

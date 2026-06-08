@@ -12,12 +12,12 @@ allprojects {
     }
 }
 ```
-- app build.gradle 에 com.google.android.gms 와 MobWith 라이브러리를 추가합니다.  
+- app build.gradle 에 com.google.android.gms:play-services-ads-identifier 와 최신 버전의 MobWith SDK를 추가합니다.  
 
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.79'
+    implementation 'io.github.mobon:mobwithSDK:1.0.83'
 }
 ```
 
@@ -27,11 +27,13 @@ dependencies {
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-**Android 9 (Pie) 업데이트에 따른 추가설정**
-- targetSdkVersion 28 부터 네트워크 통신 시 암호화 되지 않은 HTTP통신이 차단되도록 기본설정이 변경되었습니다.  
-  SDK 내 모든 미디에이션 광고가 정상동작하기 위해서는 HTTP 통신을 허용해주셔야 하며, 방법은 아래와 같습니다.  
-  AndroidManifest.xml 파일에서 application 항목의 속성값으로 usesCleartextTraffic을 true로 설정해야 합니다.  
-  (Android 9 부터 해당값이 default로 false 설정되어 HTTP 통신이 제한됩니다.)
+**Android 9 (Pie) 업데이트에 따른 추가설정**  
+targetSdkVersion 28 이상부터는 네트워크 통신 시 암호화되지 않은 HTTP 통신이 기본적으로 차단됩니다.  
+
+SDK 내 모든 미디에이션 광고가 정상적으로 동작하기 위해서는 HTTP 통신을 허용해야 하며, 설정 방법은 다음과 같습니다.  
+
+- AndroidManifest.xml의 application 태그에 usesCleartextTraffic="true" 속성을 설정합니다.  
+- Android 9(API 28)부터 해당 값의 기본값은 false로, HTTP 통신이 제한됩니다.
 
 ```xml
 <manifest ...>
@@ -46,15 +48,16 @@ android:usesCleartextTraffic="true"
 ## ADFIT SDK 추가
 - Adfit 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Adfit SDK 바로가기](https://github.com/adfit/adfit-android-sdk)  
-- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK com.kakao.adfit:ads-base:3.21.10 버전</span>에 최적화 되어 있습니다.  
-- 경우에 따라서는 가이드에 안내된 라이브러리("com.kakao.adfit:ads-base:3.21.10")가 아닌 다른 버전/타입의 SDK를 추가 해야 할 수도 있습니다.  
-  (해당되는 경우 별도로 안내됩니다.)  
-- NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">Adfit SDK(com.kakao.adfit:ads-base:3.21.10)</span> 버전에 최적화되어 있습니다.
+- 상황에 따라 가이드에 명시된 라이브러리(com.kakao.adfit:ads-base:3.21.10)가 아닌, 다른 버전 또는 타입의 SDK를 추가로 적용해야 할 수 있습니다.  
+(해당되는 경우 별도로 안내됩니다.)
+- NativeAdView 기능 사용 시, R.id.mediaContainerView에는 반드시 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용해야 합니다.  
+(MediaView의 상위 클래스가 FrameLayout이기 때문에, 미디어(이미지, 동영상) 광고가 정상적으로 노출됩니다.)
 
 ## ADOP BidMad SDK 추가
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85)  
-- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.18.** 버전</span>에 최적화 되어 있습니다.  
+- MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.25.** 버전</span>에 최적화 되어 있습니다.  
 - SDK 세팅 부분만 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
 - 참고사항  
 ADOP Bidmad 이외 다른 광고 SDK를 사용 시 라이브러리 충돌이 될 수 있으니 아래 사항 참고 바랍니다.  
@@ -84,19 +87,19 @@ allprojects {
   }
 }
 ```
- 2. 다음으로 App단위의 Gradle 파일에 아래와 같이 Coupnag SDK를 Implements 해주시면 됩니다.  
+ 2. 다음으로 App단위의 Gradle 파일에 아래와 같이 Coupang SDK를 Implements 해주시면 됩니다.  
 
 ```groovy
 implementation 'com.coupang:ads:1.3.0'
 ```
 
-- AdnroidManifests.xml에서 아래와 같이 applicaion태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.  
+- manifests.xml에서 아래와 같이 application태그 내부에 meta-data를 추가해 줍니다. 넣어야 할 값은 가이드와 함께 제공된 Coupang Sub ID 값을 참고 하시면 됩니다.  
 
 ```xml
   <application>
     ....
     <meta-data android:name="coupang_ads_sub_id"
-          android:value="{전달 받은 Coupnag Sub ID}"/>
+          android:value="{전달 받은 Coupang Sub ID}"/>
     ....
   </application>
 ```
@@ -127,6 +130,11 @@ MobwithSDK.getInstance().setUnityGameId(this,"{ 전달 받은 GameId }");
 ## IronSource(LevelPlay) SDK 추가
 - IronSource(LevelPlay) 광고를 송출하기 위해 링크를 참고하여 주세요. (8.4.0 버전에 최적화 되어 있습니다.)
 [IronSource(LevelPlay) SDK 바로가기](https://developers.is.com/ironsource-mobile/android/getting-started-android/)
+
+```groovy
+implementation 'com.ironsource.sdk:mediationsdk:9.2.0'
+implementation 'com.ironsource:adqualitysdk:7.26.2'
+```
 - Getting started와 Adnroid SDK Integration 항목을 참고 하시면 됩니다.
 - AppKey 설정  
 IronSource(LevelPlay) SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
@@ -137,7 +145,19 @@ MobwithSDK.getInstance().setLevelPlayAppKey(this,"{ 전달 받은 AppKey }");
 
 ## Pangle SDK 추가
 - Pangle 광고를 송출하기 위해 링크를 참고하여 주세요. (7.1.0.4 버전에 최적화 되어 있습니다.)  
-[Pangle SDK 바로가기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-android)
+[Pangle SDK 바로가기](https://www.pangleglobal.com/kr/integration/integrate-pangle-sdk-for-android)  
+
+```groovy
+allprojects {
+    repositories {
+        maven {
+            url 'https://artifact.bytedance.com/repository/pangle'
+        }
+
+    }
+}
+implementation 'com.pangle.global:pag-sdk:7.8.5.2'
+```
 - AppKey 설정  
 Pangle SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 
@@ -160,7 +180,8 @@ implementation된 라이브러리의 dependency의 Pangle 관련 라이브러리
 
 ## DT Exchange SDK 추가
 - DT Exchange 광고를 송출하기 위해 링크를 참고하여 주세요.  
-[DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)
+[DT Exchange SDK 바로가기](https://developer.digitalturbine.com/hc/en-us/articles/360010822437-Integrating-the-Android-SDK)  
+
 - AppKey 설정  
   DT Exchange SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 
@@ -171,18 +192,24 @@ MobwithSDK.getInstance().setDTExChangeAppKey("전달 받은 AppKey");
   DT Exchange SDK를 build.gradle에 implementation 해야 합니다. (com.fyber:marketplace-sdk:8.3.8 버전에 최적화 되어 있습니다.)
 
 ```groovy
-implementation 'com.fyber:marketplace-sdk:8.3.8'
+implementation 'com.fyber:marketplace-sdk:8.4.5'
 ```
 
 ## Inmobi SDK 추가
 - Inmobi 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [Inmobi SDK 바로가기](https://support.inmobi.com/monetize/getting-started)
+
+```groovy
+implementation 'com.inmobi.monetization:inmobi-ads-kotlin:11.3.0'
+implementation 'com.google.android.gms:play-services-location:21.3.0'
+implementation 'androidx.browser:browser:1.10.0'
+```
 - AppKey 설정  
   Inmobi SDK를 미디에이션 하기위해서는 광고 로딩전 아래와 같이 AppKey의 설정이 필요합니다.
 - NativeAdView 기능을 사용할 시 R.id.mediaContainerView에 <span style="color:#FFFFFF; font-weight:bold;">FrameLayout</span>을 사용 해야 미디어(사진, 동영상)광고가 원활히 송출 됩니다. (MediaView의 상위 클래스가 FrameLayout이기 때문입니다.)
 
 ```java
-MobwithSDK.getInstance().setInMobiAppKey("전달 받은 AppKey");
+MobwithSDK.getInstance().setInMobiAppKey("전달 받은 AppKey"); 
 ```
 - build.gradle 설정  
   Inmobi SDK를 build.gradle에 implementation 해야 합니다.  
@@ -222,11 +249,10 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```groovy
   implementation("com.google.android.gms:play-services-ads:24.9.0")
 ```
-- Manifast 설정
+- Manifasts 설정
 ```xml
 <manifest>
   <application>
-    <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
     <meta-data
         android:name="com.google.android.gms.ads.APPLICATION_ID"
         android:value="SAMPLE_APP_ID"/>

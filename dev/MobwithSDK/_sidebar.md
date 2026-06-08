@@ -7,6 +7,7 @@
   - [Ad formats](Android/usage.md)
     - [Banner AD](Android/bannerAd.md)
     - [BannerWithArticle AD](Android/bannerWithArticleAd.md)
+    - 
     - [Native AD](Android/nativeAd.md)
     - [Native Loader AD](Android/nativeLoaderAd.md)
     - [Interstitial AD](Android/interstitailAd.md)
@@ -35,9 +36,13 @@
     - [Reward AD](iOS/rewardAd.md)
   - [History](iOS/history.md)
   
-- Custom Adapter
+- [Custom Adapter](CustomAdapter/base.md)
   - AdMob 3rd-Party Adapter
     - [SDK Installation](CustomAdapter/AdMob/install.md)
     - [광고 설정](CustomAdapter/AdMob/loadAd.md)
     - [History](CustomAdapter/AdMob/history.md)
+  - AppLovin MAX 3rd-Party Adapter
+    - [SDK Installation](CustomAdapter/Applovin/install.md)
+    - [광고 설정](CustomAdapter/Applovin/loadAd.md)
+    - [History](CustomAdapter/Applovin/history.md)
   
