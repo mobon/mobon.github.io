@@ -20,6 +20,8 @@
     - [Reward AD](Android/rewardAd.md)
     - [Smart AD](Android/smartAd.md)
     - [Smart Frame Banner AD](Android/frameBannerAd.md)
+    - [Splash AD](Android/SplashAd.md)
+    - [HybridBannerBridge](Android/HybridBannerBridge.md)
   - [History](Android/history.md)
   
 
@@ -34,6 +36,8 @@
     - [Native AD](iOS/nativeAd.md)
     - [Interstitial AD](iOS/interstitailAd.md)
     - [Reward AD](iOS/rewardAd.md)
+    - [Splash AD](iOS/SplashAd.md)
+    - [HybridBannerBridge](iOS/HybridBannerBridge.md)
   - [History](iOS/history.md)
   
 - [Custom Adapter](CustomAdapter/base.md)
