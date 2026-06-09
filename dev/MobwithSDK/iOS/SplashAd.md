@@ -1,6 +1,5 @@
 
-
-## MMSplashAd
+## MMSplashAd  <!-- {docsify-ignore} -->
 
 스플래시 화면에 광고를 표시하기 위한 광고 객체 입니다.
 
@@ -11,9 +10,9 @@ splashAd.useFullScreenAd = false
 splashAd.timeOutSec = 5
 splashAd.category = [
     "A0001",
-    "B0001",
-    "C0001",
-    "D0001",
+    "A0002",
+    "A0003",
+    "A0004",
     ...
 ]
 
@@ -51,6 +50,20 @@ splashAd.loadAd()
 ```swift
 splashAd.timeOutSec = 5
 ```
+
+
+### 광고 카테고리 설정
+category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
+```swift
+splashAd.category = [
+    "A0001",
+    "A0002",
+    "A0003",
+    "A0004",
+    ...
+]
+```
+* 카테고리 값의 경우 협의된 내용을 참고 하시기 바랍니다.
 
 
 ### 광고 객체 제거

@@ -1,7 +1,8 @@
 
 
 
-## MMHybridBannerBridge
+## MMHybridBannerBridge  <!-- {docsify-ignore} -->
+
 하이브리드 앱에 광고를 표시하기 위한 브릿지 입니다.
 
 ### 웹 페이지에 광고를 표시할 지면 할당
@@ -48,6 +49,14 @@ class ViewController: UIViewController {
         ....
 
         bridge = MMHybridBannerBridge(webVeiw: webView)
+        bridge.category = [
+            "A0001",
+            "A0002",
+            "A0003",
+            "A0004",
+            ...
+        ]
+
         // 브릿지를 등록해 줍니다.  광고 클릭등의 이벤트 발생시 자체적으로 랜딩페이지 이동 등을 처리해 줍니다.
         webView.configuration.userContentController.add(self, name: bridge?.bridgeName ?? "")
         bridge?.requestAd(placementId: "{할당 받은 광고 지면번호}")
@@ -118,4 +127,17 @@ extension ViewController: WKScriptMessageHandler {
     
 }
 
+```
+
+### 광고 카테고리 설정
+category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
 ```swift
+bridge.category = [
+    "A0001",
+    "A0002",
+    "A0003",
+    "A0004",
+    ...
+]
+```
+* 카테고리 값의 경우 협의된 내용을 참고 하시기 바랍니다.
