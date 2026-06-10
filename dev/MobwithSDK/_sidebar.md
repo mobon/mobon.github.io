@@ -20,8 +20,8 @@
     - [Reward AD](Android/rewardAd.md)
     - [Smart AD](Android/smartAd.md)
     - [Smart Frame Banner AD](Android/frameBannerAd.md)
-    - [Splash AD](Android/SplashAd.md)
-    - [HybridBannerBridge](Android/HybridBannerBridge.md)
+    - [Splash AD](Android/splashAd.md)
+    - [HybridBannerBridge](Android/hybridBannerBridge.md)
   - [History](Android/history.md)
   
 
