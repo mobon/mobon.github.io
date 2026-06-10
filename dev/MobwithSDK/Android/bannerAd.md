@@ -17,9 +17,8 @@
 ```
 
 ### 광고 로드 방법
-----
-배너 광고를 요청하려면 MobWithBannerView 설정이 필요합니다.  
-각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
+---- 
+MobWithBannerView는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
 아래는 BannerView를 설정하고 광고를 요청하는 예시 코드입니다.
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);

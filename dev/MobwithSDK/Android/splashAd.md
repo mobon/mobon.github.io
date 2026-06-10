@@ -1,34 +1,33 @@
 ## Splash AD <!-- {docsify-ignore} -->
 
-### 스플래시 광고 뷰 정의
-----
-MobwithSplashBannerView는 FrameLayout을 상속한 스플래시 광고 오버레이 뷰입니다.   
+### 스플래시 광고 정의
+---- 
+스플래시 화면에 광고를 표시하기 위한 광고 객체 입니다.
 Activity 위에 광고를 표시하며, 전면 형식과 하단 배너 형식 두 가지를 지원합니다.
 
 ### 광고 로드 방법
-----
-배너 광고를 요청하려면 MobwithSplashBannerView는 설정이 필요합니다.  
-각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
-아래는 MobwithSplashBannerView는를 설정하고 광고를 요청하는 예시 코드입니다.
+---- 
+MobwithSplashBanner에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
+아래는 MobwithSplashBanner를 설정하고 광고를 요청하는 예시 코드입니다.
 
 ```java
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobwithSplashBannerView splashBanner = new MobwithSplashBannerView(activity,
+MobwithSplashBanner splashBanner = new MobwithSplashBanner(activity,
         unitID, //발급받은 UNIT_ID
         true,  //전면형 광고 여부 (true:전면, false:하단 배너)
         3      //광고 요청 대기 시간(기본값: 5초)
 );
 
 // 배너뷰의 리스너를 등록합니다.
-splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashListener() {
+splashBanner.setAdListener(new MobwithSplashBanner.OnSplashListener() {
     @Override
-    public void onAdClicked () {
-        // 스플래시 광고 클릭 시 호출
+    public void onSplashAdDidReceived() {
+        // 스플래시 광고를 수신함 운영 시간에 맞춰 노출 후 다음 화면으로 이동
     }
 
     @Override
-    public void onAdClosed () {
-        // 스플래시 광고 닫힘 시 호출
+    public void onSplashAdFailToReceived() {
+        // 스플래시 광고 수신 실패 즉시 다음 화면으로 이동
     }
 });
 
@@ -42,18 +41,17 @@ splashBanner.loadAd();
 |:-----------------------------------------------------------------|:--------------------------------|
 | setBannerUnitId(String unitId)                                   | 발급 받은 UnitId 설정                 |
 | loadAd()                                                         | 광고 요청                           |
-| setAdListener(MobwithSplashBannerView.OnSplashListener listener) | 광고 Callback                     |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)  | 카테고리 타겟팅 광고 기능                  |
-| setTimeOutSec(int seconds)                                          | 광고 요청 타임아웃 시간 (초)               |
-| setFullScreenSplash(boolean fullScreen)                          | 광고 타입 설정 (true:전면, false:하단 배너) |
-| dismiss()                                                        | 광고 닫기                           |`
+| setAdListener(MobwithSplashBanner.OnSplashListener listener) | 광고 Callback                     |
+| setCategory(List<String> categories)                             | 카테고리 타겟팅 광고 기능                  |
+| setTimeOutSec(int seconds)                                       | 광고 요청 타임아웃 시간 (초)               |
+| useFullScreenAd(boolean fullScreen)                          | 광고 타입 설정 (true:전면, false:하단 배너) |
 | destroy()                                                        | 광고 리소스 해제                       |`
 
 ### 전체 화면 모드 사용
 useFullScreenAd를 true로 설정하면 전체화면 모드를 사용하게 됩니다.  기본값은 false 입니다.
 * 광고 사이즈에 따라 전체화면 사이즈를 표시하지 않을 수도 있습니다.
 ```java
-splashBanner.setFullScreenSplash(true); //(true:전면, false:하단 배너)
+splashBanner.useFullScreenAd(true);
 ```
 
 ### 광고 요청 타임아웃
@@ -67,7 +65,7 @@ splashBanner.setTimeOutSec(5);
 OnSplashListener 구현하여 스플래시 광고의 각 이벤트에 대한 콜백을 전달 받을 수 있습니다.
 자세한 내용은 아래를 참고 바랍니다.
 ```java
-new MobwithSplashBannerView.OnSplashAdListener() {
+new MobwithSplashBanner.OnSplashAdListener() {
     @Override
     public void onSplashAdDidReceived() {
         // 스플래시 광고를 수신함 운영 시간에 맞춰 노출 후 다음 화면으로 이동
@@ -80,6 +78,19 @@ new MobwithSplashBannerView.OnSplashAdListener() {
 }
 
 ```
+
+### 광고 카테고리 설정
+category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
+```java
+splashBanner.setCategory(Arrays.asList(
+     "A0001",
+     "A0002",
+     "A0003",
+     "A0004",
+     ...
+));
+```
+* 카테고리 값의 경우 협의된 내용을 참고 하시기 바랍니다.
 
 ### 광고 리소스 해제
 ----

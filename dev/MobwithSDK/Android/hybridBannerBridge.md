@@ -87,42 +87,6 @@ requestAd(placementId)를 호출하여 광고를 미리 로딩 할 수 있습니
 bridge.requestAd("{할당 받은 광고 지면번호}");
 ```
 
-### 광고 이벤트 처리
-웹 페이지에서 발생하는 광고 관련 이벤트를 수신하기 위해 @JavascriptInterface를 등록합니다.
-postMessage()가 호출되면 먼저 bridge.handleBridgeMessage()로 처리를 위임합니다.
-브릿지 내부에서 처리된 경우 true를 반환하며, 이 경우 추가 처리 없이 종료됩니다.
-브릿지가 처리하지 않은 메시지는 handleBridgeMessage()를 통해 앱에서 직접 처리합니다.
-
-```java
-// JavascriptInterface로 웹 → 앱 메시지를 수신합니다.
-    public class WebBridgeInterface {
-
-        @JavascriptInterface
-        public void postMessage(String messageJson) {
-            // bridge가 먼저 처리 시도 — 내부 처리되면 종료
-            if (bridge != null && bridge.handleBridgeMessage(messageJson)) {
-                return;
-            }
-
-            // bridge가 처리하지 않은 메시지 직접 처리
-            try {
-                JSONObject messageBody = new JSONObject(messageJson);
-                handleBridgeMessage(messageBody);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private void handleBridgeMessage(JSONObject messageBody) {
-        // 메시지 처리 로직 구현
-    }
-```
-웹뷰에 인터페이스 등록 시 아래와 같이 "mobwithHybridBannerBridge" 이름으로 등록합니다.
-```java
-webView.addJavascriptInterface(new WebBridgeInterface(), "mobwithHybridBannerBridge");
-```
-
 ### 광고 카테고리 설정
 category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
 ```java
