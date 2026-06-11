@@ -110,13 +110,13 @@ https://github.com/mobon/MobWithAdSDK_SPM
 ```
 
 ### 1. Project -> Packages 추가
-위 GIT 주소를 이용하여 아래와 같이 Package를 추가해 줍니다.
-![add package](./img/spm_add_package.png)  
+위 GIT 주소를 이용하여 아래와 같이 Package를 추가해 줍니다.  
+![add package](./Img/spm_add_package.png)  
 
 ### 2. Targets -> Frameworks, Libraries, and Embedded Comtent 확인
 아래 스크린샷과 같이 MobWithADSDK 프레임워크가 포함되었는지 확인 합니다.  
 만약 자동으로 포함되어 있지 않은 경우 아래 '+' 버튼을 눌러 프레임워크를 추가해 줍니다.  
-![add to target](./img/spm_add_package.png)  
+![add to target](./Img/spm_add_package.png)  
 
 
 <br><br>
