@@ -94,14 +94,6 @@ bridge?.webViewFinishLoad(webView)
 위 함수가 호출되면 MMHybridBannerBridge에서 광고 지면을 확인하여, 광고 로딩 및 표시를 자동으로 처리 해 줍니다.
 
 
-### 광고 미리 로딩
-requestAd(placementId:)를 호출하여 광고를 미리 로딩 할 수 있습니다.  
-웹 페이지상에서 지정한 지면번호를 확인하여 일치하는 경우 해당 지면에 미리 로딩한 광고를 보여주게 됩니다.
-
-```swift
-bridge?.requestAd(placementId: "{할당 받은 광고 지면번호}")
-```
-
 
 ### 광고 이벤트 처리
 userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) 콜백을 수신하면, 

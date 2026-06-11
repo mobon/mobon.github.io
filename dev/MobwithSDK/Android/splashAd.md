@@ -15,7 +15,7 @@ MobwithSplashBanner에는 발급받은 UNIT_ID 값을 반드시 설정해야 합
 MobwithSplashBanner splashBanner = new MobwithSplashBanner(activity,
         unitID, //발급받은 UNIT_ID
         true,  //전면형 광고 여부 (true:전면, false:하단 배너)
-        3      //광고 요청 대기 시간(기본값: 5초)
+        3      //광고 로드 타임아웃 시간(기본값: 5초), 해당 시간내 광고가 로드되지 않으면 광고 로딩 실패 콜백이 발생합니다.
 );
 
 // 배너뷰의 리스너를 등록합니다.
@@ -43,7 +43,7 @@ splashBanner.loadAd();
 | loadAd()                                                         | 광고 요청                           |
 | setAdListener(MobwithSplashBanner.OnSplashListener listener) | 광고 Callback                     |
 | setCategory(List<String> categories)                             | 카테고리 타겟팅 광고 기능                  |
-| setTimeOutSec(int seconds)                                       | 광고 요청 타임아웃 시간 (초)               |
+| setTimeOutSec(int seconds)                                       | 광고 요청 타임아웃 시간 (초).  <br>해당 시간내 광고 로딩이 완료되지 않으면 광고 로딩 실패 콜백이 전달 됩니다.               |
 | useFullScreenAd(boolean fullScreen)                          | 광고 타입 설정 (true:전면, false:하단 배너) |
 | destroy()                                                        | 광고 리소스 해제                       |`
 

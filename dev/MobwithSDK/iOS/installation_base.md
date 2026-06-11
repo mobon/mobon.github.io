@@ -97,6 +97,28 @@ pod 'BidmadSDK/core', '= 6.13.3'
 (Pods 폴더 삭제, Podfile.lock 제거, DerivedData 폴더 내용 삭제 등)
 
 
+<br><br>  
+
+## SPM을 이용하여 설치 
+Swift Package Manager(SPM)의 설치는 기본 프레임워크의 설치만 지원합니다.  
+만약 SPM을 통해 SDK를 설치하신 경우 각 Adapter의 경우 가급적 아래 [[수동 설치의 Adapter 프레임워크 설치](/iOS/installation_base?id=adapter-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-%EC%84%A4%EC%B9%98)]를 참고하여 주시기 바랍니다.
+
+Package 추가를 위한 GIT 주소는 아래와 같습니다.
+```swift
+https://github.com/mobon/MobWithAdSDK_SPM
+
+```
+
+### 1. Project -> Packages 추가
+위 GIT 주소를 이용하여 아래와 같이 Package를 추가해 줍니다.
+![add package](./img/spm_add_package.png)  
+
+### 2. Targets -> Frameworks, Libraries, and Embedded Comtent 확인
+아래 스크린샷과 같이 MobWithADSDK 프레임워크가 포함되었는지 확인 합니다.  
+만약 자동으로 포함되어 있지 않은 경우 아래 '+' 버튼을 눌러 프레임워크를 추가해 줍니다.  
+![add to target](./img/spm_add_package.png)  
+
+
 <br><br>
 
 ## 수동 설치
