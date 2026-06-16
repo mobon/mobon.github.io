@@ -1,5 +1,5 @@
 
-🌐 [한국어 가이드](/CustomAdapter/AppLovin/install)
+🌐 [한국어 가이드](/CustomAdapter/Applovin/install)
 
 ## 영문 가이드는 번역 준비중 입니다!
 <br>

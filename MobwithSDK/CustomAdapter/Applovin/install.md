@@ -1,4 +1,4 @@
-🌐 [View English Guide](/CustomAdapter/AppLovin/install_en)
+🌐 [View English Guide](/CustomAdapter/Applovin/install_en)
 
 # AppLovin MAX 3rd Party Adapter SDK 설치
 
