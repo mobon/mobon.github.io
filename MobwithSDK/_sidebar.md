@@ -42,7 +42,7 @@
     - [광고 설정](CustomAdapter/AdMob/loadAd.md)
     - [History](CustomAdapter/AdMob/history.md)
   - AppLovin MAX 3rd-Party Adapter
-    - [SDK Installation](CustomAdapter/Applovin/install.md)
-    - [광고 설정](CustomAdapter/Applovin/loadAd.md)
-    - [History](CustomAdapter/Applovin/history.md)
+    - [SDK Installation](CustomAdapter/AppLovin/install.md)
+    - [광고 설정](CustomAdapter/AppLovin/loadAd.md)
+    - [History](CustomAdapter/AppLovin/history.md)
   
