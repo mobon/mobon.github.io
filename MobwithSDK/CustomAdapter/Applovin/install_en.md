@@ -1,4 +1,11 @@
-🌐 [View English Guide](/CustomAdapter/Applovin/install_en)
+
+🌐 [한국어 가이드](/CustomAdapter/Applovin/install)
+
+## 영문 가이드는 번역 준비중 입니다!
+<br>
+<br>
+<br>
+
 
 # AppLovin MAX 3rd Party Adapter SDK 설치
 
@@ -74,5 +81,5 @@ let initConfig = ALSdkInitializationConfiguration(sdkKey: AdIds.appKey) { builde
   * iOS : [AppLovin MAX iOS 가이드 바로가기](https://support.axon.ai/en/max/ios/overview/integration)
 
 * 최적화된 AppLovin Max SDK 버전은 아래와 같습니다.
-  * Android : 13.6.3
+  * Android : 
   * iOS : 13.6.0

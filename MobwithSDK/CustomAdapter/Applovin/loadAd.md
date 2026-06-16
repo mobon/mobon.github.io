@@ -6,8 +6,7 @@ AppLovin MAX 3rd Party Adapter의 경우 AppLovin MAX 미디에이션을 통해 
 따라서 이미 AppLovin MAX 통해 광고를 송출하고 있는 경우 앱쪽에서는 별도로 추가할 내용은 없습니다.  
 만약 AppLovin MAX 광고 송출을 위한 기능 개발이 되어 있지 않은 경우 아래 링크를 통해 AppLovin MAX 광고 송출을 할 수 있도록 적용 하시면 됩니다.
 
-*
-Android : [AppLovin MAX Android 가이드 바로가기](https://support.axon.ai/en/max/android/overview/integration)
+* Android : [AppLovin MAX Android 가이드 바로가기](https://support.axon.ai/en/max/android/overview/integration)
 * iOS : [AppLovin MAX iOS 가이드 바로가기](https://support.axon.ai/en/max/ios/ad-formats/app-open-ads)
 
 ## AppLovin MAX 관리자 콘솔 설정
