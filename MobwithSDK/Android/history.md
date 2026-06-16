@@ -1,5 +1,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
+## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
+- 리워드 Prepare bug fix
+- ADID 갱신 로직
+
 ## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
 - 배너 닫기 버튼 기능 추가
 - Applovin MAX Imp, Click 통계 API 추가
@@ -15,16 +19,18 @@
 ## [1.0.80] - 2026-04-21 <!-- {docsify-ignore} -->
 - 전면배너, 리워드배너 UI 개선
 
-## [1.0.79] - 2026-02-10) <!-- {docsify-ignore} -->
-- RewardAdDialog Back 클릭 이벤트 제거
-
-## [1.0.78] - 2026-02-04 <!-- {docsify-ignore} -->
-- Script 광고(Toast) 클릭 기능 수정
-
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 이전 버전 히스토리 펼치기
 </summary>
+
+## [1.0.79] - 2026-02-10) <!-- {docsify-ignore} -->
+----
+- RewardAdDialog Back 클릭 이벤트 제거
+
+## [1.0.78] - 2026-02-04 <!-- {docsify-ignore} -->
+---
+- Script 광고(Toast) 클릭 기능 수정
 
 ## 1.0.77 (2026.02.04) <!-- {docsify-ignore} -->
 ---
