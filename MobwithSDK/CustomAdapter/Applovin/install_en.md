@@ -1,27 +1,21 @@
 
 🌐 [한국어 가이드](/CustomAdapter/Applovin/install)
 
-## 영문 가이드는 번역 준비중 입니다!
-<br>
-<br>
-<br>
+# AppLovin MAX 3rd Party Adapter SDK Installation
+
+This guide explains how to use the AppLovin MAX 3rd Party Adapter.  
+Please install both of the SDKs described below.
 
 
-# AppLovin MAX 3rd Party Adapter SDK 설치
-
-AppLovin MAX 3rd Party Adapter를 사용하기 위한 가이드 입니다.  
-아래 설명된 두 SDK를 모두 설치해주시면 됩니다.   
-
-
-### 1. MobWithAdSDK 설치
-다음 링크를 참조하여 프로젝트에 Mobwith AD SDK를 추가해 줍니다.  
-각 OS별 SDK에서 미디에이션을 위해 추가를 요구하는 부분은 협의된 내용에 따라 적용하시면 됩니다.
-- Android : [[가이드 문서 링크](/Android/installation.md)]
-- iOS : [[가이드 문서 링크](/iOS/installation_base.md)]
+### 1. Install MobWithAdSDK
+Refer to the links below to add the MobWith AD SDK to your project.  
+For each platform, apply the mediation-related additions according to what was agreed upon.
+- Android : [[Guide document link](/Android/installation_en.md)]
+- iOS : [[Guide document link](/iOS/installation_base_en.md)]
 
 
-### 2. AppLovin MAX 3rd-Party Adapter SDK 추가
-각 OS별 아래를 참고하여 3rd-Party Adapter를 추가해 줍니다.
+### 2. Add the AppLovin MAX 3rd-Party Adapter SDK
+Refer to the platform-specific sections below to add the 3rd-Party Adapter.
 
 #### Android
 ```
@@ -30,34 +24,34 @@ implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.0.1")
 
 
 #### iOS  
-cocoapod 소스 지정 부분은 위 MobwithSDK 설치 과정에서 이미 설정하신 경우 무시하셔도 됩니다.
+If you already configured the CocoaPods source declarations during the MobWith SDK installation above, you can ignore that part.
 ```
-# Cocoapod 소스 지정.  순서에 따라 제대로 가져오지 못 할 수 있으니 주의 바랍니다.
+# CocoaPods source declarations. Note: the order matters, otherwise pods may not be fetched correctly.
 
-# 기본 Repo.
+# Base repo.
 source 'https://cdn.cocoapods.org/'                   
 
-# MobWithAdSDK의 Repo.   
+# MobWithAdSDK repo.   
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
-# AppLovin MAX 3rd-Party Adapter SDK 추가
+# Add the AppLovin MAX 3rd-Party Adapter SDK
 pod 'MobwithAppLovinMediationAdapter'
 ```
 
 
 
-### 3. SDK 설치 완료 확인
-AppLovin MAX 초기화 함수의 콜백을 통해 SDK 설치가 제대로 되었는지 확인이 가능 합니다.  
-각 OS별 아래 내용을 참고하셔서 SDK가 제대로 설치되었는지 확인 바랍니다.  
-참고로 먼저 AppLovin MAX 관리자 콘솔에서 미디에이션 설정이 완료 되어야 합니다.  
+### 3. Verify the SDK Installation
+You can verify that the SDK was installed correctly through the callback of the AppLovin MAX initialization function.  
+Refer to the platform-specific content below to confirm that the SDK is installed properly.  
+Note that the mediation configuration must first be completed in the AppLovin MAX admin console.  
 
 #### Android
-아래 초기화 함수를 통해 Initialize를 합니다.
+Initialize using the initialization function below.
 ```
 AppLovinSdk.getInstance(activity).initialize(initConfigBuilder.build(), new AppLovinSdk.SdkInitializationListener() {
             @Override
             public void onSdkInitialized(AppLovinSdkConfiguration appLovinSdkConfiguration) {
-                //SDK 설정 완료 시 진입
+                // Called when the SDK setup completes
             }
         });
 ```
@@ -74,12 +68,12 @@ let initConfig = ALSdkInitializationConfiguration(sdkKey: AdIds.appKey) { builde
 ```
 
 
-### 4. 참고 사항
-* 3rd Party Adapter의 경우 AppLovin MAX SDK의 미디에이션에 3rd Party로 참여하는 것이므로, 해당 프로젝트에 AppLovin MAX SDK가 설치되어 있어야 합니다.  
-* AppLovin MAX SDK를 설치하지 않은 경우 아래 각 OS별 링크를 통해 AppLovin MAX SDK의 설치 및 광고 설정을 진행해 주셔야 합니다.  
-  * Android : [AppLovin MAX Android 가이드 바로가기](https://support.axon.ai/en/max/android/overview/integration)
-  * iOS : [AppLovin MAX iOS 가이드 바로가기](https://support.axon.ai/en/max/ios/overview/integration)
+### 4. Notes
+* The 3rd Party Adapter participates as a 3rd party within AppLovin MAX SDK mediation, so the AppLovin MAX SDK must already be installed in your project.  
+* If you have not installed the AppLovin MAX SDK, use the platform-specific links below to install the AppLovin MAX SDK and configure your ad units.  
+  * Android : [Go to the AppLovin MAX Android guide](https://support.axon.ai/en/max/android/overview/integration)
+  * iOS : [Go to the AppLovin MAX iOS guide](https://support.axon.ai/en/max/ios/overview/integration)
 
-* 최적화된 AppLovin Max SDK 버전은 아래와 같습니다.
-  * Android : 
+* The optimized AppLovin MAX SDK versions are as follows.
+  * Android : 13.6.3
   * iOS : 13.6.0

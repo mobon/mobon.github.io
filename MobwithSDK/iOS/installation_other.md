@@ -1,3 +1,6 @@
+🌐 [View English Guide](/iOS/installation_other_en)
+
+
 ## ATS(App Transport Security) 처리
 ---
 iOS 9부터 ATS(App Transport Security) 기능이 기본적으로 활성화 되어 있으며, 암호화된 HTTPS 방식의 통신만 허용됩니다.  

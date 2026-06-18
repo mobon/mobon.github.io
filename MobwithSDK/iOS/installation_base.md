@@ -1,3 +1,6 @@
+🌐 [View English Guide](/iOS/installation_base_en)
+
+
 ## Cocoapods 사용하여 설치
 ---
 1.3.0 버전 부터 cocoapod 및 미이에이션을 위한 SDK 적용 방법이 변경되었으니 참고 부탁드립니다.  

@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/installation_en)
+
 # 설치 방법
 
 ## Gradle 설정

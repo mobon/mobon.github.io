@@ -1,3 +1,6 @@
+🌐 [View English Guide](/iOS/installation_init_en)
+
+
 ## 프레임워크 Import
 ---
 SDK를 사용하기전 아래와 같이 프레임워크를 Import합니다.  
