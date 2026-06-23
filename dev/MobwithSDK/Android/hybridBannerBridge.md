@@ -50,17 +50,13 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
 
-        bridge = new MWHybridBannerBridge(webView);
+        bridge = new HybridBannerBridge.attach(this, webView);
         bridge.setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"));
-
-        webView.addJavascriptInterface(bridge, bridge.getBridgeName());
-
-        bridge.requestAd("{할당 받은 광고 지면번호}");
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
-                bridge.webViewFinishLoad(view);
+                hybridBannerBridge.webViewFinishLoad();
             }
         });
 
@@ -71,11 +67,11 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ### 페이지 로딩 완료의 알림
-페이지 로딩이 완료되면 실제 광고 로드 및 표시를 위해 아래 함수를 호출 해 줍니다.  
-이때 파라메터로 전달하는 webView는 MWHybridBannerBridge를 생성할때 전달한 webview와 동일한 객체여야 합니다.
+페이지 로딩이 완료(Webview의 onPageFinished 시점)되면 실제 광고 로드 및 표시를 위해 아래 함수를 호출 해 줍니다.  
+파라미터는 광고를 배치 할 WebPage의 placementId를 입력합니다.
 
 ```java
-bridge.webViewFinishLoad(webView);
+bridge.webViewFinishLoad();
 ```
 위 함수가 호출되면 MWHybridBannerBridge에서 광고 지면을 확인하여, 광고 로딩 및 표시를 자동으로 처리 해 줍니다.
 
