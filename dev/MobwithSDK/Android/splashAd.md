@@ -12,10 +12,10 @@ MobwithSplashBanner에는 발급받은 UNIT_ID 값을 반드시 설정해야 합
 
 ```java
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobwithSplashBanner splashBanner = new MobwithSplashBanner(activity,
+MobwithSplashBanner splashBanner = new MobwithSplashBanner(
+        activity,
         unitID, //발급받은 UNIT_ID
         true,  //전면형 광고 여부 (true:전면, false:하단 배너)
-        3      //광고 로드 타임아웃 시간(기본값: 5초), 해당 시간내 광고가 로드되지 않으면 광고 로딩 실패 콜백이 발생합니다.
 );
 
 // 배너뷰의 리스너를 등록합니다.
@@ -50,7 +50,7 @@ splashBanner.loadAd();
 ### 전체 화면 모드 사용
 useFullScreenAd를 true로 설정하면 전체화면 모드를 사용하게 됩니다.  기본값은 false 입니다.
 * 광고 사이즈에 따라 전체화면 사이즈를 표시하지 않을 수도 있습니다.
-```java
+```java 
 splashBanner.useFullScreenAd(true);
 ```
 
@@ -72,7 +72,7 @@ new MobwithSplashBanner.OnSplashAdListener() {
     }
 
     @Override
-    public void onSplashAdFailToReceived() {
+    public void onSplashAdFailToReceived(String message) {
         // 스플래시 광고 수신 실패 즉시 다음 화면으로 이동
     }
 }
