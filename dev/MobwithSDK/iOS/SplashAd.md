@@ -15,6 +15,12 @@ splashAd.category = [
     "A0004",
     ...
 ]
+splashAd.campaignCodes = [
+    "03b7a807c94f4beeb4115a23b2a5c39a",
+    "24f2e8051e044ddd867ba68ff467d8b0",
+    "4b56b65279a94d059eba23ffaf0ad869",
+    ...
+]
 
 splashAd.loadAd()
 ```
@@ -65,6 +71,21 @@ splashAd.category = [
 ]
 ```
 * 카테고리 값의 경우 협의된 내용을 참고 하시기 바랍니다.
+
+### 광고 캠페인 코드 설정
+campaignCodes 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
+```swift
+splashAd.campaignCodes = [
+    "03b7a807c94f4beeb4115a23b2a5c39a",
+    "24f2e8051e044ddd867ba68ff467d8b0",
+    "4b56b65279a94d059eba23ffaf0ad869",
+    ...
+]
+```
+* 캠페인 코드 값의 경우 협의된 내용을 참고 하시기 바랍니다.
+
+
+
 
 
 ### 광고 객체 제거

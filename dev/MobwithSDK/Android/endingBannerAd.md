@@ -62,7 +62,7 @@ endingBannerView.loadAd();
 ### 광고 카테고리 설정
 category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
 ```java
-splashBanner.setCategory(Arrays.asList(
+endingBannerView.setCategory(Arrays.asList(
      "A0001",
      "A0002",
      "A0003",
@@ -70,6 +70,21 @@ splashBanner.setCategory(Arrays.asList(
 ...
 ));
 ```
+
+
+### 광고 캠페인 코드 설정
+campaignCodes 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
+```java
+endingBannerView.setCampaignCodes(Arrays.asList(
+    "03b7a807c94f4beeb4115a23b2a5c39a",
+    "24f2e8051e044ddd867ba68ff467d8b0",
+    "4b56b65279a94d059eba23ffaf0ad869",
+    ...
+));
+
+```
+* 캠페인 코드 값의 경우 협의된 내용을 참고 하시기 바랍니다.
+
 
 ### 광고 리소스 해제
 광고가 더 이상 필요하지 않은 경우, destroy() 함수를 호출하여 광고 리소스를 해제 합니다.
