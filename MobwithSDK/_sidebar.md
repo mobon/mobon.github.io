@@ -10,7 +10,7 @@
     - 
     - [Native AD](Android/nativeAd.md)
     - [Native Loader AD](Android/nativeLoaderAd.md)
-    - [Interstitial AD](Android/interstitailAd.md)
+    - [Interstitial AD](Android/interstitialAd.md)
     - [Ending AD](Android/endingAd.md)
     - [Newsfeed AD](Android/newsfeedAd.md)
     - [FreePass AD](Android/freePassAd.md)

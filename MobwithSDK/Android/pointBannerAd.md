@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/pointBannerAd_en)
+
 ## Point Banner AD <!-- {docsify-ignore} -->
 해당 광고뷰는 광고 클릭 시 리워드를 제공하기 위한 기능 및 UI가 포함된 배너뷰입니다.  
 

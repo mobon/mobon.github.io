@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/bannerWithArticleAd_en)
+
 ## BannerWithArticle AD <!-- {docsify-ignore} -->
 
 ### 배너 광고뷰의 크기 설정

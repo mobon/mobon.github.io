@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/freePassAd_en)
+
 ## FreePass AD <!-- {docsify-ignore} -->
 
 ### 광고 로드 방법

@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/smartAd_en)
+
 ## Smart AD (카테고리 타겟팅) <!-- {docsify-ignore} -->
 카테고리 매핑을 통한 스마트 광고를 사용하시는 경우 setMobwithAdCategoryModel()를 통해서 카테고리 설정이 필요합니다.
 

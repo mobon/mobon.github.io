@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/usage_en)
+
 광고 타입별 사용 방법을 안내 합니다.
 
 

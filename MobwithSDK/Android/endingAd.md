@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/endingAd_en)
+
 ## Ending AD <!-- {docsify-ignore} -->
 
 ### 광고 로드 방법

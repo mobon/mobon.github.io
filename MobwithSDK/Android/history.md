@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/history_en)
+
 ## History <!-- {docsify-ignore} -->
 ---
 ## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->

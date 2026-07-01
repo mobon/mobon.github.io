@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/interstitialAd_en)
+
 ## Interstitial AD <!-- {docsify-ignore} -->
 
 ### 광고 로드 방법
