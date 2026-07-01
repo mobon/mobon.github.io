@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/rewardAd_en)
+
 ## Reward AD <!-- {docsify-ignore} -->
 
 ### 광고 로드 방법

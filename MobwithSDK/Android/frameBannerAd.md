@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/frameBannerAd_en)
+
 ## Frame Banner AD <!-- {docsify-ignore} -->
 
 ### FrameBannerView Native Container 설정

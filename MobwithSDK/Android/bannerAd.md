@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/bannerAd_en)
+
 ## Banner AD <!-- {docsify-ignore} -->
 
 ### 배너 광고 뷰 정의

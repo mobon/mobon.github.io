@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/getStarted_en)
+
 ## 최신 버전 및 변경사항
 ---
 ### 최신버전 : 1.0.84

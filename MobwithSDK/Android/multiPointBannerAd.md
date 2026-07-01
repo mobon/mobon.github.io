@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/multiPointBannerAd_en)
+
 ## Multi Point Banner AD <!-- {docsify-ignore} -->
 해당 광고의 기능은 MobwithPointBannerView와 동일한 기능을 제공하지만, 단일 광고만 표시하는 기존 뷰와 달리 최대 5개의 광고를 좌우 스크롤 형태로 노출하는 BannerView입니다.  
 

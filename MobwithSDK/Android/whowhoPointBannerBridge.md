@@ -1,3 +1,5 @@
+🌐 [View English Guide](/Android/whowhoPointBannerBridge_en)
+
 ## WhoWho Point Banner Bridge <!-- {docsify-ignore} -->
 웹뷰 기반의 하이브리드 앱에서 MobwithPointBannerView와 동일한 광고를 추가하기 위해 필요한 기능이 구현되어 있습니다.  
 사용 방법은 아래를 참고하시면 됩니다.

@@ -1,10 +1,10 @@
-🌐 [View English Guide](/Android/newsfeedAd_en)
+🌐 [한국어 가이드](/Android/newsfeedAd)
 
 ## Newsfeed Banner AD <!-- {docsify-ignore} -->
-한줄 기사가 표시되는 텍스트형 배너 뷰 입니다.  
-해당 뷰의 경우 높이값 30dp에 맞게 UI가 구현되어 있으며, 해당 지면의 높이값이 30dp 보다 작은 경우 화면에 UI가 제대로 표시되지 않을 수 있습니다.
+This is a text-type banner view that displays a single-line article.  
+This view is implemented with a UI that fits a height value of 30dp. If the height of the placement is smaller than 30dp, the UI may not display correctly on the screen.
 
-### 광고 로드 방법
+### How to Load the Ad
 ----
 ```java
 MobwithArticleBannerView adArticleBannerView =  new MobwithArticleBannerView(this)
