@@ -1,3 +1,5 @@
+🌐 [View English Guide](/iOS/history_en)
+
 # History
 ---
 ### [1.3.9] - 2026-06-30

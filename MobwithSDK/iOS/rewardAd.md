@@ -1,3 +1,5 @@
+🌐 [View English Guide](/iOS/rewardAd_en)
+
 ## Reward AD <!-- {docsify-ignore} -->
 
 

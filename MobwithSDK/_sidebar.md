@@ -26,9 +26,9 @@
 - iOS
   - [Getting Started](iOS/getStarted.md)
   - SDK Installation
-    - [SDK 설치](iOS/installation_base.md)
-    - [프로젝트 설정](iOS/installation_other.md)
-    - [SDK 초기화](iOS/installation_init.md)
+    - [SDK Installation](iOS/installation_base.md)
+    - [Project Configuration](iOS/installation_other.md)
+    - [SDK Initialization](iOS/installation_init.md)
   - [Ad formats](iOS/usage.md)
     - [Banner AD](iOS/banner.md)
     - [Native AD](iOS/nativeAd.md)
@@ -39,10 +39,10 @@
 - [Custom Adapter](CustomAdapter/base.md)
   - AdMob 3rd-Party Adapter
     - [SDK Installation](CustomAdapter/AdMob/install.md)
-    - [광고 설정](CustomAdapter/AdMob/loadAd.md)
+    - [Ad Configuration](CustomAdapter/AdMob/loadAd.md)
     - [History](CustomAdapter/AdMob/history.md)
   - AppLovin MAX 3rd-Party Adapter
     - [SDK Installation](CustomAdapter/Applovin/install.md)
-    - [광고 설정](CustomAdapter/Applovin/loadAd.md)
+    - [Ad Configuration](CustomAdapter/Applovin/loadAd.md)
     - [History](CustomAdapter/Applovin/history.md)
   
