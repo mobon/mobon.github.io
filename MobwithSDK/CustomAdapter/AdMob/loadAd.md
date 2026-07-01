@@ -1,3 +1,5 @@
+🌐 [View English Guide](/CustomAdapter/AdMob/loadAd_en)
+
 # 광고 설정
 
 ## 광고 송출
