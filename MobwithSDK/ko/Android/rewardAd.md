@@ -1,0 +1,83 @@
+🌐 <a href="../en/#/Android/rewardAd">View English Guide</a>
+
+## Reward AD <!-- {docsify-ignore} -->
+
+### 광고 로드 방법
+광고를 본 사용자에게 리워드를 지급하기 위한 광고 입니다.   
+리워드 광고는 광고 load가 성공적으로 완료되면 원하는 시점에 노출(show) 하는 프로세스로 진행됩니다.
+----
+```java
+//광고 객체 생성 시 Activity를 전달해주시는 걸 권장합니다.
+MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(activity)     //Activity context를 전달해주셔야 합니다.
+                .setUnitId("YOUR_UNIT_ID")  //발급받은 광고 UnitId 설정
+                .build();
+
+// 콜백을 받기위한 Listener는 iRewardAdsCallback를 사용합니다.
+rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorStr) {
+      if (result) {
+          //광고 로딩 성공
+          Toast.makeText(MainActivity.this, "광고 로드 성공(REWARD)", Toast.LENGTH_SHORT).show();
+      } else {
+          //광고 로딩 실패
+          Toast.makeText(MainActivity.this, "광고 로드 실패(REWARD)", Toast.LENGTH_SHORT).show();
+      }
+  }
+
+  @Override
+  public void onAdClicked() {
+    // 광고를 클릭한 경우
+  }
+
+  @Override
+  public void onOpened() {
+    // 로드된 광고가 화면에 표시된 경우
+  }
+
+  @Override
+  public void onFailOpened() {
+    // 로드된 광고를 화면에 표시하지 못한경우.
+  }
+
+  @Override
+  public void onClosed() {
+        // 광고 창을 닫은 경우
+        // 만약 광고창이 닫혀도 MobwithRewardVideoDialog에 대한 Log가 남거나 Lifecycle이 동작할 때 아래 함수(distroy())를 호출해주세요.
+        rewardVideoDialog.distroy();
+  }
+
+  @Override
+  public void onSkip() {
+    // 광고를 끝까지 보지 않고 스킵한 경우
+  }
+
+  @Override
+  public void onReward() {
+    // 각 광고별로 리워드 조건을 충족한 경우
+  }
+});
+
+//광고 show() 이전에 광고를 로드 해야합니다.
+rewardVideoDialog.load();
+```
+### 광고 송출
+----
+```java
+// onLoadedAdInfo에서 result가 성공일 경우
+// isLoaded() 함수를 통해 로드된 광고가 존재하는지 확인 할 수 있습니다.
+if (rewardVideoDialog.isLoaded()) {
+    rewardVideoDialog.show();
+}
+```
+
+### 리워드 광고 기능
+| 메서드                                                             | Description           |
+|:----------------------------------------------------------------|:----------------------|
+| setUnitId(String unitId)                                        | 발급 받은 UnitId 설정       |
+| load()                                                          | 광고 요청                 |
+| isLoaded()                                                      | 광고 요청 성공 여부           |
+| show()                                                          | 광고 송출                 |
+| destroy()                                                       | 광고 리소스 해제                 |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
+| close()                                                         | 광고 닫기                 |
