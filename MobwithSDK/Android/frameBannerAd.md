@@ -183,9 +183,9 @@ MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(
         context,
         mUnitId,
         containerView,
-        new NativeAdViewItemModel(
+        new NativeAdViewItemModel(  //직광고 native layout
                 R.layout.custom_native_ad_view,
-                R.id.mediaContainerView,
+                R.id.mediaContainerView,  //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
                 R.id.imageViewAD,
                 R.id.imageViewLogo,
                 R.id.textViewTitle,
@@ -194,9 +194,9 @@ MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(
                 R.id.infoViewLayout,
                 R.id.imageViewInfo
         ),
-        new NativeAdViewItemModel(
+        new NativeAdViewItemModel(  //네트워크 광고 native layout
                 R.layout.custom_native_ad_view_2,
-                R.id.mediaContainerView,
+                R.id.mediaContainerView,    //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
                 R.id.imageViewAD,
                 R.id.imageViewLogo,
                 R.id.textViewTitle,
