@@ -1,3 +1,5 @@
+🌐 [View English Guide](/iOS/nativeAd_en)
+
 ## Native AD <!-- {docsify-ignore} -->
 
 ## MMNativeAdView
@@ -130,19 +132,6 @@ extension NativeAdLoaderView: MobwithNativeAdViewRender {
 let mediaCodes:[String] = [ "광고 Unit ID" ] //1개 이상의 Unit를 설정해 주어야 합니다.
 var nativeAdLoader = MobWithNativeAdLoader(unitIds: mediaCodes, nibName: "NativeAdLoaderView", bundle: nil)
 nativeAdLoader.nativeAdLoaderDelegate = self
-//광고를 표시할 View 설정
-adLoader.setNativeADView(this,
-      R.layout.custom_native_ad_view,
-      R.id.mediaContainerView,
-      R.id.imageViewAD,
-      R.id.imageViewLogo,
-      R.id.textViewTitle,
-      R.id.textViewDesc,
-      R.id.buttonGo,
-      R.id.infoViewLayout,
-      R.id.imageViewInfo);
-
-
 .......
 
 ```

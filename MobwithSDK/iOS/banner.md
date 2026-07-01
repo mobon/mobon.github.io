@@ -1,3 +1,5 @@
+🌐 [View English Guide](/iOS/banner_en)
+
 ## Banner 광고 <!-- {docsify-ignore} -->
 <br>  
 <br>  

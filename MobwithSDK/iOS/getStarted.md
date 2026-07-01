@@ -1,3 +1,5 @@
+🌐 [View English Guide](/iOS/getStarted_en)
+
 ## 지원환경
 
 ---

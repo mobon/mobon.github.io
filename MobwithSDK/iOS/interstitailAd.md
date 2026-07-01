@@ -1,9 +1,11 @@
+🌐 [View English Guide](/iOS/interstitailAd_en)
+
 ## Interstitial AD <!-- {docsify-ignore} -->
 
 
 ## MobWithInterstitailAd
 ---
-MobWithInterstitailAd를 이용하여 화면에 전면배너를 표시 할 수 있습니다.  
+MobWithInterstitailAd를 이용하여 화면에 전면 광고를 표시 할 수 있습니다.  
 MobWithInterstitailAd의 사용은 아래 예시를 참고 하시면 됩니다.
 
 ```swift
@@ -16,7 +18,7 @@ interstitialAd.unitId = "{전달 받은 지면번호}"
 interstitialAd.loadAd()
 ```
 
-### loaded()
+### loadAd()
 광고를 로드 합니다.  
 전면배너의 경우 광고 로드와 화면에 표시하는것이 분리 되어 있으며,  광고의 빠른 표시를 위해 실제 광고가 표시되는 시점 이전에 미리 광고를 불러 두시는 것을 권장 드립니다.
 
