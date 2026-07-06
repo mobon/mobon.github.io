@@ -1,5 +1,12 @@
 ## History <!-- {docsify-ignore} -->
 ---
+## [1.0.85] - 2026-07-06 <!-- {docsify-ignore} -->
+- 신규 광고 상품 추가 (splashAd, hybridBannerBridge, endingBannerView)
+
+## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
+- 리워드 Prepare bug fix
+- ADID 갱신 로직
+
 ## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
 - 배너 닫기 버튼 기능 추가
 - Applovin MAX Imp, Click 통계 API 추가

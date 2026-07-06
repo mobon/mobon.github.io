@@ -1,10 +1,9 @@
 ## 최신 버전 및 변경사항
 ---
-### 최신버전 : 1.0.83
+### 최신버전 : 1.0.85
 
 ### 변경사항
-- 배너 닫기 버튼 기능 추가
-- Applovin MAX Imp, Click 통계 API 추가
+- 신규 광고 상품 추가 (splashAd, hybridBannerBridge, endingBannerView)
 
 ## 지원환경
 ---
