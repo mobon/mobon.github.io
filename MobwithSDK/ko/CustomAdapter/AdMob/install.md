@@ -24,7 +24,7 @@ implementation("io.github.mobon:MobwithAdMobMediationAdapter:1.0.0-alpha2")
 implementation("com.google.android.gms:play-services-ads:24.2.0")  
 implementation("com.google.android.gms:play-services-ads-identifier:17.0.0")  
 //MOBWITH SDK
-implementation("io.github.mobon:mobwithSDK:1.0.80")
+implementation("io.github.mobon:mobwithSDK:1.0.80") //원활한 광고 송출을 위해 반드시 1.0.80 버전을 사용해야 합니다.
 implementation("com.github.Dimezis:BlurView:version-3.2.0")
 ```
 ### 3. SDK 설치 완료 확인
