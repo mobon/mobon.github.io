@@ -14,9 +14,19 @@ AdMob 3rd Party Adapter를 사용하기 위한 가이드 입니다.
 
 
 ### 2. AdMob 3rd-Party Adapter SDK 추가
-별도로 전달 드린 AAR파일(Android) 또는 xcframework(iOS)를 프로젝트에 포함시켜 줍니다. 
+각 OS별 아래를 참고하여 3rd-Party Adapter를 추가해 줍니다.
 
-
+- Android
+```
+//AdmobMediationAdapter  
+implementation("io.github.mobon:MobwithAdMobMediationAdapter:1.0.0-alpha2")  
+//Admob SDK  
+implementation("com.google.android.gms:play-services-ads:24.2.0")  
+implementation("com.google.android.gms:play-services-ads-identifier:17.0.0")  
+//MOBWITH SDK
+implementation("io.github.mobon:mobwithSDK:1.0.84")
+implementation("com.github.Dimezis:BlurView:version-3.2.0")
+```
 ### 3. SDK 설치 완료 확인
 AdMob의 초기화 함수의 콜백을 통해 SDK 설치가 제대로 되었는지 확인이 가능 합니다.  
 각 OS별 아래 내용을 참고하셔서 SDK가 제대로 설치되었는지 확인 바랍니다.  
