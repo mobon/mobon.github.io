@@ -16,7 +16,37 @@ For the parts that each per-OS SDK requires you to add for mediation, apply them
 
 
 ### 2. Add the AdMob 3rd-Party Adapter SDK
-Include the AAR file (Android) or xcframework (iOS) provided to you separately in your project.
+Refer to the platform-specific sections below to add the 3rd-Party Adapter.
+
+#### Android
+```
+//AdmobMediationAdapter  
+implementation("io.github.mobon:MobwithAdMobMediationAdapter:1.0.0-alpha2")  
+//Admob SDK  
+implementation("com.google.android.gms:play-services-ads:24.2.0")  
+implementation("com.google.android.gms:play-services-ads-identifier:17.0.0")  
+//MOBWITH SDK
+implementation("io.github.mobon:mobwithSDK:1.0.80") // To ensure stable ad delivery, you must use version 1.0.80 or later.
+implementation("com.github.Dimezis:BlurView:version-3.2.0")
+```
+
+#### iOS  
+If you already configured the CocoaPods source declarations during the MobWith SDK installation above, you can ignore that part.
+```
+# CocoaPods source declarations. Note: the order matters, otherwise pods may not be fetched correctly.
+
+# Base repo.
+source 'https://cdn.cocoapods.org/'                   
+
+# MobWithAdSDK repo.   
+source 'https://github.com/mobon/MobwithAdSpecs.git'  
+source 'https://github.com/mobon/MobwithAdSpecs.git'  
+
+# Add the AdMob 3rd-Party Adapter SDK
+pod 'MobWithAdMobMediationAdapter'
+
+```
+
 
 
 ### 3. Verifying that SDK installation is complete

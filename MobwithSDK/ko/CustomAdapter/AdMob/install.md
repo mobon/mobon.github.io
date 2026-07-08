@@ -16,7 +16,7 @@ AdMob 3rd Party Adapter를 사용하기 위한 가이드 입니다.
 ### 2. AdMob 3rd-Party Adapter SDK 추가
 각 OS별 아래를 참고하여 3rd-Party Adapter를 추가해 줍니다.
 
-- Android
+#### Android
 ```
 //AdmobMediationAdapter  
 implementation("io.github.mobon:MobwithAdMobMediationAdapter:1.0.0-alpha2")  
@@ -27,6 +27,24 @@ implementation("com.google.android.gms:play-services-ads-identifier:17.0.0")
 implementation("io.github.mobon:mobwithSDK:1.0.80") //원활한 광고 송출을 위해 반드시 1.0.80 버전을 사용해야 합니다.
 implementation("com.github.Dimezis:BlurView:version-3.2.0")
 ```
+
+#### iOS  
+cocoapod 소스 지정 부분은 위 MobwithSDK 설치 과정에서 이미 설정하신 경우 무시하셔도 됩니다.
+```
+# Cocoapod 소스 지정.  순서에 따라 제대로 가져오지 못 할 수 있으니 주의 바랍니다.
+
+# 기본 Repo.
+source 'https://cdn.cocoapods.org/'                   
+
+# MobWithAdSDK의 Repo.   
+source 'https://github.com/mobon/MobwithAdSpecs.git'  
+
+# AdMob 3rd-Party Adapter SDK 추가
+pod 'MobWithAdMobMediationAdapter'
+
+```
+
+
 ### 3. SDK 설치 완료 확인
 AdMob의 초기화 함수의 콜백을 통해 SDK 설치가 제대로 되었는지 확인이 가능 합니다.  
 각 OS별 아래 내용을 참고하셔서 SDK가 제대로 설치되었는지 확인 바랍니다.  
