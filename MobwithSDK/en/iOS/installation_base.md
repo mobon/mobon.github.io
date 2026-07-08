@@ -34,6 +34,8 @@ pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
 
 # Admob Adapter
 pod 'MobWithAdMobAdapter', '12.14.0.1.3.4'
+# If you are using AdMob SDK 12.6.x, use the following Adapter version.
+# pod 'MobWithAdMobAdapter', '12.6.0.1.3.10'
 
 # Cauly Adapter
 pod 'MobWithCaulyAdapter', '3.1.22.1.3.1'
