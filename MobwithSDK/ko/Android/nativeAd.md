@@ -180,7 +180,12 @@ nativeAdView.performAdClicked();
 
 ### 서브 레이아웃 기능
 ----
-- 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.
+- 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.   
+
+  | Parameter                                                             | Description                        |
+  |:----------------------------------------------------------------|:-----------------------------------|
+  | directAdViewItemModel                              | 직광고 Layout       |
+  | nativeAdViewItemModel                                                        | 네트워크광고 Layout                              |
 - 사용 방법은 위와 동일하나, MobwithNativeAdView 생성 시 전달하는 파라미터가 다릅니다.  
   아래는 이에 대한 예시입니다.
 ```java
