@@ -18,12 +18,13 @@ AppLovin MAX 3rd Party Adapter를 사용하기 위한 가이드 입니다.
 
 #### Android
 ```
-//AdmobMediationAdapter  
+//ApplovinMediationAdapter  
 implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.0.0-alpha")  
-//Admob SDK  
-implementation("com.google.android.gms:play-services-ads:24.2.0")  
-implementation("com.google.android.gms:play-services-ads-identifier:17.0.0")  
+//Applovin SDK
+implementation("com.applovin:applovin-sdk:+@aar")    
 //MOBWITH SDK
+implementation 'com.google.android.gms:play-services-ads:23.0.0'
+implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
 implementation("io.github.mobon:mobwithSDK:1.0.84")
 implementation("com.github.Dimezis:BlurView:version-3.2.0")
 ```
