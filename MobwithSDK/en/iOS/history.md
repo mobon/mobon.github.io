@@ -2,6 +2,9 @@
 
 # History
 ---
+### [1.3.9] - 2026-07-08
+- Improved NativeAdView
+
 ### [1.3.9] - 2026-06-30
 - Minor bug fixes
 
