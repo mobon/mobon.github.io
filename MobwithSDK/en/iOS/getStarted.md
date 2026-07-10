@@ -24,7 +24,8 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 
 ---
 
-- Latest version : 1.3.11
+- Latest version : 1.3.12
 - Changes
   - Improved NativeAdView
+  - Minor bug fixes
 

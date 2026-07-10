@@ -2,6 +2,10 @@
 
 # History
 ---
+### [1.3.12] - 2026-07-10
+- NativeAdView 개선
+- 마이너 오류 수정
+ 
 ### [1.3.11] - 2026-07-08
 - NativeAdView 개선
 
@@ -14,6 +18,13 @@
 ### [1.3.7] - 2026-06-10
 - 마이너 오류 수정
 
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
+
 ### [1.3.6] - 2026-06-10
 - SDK내 불필요 요소 제거
 - 마이너 오류 수정
@@ -21,13 +32,6 @@
 ### [1.3.5] - 2026-06-01
 - 배너 광고에 닫기 버튼 표시 기능 추가
 
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-이전 버전 히스토리 펼치기
-</summary>
 ### [1.3.4] - 2026-05-14
 - NativeAd에서 AdMob 광고 미디에이션시 일부 광고 노출 오류 수정
 
