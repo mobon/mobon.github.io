@@ -61,7 +61,19 @@ android:usesCleartextTraffic="true"
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85)  
 - MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.25.** 버전</span>에 최적화 되어 있습니다.  
-- SDK 세팅 부분만 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
+- 아래는 모비위드 SDK에 세팅된 ADOP Adapter 입니다. 설정 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
+```groovy
+implementation 'ad.helper.openbidding:admob-obh:3.25.0'
+implementation 'com.adop.sdk:bidmad-androidx:3.25.0'
+implementation 'com.adop.sdk.adapter:admob:24.4.0.0'
+implementation 'com.adop.sdk.adapter:adpie:1.13.6.0'
+implementation 'com.adop.sdk.adapter:adpopcorn:3.8.2.0'
+implementation 'com.adop.sdk.adapter:criteo:6.0.0.2'
+implementation 'com.adop.sdk.adapter:fyber:8.3.7.0'
+implementation 'com.adop.sdk.adapter:pubmatic:2.7.1.4'
+implementation 'com.adop.sdk.adapter:unityads:4.15.0.0'
+implementation 'com.adop.sdk.adapter:vungle:7.5.0.0'
+```
 - 참고사항  
 ADOP Bidmad 이외 다른 광고 SDK를 사용 시 라이브러리 충돌이 될 수 있으니 아래 사항 참고 바랍니다.  
 &nbsp;- "com.adop.sdk.adapter:adfit:{version}"       //adfit 광고 사용 시 lib 겹치는 문제로 제거 해야 합니다.  
