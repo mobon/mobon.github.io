@@ -20,7 +20,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # MobWithAdSDK 추가
-pod 'MobWithAdSDK', '1.3.12'
+pod 'MobWithAdSDK', '1.3.13'
 
 ```
 
@@ -55,7 +55,7 @@ pod 'MobWithPangleAdapter', '7.8.0.4.1.3.1'
 
 # BidMad의 경우 아래와 같이 BidMad의 Adapter를 무조건 하나 이상 적용해 주셔야 합니다.  
 # BidMad의 Adapter에 대해서는 수동 설치의 각 SDK 가이드 문서를 참고 바랍니다.
-pod 'MobWithBidMadAdapter', '6.13.6.1.3.12'
+pod 'MobWithBidMadAdapter', '6.13.6.1.3.13'
 pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
 
 pod 'BidmadSDK/core', '= 6.13.6'             # 빌드 오류 대응
