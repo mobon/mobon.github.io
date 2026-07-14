@@ -160,13 +160,13 @@ nativeAdView.loadAd();
 |         unitId          | 발급 받은 광고 unit id                                                                                                                                           |
 |      containerView      | 광고를 표시할 각 View들을 담고있는 레이아웃 (기타 각 View의 ID를 확인하지 못하게 되는경우 광고가 제대로 표시되지 않을 수 있다.)                                                                            |
 |  mediaViewContainerID   | 광고 Image를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. <br>가급적 FrameLayout의 사용을 권장합니다.<br>ViewGroup에 따라 미디어(사진, 동영상) 광고가 노출되지 않을 수 있으니, 반드시 광고 노출 여부를 확인하시기 바랍니다. |
-|      adImageViewID      | 광고 Image를 표시할 ImageView의 레이아웃 ID                                                                                                                           |
-|    adLogoImageViewID    | 광고주 로고를 표시할 ImageView의 레이아웃 ID                                                                                                                             |
-|       titleViewID       | 광고 Title을 표시할 TextView의 레이아웃 ID                                                                                                                            |
-|    descriptionViewID    | 광고에 대한 설명이 표시될 TextView의 레이아웃 ID                                                                                                                           |
-|    gotoSiteButtonID     | 광고 사이트 이동에 대한 메세지가 출력될 TextView의 레이아웃 ID                                                                                                                   |
-| infoLogoViewContainerID | 광고 Info Logo를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. AppLovin 미디에이션을 위해 사용한다.                                                                               |
-|   infoLogoImageViewID   | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID                                                                                                                       |
+|      adImageViewID      | 광고 Image를 표시할 ImageView의 레이아웃 ID (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                                                                          |
+|    adLogoImageViewID    | 광고주 로고를 표시할 ImageView의 레이아웃 ID (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                                                                            |
+|       titleViewID       | 광고 Title을 표시할 TextView의 레이아웃 ID (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                                                                           |
+|    descriptionViewID    | 광고에 대한 설명이 표시될 TextView의 레이아웃 ID (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                                                                          |
+|    gotoSiteButtonID     | 광고 사이트 이동에 대한 메세지가 출력될 TextView의 레이아웃 ID (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                                                                  |
+| infoLogoViewContainerID | 광고 Info Logo를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. AppLovin 미디에이션을 위해 사용한다. (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                              |
+|   infoLogoImageViewID   | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID (사용하지 않을 시 -1로 세팅하시기 바랍니다.)                                                                                           |
 
 ### 광고 클릭 버튼을 사용하지 못하는 경우
 ----
