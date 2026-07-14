@@ -2,6 +2,9 @@
 
 ## History <!-- {docsify-ignore} -->
 ---
+## [1.0.86] - 2026-07-14 <!-- {docsify-ignore} -->
+- freepass bug fix
+
 ## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
 - 리워드 Prepare bug fix
 - ADID 갱신 로직
