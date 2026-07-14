@@ -62,6 +62,8 @@ extension DefaultNativeAdView: MobwithNativeAdViewRender {
 }
 ```
 
+* Note: When using mediation with the ADOP BidMad SDK, use 'BIDMADNativeAdView' instead of 'UIView'.
+
 <br>
 <br>
 

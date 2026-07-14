@@ -63,7 +63,7 @@ extension DefaultNativeAdView: MobwithNativeAdViewRender {
 }
 ```
 
-  
+* 주의사항: ADOP BidMad SDK의 미디에이션을 사용하는 경우 'UIView' 대신 'BIDMADNativeAdView'를 사용해 주셔야 합니다.
   
 
 
