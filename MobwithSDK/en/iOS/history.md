@@ -2,6 +2,10 @@
 
 # History
 ---
+
+### [1.3.14] - 2026-07-15
+- Minor bug fixes
+
 ### [1.3.13] - 2026-07-14
 - Minor bug fixes
 

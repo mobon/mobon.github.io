@@ -19,7 +19,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # Add MobWithAdSDK
-pod 'MobWithAdSDK', '1.3.12'
+pod 'MobWithAdSDK', '1.3.14'
 
 ```
 
@@ -54,7 +54,7 @@ pod 'MobWithPangleAdapter', '7.8.0.4.1.3.1'
 
 # For BidMad, you must apply at least one of the BidMad Adapters as shown below.  
 # For the BidMad Adapters, refer to each SDK's guide document in the Manual Installation section.
-pod 'MobWithBidMadAdapter', '6.13.6.1.3.12'
+pod 'MobWithBidMadAdapter', '6.13.6.1.3.14'
 pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
 
 pod 'BidmadSDK/core', '= 6.13.6'             # Workaround for build errors
