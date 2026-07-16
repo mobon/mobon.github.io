@@ -18,7 +18,7 @@ Please refer to the following instructions for creating the ad UI and loading ad
 #### Creating and Connecting the Ad UI Using Interface Builder (XIB)
 First, create the ad UI by referring to the example below.
 
-![admob create mediation groups3](../../img/ios_native_nib.png)
+![](../../img/ios_native_nib.png)
 
 * This is only a sample layout. Please configure the UI appropriately according to the integration guide of the mediation SDK you are using.  
 Next, connect each view by implementing `MobwithNativeAdViewRender` as shown below.
