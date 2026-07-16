@@ -1,4 +1,4 @@
-🌐 [View English Guide](../en/#/iOS/nativeAd)
+🌐 <a href="../en/#/iOS/nativeAd">View English Guide</a>
 
 ## Native AD 
 
@@ -18,7 +18,7 @@
 #### Interface Builder(XIB)를 통한 광고 UI 생성 및 UI 연결
 
 먼저 아래 이미지를 참고하여 광고 UI를 구성합니다.   
-![](../../../img/ios_native_nib.png)
+![](/img/ios_native_nib.png)
 
 
 - 구성 예시이며, 사용하는 외부 미디에이션 SDK 등에 대한 가이드를 참고하여 적절히 구성 하시면 됩니다.
