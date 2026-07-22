@@ -24,7 +24,7 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 
 ---
 
-- Latest version : 1.3.14
+- Latest version : 1.3.16
 - Changes
   - Minor bug fixes
 

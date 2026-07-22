@@ -17,7 +17,8 @@
 
 #### Interface Builder(XIB)를 통한 광고 UI 생성 및 UI 연결
 
-먼저 아래 이미지를 참고하여 광고 UI를 구성합니다.   
+먼저 아래 이미지를 참고하여 광고 UI를 구성합니다.  
+
 ![](../../img/ios_native_nib.png)
 
 
