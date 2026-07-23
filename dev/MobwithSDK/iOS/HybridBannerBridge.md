@@ -169,6 +169,10 @@ extension ViewController: MMHybridBannerBridgeDelegate {
     func mobWithHybridBannerBridgeAdClicked(_ bridge: MMHybridBannerBridge?) {
         print("#function")
     }
+
+    func mobWithHybridBannerBridgeAdLoadFailed(_ bridge: MMHybridBannerBridge?) {
+        print("#function")
+    }
 }
 ```
 
@@ -176,3 +180,7 @@ extension ViewController: MMHybridBannerBridgeDelegate {
 광고를 클릭한 경우 전달 됩니다.
 위 '광고 이벤트 처리' 항목에서 'bridge?.handleBridgeMessage(message)'의 결과값이 true인 경우를 활용하셔도 되나,
 위 콜백 함수를 통하여 판단하셔도 됩니다.
+
+
+### mobWithHybridBannerBridgeAdLoadFailed(_ bridge: MMHybridBannerBridge?)                                
+광고 로드에 실패한 경우 호출 됩니다.
