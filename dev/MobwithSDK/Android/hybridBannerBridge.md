@@ -58,6 +58,22 @@ public class MainActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
 
         bridge = new HybridBannerBridge.attach(this, webView);
+        bridge.setOnAdListener(new HybridBannerBridge.OnAdListener() {
+            @Override
+            public void onAdLoaded() {
+                //광고 로딩 성공
+            }
+
+            @Override
+            public void onAdLoadedFail(String msg) {
+                //광고 로딩 실패
+            }
+
+            @Override
+            public void onAdClicked(@NonNull String url) {
+                //광고 클릭
+            }
+        });
         bridge.setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"));
         bridge.setCampaignCodes(Arrays.asList(
             "03b7a807c94f4beeb4115a23b2a5c39a",
