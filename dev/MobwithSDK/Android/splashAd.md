@@ -42,7 +42,6 @@ splashBanner.loadAd();
 | setBannerUnitId(String unitId)                                   | 발급 받은 UnitId 설정                 |
 | loadAd()                                                         | 광고 요청                           |
 | setAdListener(MobwithSplashBannerView.OnSplashListener listener) | 광고 Callback                     |
-| setCategory(List<String> categories)                             | 카테고리 타겟팅 광고 기능                  |
 | setTimeOutSec(int seconds)                                       | 광고 요청 타임아웃 시간 (초).  <br>해당 시간내 광고 로딩이 완료되지 않으면 광고 로딩 실패 콜백이 전달 됩니다.               |
 | useFullScreenAd(boolean fullScreen)                          | 광고 타입 설정 (true:전면, false:하단 배너) |
 | destroy()                                                        | 광고 리소스 해제                       |`
@@ -78,33 +77,6 @@ new MobwithSplashBannerView.OnSplashAdListener() {
 }
 
 ```
-
-### 광고 카테고리 설정
-category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
-```java
-splashBanner.setCategory(Arrays.asList(
-     "A0001",
-     "A0002",
-     "A0003",
-     "A0004",
-     ...
-));
-```
-* 카테고리 값의 경우 협의된 내용을 참고 하시기 바랍니다.
-
-
-### 광고 캠페인 코드 설정
-campaignCodes 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
-```java
-splashBanner.setCampaignCodes(Arrays.asList(
-    "03b7a807c94f4beeb4115a23b2a5c39a",
-    "24f2e8051e044ddd867ba68ff467d8b0",
-    "4b56b65279a94d059eba23ffaf0ad869",
-    ...
-));
-
-```
-* 캠페인 코드 값의 경우 협의된 내용을 참고 하시기 바랍니다.
 
 
 

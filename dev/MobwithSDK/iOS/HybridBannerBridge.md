@@ -10,11 +10,11 @@
 ```html
 <html>
     .... 
-    <div class="mobwith-banner" data-placement-id="1001">
+    <div class="mobwith-banner" data-placement-id="1001" data-zone-type="05">
     
     ....
     
-    <div class="mobwith-banner" data-placement-id="1002">
+    <div class="mobwith-banner" data-placement-id="1002" data-zone-type="02">
     ....
 
 </html>
@@ -32,6 +32,11 @@ data-placement-id에는 해당 지면 위치에 할당받은 지면번호를 지
 data-placement-id="{ 할당받은 광고 지면번호 }"
 ```
 
+data-zone-type에는 노출할 광고 타입을 지정 합니다.  
+광고 타입 코드는 지면번호와 함께 전달 됩니다.
+```html
+data-placement-id="{ 광고 타입 코드 }"
+```
 
 
 
@@ -102,8 +107,8 @@ bridge?.webViewFinishLoad(webView)
 
 
 ### 광고 이벤트 처리
-userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) 콜백을 수신하면, 
-handleBridgeMessage() 함수를 호출 해 줍니다.  
+'userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage)' 콜백을 수신하면, 
+'handleBridgeMessage()' 함수를 호출 해 줍니다.  
 만약 내부적으로 해당 콜벡을 처리하게 되면 true를 넘겨줍니다.
 ```swift
 
@@ -152,3 +157,21 @@ bridge.campaignCodes = [
 ]
 ```
 * 캠페인 코드 값의 경우 협의된 내용을 참고 하시기 바랍니다.
+
+
+### MMHybridBannerBridgeDelegate
+하이브리드 브릿지를 통해 노출된 광고에서 발생하는 각종 이벤트 콜백을 전달 받고자 하시는 경우 적용하시면 됩니다.
+
+```swift
+extension ViewController: MMHybridBannerBridgeDelegate {
+    
+    func mobWithHybridBannerBridgeAdClicked(_ bridge: MMHybridBannerBridge?) {
+        print("#function")
+    }
+}
+```
+
+### mobWithHybridBannerBridgeAdClicked(_ bridge: MMHybridBannerBridge?)                                
+광고를 클릭한 경우 전달 됩니다.
+위 '광고 이벤트 처리' 항목에서 'bridge?.handleBridgeMessage(message)'의 결과값이 true인 경우를 활용하셔도 되나,
+위 콜백 함수를 통하여 판단하셔도 됩니다.

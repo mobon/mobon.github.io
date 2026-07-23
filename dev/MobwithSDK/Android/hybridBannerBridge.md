@@ -9,11 +9,11 @@
 ```html
 <html>
     .... 
-    <div class="mobwith-banner" data-placement-id="1001">
+    <div class="mobwith-banner" data-placement-id="1001" data-zone-type="05">
     
     ....
     
-    <div class="mobwith-banner" data-placement-id="1002">
+    <div class="mobwith-banner" data-placement-id="1002" data-zone-type="02">
     ....
 
 </html>
@@ -31,6 +31,13 @@ data-placement-id에는 해당 지면 위치에 할당받은 지면번호를 지
 ```html
 data-placement-id="{ 할당받은 광고 지면번호 }"
 ```
+
+data-zone-type에는 노출할 광고 타입을 지정 합니다.  
+광고 타입 코드는 지면번호와 함께 전달 됩니다.
+```html
+data-placement-id="{ 광고 타입 코드 }"
+```
+
 
 ### 웹뷰 설정 및 HybridBannerBridge 등록
 아래를 참고하여 HybridBannerBridge를 생성후, 웹뷰를 설정을 진행 합니다.
