@@ -10,11 +10,11 @@
 ```html
 <html>
     .... 
-    <div class="mobwith-banner" data-placement-id="1001" data-zone-type="05">
+    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="anndroid_zone_id" data-zone-type="05" > </div>
     
     ....
     
-    <div class="mobwith-banner" data-placement-id="1002" data-zone-type="02">
+    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="anndroid_zone_id" data-zone-type="02" > </div>
     ....
 
 </html>
