@@ -78,9 +78,9 @@ public class MainActivity extends AppCompatActivity {
         });
         bridge.setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"));
         bridge.setCampaignCodes(Arrays.asList(
-            "03b7a807c94f4beeb4115a23b2a5c39a",
-            "24f2e8051e044ddd867ba68ff467d8b0",
-            "4b56b65279a94d059eba23ffaf0ad869",
+                "campaign1",
+                "campaign2",
+                "campaign3",
             ...
         ));
 
