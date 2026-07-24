@@ -1,5 +1,26 @@
 🌐 <a href="../ko/#/iOS/installation_base">한국어 가이드</a>
 
+## Install Using Swift Package Manager (SPM)
+Swift Package Manager (SPM) currently supports installation of the base framework only.  
+If you install the SDK using SPM, we recommend installing each mediation Adapter manually. Please refer to the [[Manual Installation > Installing Adapter Frameworks](/iOS/installation_base?id=installing-adapter-frameworks)] section below.
+
+Use the following Git repository URL to add the package.
+```swift
+https://github.com/mobon/MobWithAdSDK_SPM
+
+```
+
+### 1. Add the Package
+Add the package to your project using the Git repository URL shown above.  
+![](../../img/spm_add_package.png)
+
+### 2. Verify the Framework in Targets > Frameworks, Libraries, and Embedded Content
+Make sure that the `MobWithADSDK` framework has been added as shown in the screenshot below.  
+If it was not added automatically, click the **+** button to add the framework manually.
+![](../../img/spm_add_to_target.png)
+
+
+
 ## Install Using CocoaPods
 ---
 Please note that, starting from version 1.3.0, the way CocoaPods and the SDKs for mediation are applied has changed.  
@@ -8,7 +29,7 @@ In particular, note that the pod name has changed from the previous 'MobWithAD' 
 
 ### 1. Install MobWithAdSDK
 Add 'MobWithAdSDK' to your project's Podfile.  
-The example below installs the SDK by specifying version 1.3.8.
+The example below installs the SDK by specifying version 1.3.16.
 ```
 # CocoaPods source declarations. Note: the order matters, otherwise pods may not be fetched correctly.
 
