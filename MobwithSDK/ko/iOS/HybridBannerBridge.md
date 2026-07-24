@@ -68,6 +68,7 @@ class ViewController: UIViewController {
             "4b56b65279a94d059eba23ffaf0ad869",
             ...
         ]
+        bridge?.adDelegate = self // MMHybridBannerBridgeDelegate 등록.
 
         // 브릿지를 등록해 줍니다.  광고 클릭등의 이벤트 발생시 자체적으로 랜딩페이지 이동 등을 처리해 줍니다.
         webView.configuration.userContentController.add(self, name: bridge?.bridgeName ?? "")
