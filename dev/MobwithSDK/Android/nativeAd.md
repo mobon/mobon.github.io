@@ -148,6 +148,8 @@ nativeAdView.loadAd();
 | setUnitId(String unitId)                              | 발급 받은 UnitId 설정       |
 | loadAd()                                                        | 광고 요청                              |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능                     |
+| setCategory(List<String> categories)         | 카테고리 타겟팅 광고 기능  |
+| setCampaignCodes(List<String> campaignCodes) | 타겟팅 캠페인 코드 설정   |
 | performAdClicked()                                          | 광고 클릭 이벤트 발생 |
 
 ### MobwithNativeAdView 파라미터 정의 (Native Layout)
