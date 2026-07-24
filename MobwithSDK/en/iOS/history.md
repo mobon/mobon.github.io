@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.17] - 2026-07-24
+- Release at SPM
+- Added SplashAd, HybridBannerBridge
+ 
 ### [1.3.16] - 2026-07-22
 - Minor bug fixes
 
@@ -11,6 +15,14 @@
 
 ### [1.3.13] - 2026-07-14
 - Minor bug fixes
+
+
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+Expand previous version history
+</summary>
 
 ### [1.3.12] - 2026-07-10
 - Improved NativeAdView
@@ -27,15 +39,6 @@
 
 ### [1.3.7] - 2026-06-10
 - Minor bug fixes
-
-
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-Expand previous version history
-</summary>
 
 ### [1.3.6] - 2026-06-10
 - Removed unnecessary elements within the SDK

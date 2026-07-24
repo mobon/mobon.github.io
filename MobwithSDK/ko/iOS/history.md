@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.17] - 2026-07-24
+- SPM버전 정식 배포
+- SplashAd, HybridBannerBridge 추가
+
 ### [1.3.16] - 2026-07-22
 - 마이너 오류 수정
 
@@ -11,6 +15,15 @@
 
 ### [1.3.13] - 2026-07-14
 - 마이너 오류 수정
+
+
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
+
 
 ### [1.3.12] - 2026-07-10
 - NativeAdView 개선
@@ -27,13 +40,6 @@
 
 ### [1.3.7] - 2026-06-10
 - 마이너 오류 수정
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-이전 버전 히스토리 펼치기
-</summary>
 
 ### [1.3.6] - 2026-06-10
 - SDK내 불필요 요소 제거
