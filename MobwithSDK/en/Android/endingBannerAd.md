@@ -10,11 +10,11 @@ It is recommended to use a FrameLayout as the banner container (ViewGroup) where
 ```xml
 ....
 <FrameLayout
-  android:id="@+id/bannerContainer"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  />
-....
+    android:id="@+id/bannerContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+/>
+    ....
 ```
 
 ### How to Load Ads
@@ -30,23 +30,23 @@ If you load the ad and add it to the container before showing a Dialog, the scre
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // You must set the issued UNIT_ID value for each ad view.
 MobWithEndingBannerView endingBannerView = new MobWithEndingBannerView(this)
-                                      .setBannerUnitId("Your Ad Unit ID");
+        .setBannerUnitId("Your Ad Unit ID");
 
 // Register the listener for the banner view.
 endingBannerView.setAdListener(new iEndingBannerCallback() {
-  @Override
-  public void onLoadedAdInfo(boolean result, String errorcode) {
-    if (result) {
-       // Called when the banner ad has finished loading
-       bannerContainer.removeAllViews();
-       // Add the banner view to the layout where you want to display the ad
-       bannerContainer.addView(endingBannerView);
-    } else {
-      // Called when banner ad display fails - even if automatic refresh is set via setInterval(), it will not refresh after failure.
-        endingBannerView.destroyAd();
-        endingBannerView = null;     
+    @Override
+    public void onLoadedAdInfo(boolean result, String errorcode) {
+        if (result) {
+            // Called when the banner ad has finished loading
+            bannerContainer.removeAllViews();
+            // Add the banner view to the layout where you want to display the ad
+            bannerContainer.addView(endingBannerView);
+        } else {
+            // Called when banner ad display fails - even if automatic refresh is set via setInterval(), it will not refresh after failure.
+            endingBannerView.destroyAd();
+            endingBannerView = null;
+        }
     }
-  }
 
     @Override
     public void onAdClicked() {
@@ -55,16 +55,17 @@ endingBannerView.setAdListener(new iEndingBannerCallback() {
 });
 
 // Request the ad.
-endingBannerView.loadAd();
+        endingBannerView.loadAd();
 ```
 
 ### Banner Ad Features
 | Method                                        | Description             |
-|:----------------------------------------------|:------------------------|
+|:-----------------------------------------------|:------------------------|
 | setBannerUnitId(String unitId)                | Set the issued UnitId   |
 | loadAd()                                      | Request an ad           |
 | setCategory(List<String> categories)          | Set category targeting for ads |
 | setCampaignCodes(List<String> campaignCodes)  | Set targeting campaign codes |
+| performAdClick()                              | Trigger the ad click event |
 | destroy()                                     | Release ad resources    |
 
 ### Setting Ad Categories
