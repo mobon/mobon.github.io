@@ -71,8 +71,7 @@ class ViewController: UIViewController {
         bridge?.adDelegate = self // Register the MMHybridBannerBridgeDelegate
         
         // Register the bridge. It automatically handles landing page navigation and other events such as ad clicks.
-        webView.configuration.userContentController.add(self, name: bridge?.bridgeName ?? "")
-        bridge?.requestAd(placementId: "{ Your Ad Unit ID }")
+        webView.configuration.userContentController.add(self, name: bridge?.bridgeName ?? "")\
         
         webView.navigationDelegate = self
         if let url = URL(string: "{ Web Page URL }") {
