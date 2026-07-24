@@ -2,10 +2,11 @@
 
 ## 최신 버전 및 변경사항
 ---
-### 최신버전 : 1.0.86
+### 최신버전 : 1.0.87
 
 ### 변경사항
-- bugfix
+- 신규 광고 상품 추가 (SplashAd, EndingBannerView, HybridBannerBridgeView)
+- 광고 성능 최적화
 
 ## 지원환경
 ---

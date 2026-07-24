@@ -2,6 +2,11 @@
 
 ## History <!-- {docsify-ignore} -->
 ---
+
+## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
+- 신규 광고 상품 추가 (SplashAd, EndingBannerView, HybridBannerBridgeView)
+- 광고 성능 최적화
+
 ## [1.0.86] - 2026-07-14 <!-- {docsify-ignore} -->
 - freepass bug fix
 
