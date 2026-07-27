@@ -15,7 +15,7 @@ android:layout_width="wrap_content"
 android:layout_height="wrap_content" >
 
     <FrameLayout
-        android:id="@+id/mediaContainerView"
+        android:id="@+id/mediaViewContainerID"
         android:layout_width="300dp"
         android:layout_height="220dp"
         android:background="#ff00ff00"
@@ -23,15 +23,17 @@ android:layout_height="wrap_content" >
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-      <ImageView
-              android:id="@+id/imageViewAD"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" />
+
+<!--      영상 광고일 시 mediaViewContainerID를 사용하고 이미지 광고일 시 adImageViewID를 사용하기 떄문에 내부에 구현을 권장합니다. -->
+        <ImageView 
+            android:id="@+id/adImageViewID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </FrameLayout>
   
     <ImageView
-        android:id="@+id/imageViewLogo"
+        android:id="@+id/adLogoImageViewID"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="#ffffccff"
@@ -43,7 +45,7 @@ android:layout_height="wrap_content" >
         />
 
     <TextView
-        android:id="@+id/textViewTitle"
+        android:id="@+id/titleViewID"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="5dp"
@@ -59,7 +61,7 @@ android:layout_height="wrap_content" >
         />
 
     <TextView
-        android:id="@+id/textViewDesc"
+        android:id="@+id/descriptionViewID"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:maxLines="1"
@@ -71,7 +73,7 @@ android:layout_height="wrap_content" >
         />
 
     <Button
-        android:id="@+id/buttonGo"
+        android:id="@+id/gotoSiteButtonID"
         android:layout_width="60dp"
         android:layout_height="35dp"
         android:background="#ccffcc"
@@ -84,7 +86,7 @@ android:layout_height="wrap_content" >
 
 
     <FrameLayout
-        android:id="@+id/infoViewLayout"
+        android:id="@+id/infoLogoViewContainerID"
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:background="#ffffccff"
@@ -94,7 +96,7 @@ android:layout_height="wrap_content" >
         app:layout_constraintTop_toTopOf="parent" >
 
         <ImageView
-            android:id="@+id/imageViewInfo"
+            android:id="@+id/infoLogoImageViewID"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>
@@ -118,7 +120,7 @@ nativeAdView = new MobwithNativeAdView(
                         context,
                         YOUR_UNIT_ID,       //발급받은 광고 Unit Id
                         (FrameLayout) findViewById(R.id.adview_container),  //광고를 보여줄 ContainerView(ViewGroup) FrameLayout 사용 권장 
-                        R.layout.custom_native_ad_view, //구현 한 Custom Native Ad 레이아웃 ID
+                        R.layout.custom_native_ad_view, //매체사에서 구현 한 Custom NativeAd 레이아웃 ID
                         R.id.mediaContainerView,    //광고 Image를 표시할 ImageView를 감싸는 ViewGroup ID (FrameLayout 사용 권장)
                         R.id.imageViewAD,
                         R.id.imageViewLogo,
