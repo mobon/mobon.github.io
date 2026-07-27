@@ -23,6 +23,11 @@ Below is example code for composing the native layout.
           app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintRight_toRightOf="parent">
 
+    <ImageView
+            android:id="@+id/imageViewAD"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
   </FrameLayout>
 
   <ImageView

@@ -29,7 +29,7 @@ Dialog 같은 경우 Show 하기 전에 광고를 로드하여 Container에 Add�
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobWithEndingBannerView endingBannerView = new MobWithEndingBannerView(this)
+EndingBannerView endingBannerView = new EndingBannerView(this)
                                       .setBannerUnitId(YOUR_UNIT_ID)
                                       .setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"))
                                       .setCampaignCodes(Arrays.asList(

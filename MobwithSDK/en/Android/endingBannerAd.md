@@ -1,6 +1,6 @@
 🌐 <a href="../ko/#/Android/endingBannerAd">한국어 가이드</a>
 
-## Ending Banner AD <!-- {docsify-ignore} -->
+## EndingBannerView <!-- {docsify-ignore} -->
 
 ### Definition of EndingBannerView
 ----
@@ -29,7 +29,7 @@ If you load the ad and add it to the container before showing a Dialog, the scre
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // You must set the issued UNIT_ID value for each ad view.
-MobWithEndingBannerView endingBannerView = new MobWithEndingBannerView(this)
+EndingBannerView endingBannerView = new EndingBannerView(this)
         .setBannerUnitId("Your Ad Unit ID");
 
 // Register the listener for the banner view.
