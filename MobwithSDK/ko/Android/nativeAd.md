@@ -154,12 +154,12 @@ nativeAdView.loadAd();
 ### Native AD 기능
 | 메서드                                                             | Description                        |
 |:----------------------------------------------------------------|:-----------------------------------|
-| setUnitId(String unitId)                              | 발급 받은 UnitId 설정       |
+| setUnitId(String unitId)                                        | 발급 받은 UnitId 설정       |
 | loadAd()                                                        | 광고 요청                              |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능                     |
-| setCategory(List<String> categories)         | 카테고리 타겟팅 광고 기능  |
-| setCampaignCodes(List<String> campaignCodes) | 타겟팅 캠페인 코드 설정   |
-| performAdClicked()                                          | 광고 클릭 이벤트 발생 |
+| setCategory(List<String> categories)                            | 카테고리 타겟팅 광고 기능  |
+| setCampaignCodes(List<String> campaignCodes)                    | 타겟팅 캠페인 코드 설정   |
+| performAdClicked()                                              | 광고 클릭 이벤트 발생 |
 
 ### MobwithNativeAdView 파라미터 정의 (Native Layout)
 
@@ -191,10 +191,10 @@ nativeAdView.performAdClicked();
 ----
 - 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.   
 
-  | Parameter                                                             | Description                        |
-  |:----------------------------------------------------------------|:-----------------------------------|
-  | directAdViewItemModel                              | 직광고 Layout       |
-  | nativeAdViewItemModel                                                        | 네트워크광고 Layout                              |
+  | Parameter                                           | Description       |
+  |:----------------------------------------------------|:------------------|
+  | directAdViewItemModel                               | 직광고 Layout        |
+  | nativeAdViewItemModel                               | 네트워크광고 Layout     |
 - 사용 방법은 위와 동일하나, MobwithNativeAdView 생성 시 전달하는 파라미터가 다릅니다.  
   아래는 이에 대한 예시입니다.
 ```java

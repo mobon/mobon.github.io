@@ -5,17 +5,30 @@
 ### 스플래시 광고 정의
 ---- 
 스플래시 화면에 광고를 표시하기 위한 광고 객체 입니다.
-Activity 위에 광고를 표시하며, 전면 형식과 하단 배너 형식 두 가지를 지원합니다.
 
 ### 광고 로드 방법
 ---- 
 MobwithSplashBannerView 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
 아래는 MobwithSplashBannerView 설정하고 광고를 요청하는 예시 코드입니다.
 
+```xml
+스플래시 광고를 송출 할 Layout을 구현해야 합니다. 아래는 예시 코드입니다.
+
+...
+<FrameLayout
+    android:id="@+id/adContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+/>
+...
+
+```
+
 ```java
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
 MobwithSplashBannerView splashBanner = new MobwithSplashBannerView(
-        activity,
+        context,
+        adContainer,  //스플래시 광고를 송출할 레이아웃(ViewGruop)
         unitID, //발급받은 UNIT_ID
         true,  //전면형 광고 여부 (true:전면, false:하단 배너)
 );
@@ -36,6 +49,14 @@ splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashListener() {
 // 광고를 호출합니다.
 splashBanner.loadAd();
 ```
+### MobwithSplashBannerView 파라미터
+
+| 파라미터                      | Description                                                         |
+|:--------------------------|:--------------------------------------------------------------------|
+| Context context           | 광고를 송출 할 Activity Context                                           |
+| ViewGroup layoutContainer | 스플래시 광고를 송출 할 레이아웃(ViewGruop)                                       |
+| String unitId             | 발급 받은 UnitId                                                         |
+| boolean isFullScreen      | 광고 타입 설정 (true:전면, false:하단 배너) |
 
 ### 배너 광고 기능
 
@@ -45,6 +66,7 @@ splashBanner.loadAd();
 | loadAd()                                                         | 광고 요청                           |
 | setAdListener(MobwithSplashBannerView.OnSplashListener listener) | 광고 Callback                     |
 | setTimeOutSec(int seconds)                                       | 광고 요청 타임아웃 시간 (초).  <br>해당 시간내 광고 로딩이 완료되지 않으면 광고 로딩 실패 콜백이 전달 됩니다.               |
+| setFadeDuration(long durationMs)                                       | 페이드 In/Out 지속시간 설정 (ms)               |
 | useFullScreenAd(boolean fullScreen)                          | 광고 타입 설정 (true:전면, false:하단 배너) |
 | destroy()                                                        | 광고 리소스 해제                       |`
 

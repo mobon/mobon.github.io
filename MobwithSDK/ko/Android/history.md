@@ -3,6 +3,10 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
+- SplashAd Container 파라미터 추가
+- HybridBannerBridgeView bug fix
+
 ## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
 - 신규 광고 상품 추가 (SplashAd, EndingBannerView, HybridBannerBridgeView)
 - 광고 성능 최적화
@@ -18,24 +22,28 @@
 - 배너 닫기 버튼 기능 추가
 - Applovin MAX Imp, Click 통계 API 추가
 
-## [1.0.82] - 2026-05-14 <!-- {docsify-ignore} -->
-- Frame Ad UI 최적화
-- Bidmad SDK 최신화
-
-## [1.0.81] - 2026-05-06 <!-- {docsify-ignore} -->
-- Mixer 병렬 송출 기능
-- 전면배너 UI 최적화
-
-## [1.0.80] - 2026-04-21 <!-- {docsify-ignore} -->
-- 전면배너, 리워드배너 UI 개선
-
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 이전 버전 히스토리 펼치기
 </summary>
 
+## [1.0.82] - 2026-05-14 <!-- {docsify-ignore} -->
+---
+- Frame Ad UI 최적화
+- Bidmad SDK 최신화
+
+
+## [1.0.81] - 2026-05-06 <!-- {docsify-ignore} -->
+---
+- Mixer 병렬 송출 기능
+- 전면배너 UI 최적화
+
+## [1.0.80] - 2026-04-21 <!-- {docsify-ignore} -->
+---
+- 전면배너, 리워드배너 UI 개선
+
 ## [1.0.79] - 2026-02-10) <!-- {docsify-ignore} -->
-----
+---
 - RewardAdDialog Back 클릭 이벤트 제거
 
 ## [1.0.78] - 2026-02-04 <!-- {docsify-ignore} -->
