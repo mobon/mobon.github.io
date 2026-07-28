@@ -160,6 +160,14 @@ bridge.campaignCodes = [
 * 캠페인 코드 값의 경우 협의된 내용을 참고 하시기 바랍니다.
 
 
+### 광고 해제 및 리소스 반환
+destroy() 함수를 호출하여 현재 로드된 광고 제거 및 연결된 리소스를 해제 할 수 있습니다.
+생성된 MMHybridBannerBridge를 더 이상 사용하지 않게 되는 경우 호출 할 것을 권장 드립니다. 
+```swift
+bridge.destroy()
+```
+
+
 ### MMHybridBannerBridgeDelegate
 하이브리드 브릿지를 통해 노출된 광고에서 발생하는 각종 이벤트 콜백을 전달 받고자 하시는 경우 적용하시면 됩니다.
 

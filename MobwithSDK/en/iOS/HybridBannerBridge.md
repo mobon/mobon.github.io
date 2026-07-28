@@ -159,6 +159,16 @@ bridge.campaignCodes = [
 * Please refer to the agreed specifications for campaign code values.
 
 
+### Releasing Ads and Resources
+Call the `destroy()` function to remove the currently loaded ads and release associated resources.  
+It is recommended to call this function when the created `MMHybridBannerBridge` instance is no longer needed.
+
+```swift
+bridge.destroy()
+```
+
+
+
 ### MMHybridBannerBridgeDelegate
 Implement this delegate to receive various event callbacks from ads displayed through the hybrid bridge.
 
