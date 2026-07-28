@@ -1,4 +1,4 @@
-🌐 <a href="../kr/#/Android/history">한국어 가이드 보기 (View Korean Guide)</a>
+🌐 <a href="../ko/#/Android/history">한국어 가이드 보기 (View Korean Guide)</a>
 
 ## History <!-- {docsify-ignore} -->
 ---

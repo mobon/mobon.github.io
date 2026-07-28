@@ -1,4 +1,4 @@
-🌐 <a href="../kr/#/Android/splashAd">한국어 가이드 보기 (View Korean Guide)</a>
+🌐 <a href="../ko/#/Android/splashAd">한국어 가이드 보기 (View Korean Guide)</a>
 
 ## Splash AD <!-- {docsify-ignore} -->
 

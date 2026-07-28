@@ -1,4 +1,4 @@
-🌐 <a href="../kr/#/Android/nativeAd">한국어 가이드 보기 (View Korean Guide)</a>
+🌐 <a href="../ko/#/Android/nativeAd">한국어 가이드 보기 (View Korean Guide)</a>
 
 ## Native AD <!-- {docsify-ignore} -->
 
