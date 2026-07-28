@@ -98,9 +98,9 @@ extension ViewController: WKNavigationDelegate {
 
 ### 페이지 로딩 완료의 알림
 페이지 로딩이 완료되면 실제 광고 로드 및 표시를 위해 아래 함수를 호출 해 줍니다.  
-이때 파라메터로 전달하는 webView는 MMHybridBannerBridge를 생성할때 전달한 webview와 동일한 객체여야 합니다.
+이때 파라메터로 전달하는 webView는 MMHybridBannerBridge를 생성할때 전달한 webview와 동일한 객체여야 합니다.  
 만약 'isLoadAd'를 false로 설정하면 해당 시점에 광고를 바로 로드하지 않거나, 실제 페이지 로딩 완료 시점과 didFinish()가 호출되는 시점이 다른 경우
-아래 '광고의 수동 요청'을 참고하여 별도로 광고 요청을 해주셔야 합니다.
+아래 '광고의 수동 요청'을 참고하여 별도로 광고 요청을 해주셔야 합니다.  
 ```swift
 // 페이지 로딩이 끝난뒤 바로 광고 로딩을 시작하는 경우
 bridge?.webViewFinishLoad(webView)
@@ -112,8 +112,8 @@ bridge?.webViewFinishLoad(webView, isLoadAd: false)
 
 
 ### 광고의 수동 요청
-'window.MobwithBridge.refresh()'을 이용하여, 웹페이지내에서 JavaScript 명령을 이용하여 광고를 요청하거나 갱신 할 수 있습니다.
-아래는 별도로 버튼을 추가하여 해당 버튼을 눌러 광고를 갱신하고자 하는 경우에 대한 예시 입니다.
+'window.MobwithBridge.refresh()'을 이용하여, 웹페이지내에서 JavaScript 명령을 이용하여 광고를 요청하거나 갱신 할 수 있습니다.  
+아래는 별도로 버튼을 추가하여 해당 버튼을 눌러 광고를 갱신하고자 하는 경우에 대한 예시 입니다.  
 ```swift
 <button type="button" onclick="window.MobwithBridge && window.MobwithBridge.refresh();">
     Load Ad
