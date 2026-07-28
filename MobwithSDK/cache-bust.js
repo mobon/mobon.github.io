@@ -1,5 +1,5 @@
 (() => {
-    const VERSION = "202607281700";
+    const VERSION = "202607281705";
     const originalOpen = XMLHttpRequest.prototype.open;
   
     XMLHttpRequest.prototype.open = function(method, url, ...rest) {

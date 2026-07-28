@@ -107,6 +107,20 @@ bridge.webViewFinishLoad(true);     //페이지 로딩이 완료되면 즉시 �
 ```
 위 함수가 호출되면 HybridBannerBridge에서 광고 지면을 확인하여, 광고 로딩 및 표시를 자동으로 처리 해 줍니다.
 
+
+### 광고의 수동 요청
+'window.MobwithBridge.refresh()'을 이용하여, 웹페이지내에서 JavaScript 명령을 이용하여 광고를 요청하거나 갱신 할 수 있습니다.  
+아래는 별도로 버튼을 추가하여 해당 버튼을 눌러 광고를 갱신하고자 하는 경우에 대한 예시 입니다.  
+```swift
+<button type="button" onclick="window.MobwithBridge && window.MobwithBridge.refresh();">
+    Load Ad
+</button>
+```
+
+
+
+
+
 ### 광고 카테고리 설정
 category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
 ```java

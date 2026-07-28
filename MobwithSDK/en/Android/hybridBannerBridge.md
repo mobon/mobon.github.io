@@ -108,6 +108,19 @@ bridge.webViewFinishLoad(boolean shouldRequestAd);  //Pass true to start loading
 Once this function is called, HybridBannerBridge checks the ad slot and automatically handles ad loading and display.
 
 
+### Manual ad request
+You can request or refresh ads from the web page by calling 'window.MobwithBridge.refresh()' from JavaScript.  
+The following example shows how to add a button that manually requests or refreshes ads when tapped.  
+
+```swift
+<button type="button" onclick="window.MobwithBridge && window.MobwithBridge.refresh();">
+    Load Ad
+</button>
+```
+
+
+
+
 ### Ad Category Settings
 Set category values as a string array to display ads matching the configured categories.
 ```java
