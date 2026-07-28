@@ -24,6 +24,6 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 
 ---
 
-- Latest version : 1.3.18
+- Latest version : 1.3.19
 - Changes
-  - Minor bug fixes
+  - Added manual ad loading to MMHybridBannerBridge

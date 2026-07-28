@@ -89,7 +89,7 @@ class ViewController: UIViewController {
 extension ViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         // Notify when page loading is complete
-        bridge?.webViewFinishLoad(webView)
+        bridge?.webViewFinishLoad(webView, isLoadAd: false)
     }
 }
 
@@ -98,12 +98,26 @@ extension ViewController: WKNavigationDelegate {
 
 ### Notification when page loading is complete
 When the page finishes loading, call the following function to load and display ads.  
-The webView parameter must be the same WebView instance that was passed when creating the MMHybridBannerBridge.
-
+The webView parameter must be the same WKWebView instance that was passed when creating the MMHybridBannerBridge.  
+If isLoadAd is set to false, ads will not be loaded immediately.  
+This is useful when the actual page load completion timing differs from the didFinish() callback, or when you want to control ad loading manually.  
+In this case, refer to “Manual Ad Request” below to request ads separately.  
 ```swift
 bridge?.webViewFinishLoad(webView)
 ```
 When this function is called, MMHybridBannerBridge automatically detects ad slots and handles ad loading and display.
+
+
+### Manual ad request
+You can request or refresh ads from the web page by calling 'window.MobwithBridge.refresh()' from JavaScript.  
+The following example shows how to add a button that manually requests or refreshes ads when tapped.  
+
+```swift
+<button type="button" onclick="window.MobwithBridge && window.MobwithBridge.refresh();">
+    Load Ad
+</button>
+```
+
 
 
 

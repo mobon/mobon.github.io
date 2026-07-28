@@ -3,6 +3,9 @@
 # History
 ---
 
+### [1.3.19] - 2026-07-28
+- Added manual ad loading to MMHybridBannerBridge
+
 ### [1.3.18] - 2026-07-28
 - Minor bug fixes
 - Release with CocoaPod
