@@ -24,14 +24,6 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 
 ---
 
-### CocoaPod
-- Latest version : 1.3.16
+- Latest version : 1.3.18
 - Changes
   - Minor bug fixes
-
-
-### SPM
-- Latest version : 1.3.17
-- Changes
-  - Release at SPM
-  - Added at SplashAd, HybridBannerBridge

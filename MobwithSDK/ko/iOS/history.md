@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.18] - 2026-07-28
+- 마이너 오류 수정
+- CocoaPod 동시 배포
+
 ### [1.3.17] - 2026-07-24
 - SPM버전 정식 배포
 - SplashAd, HybridBannerBridge 추가

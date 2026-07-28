@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.18] - 2026-07-28
+- Minor bug fixes
+- Release with CocoaPod
+
 ### [1.3.17] - 2026-07-24
 - Release at SPM
 - Added SplashAd, HybridBannerBridge
