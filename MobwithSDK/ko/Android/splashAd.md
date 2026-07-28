@@ -34,14 +34,14 @@ MobwithSplashBannerView splashBanner = new MobwithSplashBannerView(
 );
 
 // 배너뷰의 리스너를 등록합니다.
-splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashListener() {
+splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashAdListener() {
     @Override
     public void onSplashAdDidReceived() {
         // 스플래시 광고를 수신함 운영 시간에 맞춰 노출 후 다음 화면으로 이동
     }
 
     @Override
-    public void onSplashAdFailToReceived() {
+    public void onSplashAdFailToReceived(String message) {
         // 스플래시 광고 수신 실패 즉시 다음 화면으로 이동
     }
 });

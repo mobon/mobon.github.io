@@ -34,14 +34,14 @@ MobwithSplashBannerView splashBanner = new MobwithSplashBannerView(
 );
 
 // Register the banner view's listener.
-splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashListener() {
+splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashAdListener() {
     @Override
     public void onSplashAdDidReceived() {
         // Splash ad received; display it during the configured time, then move to the next screen
     }
 
     @Override
-    public void onSplashAdFailToReceived() {
+    public void onSplashAdFailToReceived(String message) {
         // Failed to receive splash ad; move to the next screen immediately
     }
 });
