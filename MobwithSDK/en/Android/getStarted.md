@@ -1,24 +1,23 @@
-🌐 <a href="../ko/#/Android/getStarted">한국어 가이드</a>
+🌐 <a href="../kr/#/Android/getStarted">한국어 가이드 보기 (View Korean Guide)</a>
 
-## Latest Version and Changes
+## Latest Version & Changes
 ---
-### Latest Version: 1.0.84
+### Latest Version: 1.0.88
 
 ### Changes
-- Reward Prepare bug fix
-- ADID refresh logic
+- Bug fixes
 
 ## Supported Environment
 ---
-- Minimum SDK Version : Android 23
+- Minimum SDK Version: Android 23
 
-- Compile SDK Version : Android 34
+- Compile SDK Version: Android 34
 
-- Build Tool : Android Studio
+- Build Tool: Android Studio
 
 - AndroidX recommended
 
-## Unit Number
+## Placement ID
 ---
-For values such as the AppKey required to use external mediation SDKs, as well as unit numbers, please use the values provided separately.   
-Note that some AppKeys and unit numbers may be affected by the app's Bundle ID, so please be careful.
+For values such as the AppKey required to use external mediation SDKs, as well as placement IDs, please use the values provided to you separately.  
+Note that some AppKey and placement ID values may be affected by factors such as the app's Bundle ID, so please take care.

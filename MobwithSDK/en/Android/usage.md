@@ -56,5 +56,13 @@ Explains how to use reward ads.
 Explains how to use smart ads (category targeting).
 
 ### [Frame AD](/Android/frameBannerAd.md)
-
 Explains how to use frame ads.
+
+### [SPLASH AD](/Android/splashAd.md)
+Explains how to use splash ads.
+
+### [HybridBannerBridge](/Android/hybridBannerBridge.md)
+Explains how to use hybrid banner bridge ads.
+
+### [EndingBannerVoew AD](/Android/endingBannerAd.md)
+Explains how to use ending banner ads.

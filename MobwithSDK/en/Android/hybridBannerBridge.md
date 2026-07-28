@@ -1,13 +1,13 @@
-🌐 <a href="../ko/#/Android/hybridBannerBridge">한국어 가이드</a>
+🌐 <a href="../kr/#/Android/hybridBannerBridge">한국어 가이드 보기 (View Korean Guide)</a>
 
 ## HybridBannerBridge <!-- {docsify-ignore} -->
 
-### Definition of HybridBannerBridge
+### What is HybridBannerBridge?
 ----
-This is a bridge for displaying ads in hybrid apps.
+A bridge for displaying ads in hybrid apps.
 
-### Assigning Ad Slots to Display Ads on Web Pages
-Refer below to assign ad slots on the web page where ads will be displayed.
+### Assigning Ad Slots to Display Ads on a Web Page
+Refer to the following to assign the ad slot(s) that will display ads on the web page.
 ```html
 <html>
     .... 
@@ -21,28 +21,28 @@ Refer below to assign ad slots on the web page where ads will be displayed.
 </html>
 ```
 
-The above example uses the bridge to display two ads within the web view.
+In the example above, the bridge is used to display 2 ads within the web page.
 
-The class name of the div tag should be fixed as below:
+The class name of the div tag should always be set as follows:
 ```html
 class="mobwith-banner"
 ```
 
-Set the data-placement-id-ios and data-placement-id-android attributes to the assigned ad unit IDs for the respective platforms:
+Set data-placement-id-ios and data-placement-id-android to the placement ID assigned to that ad slot.
 ```html
-data-placement-id-ios="{ Your Ad Unit ID (iOS) }"
-data-placement-id-android="{ Your Ad Unit ID (Android) }"
+data-placement-id-ios="{ Assigned ad placement ID (for iOS) }"
+data-placement-id-android="{ Assigned ad placement ID (for Android) }"
 ```
 
-The data-zone-type attribute specifies the type of ad to be displayed.  
-The ad type code is passed along with the ad unit ID.
+Set data-zone-type to the type of ad to be displayed.  
+The ad type code is provided along with the placement ID.
 ```html
-data-zone-type="{ Ad Type Code }"
+data-zone-type="{ Ad type code }"
 ```
 
 
-### WebView Setup and Registering HybridBannerBridge
-Refer below to create a HybridBannerBridge instance and configure the WebView.
+### WebView Setup and HybridBannerBridge Registration
+Refer to the following to create a HybridBannerBridge and then configure the WebView.
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -63,24 +63,24 @@ public class MainActivity extends AppCompatActivity {
         bridge.setOnAdListener(new HybridBannerBridge.OnAdListener() {
             @Override
             public void onAdLoaded() {
-                // Ad loaded successfully
+                //Ad loaded successfully
             }
 
             @Override
             public void onAdLoadedFail(String msg) {
-                // Ad failed to load
+                //Ad failed to load
             }
 
             @Override
             public void onAdClicked(@NonNull String url) {
-                // Ad clicked
+                //Ad clicked
             }
         });
         bridge.setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"));
         bridge.setCampaignCodes(Arrays.asList(
-            "03b7a807c94f4beeb4115a23b2a5c39a",
-            "24f2e8051e044ddd867ba68ff467d8b0",
-            "4b56b65279a94d059eba23ffaf0ad869",
+                "campaign1",
+                "campaign2",
+                "campaign3",
             ...
         ));
 
@@ -91,32 +91,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("{ Web Page URL }");
+        webView.loadUrl("URL of the web page to load");
     }
 }
 
 ```
 
-### Notification of Page Load Completion
-When the page load is complete (at WebView's onPageFinished event), call the following method to trigger actual ad loading and display.  
-The parameter is the placement ID of the ad slot on the web page.
+### Notifying Page Load Completion
+When the page finishes loading (at the point of the WebView's onPageFinished), call the function below to load and display the actual ad.  
+The parameter is the placementId of the WebPage where the ad will be placed.
 
 ```java
 bridge.webViewFinishLoad();
 ```
-When this method is called, HybridBannerBridge automatically detects the ad slots, loads, and displays the ads accordingly.
+Once this function is called, HybridBannerBridge checks the ad slot and automatically handles ad loading and display.
 
 
-### Setting Ad Categories
-You can set the category values as a list of strings to display ads matching the specified categories.
+### Ad Category Settings
+Set category values as a string array to display ads matching the configured categories.
 ```java
 bridge.setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"));
 ```
-* Please refer to the agreed documentation for valid category values.    
+* For category values, please refer to the agreed-upon values.
 
 
-### Setting Campaign Codes
-You can set campaign codes as a list of strings to display ads matching the specified campaigns.
+### Ad Campaign Code Settings
+Set campaignCodes values as a string array to display ads matching the configured campaign codes.
 ```java
 bridge.setCampaignCodes(Arrays.asList(
     "03b7a807c94f4beeb4115a23b2a5c39a",
@@ -126,4 +126,4 @@ bridge.setCampaignCodes(Arrays.asList(
 ));
 
 ```
-* Please refer to the agreed documentation for valid campaign code values.
+* For campaign code values, please refer to the agreed-upon values.
