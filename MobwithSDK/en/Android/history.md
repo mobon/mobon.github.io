@@ -3,6 +3,10 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.89] - 2026-07-28 <!-- {docsify-ignore} -->
+- Added the HybridBannerBridgeView script
+- Modified the HybridBannerBridgeView webViewFinishLoad() function
+
 ## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
 - Added SplashAd Container parameter
 - Fixed HybridBannerBridgeView bug
@@ -18,14 +22,16 @@
 - Fixed reward ad Prepare bug
 - ADID refresh logic
 
-## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
-- Added banner close button feature
-- Added Applovin MAX impression/click statistics API
-
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 Expand previous version history
 </summary>
+
+## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
+---
+- Added banner close button feature
+- Added Applovin MAX impression/click statistics API
+
 
 ## [1.0.82] - 2026-05-14 <!-- {docsify-ignore} -->
 ---

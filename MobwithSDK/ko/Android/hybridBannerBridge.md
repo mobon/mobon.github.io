@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
-                bridge.webViewFinishLoad();
+                bridge.webViewFinishLoad(true); //페이지 로딩이 완료되면 즉시 광고 로딩을 시작하려면 true를, 광고를 수동으로 요청하려면 false를 파라미터로 전달합니다.
             }
         });
 
@@ -100,12 +100,12 @@ public class MainActivity extends AppCompatActivity {
 ### 페이지 로딩 완료의 알림
 페이지 로딩이 완료(Webview의 onPageFinished 시점)되면 실제 광고 로드 및 표시를 위해 아래 함수를 호출 해 줍니다.  
 파라미터는 광고를 배치 할 WebPage의 placementId를 입력합니다.
-
+※ 참고사항 : 광고 수동 요청   
+페이지 로딩이 완료되면 즉시 광고 로딩을 시작하려면 true를, 광고를 수동으로 요청하려면 false를 파라미터로 전달합니다.
 ```java
-bridge.webViewFinishLoad();
+bridge.webViewFinishLoad(true);     //페이지 로딩이 완료되면 즉시 광고 로딩을 시작하려면 true를, 광고를 수동으로 요청하려면 false를 파라미터로 전달합니다.
 ```
 위 함수가 호출되면 HybridBannerBridge에서 광고 지면을 확인하여, 광고 로딩 및 표시를 자동으로 처리 해 줍니다.
-
 
 ### 광고 카테고리 설정
 category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.

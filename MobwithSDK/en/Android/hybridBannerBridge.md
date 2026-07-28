@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url) {
-                bridge.webViewFinishLoad();
+                bridge.webViewFinishLoad(true);     //Pass true to start loading the ad immediately after the page finishes loading, or false to request the ad manually.
             }
         });
 
@@ -100,9 +100,10 @@ public class MainActivity extends AppCompatActivity {
 ### Notifying Page Load Completion
 When the page finishes loading (at the point of the WebView's onPageFinished), call the function below to load and display the actual ad.  
 The parameter is the placementId of the WebPage where the ad will be placed.
-
+※ Note: Manual ad request
+Pass true to start loading the ad immediately after the page finishes loading, or false to request the ad manually.
 ```java
-bridge.webViewFinishLoad();
+bridge.webViewFinishLoad(boolean shouldRequestAd);  //Pass true to start loading the ad immediately after the page finishes loading, or false to request the ad manually.
 ```
 Once this function is called, HybridBannerBridge checks the ad slot and automatically handles ad loading and display.
 
