@@ -3,6 +3,9 @@
 # History
 ---
 
+### [1.3.19]
+- MobWithAdMobAdapter '12.14.0.1.3.19' (AdManager 지원) 업데이트
+
 ### [1.3.19] - 2026-07-28
 - MMHybridBannerBridge 광고 수동 로드 기능 추가
 

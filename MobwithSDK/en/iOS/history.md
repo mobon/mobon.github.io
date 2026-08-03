@@ -3,6 +3,9 @@
 # History
 ---
 
+### [1.3.19]
+- MobWithAdMobAdapter '12.14.0.1.3.19' (Support AdManager) Update
+
 ### [1.3.19] - 2026-07-28
 - Added manual ad loading to MMHybridBannerBridge
 
