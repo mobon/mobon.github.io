@@ -255,6 +255,21 @@ allprojects {
 implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```
 
+## ADMANAGER SDK 추가
+- ADMANAGER 광고를 송출하기 위해 링크를 참고하여 주세요.
+  [ADMANAGER SDK 바로가기](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ko&_gl=1*1c7zbjc*_up*MQ..*_ga*MjQ5NDMyODQwLjE3ODM0ODE1MTI.*_ga_SM8HXJ53K2*czE3ODM0ODE1MTEkbzEkZzAkdDE3ODM0ODE1MTEkajYwJGwwJGgw)
+
+- Manifest 추가
+  ADMANAGER 광고 송출을 위한 Manifest 속성 추가가 필요합니다
+```xml
+<meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+        android:value="true" />
+```
+
+```groovy
+    implementation("com.google.android.gms:play-services-ads:24.9.0")
+```
+
 ## Admob Mediation SDK 추가
 - Admob Mediation 광고를 송출하기 위해 링크를 참고하여 주세요.
   [Admob SDK Guide 바로가기](https://developers.google.com/admob/android/choose-networks?hl=ko&_gl=1*d0p0ke*_up*MQ..*_ga*MTY4MTA1NTI2OC4xNzY4NDQxMDE0*_ga_SM8HXJ53K2*czE3Njg0NDEwMTQkbzEkZzAkdDE3Njg0NDEwMTQkajYwJGwwJGgw)

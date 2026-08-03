@@ -243,6 +243,21 @@ allprojects {
 implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```
 
+## Adding the ADMANAGER SDK
+- To serve ADMANAGER ads, please refer to the guide below:
+  [Go to the ADMANAGER SDK](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ko&_gl=1*1c7zbjc*_up*MQ..*_ga*MjQ5NDMyODQwLjE3ODM0ODE1MTI.*_ga_SM8HXJ53K2*czE3ODM0ODE1MTEkbzEkZzAkdDE3ODM0ODE1MTEkajYwJGwwJGgw)
+- Add the following metadata to your AndroidManifest.xml
+  This metadata is required to enable ADMANAGER ad serving.
+
+```xml
+<meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+        android:value="true" />
+```
+
+```groovy
+    implementation("com.google.android.gms:play-services-ads:24.9.0")
+```
+
 ## Adding the AdMob Mediation SDK
 - To serve AdMob Mediation ads, refer to the link below.
   [Go to the AdMob SDK guide](https://developers.google.com/admob/android/choose-networks?hl=ko&_gl=1*d0p0ke*_up*MQ..*_ga*MTY4MTA1NTI2OC4xNzY4NDQxMDE0*_ga_SM8HXJ53K2*czE3Njg0NDEwMTQkbzEkZzAkdDE3Njg0NDEwMTQkajYwJGwwJGgw)
