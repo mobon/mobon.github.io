@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.90] - 2026-08-05 <!-- {docsify-ignore} -->
+- bug fix
+
 ## [1.0.89] - 2026-07-28 <!-- {docsify-ignore} -->
 - Added the HybridBannerBridgeView script
 - Modified the HybridBannerBridgeView webViewFinishLoad() function
@@ -18,14 +21,14 @@
 ## [1.0.86] - 2026-07-14 <!-- {docsify-ignore} -->
 - Fixed freepass bug
 
-## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
-- Fixed reward ad Prepare bug
-- ADID refresh logic
-
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 Expand previous version history
 </summary>
+
+## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
+- Fixed reward ad Prepare bug
+- ADID refresh logic
 
 ## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
 ---

@@ -3,6 +3,10 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.90] - 2026-08-05 <!-- {docsify-ignore} -->
+- 배너 닫기 기능 제거
+- bug fix
+
 ## [1.0.89] - 2026-07-28 <!-- {docsify-ignore} -->
 - HybridBannerBridgeView 스크립트 추가
 - HybridBannerBridgeView webViewFinishLoad() 함수 수정
@@ -18,15 +22,15 @@
 ## [1.0.86] - 2026-07-14 <!-- {docsify-ignore} -->
 - freepass bug fix
 
-## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
-- 리워드 Prepare bug fix
-- ADID 갱신 로직
-
 
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 이전 버전 히스토리 펼치기
 </summary>
+
+## [1.0.84] - 2026-06-16 <!-- {docsify-ignore} -->
+- 리워드 Prepare bug fix
+- ADID 갱신 로직
 
 ## [1.0.83] - 2026-06-01 <!-- {docsify-ignore} -->
 ---
