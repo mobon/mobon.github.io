@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.20] - 2026-08-05
+- Removed 'useCloseButton' from MobWithAdView (Banner Ad) to comply with AdMob and other advertising policies.
+- Minor bug fixes
+
 ### [1.3.19]
 - MobWithAdMobAdapter '12.14.0.1.3.19' (Support AdManager) Update
 

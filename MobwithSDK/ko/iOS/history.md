@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.20] - 2026-08-05
+- MobWithAdView(배너광고)의 useCloseButton 기능 삭제 (AdMob등 정책 이슈)
+- 마이너 오류 수정
+
 ### [1.3.19]
 - MobWithAdMobAdapter '12.14.0.1.3.19' (AdManager 지원) 업데이트
 
