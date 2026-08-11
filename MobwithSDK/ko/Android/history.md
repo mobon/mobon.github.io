@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.92] - 2026-08-11 <!-- {docsify-ignore} -->
+- bug fix
+
 ## [1.0.91] - 2026-08-05 <!-- {docsify-ignore} -->
 - bug fix
 
@@ -18,15 +21,18 @@
 - SplashAd Container 파라미터 추가
 - HybridBannerBridgeView bug fix
 
-## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
-- 신규 광고 상품 추가 (SplashAd, EndingBannerView, HybridBannerBridgeView)
-- 광고 성능 최적화
-
 
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 이전 버전 히스토리 펼치기
 </summary>
+
+
+## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
+---
+- 신규 광고 상품 추가 (SplashAd, EndingBannerView, HybridBannerBridgeView)
+- 광고 성능 최적화
+
 
 ## [1.0.86] - 2026-07-14 <!-- {docsify-ignore} -->
 ---

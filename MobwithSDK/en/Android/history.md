@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.92] - 2026-08-11 <!-- {docsify-ignore} -->
+- bug fix
+
 ## [1.0.91] - 2026-08-05 <!-- {docsify-ignore} -->
 - bug fix
 
@@ -17,14 +20,15 @@
 - Added SplashAd Container parameter
 - Fixed HybridBannerBridgeView bug
 
-## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
-- Added new ad products (SplashAd, EndingBannerView, HybridBannerBridgeView)
-- Optimized ad performance
-
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 Expand previous version history
 </summary>
+
+## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
+---
+- Added new ad products (SplashAd, EndingBannerView, HybridBannerBridgeView)
+- Optimized ad performance
 
 ## [1.0.86] - 2026-07-14 <!-- {docsify-ignore} -->
 ---

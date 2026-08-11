@@ -2,7 +2,7 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.91
+### Latest Version: 1.0.92
 
 ### Changes
 - Bug fixes

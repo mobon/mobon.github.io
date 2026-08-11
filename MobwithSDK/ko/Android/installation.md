@@ -19,7 +19,7 @@ allprojects {
 ```groovy
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.91'
+    implementation 'io.github.mobon:mobwithSDK:1.0.92'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
