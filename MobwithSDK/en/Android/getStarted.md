@@ -2,10 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.92
+### Latest Version: 1.0.93
 
 ### Changes
-- Bug fixes
+- Update EndingBannerView's UI
 
 ## Supported Environment
 ---

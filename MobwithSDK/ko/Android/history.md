@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
+- EndingBannerView의 UI 업데이트
+
 ## [1.0.92] - 2026-08-11 <!-- {docsify-ignore} -->
 - bug fix
 
