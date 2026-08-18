@@ -9,8 +9,8 @@ Please install both of the SDKs described below.
 ### 1. Install MobWithAdSDK
 Refer to the links below to add the MobWith AD SDK to your project.  
 For each platform, apply the mediation-related additions according to what was agreed upon.
-- Android : [[Guide document link](/Android/installation_en.md)]
-- iOS : [[Guide document link](/iOS/installation_base_en.md)]
+- Android : [[Guide document link](/Android/installation.md)]
+- iOS : [[Guide document link](/iOS/installation_base.md)]
 
 
 ### 2. Add the AppLovin MAX 3rd-Party Adapter SDK
