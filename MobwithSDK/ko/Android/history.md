@@ -3,6 +3,11 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.94] - 2026-08-20 <!-- {docsify-ignore} -->
+- NativeAdView Kakao BizBoard Banner 광고 노출 기능 추가
+- Banner 광고 닫기 (X) 버튼 크기 조절
+- URL Query Encoding (Carrier, Language) 파라미터 추가
+
 ## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
 - EndingBannerView의 UI 업데이트
 
@@ -20,16 +25,16 @@
 - HybridBannerBridgeView 스크립트 추가
 - HybridBannerBridgeView webViewFinishLoad() 함수 수정
 
-## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
-- SplashAd Container 파라미터 추가
-- HybridBannerBridgeView bug fix
-
 
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 이전 버전 히스토리 펼치기
 </summary>
 
+## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
+---
+- SplashAd Container 파라미터 추가
+- HybridBannerBridgeView bug fix
 
 ## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
 ---

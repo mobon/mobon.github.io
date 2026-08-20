@@ -4,6 +4,11 @@
 ---
 
 ## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
+- Added NativeAdView Kakao BizBoard Banner ad exposure feature
+- Adjusted Banner ad close (X) button size
+- Added URL Query Encoding (Carrier, Language) parameters
+
+## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
 - Update EndingBannerView's UI
 
 ## [1.0.92] - 2026-08-11 <!-- {docsify-ignore} -->
@@ -19,14 +24,16 @@
 - Added the HybridBannerBridgeView script
 - Modified the HybridBannerBridgeView webViewFinishLoad() function
 
-## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
-- Added SplashAd Container parameter
-- Fixed HybridBannerBridgeView bug
 
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 Expand previous version history
 </summary>
+
+## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
+---
+- Added SplashAd Container parameter
+- Fixed HybridBannerBridgeView bug
 
 ## [1.0.87] - 2026-07-24 <!-- {docsify-ignore} -->
 ---
