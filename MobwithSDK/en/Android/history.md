@@ -3,7 +3,7 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
-## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
+## [1.0.94] - 2026-08-14 <!-- {docsify-ignore} -->
 - Added NativeAdView Kakao BizBoard Banner ad exposure feature
 - Adjusted Banner ad close (X) button size
 - Added URL Query Encoding (Carrier, Language) parameters
