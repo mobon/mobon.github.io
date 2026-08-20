@@ -261,9 +261,19 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 
 - Manifest 추가
   ADMANAGER 광고 송출을 위한 Manifest 속성 추가가 필요합니다
+
 ```xml
-<meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-        android:value="true" />
+<manifest>
+  <application>
+    <meta-data
+        android:name="com.google.android.gms.ads.APPLICATION_ID"
+        android:value="발급받은 APP_ID"/>
+
+    <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+  </application>
+</manifest>
+
 ```
 
 ```groovy

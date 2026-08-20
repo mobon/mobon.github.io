@@ -250,8 +250,16 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
   This metadata is required to enable ADMANAGER ad serving.
 
 ```xml
-<meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-        android:value="true" />
+<manifest>
+  <application>
+    <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="Your APP_ID"/>
+
+    <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+  </application>
+</manifest>
 ```
 
 ```groovy
