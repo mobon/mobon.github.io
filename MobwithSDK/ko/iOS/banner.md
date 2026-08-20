@@ -99,6 +99,15 @@ BizBoardTemplate.defaultEdgeInset = UIEdgeInsets.init(top: 0.0, left: 0.0, botto
 ```
 
 
+### 광고뷰의 해제
+더이상 본 BannerView를 사용하지 않는 경우 아래를 참고하여 광고 리소스를 해제해 주셔야 합니다.
+``` swift
+...
+mobWithAdView?.clearAdViews()
+mobWithAdView = nil
+...
+```
+
 
 
 ## MobWithADViewDelegate

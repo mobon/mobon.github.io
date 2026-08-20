@@ -3,6 +3,12 @@
 # History
 ---
 
+### [1.3.22] - 2026-08-20
+- Added NativeAdView support
+- Reapplied the close button to BannerView
+- Fixed a memory-release issue
+- Fixed minor bugs
+
 ### [1.3.20] - 2026-08-05
 - Removed 'useCloseButton' from MobWithAdView (Banner Ad) to comply with AdMob and other advertising policies.
 - Minor bug fixes

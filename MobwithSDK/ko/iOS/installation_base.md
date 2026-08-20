@@ -29,7 +29,7 @@ https://github.com/mobon/MobWithAdSDK_SPM
 
 ### 1. MobWithAdSDK 설치
 프로젝트의 Podfile에 'MobWithAdSDK' 를 추가합니다.  
-아래는 1.3.16 버전을 지정해서 SDK를 설치하는 예시 입니다.
+아래는 1.3.22 버전을 지정해서 SDK를 설치하는 예시 입니다.
 ```
 # Cocoapod 소스 지정.  순서에 따라 제대로 가져오지 못 할 수 있으니 주의 바랍니다.
 
@@ -40,7 +40,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # MobWithAdSDK 추가
-pod 'MobWithAdSDK', '1.3.20'
+pod 'MobWithAdSDK', '1.3.22'
 
 ```
 
@@ -75,7 +75,7 @@ pod 'MobWithPangleAdapter', '7.8.0.4.1.3.1'
 
 # BidMad의 경우 아래와 같이 BidMad의 Adapter를 무조건 하나 이상 적용해 주셔야 합니다.  
 # BidMad의 Adapter에 대해서는 수동 설치의 각 SDK 가이드 문서를 참고 바랍니다.
-pod 'MobWithBidMadAdapter', '6.13.6.1.3.14'
+pod 'MobWithBidMadAdapter', '6.13.6.1.3.21'
 pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
 
 pod 'BidmadSDK/core', '= 6.13.6'             # 빌드 오류 대응
