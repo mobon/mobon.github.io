@@ -54,7 +54,7 @@ Refer to the following for each mediation Adapter.
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
 
 # Admob Adapter
-pod 'MobWithAdMobAdapter', '12.14.0.1.3.19'
+pod 'MobWithAdMobAdapter', '12.14.0.1.3.21'
 # If you are using AdMob SDK 12.6.x, use the following Adapter version.
 # pod 'MobWithAdMobAdapter', '12.6.0.1.3.10'
 

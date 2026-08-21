@@ -31,6 +31,7 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
   - Reapplied the close button to BannerView
   - Fixed a memory-release issue
   - MobWithBidMadAdapter released '6.13.6.1.3.21'
+  - MobWithAdMobAdapter released '12.14.0.1.3.21'
   - Fixed minor bugs
 
 ### SPM

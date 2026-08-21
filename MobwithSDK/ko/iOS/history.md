@@ -3,11 +3,14 @@
 # History
 ---
 
+### [1.3.22] - 2026-08-21
+- MobWithAdMobAdapter '12.14.0.1.3.21' 버전 배포
+
 ### [1.3.22] - 2026-08-20
 - NativeAdView 기능 추가
 - BannerView에 닫기 버튼 재적용
 - 메모리 해제 이슈 수정
-- MobWithBidMadAdapter 6.13.6.1.3.21 버전 배포
+- MobWithBidMadAdapter '6.13.6.1.3.21' 버전 배포
 - 마이너 오류 수정
 
 ### [1.3.20] - 2026-08-05

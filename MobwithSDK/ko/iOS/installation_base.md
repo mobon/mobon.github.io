@@ -54,7 +54,7 @@ MobWithAdSDK와 같은 source를 지정해 주셔야 합니다.
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
 
 # Admob Adapter
-pod 'MobWithAdMobAdapter', '12.14.0.1.3.19'
+pod 'MobWithAdMobAdapter', '12.14.0.1.3.21'
 # AdMob SDK 12.6.X 버전을 사용하는 경우 아래를 적용하시면 됩니다.
 # pod 'MobWithAdMobAdapter', '12.6.0.1.3.10'
 
