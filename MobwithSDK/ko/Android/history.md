@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.95] - 2026-08-25 <!-- {docsify-ignore} -->
+- HybridBannerBridge No Ad 버그 수정
+
 ## [1.0.94] - 2026-08-20 <!-- {docsify-ignore} -->
 - NativeAdView Kakao BizBoard Banner 광고 노출 기능 추가
 - Banner 광고 닫기 (X) 버튼 크기 조절

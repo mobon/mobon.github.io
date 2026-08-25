@@ -2,11 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.94
+### Latest Version: 1.0.95
 
 ### Changes
-- Added NativeAdView Kakao BizBoard Banner ad exposure feature
-- Adjusted Banner ad close (X) button size
+- Bug fix
 
 ## Supported Environment
 ---
