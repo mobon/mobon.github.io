@@ -25,12 +25,16 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 ---
 
 ### CocoaPod
-- Latest version : 1.3.20
+- Latest version : 1.3.22
 - Changes
-  - Removed 'useCloseButton' from MobWithAdView (Banner Ad) to comply with AdMob and other advertising policies.
-  - Minor bug fixes
+  - Added NativeAdView support
+  - Reapplied the close button to BannerView
+  - Fixed a memory-release issue
+  - MobWithBidMadAdapter released '6.13.6.1.3.21'
+  - MobWithAdMobAdapter released '12.14.0.1.3.21'
+  - Fixed minor bugs
 
 ### SPM
-- Latest version : 1.3.19
+- Latest version : 1.3.24
 - Changes
-  - Added manual ad loading to MMHybridBannerBridge
+  - Fixed minor bugs

@@ -25,13 +25,17 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 ---
 
 ### CocoaPod
-- 최신버전 : 1.3.20
+- 최신버전 : 1.3.22
 - 변경사항
-  - MobWithAdView(배너광고)의 useCloseButton 기능 삭제 (AdMob등 정책 이슈)
+  - NativeAdView 기능 추가
+  - BannerView에 닫기 버튼 재적용
+  - 메모리 해제 이슈 수정
+  - MobWithBidMadAdapter '6.13.6.1.3.21' 버전 배포
+  - MobWithAdMobAdapter '12.14.0.1.3.21' 버전 배포
   - 마이너 오류 수정
 
 
 ### SPM
-- 최신버전 : 1.3.19
+- 최신버전 : 1.3.24
 - 변경사항
-  - MMHybridBannerBridge 광고 수동 로드 기능 추가
+  - 마이너 오류 수정

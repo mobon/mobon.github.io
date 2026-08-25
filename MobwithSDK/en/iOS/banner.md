@@ -89,6 +89,27 @@ mobWithAdView.fitToHeight = true
 ...
 ```
 
+### Releasing the Ad View
+When the BannerView is no longer needed, release its ad resources as follows:
+``` swift
+...
+mobWithAdView?.clearAdViews()
+mobWithAdView = nil
+...
+```
+
+
+### useCloseButton
+If you set useCloseButton to true, a close button is created on the ad.  
+When the close button is pressed, the mobWithAdViewClose() callback is delivered, and we recommend handling it appropriately accordingly.  
+The default value is false.
+``` swift
+...
+mobWithAdView.useCloseButton = true
+...
+```
+
+
 
 ### When using AdFit Bizboard
 For Bizboard ads, margins are allocated by default.  
