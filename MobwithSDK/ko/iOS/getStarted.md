@@ -36,6 +36,6 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 
 
 ### SPM
-- 최신버전 : 1.3.19
+- 최신버전 : 1.3.24
 - 변경사항
-  - MMHybridBannerBridge 광고 수동 로드 기능 추가
+  - 마이너 오류 수정

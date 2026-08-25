@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.24] - 2026-08-25
+- Release at SPM
+- Fixed minor bugs
+
 ### [1.3.22] - 2026-08-21
 - MobWithAdMobAdapter released '12.14.0.1.3.21'
 

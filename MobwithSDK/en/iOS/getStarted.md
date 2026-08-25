@@ -35,6 +35,6 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
   - Fixed minor bugs
 
 ### SPM
-- Latest version : 1.3.19
+- Latest version : 1.3.24
 - Changes
-  - Added manual ad loading to MMHybridBannerBridge
+  - Fixed minor bugs
