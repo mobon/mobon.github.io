@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.25] - 2026-08-26
+- Release at SPM
+- Fixed minor bugs
+
 ### [1.3.24] - 2026-08-25
 - Release at SPM
 - Fixed minor bugs

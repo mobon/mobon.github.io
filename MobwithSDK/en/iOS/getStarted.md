@@ -35,6 +35,6 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
   - Fixed minor bugs
 
 ### SPM
-- Latest version : 1.3.24
+- Latest version : 1.3.25
 - Changes
   - Fixed minor bugs
