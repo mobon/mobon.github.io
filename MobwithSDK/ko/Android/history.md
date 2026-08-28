@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.95] - 2026-08-28 <!-- {docsify-ignore} -->
+- HybridBannerBridge destroy() 버그 수정
+
 ## [1.0.95] - 2026-08-25 <!-- {docsify-ignore} -->
 - HybridBannerBridge No Ad 버그 수정
 

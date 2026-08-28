@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
+- HybridBannerBridge destroy bug fix
+
 ## [1.0.95] - 2026-08-25 <!-- {docsify-ignore} -->
 - HybridBannerBridge bug fix
 
