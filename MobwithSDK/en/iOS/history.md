@@ -3,6 +3,10 @@
 # History
 ---
 
+### [1.3.27] - 2026-09-02
+- Add MobWithAdPopcornAdapter for receive NAM Ads
+- Fixed minor bugs
+
 ### [1.3.25] - 2026-08-26
 - Release at SPM
 - Fixed minor bugs

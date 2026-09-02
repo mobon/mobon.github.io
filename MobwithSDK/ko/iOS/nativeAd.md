@@ -23,6 +23,8 @@
 
 
 - 구성 예시이며, 사용하는 외부 미디에이션 SDK 등에 대한 가이드를 참고하여 적절히 구성 하시면 됩니다.
+- MobWithAdPopcornAdapter를 이용하여 NAM 광고를 송출하는 경우 ContainerView의 사이즈를 명확하게 지정해 주셔야 합니다.
+  * Auto Layout 등으로 내부 컨텐츠 사이즈에 의존하는 경우 광고가 제대로 표시되지 않을 수 있습니다.
 
 다음으로 아래와 같이 `MobwithNativeAdViewRender`를 통해 각 View를 연결해 줍니다.
 

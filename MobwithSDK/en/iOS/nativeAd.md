@@ -22,6 +22,9 @@ First, create the ad UI by referring to the example below.
 
 * This is only a sample layout. Please configure the UI appropriately according to the integration guide of the mediation SDK you are using.  
 Next, connect each view by implementing `MobwithNativeAdViewRender` as shown below.
+* When serving NAM ads with MobWithAdPopcornAdapter, explicitly set the ContainerView size.
+  - If its size depends on internal content—for example, through Auto Layout—the ad may not display correctly.
+
 
 ```swift
 class DefaultNativeAdView: UIView {

@@ -80,6 +80,10 @@ pod 'BidmadAdmixerAdapter', '2.0.2.12.2'
 
 pod 'BidmadSDK/core', '= 6.13.6'             # 빌드 오류 대응
 
+
+# AdPopcorn Adapter (for NAM)
+pod 'MobWithAdPopcornAdapter', '3.3.2.1.3.26'
+
 ```
 
 ### Adapter의 버전 규칙

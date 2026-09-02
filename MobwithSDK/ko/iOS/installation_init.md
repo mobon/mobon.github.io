@@ -42,6 +42,10 @@ MobWithADSDK.standard.setDTExchangeAppID(appId: "{전달받은 DT Exchange App I
 // InMobi Adapter SDK 초기화
 MobWithADSDK.standard.setInMobiAccountId(accountId: "{전달받은 InMobi Account ID}") 
 
+// Adpopcorn Adapter SDK (for NAM) 초기화
+MobWithADSDK.standard.setAdPopcornAppKey("{전달받은 AdPopcorn AppKey}")
+
+
 // 앱스토어 등록시 발급된 App ID 입력, Cauly Adapter SDK 사용시 필수로 적용하셔야 합니다.
 MobWithADSDK.standard.appId = "{App Store App ID}"    
 ```
