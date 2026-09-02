@@ -4,7 +4,7 @@
 ---
 
 ## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
-- Added feature to set the scaleType for the NativeAd main image
+- InterstitialAd & RewardedAd Close Button UI Changed
 
 ## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
 - Added feature to set the scaleType for the NativeAd main image

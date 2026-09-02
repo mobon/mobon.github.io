@@ -4,7 +4,7 @@
 ---
 
 ## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
-- InterstitialAd & RewardedAd Close Button UI Changed
+- 전면&리워드 광고 닫기 버튼 UI 변경
 
 ## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
 - NativeAd 메인 이미지 scaleType 설정 기능 추가
