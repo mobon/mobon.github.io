@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.100] - 2026-09-02 <!-- {docsify-ignore} -->
+- bug fix
+
 ## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
 - InterstitialAd & RewardedAd Close Button UI Changed
 

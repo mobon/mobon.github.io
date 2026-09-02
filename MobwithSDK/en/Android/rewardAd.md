@@ -43,8 +43,6 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   @Override
   public void onClosed() {
         // When the ad window is closed
-        // If logs for MobwithRewardVideoDialog remain or the Lifecycle runs even after the ad window is closed, please call the function below (distroy()).
-        rewardVideoDialog.distroy();
   }
 
   @Override

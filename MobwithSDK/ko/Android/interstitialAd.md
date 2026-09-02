@@ -78,7 +78,6 @@ if (interstitialDialog.isLoaded()) {
 | isLoaded()                                                        | 광고 요청 성공 여부           |
 | show()                                                        | 광고 송출                 |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
-| close()                                                 | 광고 닫기                 |
 | setBackCancel(boolean isUse)                          | 뒤로가기 버튼 광고 닫기 여부 설정   |
 
 ### Click Event KeyCode

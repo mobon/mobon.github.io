@@ -43,8 +43,6 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
   @Override
   public void onClosed() {
         // 광고 창을 닫은 경우
-        // 만약 광고창이 닫혀도 MobwithRewardVideoDialog에 대한 Log가 남거나 Lifecycle이 동작할 때 아래 함수(distroy())를 호출해주세요.
-        rewardVideoDialog.distroy();
   }
 
   @Override
@@ -78,6 +76,4 @@ if (rewardVideoDialog.isLoaded()) {
 | load()                                                          | 광고 요청                 |
 | isLoaded()                                                      | 광고 요청 성공 여부           |
 | show()                                                          | 광고 송출                 |
-| destroy()                                                       | 광고 리소스 해제                 |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
-| close()                                                         | 광고 닫기                 |

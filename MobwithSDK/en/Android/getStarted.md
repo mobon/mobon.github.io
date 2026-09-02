@@ -2,7 +2,7 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.99
+### Latest Version: 1.0.100
 
 ### Changes
 - InterstitialAd & RewardedAd Close Button UI Changed

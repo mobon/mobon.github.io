@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.100] - 2026-09-02 <!-- {docsify-ignore} -->
+- bug fix
+
 ## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
 - 전면&리워드 광고 닫기 버튼 UI 변경
 
