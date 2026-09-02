@@ -25,10 +25,9 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 ---
 
 ### CocoaPod
-- Latest version : 1.3.27
+- Latest version : 1.3.28
 - Changes
-  - Add MobWithAdPopcornAdapter for receive NAM Ads
-  - Fixed minor bugs
+  - Update UI
 
 ### SPM
 - Latest version : 1.3.25
