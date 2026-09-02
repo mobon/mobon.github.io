@@ -250,19 +250,17 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 
 - Manifest Configuration
   Add your issued AdPopcorn APP Key to the Manifest.
+```xml
   <application>
   ...
   <meta-data android:name="adpopcorn_ssp_app_key" android:value="Enter_your_app_key_here"/>
   ...
   </application>
+```
 
 - build.gradle Configuration
   You need to implement the AdPopcorn SDK in build.gradle.
   (Optimized for version com.igaworks.ssp:IgawAdPopcornSSP:3.11.1.)
-
-```groovy
-implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
-```
 
 ```groovy
 implementation ('com.igaworks.ssp:IgawAdPopcornSSP:3.11.1')

@@ -262,19 +262,17 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 
 - Manifest 설정
   발급받은 애드팝콘 APP Key를 Manifest에 추가합니다.
+```xml
   <application>
   ...
   <meta-data android:name="adpopcorn_ssp_app_key" android:value="이곳에_앱키를_입력하세요"/>
   ...
   </application>
+```
 
 - build.gradle 설정  
   AdPopcorn SDK를 build.gradle에 implementation 해야 합니다.
   (com.igaworks.ssp:IgawAdPopcornSSP:3.11.1 버전에 최적화 되어 있습니다.)
-
-```groovy
-implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
-```
 
 ```groovy
 implementation ('com.igaworks.ssp:IgawAdPopcornSSP:3.11.1')
