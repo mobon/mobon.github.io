@@ -2,12 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.98
+### Latest Version: 1.0.99
 
 ### Changes
-- Added feature to set the scaleType for the NativeAd main image
-- Added AdPopcorn Naver mediation ad feature
-- Fixed Mixer Video bug
+- InterstitialAd & RewardedAd Close Button UI Changed
 
 ## Supported Environment
 ---

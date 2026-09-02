@@ -20,7 +20,7 @@ allprojects {
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
     implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.96'
+    implementation 'io.github.mobon:mobwithSDK:1.0.99'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
