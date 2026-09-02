@@ -3,7 +3,14 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
-## [1.0.95] - 2026-08-28 <!-- {docsify-ignore} -->
+## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
+- NativeAd 메인 이미지 scaleType 설정 기능 추가
+
+## [1.0.97] - 2026-09-02 <!-- {docsify-ignore} -->
+- Adpopcorn Naver 미디에이션 광고 기능 추가
+- Mixer Video 버그 수정
+
+## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
 - HybridBannerBridge destroy() 버그 수정
 
 ## [1.0.95] - 2026-08-25 <!-- {docsify-ignore} -->

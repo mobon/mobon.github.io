@@ -2,10 +2,12 @@
 
 ## 최신 버전 및 변경사항
 ---
-### 최신버전 : 1.0.96
+### 최신버전 : 1.0.98
 
 ### 변경사항
-- Bug fix
+- NativeAd 메인 이미지 scaleType 설정 기능 추가
+- Adpopcorn Naver 미디에이션 광고 기능 추가
+- Mixer Video 버그 수정
 
 ## 지원환경
 ---

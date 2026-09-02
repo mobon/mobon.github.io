@@ -187,6 +187,18 @@ nativeAdView.performAdClicked();
 
 Calling the method above can produce the same effect as clicking the ad.
 
+### Main Ad Image ScaleType Application Feature
+
+This feature allows you to directly specify the ScaleType for the ad's main image. (Prevents image distortion)
+When set to true, the ScaleType specified by the user is applied directly to the main image view (R.id.imageViewAd).
+
+----
+```java
+....
+nativeAdView.useImageViewScaleType(true);
+....
+```
+
 ### Sub-Layout Feature
 ----
 - This feature allows different layouts to be applied to direct ads and network ads as needed.   

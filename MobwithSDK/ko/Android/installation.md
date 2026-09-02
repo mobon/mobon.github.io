@@ -256,6 +256,33 @@ allprojects {
 implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```
 
+## AdPopcorn SDK 추가
+- AdPopcorn 광고를 송출하기 위해 링크를 참고하여 주세요.  
+  [AdPopcorn SDK 바로가기](https://adpopcornssp.gitbook.io/ssp-sdk/sdk/android/undefined)
+
+- Manifest 설정
+  발급받은 애드팝콘 APP Key를 Manifest에 추가합니다.
+  <application>
+  ...
+  <meta-data android:name="adpopcorn_ssp_app_key" android:value="이곳에_앱키를_입력하세요"/>
+  ...
+  </application>
+
+- build.gradle 설정  
+  AdPopcorn SDK를 build.gradle에 implementation 해야 합니다.
+  (com.igaworks.ssp:IgawAdPopcornSSP:3.11.1 버전에 최적화 되어 있습니다.)
+
+```groovy
+implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
+```
+
+```groovy
+implementation ('com.igaworks.ssp:IgawAdPopcornSSP:3.11.1')
+implementation platform('com.naver.gfpsdk:nam-bom:8.17.0')
+implementation ('com.naver.gfpsdk:nam-core')
+implementation ('com.naver.gfpsdk.mediation:nam-nda')
+```
+
 ## ADMANAGER SDK 추가
 - ADMANAGER 광고를 송출하기 위해 링크를 참고하여 주세요.
   [ADMANAGER SDK 바로가기](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ko&_gl=1*1c7zbjc*_up*MQ..*_ga*MjQ5NDMyODQwLjE3ODM0ODE1MTI.*_ga_SM8HXJ53K2*czE3ODM0ODE1MTEkbzEkZzAkdDE3ODM0ODE1MTEkajYwJGwwJGgw)
