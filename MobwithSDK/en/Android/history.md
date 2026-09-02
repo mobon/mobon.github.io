@@ -3,6 +3,13 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
+- Added feature to set the scaleType for the NativeAd main image
+
+## [1.0.97] - 2026-09-02 <!-- {docsify-ignore} -->
+- Added AdPopcorn Naver mediation ad feature
+- Fixed Mixer Video bug
+
 ## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
 - HybridBannerBridge destroy bug fix
 

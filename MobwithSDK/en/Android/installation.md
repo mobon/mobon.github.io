@@ -244,6 +244,33 @@ allprojects {
 implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 ```
 
+## Adding the AdPopcorn SDK
+- Please refer to the link below to serve AdPopcorn ads.
+  [AdPopcorn SDK Quick Link](https://adpopcornssp.gitbook.io/ssp-sdk/sdk/android/undefined)
+
+- Manifest Configuration
+  Add your issued AdPopcorn APP Key to the Manifest.
+  <application>
+  ...
+  <meta-data android:name="adpopcorn_ssp_app_key" android:value="Enter_your_app_key_here"/>
+  ...
+  </application>
+
+- build.gradle Configuration
+  You need to implement the AdPopcorn SDK in build.gradle.
+  (Optimized for version com.igaworks.ssp:IgawAdPopcornSSP:3.11.1.)
+
+```groovy
+implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
+```
+
+```groovy
+implementation ('com.igaworks.ssp:IgawAdPopcornSSP:3.11.1')
+implementation platform('com.naver.gfpsdk:nam-bom:8.17.0')
+implementation ('com.naver.gfpsdk:nam-core')
+implementation ('com.naver.gfpsdk.mediation:nam-nda')
+```
+
 ## Adding the ADMANAGER SDK
 - To serve ADMANAGER ads, please refer to the guide below:
   [Go to the ADMANAGER SDK](https://developers.google.com/ad-manager/mobile-ads-sdk/android/quick-start?hl=ko&_gl=1*1c7zbjc*_up*MQ..*_ga*MjQ5NDMyODQwLjE3ODM0ODE1MTI.*_ga_SM8HXJ53K2*czE3ODM0ODE1MTEkbzEkZzAkdDE3ODM0ODE1MTEkajYwJGwwJGgw)

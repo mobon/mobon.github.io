@@ -187,6 +187,18 @@ nativeAdView.performAdClicked();
 
 위 메소드를 호출하여 광고를 클릭한 것과 동일한 효과를 줄 수 있습니다.
 
+### 메인 광고 이미지 ScaleType 적용 기능
+
+광고의 메인 이미지에 직접 ScaleType을 지정하기 위한 기능 입니다. (이미지 꺠짐 현상 방지)
+true로 설정 시 메인 이미지뷰에(R.id.imageViewAd) 사용자가 직접 지정한 ScaleType이 적용됩니다.
+
+----
+```java
+....
+nativeAdView.useImageViewScaleType(true);
+....
+```
+
 ### 서브 레이아웃 기능
 ----
 - 필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.   
