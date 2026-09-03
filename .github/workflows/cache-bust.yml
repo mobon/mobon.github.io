@@ -21,7 +21,7 @@ jobs:
       - name: Update VERSION in cache-bust.js
         run: |
           VERSION=$(date -u +%Y%m%d%H%M)
-          sed -i "s/const VERSION = \".*\";/const VERSION = \"${VERSION}\";/" GuideDoc/MobwithSDK/cache-bust.js
+          sed -i "s/const VERSION = \".*\";/const VERSION = \"${VERSION}\";/" MobwithSDK/cache-bust.js
 
       - name: Commit and push if changed
         run: |
