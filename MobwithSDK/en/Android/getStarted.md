@@ -5,7 +5,7 @@
 ### Latest Version: 1.0.100
 
 ### Changes
-- InterstitialAd & RewardedAd Close Button UI Changed
+- Adjust text size for interstitial & rewarded ads, and update close button text
 
 ## Supported Environment
 ---

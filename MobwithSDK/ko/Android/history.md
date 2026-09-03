@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.101] - 2026-09-03 <!-- {docsify-ignore} -->
+- 전면&리워드 문구 사이즈 조절 및 닫기 버튼 문구 변경
+
 ## [1.0.100] - 2026-09-02 <!-- {docsify-ignore} -->
 - bug fix
 
@@ -16,39 +19,47 @@
 - Adpopcorn Naver 미디에이션 광고 기능 추가
 - Mixer Video 버그 수정
 
-## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
-- HybridBannerBridge destroy() 버그 수정
-
-## [1.0.95] - 2026-08-25 <!-- {docsify-ignore} -->
-- HybridBannerBridge No Ad 버그 수정
-
-## [1.0.94] - 2026-08-20 <!-- {docsify-ignore} -->
-- NativeAdView Kakao BizBoard Banner 광고 노출 기능 추가
-- Banner 광고 닫기 (X) 버튼 크기 조절
-- URL Query Encoding (Carrier, Language) 파라미터 추가
-
-## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
-- EndingBannerView의 UI 업데이트
-
-## [1.0.92] - 2026-08-11 <!-- {docsify-ignore} -->
-- bug fix
-
-## [1.0.91] - 2026-08-05 <!-- {docsify-ignore} -->
-- bug fix
-
-## [1.0.90] - 2026-08-05 <!-- {docsify-ignore} -->
-- 배너 닫기 기능 제거
-- bug fix
-
-## [1.0.89] - 2026-07-28 <!-- {docsify-ignore} -->
-- HybridBannerBridgeView 스크립트 추가
-- HybridBannerBridgeView webViewFinishLoad() 함수 수정
-
 
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 이전 버전 히스토리 펼치기
 </summary>
+
+## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
+---
+- HybridBannerBridge destroy() 버그 수정
+
+## [1.0.95] - 2026-08-25 <!-- {docsify-ignore} -->
+---
+- HybridBannerBridge No Ad 버그 수정
+
+## [1.0.94] - 2026-08-20 <!-- {docsify-ignore} -->
+---
+- NativeAdView Kakao BizBoard Banner 광고 노출 기능 추가
+- Banner 광고 닫기 (X) 버튼 크기 조절
+- URL Query Encoding (Carrier, Language) 파라미터 추가
+
+## [1.0.93] - 2026-08-14 <!-- {docsify-ignore} -->
+---
+- EndingBannerView의 UI 업데이트
+
+## [1.0.92] - 2026-08-11 <!-- {docsify-ignore} -->
+---
+- bug fix
+
+## [1.0.91] - 2026-08-05 <!-- {docsify-ignore} -->
+---
+- bug fix
+
+## [1.0.90] - 2026-08-05 <!-- {docsify-ignore} -->
+---
+- 배너 닫기 기능 제거
+- bug fix
+
+## [1.0.89] - 2026-07-28 <!-- {docsify-ignore} -->
+---
+- HybridBannerBridgeView 스크립트 추가
+- HybridBannerBridgeView webViewFinishLoad() 함수 수정
 
 ## [1.0.88] - 2026-07-28 <!-- {docsify-ignore} -->
 ---
