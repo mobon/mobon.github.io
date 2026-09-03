@@ -28,6 +28,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git diff --quiet && exit 0
-          git add GuideDoc/MobwithSDK/cache-bust.js
+          git add MobwithSDK/cache-bust.js
           git commit -m "chore: bump cache-bust version"
           git push
