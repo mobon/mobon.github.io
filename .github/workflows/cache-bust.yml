@@ -1,0 +1,33 @@
+name: Bump cache-bust version
+
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/cache-bust.js'   # 자체 커밋으로 인한 재실행 방지(이중 안전장치)
+
+permissions:
+  contents: write
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Update VERSION in cache-bust.js
+        run: |
+          VERSION=$(date -u +%Y%m%d%H%M)
+          sed -i "s/const VERSION = \".*\";/const VERSION = \"${VERSION}\";/" GuideDoc/MobwithSDK/cache-bust.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet && exit 0
+          git add GuideDoc/MobwithSDK/cache-bust.js
+          git commit -m "chore: bump cache-bust version"
+          git push
