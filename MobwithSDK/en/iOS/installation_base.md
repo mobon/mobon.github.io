@@ -40,7 +40,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # Add MobWithAdSDK
-pod 'MobWithAdSDK', '1.3.28'
+pod 'MobWithAdSDK', '1.3.29'
 
 ```
 

@@ -25,9 +25,9 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 ---
 
 ### CocoaPod
-- Latest version : 1.3.28
+- Latest version : 1.3.29
 - Changes
-  - Update UI
+  - Update InterstitialAd & RewardAd UI
 
 ### SPM
 - Latest version : 1.3.25

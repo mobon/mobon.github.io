@@ -3,6 +3,9 @@
 # History
 ---
 
+### [1.3.29] - 2026-09-03
+- Update InterstitialAd & RewardAd UI
+
 ### [1.3.28] - 2026-09-02
 - Update UI
 
