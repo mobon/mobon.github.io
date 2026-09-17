@@ -3,6 +3,11 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.102] - 2026-09-17 <!-- {docsify-ignore} -->
+- Adpopcorn NAM 광고 연동
+- 글로벌 지면 Native 광고 Asset 노출 정책 대응
+- Context 타입 변경
+
 ## [1.0.101] - 2026-09-03 <!-- {docsify-ignore} -->
 - 전면&리워드 문구 사이즈 조절 및 닫기 버튼 문구 변경
 

@@ -20,7 +20,7 @@ allprojects {
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
     implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.101'
+    implementation 'io.github.mobon:mobwithSDK:1.0.102'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
@@ -298,7 +298,7 @@ implementation ('com.naver.gfpsdk.mediation:nam-nda')
     <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
   </application>
-</manifest>
+</manifest>m
 
 ```
 

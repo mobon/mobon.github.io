@@ -108,7 +108,7 @@ android:layout_height="wrap_content" >
 ### 광고 로드 방법 
 ----
 - 위에서 설정한 레이아웃을 기준으로, Custom Native Layout에 표시될 데이터를 구성합니다.
-([MobwithNativeAdView 파라미터 정의 참조](#mobwithnativeadview-파라미터-정의))
+([MobwithNativeAdView 파라미터 정의 참조](#MobwithNativeAdView-파라미터-정의-Native-Layout))
 - adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다
 - mediaContainerView는 반드시 GroupView 중 하나로 구성되어야 하며, imageViewAD를 포함하는 구조여야 합니다.  
   또한, 레이아웃은 FrameLayout 사용을 권장합니다.  

@@ -2,10 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.100
+### Latest Version: 1.0.102
 
 ### Changes
-- Adjust text size for interstitial & rewarded ads, and update close button text
+- Adpopcorn NAM ad integration
 
 ## Supported Environment
 ---

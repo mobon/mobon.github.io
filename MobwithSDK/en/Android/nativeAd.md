@@ -108,7 +108,7 @@ android:layout_height="wrap_content" >
 ### How to Load an Ad
 ----
 - Based on the layout configured above, build the data to be displayed in the Custom Native Layout.
-([See MobwithNativeAdView Parameter Definitions](#mobwithnativeadview-parameter-definitions))
+([See MobwithNativeAdView Parameter Definitions](#MobwithNativeAdView-Parameter-Definitions-Native-Layout))
 - If the IDs of each View within the adview_container are not correctly resolved, the ad may not display properly.
 - mediaContainerView must be one of the GroupView types and must contain imageViewAD.  
   Using FrameLayout for this layout is recommended.  

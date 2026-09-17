@@ -3,6 +3,11 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.102] - 2026-09-17 <!-- {docsify-ignore} -->
+- Adpopcorn NAM ad integration
+- Support for global inventory Native ad asset display policy
+- Context type change
+
 ## [1.0.101] - 2026-09-03 <!-- {docsify-ignore} -->
 - Adjust text size for interstitial & rewarded ads, and update close button text
 
