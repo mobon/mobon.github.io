@@ -25,11 +25,17 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 ---
 
 ### CocoaPod
-- Latest version : 1.3.29
+- Latest version : 1.3.30
 - Changes
-  - Update InterstitialAd & RewardAd UI
+  - SplashAd UI and functionality improvements  
+  - Removed userFullScreenAd from SplashAd  
+  - Added NAM ad delivery to HybridBannerBridge  
+  - General stability improvements and minor bug fixes
 
 ### SPM
-- Latest version : 1.3.25
+- Latest version : 1.3.30
 - Changes
-  - Fixed minor bugs
+  - SplashAd UI and functionality improvements  
+  - Removed userFullScreenAd from SplashAd  
+  - Added NAM ad delivery to HybridBannerBridge  
+  - General stability improvements and minor bug fixes

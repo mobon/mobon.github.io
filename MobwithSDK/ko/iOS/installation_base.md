@@ -29,7 +29,7 @@ https://github.com/mobon/MobWithAdSDK_SPM
 
 ### 1. MobWithAdSDK 설치
 프로젝트의 Podfile에 'MobWithAdSDK' 를 추가합니다.  
-아래는 1.3.22 버전을 지정해서 SDK를 설치하는 예시 입니다.
+아래는 1.3.30 버전을 지정해서 SDK를 설치하는 예시 입니다.
 ```
 # Cocoapod 소스 지정.  순서에 따라 제대로 가져오지 못 할 수 있으니 주의 바랍니다.
 
@@ -40,7 +40,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # MobWithAdSDK 추가
-pod 'MobWithAdSDK', '1.3.29'
+pod 'MobWithAdSDK', '1.3.30'
 
 ```
 

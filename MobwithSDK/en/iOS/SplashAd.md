@@ -7,7 +7,6 @@ This is an ad object used to display ads on the splash screen.
 ```swift
 let splashAd = MMSplashAd(viewController: self, unitId: "{ Your Ad Unit ID }", rootView: self.view)
 splashAd.delegate = self
-splashAd.useFullScreenAd = false
 splashAd.timeOutSec = 5
 
 splashAd.loadAd()
@@ -25,12 +24,6 @@ splashAd.loadAd()
 <br>
 <br>
 
-### Using Full-Screen Mode
-Setting useFullScreenAd to true enables full-screen mode. The default value is false.
-* Depending on the ad size, full-screen size may not be displayed.  
-```swift
-splashAd.useFullScreenAd = true
-```
 
 ### Ad Request
 Call the loadAd() function to load the ad.
@@ -88,7 +81,6 @@ class SplashViewController: UIViewController {
         
         splashAd = MMSplashAd.init(viewController: self, unitId: "{ Your Ad Unit ID }")
         splashAd?.delegate = self
-        splashAd.useFullScreenAd = false
         splashAd.timeOutSec = 5
         
         splashAd?.loadAd()

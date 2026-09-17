@@ -29,7 +29,7 @@ In particular, note that the pod name has changed from the previous 'MobWithAD' 
 
 ### 1. Install MobWithAdSDK
 Add 'MobWithAdSDK' to your project's Podfile.  
-The example below installs the SDK by specifying version 1.3.12.
+The example below installs the SDK by specifying version 1.3.30.
 ```
 # CocoaPods source declarations. Note: the order matters, otherwise pods may not be fetched correctly.
 
@@ -40,7 +40,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'  
 
 # Add MobWithAdSDK
-pod 'MobWithAdSDK', '1.3.29'
+pod 'MobWithAdSDK', '1.3.30'
 
 ```
 

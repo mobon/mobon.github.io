@@ -3,6 +3,12 @@
 # History
 ---
 
+### [1.3.30] - 2026-09-17
+- SplashAd UI 및 기능 개선
+- SplashAd의 userFullScreenAd 제거
+- HybridBannerBirdge에 NAM 광고 송출 추가
+- 기타 기능 안정화 및 마이너 오류 수정
+
 ### [1.3.29] - 2026-09-03
 - 전면 광고 & 리워드 광고 UI 업데이트
 
@@ -16,6 +22,17 @@
 ### [1.3.25] - 2026-08-26
 - SPM 배포
 - 마이너 오류 수정
+
+
+
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
+
+
 
 ### [1.3.24] - 2026-08-25
 - SPM 배포
@@ -57,15 +74,6 @@
 
 ### [1.3.13] - 2026-07-14
 - 마이너 오류 수정
-
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-이전 버전 히스토리 펼치기
-</summary>
-
 
 ### [1.3.12] - 2026-07-10
 - NativeAdView 개선

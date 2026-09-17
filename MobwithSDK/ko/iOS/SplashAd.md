@@ -7,7 +7,6 @@
 ```swift
 let splashAd = MMSplashAd(viewController: self, unitId: "{ 전달받은 광고 지면번호 }", rootView: self.view)
 splashAd.delegate = self
-splashAd.useFullScreenAd = false
 splashAd.timeOutSec = 5
 
 splashAd.loadAd()
@@ -25,12 +24,7 @@ splashAd.loadAd()
 <br>
 <br>
 
-### 전체 화면 모드 사용
-useFullScreenAd를 true로 설정하면 전체화면 모드를 사용하게 됩니다.  기본값은 false 입니다.
-* 광고 사이즈에 따라 전체화면 사이즈를 표시하지 않을 수도 있습니다.  
-```swift
-splashAd.useFullScreenAd = true
-```
+
 
 ### 광고 요청
 loadAd() 함수를 호출하여 광고 로딩을 합니다.
@@ -88,7 +82,6 @@ class SplashViewController: UIViewController {
         
         splashAd = MMSplashAd.init(viewController: self, unitId: "{ 광고 지면번호}")
         splashAd?.delegate = self
-        splashAd.useFullScreenAd = false
         splashAd.timeOutSec = 5
         
         splashAd?.loadAd()

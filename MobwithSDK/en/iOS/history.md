@@ -3,6 +3,12 @@
 # History
 ---
 
+### [1.3.30] - 2026-09-17
+- SplashAd UI and functionality improvements  
+- Removed userFullScreenAd from SplashAd  
+- Added NAM ad delivery to HybridBannerBridge  
+- General stability improvements and minor bug fixes
+
 ### [1.3.29] - 2026-09-03
 - Update InterstitialAd & RewardAd UI
 
@@ -17,6 +23,17 @@
 - Release at SPM
 - Fixed minor bugs
 
+
+
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+Expand previous version history
+</summary>
+
+
+
 ### [1.3.24] - 2026-08-25
 - Release at SPM
 - Fixed minor bugs
@@ -30,7 +47,6 @@
 - Fixed a memory-release issue
 - MobWithBidMadAdapter released '6.13.6.1.3.21'
 - Fixed minor bugs
-
 
 ### [1.3.20] - 2026-08-05
 - Removed 'useCloseButton' from MobWithAdView (Banner Ad) to comply with AdMob and other advertising policies.
@@ -58,14 +74,6 @@
 
 ### [1.3.13] - 2026-07-14
 - Minor bug fixes
-
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-Expand previous version history
-</summary>
 
 ### [1.3.12] - 2026-07-10
 - Improved NativeAdView
