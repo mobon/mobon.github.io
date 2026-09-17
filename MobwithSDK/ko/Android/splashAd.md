@@ -56,7 +56,6 @@ splashBanner.loadAd();
 | Context context           | 광고를 송출 할 Activity Context                                           |
 | ViewGroup layoutContainer | 스플래시 광고를 송출 할 레이아웃(ViewGruop)                                       |
 | String unitId             | 발급 받은 UnitId                                                         |
-| boolean isFullScreen      | 광고 타입 설정 (true:전면, false:하단 배너) |
 
 ### 배너 광고 기능
 
@@ -67,15 +66,7 @@ splashBanner.loadAd();
 | setAdListener(MobwithSplashBannerView.OnSplashListener listener) | 광고 Callback                     |
 | setTimeOutSec(int seconds)                                       | 광고 요청 타임아웃 시간 (초).  <br>해당 시간내 광고 로딩이 완료되지 않으면 광고 로딩 실패 콜백이 전달 됩니다.               |
 | setFadeDuration(long durationMs)                                       | 페이드 In/Out 지속시간 설정 (ms)               |
-| useFullScreenAd(boolean fullScreen)                          | 광고 타입 설정 (true:전면, false:하단 배너) |
 | destroy()                                                        | 광고 리소스 해제                       |`
-
-### 전체 화면 모드 사용
-useFullScreenAd를 true로 설정하면 전체화면 모드를 사용하게 됩니다.  기본값은 false 입니다.
-* 광고 사이즈에 따라 전체화면 사이즈를 표시하지 않을 수도 있습니다.
-```java 
-splashBanner.useFullScreenAd(true);
-```
 
 ### 광고 요청 타임아웃
 광고 요청 대기 시간을 설정할 수 있습니다.  

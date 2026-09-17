@@ -56,7 +56,6 @@ splashBanner.loadAd();
 | Context context           | The Activity Context from which the ad is served                                           |
 | ViewGroup layoutContainer | Layout (ViewGroup) that will display the splash ad                                       |
 | String unitId             | The issued UnitId                                                         |
-| boolean isFullScreen      | Ad type setting (true: interstitial, false: bottom banner) |
 
 ### Banner Ad Features
 
@@ -67,15 +66,7 @@ splashBanner.loadAd();
 | setAdListener(MobwithSplashBannerView.OnSplashListener listener) | Ad callback                     |
 | setTimeOutSec(int seconds)                                       | Ad request timeout duration (seconds).  <br>If ad loading is not completed within this time, the ad load failure callback is delivered.               |
 | setFadeDuration(long durationMs)                                       | Set fade in/out duration (ms)               |
-| useFullScreenAd(boolean fullScreen)                          | Ad type setting (true: interstitial, false: bottom banner) |
 | destroy()                                                        | Release ad resources                       |
-
-### Using Full-Screen Mode
-Setting useFullScreenAd to true enables full-screen mode. The default value is false.
-* Depending on the ad size, full-screen size may not be displayed.
-```java 
-splashBanner.useFullScreenAd(true);
-```
 
 ### Ad Request Timeout
 You can set the ad request wait time.  
