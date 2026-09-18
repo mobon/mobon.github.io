@@ -6,6 +6,9 @@
 
 ### 변경사항
 - Adpopcorn NAM 연동
+- 글로벌 지면 Native 광고 Asset 노출 정책 대응
+- Context 타입 변경
+- 스플래시 배너 UI 변경
 
 ## 지원환경
 ---
