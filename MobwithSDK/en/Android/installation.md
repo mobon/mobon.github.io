@@ -254,6 +254,10 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
   <application>
   ...
   <meta-data android:name="adpopcorn_ssp_app_key" android:value="Enter_your_app_key_here"/>
+  
+  <meta-data
+          android:name="com.naver.gfpsdk.PUBLISHER_CD"
+          android:value="Please enter a certified nam_publisher_cd."/>
   ...
   </application>
 ```
