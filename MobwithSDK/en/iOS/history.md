@@ -2,6 +2,8 @@
 
 # History
 ---
+### [1.3.31] - 2026-09-22
+- Restore SplashAd UI  
 
 ### [1.3.30] - 2026-09-17
 - SplashAd UI and functionality improvements  

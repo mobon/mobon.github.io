@@ -33,9 +33,7 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
   - General stability improvements and minor bug fixes
 
 ### SPM
-- Latest version : 1.3.30
+- Latest version : 1.3.31
 - Changes
-  - SplashAd UI and functionality improvements  
-  - Removed userFullScreenAd from SplashAd  
-  - Added NAM ad delivery to HybridBannerBridge  
-  - General stability improvements and minor bug fixes
+  - Restore SplashAd UI
+  
