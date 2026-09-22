@@ -3,6 +3,10 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.103] - 2026-09-22 <!-- {docsify-ignore} -->
+- Adpopcorn NAM 연동
+- 스플래시 배너 UI 변경
+
 ## [1.0.102] - 2026-09-17 <!-- {docsify-ignore} -->
 - Adpopcorn NAM 광고 연동
 - 글로벌 지면 Native 광고 Asset 노출 정책 대응

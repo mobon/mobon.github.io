@@ -2,12 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.102
+### Latest Version: 1.0.103
 
 ### Changes
 - Adpopcorn NAM ad integration
-- Support for global inventory Native ad asset display policy
-- Context type change
 - Splash banner UI updated
 
 ## Supported Environment
