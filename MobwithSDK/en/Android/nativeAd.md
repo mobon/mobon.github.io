@@ -152,14 +152,17 @@ nativeAdView.loadAd();
 ```
 
 ### Native AD Features
-| Method                                                             | Description                        |
-|:----------------------------------------------------------------|:-----------------------------------|
-| setUnitId(String unitId)                                        | Set the issued UnitId       |
-| loadAd()                                                        | Request an ad                              |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category-targeted ad feature                     |
-| setCategory(List<String> categories)                            | Category-targeted ad feature  |
-| setCampaignCodes(List<String> campaignCodes)                    | Set targeting campaign codes   |
-| performAdClicked()                                              | Trigger an ad click event |
+| Method                                                             | Description                                                |
+|:----------------------------------------------------------------|:-----------------------------------------------------------|
+| setUnitId(String unitId)                                        | Set the issued UnitId                                      |
+| loadAd()                                                        | Request an ad                                              |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category-targeted ad feature                               |
+| setCategory(List<String> categories)                            | Category-targeted ad feature                               |
+| setUserKey(String userKey)                                      | Set the UserKey                                            |
+| setServiceId(String serviceId)              | Set the ServiceId                                          |
+| setMediaId(String mediaId)                | Set the MediaId                                            |
+| setCampaignCodes(List<String> campaignCodes)                    | Set targeting campaign codes                               |
+| performAdClicked()                                              | Trigger an ad click event                                  |
 
 ### MobwithNativeAdView Parameter Definitions (Native Layout)
 
@@ -256,4 +259,12 @@ nativeAdView.setAdListener(new iBannerCallback() {
 });
 nativeAdView.loadAd();
 ....
+```
+
+### Rewarded Banner Feature
+When using the rewarded banner feature, you must configure the UserKey, ServiceId, and MediaId issued by the operations team.
+```java
+banner.setUserKey("Set the UserKey");
+banner.setServiceId("Set the ServiceId");
+banner.setMediaId("Set the MediaId");
 ```

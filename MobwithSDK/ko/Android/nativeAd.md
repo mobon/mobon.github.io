@@ -158,6 +158,9 @@ nativeAdView.loadAd();
 | loadAd()                                                        | 광고 요청                              |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능                     |
 | setCategory(List<String> categories)                            | 카테고리 타겟팅 광고 기능  |
+| setUserKey(String userKey)                                      | 발급받은 UserKey 설정       |
+| setServiceId(String serviceId)              | 발급받은 ServiceId 설정     |
+| setMediaId(String mediaId)                | 발급받은 MediaId 설정       |
 | setCampaignCodes(List<String> campaignCodes)                    | 타겟팅 캠페인 코드 설정   |
 | performAdClicked()                                              | 광고 클릭 이벤트 발생 |
 
@@ -256,4 +259,12 @@ nativeAdView.setAdListener(new iBannerCallback() {
 });
 nativeAdView.loadAd();
 ....
+```
+
+### 리워드 배너 기능
+리워드 배너 기능 사용 시 운영팀에서 발급받은 UserKey, ServiceId, MediaId를 설정해야 합니다.
+```java
+banner.setUserKey("발급받은 UserKey");
+banner.setServiceId("발급받은 ServiceId");
+banner.setMediaId("발급받은 MediaId");
 ```

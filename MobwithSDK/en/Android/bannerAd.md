@@ -56,19 +56,22 @@ banner.setAdListener(new iBannerCallback() {
 banner.loadAd();
 ```
 ### Banner Ad Features
-| Method                                                             | Description           |
-|:----------------------------------------------------------------|:----------------------|
-| setBannerUnitId(String unitId)                                  | Set the issued UnitId       |
-| loadAd()                                                        | Request an ad                 |
-| showNextAd()                                                    | Request the next ad              |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature        |
-| setInterval(Int second)                                         | Ad refresh interval (parameter in seconds)  |
-| restart()                                                       | Restart ad refresh           |
-| stop()                                                          | Stop ad refresh            |
-| destroy()                                                       | Release ad resources             |
-| setUseHouseBanner(boolean isUse)                                | Whether to use house banner          |
-| MobwithSDK.getInstance().setFullScreenMode(bollean isUse)       | Whether to use the fullscreen size feature for direct ads |
-| setAdScale(int heightDp)                                        | Script ad height adjustment feature    |
+| Method                                                             | Description                                                |
+|:----------------------------------------------------------------|:-----------------------------------------------------------|
+| setBannerUnitId(String unitId)                                  | Set the issued UnitId                                      |
+| loadAd()                                                        | Request an ad                                              |
+| showNextAd()                                                    | Request the next ad                                        |
+| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature                              |
+| setUserKey(String userKey)                                      | Set the UserKey                                            |
+| setServiceId(String serviceId)              | Set the ServiceId                                          |
+| setMediaId(String mediaId)                | Set the MediaId                                            |
+| setInterval(Int second)                                         | Ad refresh interval (parameter in seconds)                 |
+| restart()                                                       | Restart ad refresh                                         |
+| stop()                                                          | Stop ad refresh                                            |
+| destroy()                                                       | Release ad resources                                       |
+| setUseHouseBanner(boolean isUse)                                | Whether to use house banner                                |
+| MobwithSDK.getInstance().setFullScreenMode(bollean isUse)       | Whether to use the fullscreen size feature for direct ads  |
+| setAdScale(int heightDp)                                        | Script ad height adjustment feature                        |
 
 ### Ad Refresh
 ----
@@ -202,4 +205,12 @@ banner.setCloseBtn(new MobwithBannerView.OnCloseListener() {
         // Ad close listener
     }
 });
+```
+
+### Rewarded Banner Feature
+When using the rewarded banner feature, you must configure the UserKey, ServiceId, and MediaId issued by the operations team.
+```java
+banner.setUserKey("Set the UserKey");
+banner.setServiceId("Set the ServiceId");
+banner.setMediaId("Set the MediaId");
 ```

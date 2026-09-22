@@ -63,6 +63,9 @@ banner.loadAd();
 | loadAd()                                                        | 광고 요청                 |
 | showNextAd()                                                    | 다음 광고 요청              |
 | setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
+| setUserKey(String userKey)                                      | 발급받은 UserKey 설정       |
+| setServiceId(String serviceId)              | 발급받은 ServiceId 설정     |
+| setMediaId(String mediaId)                | 발급받은 MediaId 설정       |
 | setInterval(Int second)                                         | 광고 새로고침 (파라미터는 초 단위)  |
 | restart()                                                       | 광고 새로고침 재시작           |
 | stop()                                                          | 광고 새로고침 중단            |
@@ -209,4 +212,12 @@ banner.setCloseBtn(new MobwithBannerView.OnCloseListener() {
         //광고 닫기 리스너
     }
 });
+```
+
+### 리워드 배너 기능
+리워드 배너 기능 사용 시 운영팀에서 발급받은 UserKey, ServiceId, MediaId를 설정해야 합니다.
+```java
+banner.setUserKey("발급받은 UserKey");
+banner.setServiceId("발급받은 ServiceId");
+banner.setMediaId("발급받은 MediaId");
 ```
