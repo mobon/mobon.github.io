@@ -34,9 +34,6 @@ MobWithAD SDK는 Swift로 개발되었습니다. Swift 기반의 프로젝트에
 
 
 ### SPM
-- 최신버전 : 1.3.30
+- 최신버전 : 1.3.31
 - 변경사항
-  - SplashAd UI 및 기능 개선
-  - SplashAd의 userFullScreenAd 제거
-  - HybridBannerBirdge에 NAM 광고 송출 추가
-  - 기타 기능 안정화 및 마이너 오류 수정
+  - SplashAd UI를 기존 하단 배너 형태로 원복

@@ -3,6 +3,9 @@
 # History
 ---
 
+### [1.3.31] - 2026-09-22
+- SplashAd UI를 기존 하단 배너 형태로 원복
+
 ### [1.3.30] - 2026-09-17
 - SplashAd UI 및 기능 개선
 - SplashAd의 userFullScreenAd 제거
