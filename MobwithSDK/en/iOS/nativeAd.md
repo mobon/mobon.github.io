@@ -184,6 +184,18 @@ The Delegate for receiving callbacks uses [MobWithADViewDelegate](/iOS/banner?id
 For some external SDKs being mediated, they also require setting a rootViewController for the NativeAd.  
 For such ads, please note that even if an actual ad is received, it is treated as not received if the rootViewController is not set.
 
+
+### Use Reward Ads
+To enable reward functionality for banner ads, configure the following:
+ - mediaId: Media ID (provided separately)
+ - serviceId: Sub-service ID for the media (provided separately)
+ - userKey: A key used to identify the user
+```swift
+  mobWithAdView.mediaId = "{Media ID value provided}"
+  mobWithAdView.serviceId = "{Service ID value provided}"
+  mobWithAdView.userKey = "{User identifier managed by the media, e.g., member ID}"
+```
+
 <br><br>
 
 ## MobWithNativeAdLoader

@@ -49,12 +49,22 @@ mobWithAdView.stop()       // Stop ad auto-refresh
 ```
 
 ### start()
-정지된 광고 자동 갱신을 다시 시작합니다.
+Resume automatic renewal for paused ads.
 ```swift
 mobWithAdView.restart()    // Restart ad auto-refresh
 ```
 
 
+### Use Reward Ads
+To enable reward functionality for banner ads, configure the following:
+ - mediaId: Media ID (provided separately)
+ - serviceId: Sub-service ID for the media (provided separately)
+ - userKey: A key used to identify the user
+```swift
+  mobWithAdView.mediaId = "{Media ID value provided}"
+  mobWithAdView.serviceId = "{Service ID value provided}"
+  mobWithAdView.userKey = "{User identifier managed by the media, e.g., member ID}"
+```
 
 
 
