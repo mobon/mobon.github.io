@@ -2,11 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.103
+### Latest Version: 1.0.104
 
 ### Changes
-- Adpopcorn NAM ad integration
-- Splash banner UI updated
+- SDK Resource Cleanup
 
 ## Supported Environment
 ---

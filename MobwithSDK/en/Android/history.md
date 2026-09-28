@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.104] - 2026-09-28 <!-- {docsify-ignore} -->
+- SDK Resource Cleanup
+
 ## [1.0.103] - 2026-09-22 <!-- {docsify-ignore} -->
 - Adpopcorn NAM ad integration
 - Splash banner UI updated

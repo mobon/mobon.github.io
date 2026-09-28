@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.104] - 2026-09-28 <!-- {docsify-ignore} -->
+- SDK 리소스 정리
+
 ## [1.0.103] - 2026-09-22 <!-- {docsify-ignore} -->
 - Adpopcorn NAM 연동
 - 스플래시 배너 UI 변경
