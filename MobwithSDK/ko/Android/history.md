@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.105] - 2026-09-29 <!-- {docsify-ignore} -->
+- ADID bug fix
+
 ## [1.0.104] - 2026-09-28 <!-- {docsify-ignore} -->
 - SDK 리소스 정리
 

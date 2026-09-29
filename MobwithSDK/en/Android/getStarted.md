@@ -2,10 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.104
+### Latest Version: 1.0.105
 
 ### Changes
-- SDK Resource Cleanup
+- ADID bug fix
 
 ## Supported Environment
 ---
