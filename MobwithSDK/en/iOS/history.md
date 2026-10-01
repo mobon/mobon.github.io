@@ -2,6 +2,10 @@
 
 # History
 ---
+### [1.3.32] - 2026-09-30
+- Integrate rewarded-ad functionality into BannerView and NativeAdView.
+- General stability improvements and minor bug fixes
+
 ### [1.3.31] - 2026-09-22
 - Restore SplashAd UI  
 
@@ -10,6 +14,15 @@
 - Removed userFullScreenAd from SplashAd  
 - Added NAM ad delivery to HybridBannerBridge  
 - General stability improvements and minor bug fixes
+
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+Expand previous version history
+</summary>
+
+
 
 ### [1.3.29] - 2026-09-03
 - Update InterstitialAd & RewardAd UI
@@ -24,17 +37,6 @@
 ### [1.3.25] - 2026-08-26
 - Release at SPM
 - Fixed minor bugs
-
-
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-Expand previous version history
-</summary>
-
-
 
 ### [1.3.24] - 2026-08-25
 - Release at SPM

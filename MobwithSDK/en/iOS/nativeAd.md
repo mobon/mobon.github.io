@@ -186,14 +186,19 @@ For such ads, please note that even if an actual ad is received, it is treated a
 
 
 ### Use Reward Ads
-To enable reward functionality for banner ads, configure the following:
- - mediaId: Media ID (provided separately)
- - serviceId: Sub-service ID for the media (provided separately)
- - userKey: A key used to identify the user
+When enabling rewarded ads in a native ad, you must configure the following values.  
+Use the values assigned by the media platform for `mediaId` and `serviceId`. If values have already been provided, use them as received.
+
+| Field | Description |
+| --- | --- |
+| `mediaId` | A unique identifier for the media platform or service. |
+| `serviceId` | An identifier for the ad placement or service location within the media platform. It is a child value of `mediaId` and distinguishes multiple placements or locations within the same platform. |
+| `userKey` | A value used to identify the user, such as a user ID. Set this to a unique value managed by the media platform. |
+
 ```swift
-  mobWithAdView.mediaId = "{Media ID value provided}"
-  mobWithAdView.serviceId = "{Service ID value provided}"
-  mobWithAdView.userKey = "{User identifier managed by the media, e.g., member ID}"
+mobWithAdView.mediaId = "{Media ID}"
+mobWithAdView.serviceId = "{Service ID}"
+mobWithAdView.userKey = "{User Key}"
 ```
 
 <br><br>

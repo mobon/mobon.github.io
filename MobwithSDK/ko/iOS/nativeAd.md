@@ -202,7 +202,24 @@ nativeAdView.performAdClicked()
 미디에이션 하고 있는 일부 외부 SDK의 경우 NativeAd에도 rootViewController를 설정할 것을 요구 합니다.  
 관련 광고의 경우 실제 광고를 수신해도 rootViewController가 설정되지 않은 경우 광고를 받지 못한 것으로 취급되니 주의 바랍니다.
 
-  
+
+### 리워드 광고 기능 활성화
+광고에서 리워드 기능을 활성화하는 경우, 아래 값을 반드시 설정해야 합니다.  
+`mediaId`와 `serviceId`는 매체에서 직접 지정한 값을 사용하거나, 전달받은 값이 있다면 동일하게 설정해 주세요.
+
+| 항목 | 설명 |
+| --- | --- |
+| `mediaId` | 매체(서비스)를 구분하는 고유 식별자입니다. |
+| `serviceId` | 매체 내 광고가 노출되는 지면 또는 서비스 위치를 구분하는 식별자입니다. `mediaId`의 하위 값이며, 하나의 매체에 여러 지면이나 노출 위치가 있는 경우 이를 구분하는 데 사용합니다. |
+| `userKey` | 사용자 ID 등 사용자를 식별하기 위한 값입니다. 매체에서 관리하는 고유한 값을 설정해 주세요. |
+
+```swift
+mobWithAdView.mediaId = "{Media ID}"
+mobWithAdView.serviceId = "{Service ID}"
+mobWithAdView.userKey = "{User Key}"
+```
+
+
   
 
 

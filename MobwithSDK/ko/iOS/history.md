@@ -2,6 +2,9 @@
 
 # History
 ---
+### [1.3.32] - 2026-09-30
+- BannerView, NativeAdView에 리워드 광고 기능 연동
+- 기타 기능 안정화 및 마이너 오류 수정
 
 ### [1.3.31] - 2026-09-22
 - SplashAd UI를 기존 하단 배너 형태로 원복
@@ -11,6 +14,15 @@
 - SplashAd의 userFullScreenAd 제거
 - HybridBannerBirdge에 NAM 광고 송출 추가
 - 기타 기능 안정화 및 마이너 오류 수정
+
+
+
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
+
+
 
 ### [1.3.29] - 2026-09-03
 - 전면 광고 & 리워드 광고 UI 업데이트
@@ -25,17 +37,6 @@
 ### [1.3.25] - 2026-08-26
 - SPM 배포
 - 마이너 오류 수정
-
-
-
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-이전 버전 히스토리 펼치기
-</summary>
-
-
 
 ### [1.3.24] - 2026-08-25
 - SPM 배포
