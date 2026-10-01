@@ -3,6 +3,11 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.106] - 2026-10-01 <!-- {docsify-ignore} -->
+- Added point banner functionality for standard banner ads and native ads
+- Enhanced User-Agent
+- Added support for Android API versions
+
 ## [1.0.105] - 2026-09-29 <!-- {docsify-ignore} -->
 - ADID bug fix
 

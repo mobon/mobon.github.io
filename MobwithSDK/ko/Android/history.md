@@ -3,6 +3,11 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.106] - 2026-10-01 <!-- {docsify-ignore} -->
+- 일반 배너광고, 네이티브 광고 포인트 배너 기능 추가
+- UserAgent 고도화
+- 안드로이드 API 버전 대응
+
 ## [1.0.105] - 2026-09-29 <!-- {docsify-ignore} -->
 - ADID bug fix
 

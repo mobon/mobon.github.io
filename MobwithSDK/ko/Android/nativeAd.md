@@ -262,9 +262,17 @@ nativeAdView.loadAd();
 ```
 
 ### 리워드 배너 기능
-리워드 배너 기능 사용 시 운영팀에서 발급받은 UserKey, ServiceId, MediaId를 설정해야 합니다.
+리워드 배너 기능 사용 시 운영팀에서 발급받은 UserKey, ServiceId, MediaId를 반드시 설정해야 합니다.   
+⚠️ 필수 설정: UserKey, ServiceId, MediaId 중 하나라도 누락되면 리워드가 지급되지 않습니다.
+
+| Parameter | Description                       |
+|:----------|:----------------------------------|
+| userKey   | 사용자를 구분하는 고유 식별값                  |
+| mediaId   | 매체(서비스)를 구분하는 고유 식별값              |
+| serviceId | 매체 내 에서 광고가 노출되는 위치·서비스를 구분하는 식별값 |
+
 ```java
-banner.setUserKey("발급받은 UserKey");
-banner.setServiceId("발급받은 ServiceId");
-banner.setMediaId("발급받은 MediaId");
+nativeAdView.setUserKey("발급받은 UserKey");
+nativeAdView.setServiceId("발급받은 ServiceId");
+nativeAdView.setMediaId("발급받은 MediaId");
 ```

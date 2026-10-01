@@ -2,10 +2,12 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.105
+### Latest Version: 1.0.106
 
 ### Changes
-- ADID bug fix
+- Added point banner functionality for standard banner ads and native ads
+- Enhanced User-Agent
+- Added support for Android API versions
 
 ## Supported Environment
 ---

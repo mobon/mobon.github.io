@@ -262,7 +262,16 @@ nativeAdView.loadAd();
 ```
 
 ### Rewarded Banner Feature
-When using the rewarded banner feature, you must configure the UserKey, ServiceId, and MediaId issued by the operations team.
+To use the Reward Banner feature, you must set the UserKey, ServiceId, and MediaId issued by the operations team.   
+⚠ Required: If any of UserKey, ServiceId, or MediaId is missing, rewards will not be granted.
+
+| Parameter | Description                       |
+|:----------|:----------------------------------|
+| userKey   | A unique identifier that distinguishes each user                                  |
+| mediaId   | A unique identifier that distinguishes each media (service)                       |
+| serviceId | An identifier that distinguishes the placement or service within the media where ads are displayed |
+
+
 ```java
 banner.setUserKey("Set the UserKey");
 banner.setServiceId("Set the ServiceId");
