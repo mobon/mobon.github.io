@@ -2,12 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.106
+### Latest Version: 1.0.107
 
 ### Changes
-- Added point banner functionality for standard banner ads and native ads
-- Enhanced User-Agent
-- Added support for Android API versions
+- Fix HybridBannerBridge's bug
 
 ## Supported Environment
 ---

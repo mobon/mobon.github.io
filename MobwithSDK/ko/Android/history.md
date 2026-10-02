@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.107] - 2026-10-02 <!-- {docsify-ignore} -->
+- HybridBannerBridge 오류 수정
+
 ## [1.0.106] - 2026-10-01 <!-- {docsify-ignore} -->
 - 일반 배너광고, 네이티브 광고 포인트 배너 기능 추가
 - UserAgent 고도화

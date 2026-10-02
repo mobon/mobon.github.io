@@ -3,6 +3,9 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.107] - 2026-10-02 <!-- {docsify-ignore} -->
+- Fix HybridBannerBridge's bug
+
 ## [1.0.106] - 2026-10-01 <!-- {docsify-ignore} -->
 - Added point banner functionality for standard banner ads and native ads
 - Enhanced User-Agent
