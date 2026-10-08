@@ -223,7 +223,8 @@ banner.setCloseBtn(new MobwithBannerView.OnCloseListener() {
 | userKey   | 사용자를 구분하는 고유 식별값                  |
 | mediaId   | 매체(서비스)를 구분하는 고유 식별값              |
 | serviceId | 매체 내 에서 광고가 노출되는 위치·서비스를 구분하는 식별값 |
-   
+
+
 ```java
 banner.setUserKey("발급받은 UserKey");
 banner.setServiceId("발급받은 ServiceId");

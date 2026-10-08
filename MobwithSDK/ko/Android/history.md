@@ -3,6 +3,10 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.108] - 2026-10-08 <!-- {docsify-ignore} -->
+- 전면/리워드 로컬라이징 구현
+- 리워드 배너 bug fix
+
 ## [1.0.107] - 2026-10-02 <!-- {docsify-ignore} -->
 - HybridBannerBridge 오류 수정
 
@@ -14,39 +18,46 @@
 ## [1.0.105] - 2026-09-29 <!-- {docsify-ignore} -->
 - ADID bug fix
 
+<details style="margin-top:40px;">
+<summary style="cursor:pointer; font-weight:600; font-size:18px;">
+이전 버전 히스토리 펼치기
+</summary>
+
 ## [1.0.104] - 2026-09-28 <!-- {docsify-ignore} -->
+---
 - SDK 리소스 정리
 
 ## [1.0.103] - 2026-09-22 <!-- {docsify-ignore} -->
+---
 - Adpopcorn NAM 연동
 - 스플래시 배너 UI 변경
 
 ## [1.0.102] - 2026-09-17 <!-- {docsify-ignore} -->
+---
 - Adpopcorn NAM 광고 연동
 - 글로벌 지면 Native 광고 Asset 노출 정책 대응
 - Context 타입 변경
 
 ## [1.0.101] - 2026-09-03 <!-- {docsify-ignore} -->
+---
 - 전면&리워드 문구 사이즈 조절 및 닫기 버튼 문구 변경
 
 ## [1.0.100] - 2026-09-02 <!-- {docsify-ignore} -->
+---
 - bug fix
 
 ## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
+---
 - 전면&리워드 광고 닫기 버튼 UI 변경
 
 ## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
+---
 - NativeAd 메인 이미지 scaleType 설정 기능 추가
 
 ## [1.0.97] - 2026-09-02 <!-- {docsify-ignore} -->
+---
 - Adpopcorn Naver 미디에이션 광고 기능 추가
 - Mixer Video 버그 수정
-
-
-<details style="margin-top:40px;">
-<summary style="cursor:pointer; font-weight:600; font-size:18px;">
-이전 버전 히스토리 펼치기
-</summary>
 
 ## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
 ---

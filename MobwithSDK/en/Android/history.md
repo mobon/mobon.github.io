@@ -3,6 +3,10 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.108] - 2026-10-08 <!-- {docsify-ignore} -->
+- Implement localization for interstitial/rewarded ads
+- Fix rewarded banner bug
+
 ## [1.0.107] - 2026-10-02 <!-- {docsify-ignore} -->
 - Fix HybridBannerBridge's bug
 
@@ -14,39 +18,48 @@
 ## [1.0.105] - 2026-09-29 <!-- {docsify-ignore} -->
 - ADID bug fix
 
-## [1.0.104] - 2026-09-28 <!-- {docsify-ignore} -->
-- SDK Resource Cleanup
-
-## [1.0.103] - 2026-09-22 <!-- {docsify-ignore} -->
-- Adpopcorn NAM ad integration
-- Splash banner UI updated
-
-## [1.0.102] - 2026-09-17 <!-- {docsify-ignore} -->
-- Adpopcorn NAM ad integration
-- Support for global inventory Native ad asset display policy
-- Context type change
-
-## [1.0.101] - 2026-09-03 <!-- {docsify-ignore} -->
-- Adjust text size for interstitial & rewarded ads, and update close button text
-
-## [1.0.100] - 2026-09-02 <!-- {docsify-ignore} -->
-- bug fix
-
-## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
-- InterstitialAd & RewardedAd Close Button UI Changed
-
-## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
-- Added feature to set the scaleType for the NativeAd main image
-
-## [1.0.97] - 2026-09-02 <!-- {docsify-ignore} -->
-- Added AdPopcorn Naver mediation ad feature
-- Fixed Mixer Video bug
-
 
 <details style="margin-top:40px;">
 <summary style="cursor:pointer; font-weight:600; font-size:18px;">
 Expand previous version history
 </summary>
+
+## [1.0.104] - 2026-09-28 <!-- {docsify-ignore} -->
+---
+- SDK Resource Cleanup
+
+## [1.0.103] - 2026-09-22 <!-- {docsify-ignore} -->
+---
+- Adpopcorn NAM ad integration
+- Splash banner UI updated
+
+## [1.0.102] - 2026-09-17 <!-- {docsify-ignore} -->
+---
+- Adpopcorn NAM ad integration
+- Support for global inventory Native ad asset display policy
+- Context type change
+
+## [1.0.101] - 2026-09-03 <!-- {docsify-ignore} -->
+---
+- Adjust text size for interstitial & rewarded ads, and update close button text
+
+## [1.0.100] - 2026-09-02 <!-- {docsify-ignore} -->
+---
+- bug fix
+
+## [1.0.99] - 2026-09-02 <!-- {docsify-ignore} -->
+---
+- InterstitialAd & RewardedAd Close Button UI Changed
+
+## [1.0.98] - 2026-09-02 <!-- {docsify-ignore} -->
+---
+- Added feature to set the scaleType for the NativeAd main image
+
+## [1.0.97] - 2026-09-02 <!-- {docsify-ignore} -->
+---
+- Added AdPopcorn Naver mediation ad feature
+- Fixed Mixer Video bug
+
 
 ## [1.0.96] - 2026-08-28 <!-- {docsify-ignore} -->
 ---

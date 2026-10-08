@@ -271,6 +271,7 @@ nativeAdView.loadAd();
 | mediaId   | 매체(서비스)를 구분하는 고유 식별값              |
 | serviceId | 매체 내 에서 광고가 노출되는 위치·서비스를 구분하는 식별값 |
 
+
 ```java
 nativeAdView.setUserKey("발급받은 UserKey");
 nativeAdView.setServiceId("발급받은 ServiceId");

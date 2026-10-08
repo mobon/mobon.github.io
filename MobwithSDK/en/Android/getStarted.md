@@ -2,10 +2,11 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.107
+### Latest Version: 1.0.108
 
 ### Changes
-- Fix HybridBannerBridge's bug
+- Implement localization for interstitial/rewarded ads
+- Fix rewarded banner bug
 
 ## Supported Environment
 ---
