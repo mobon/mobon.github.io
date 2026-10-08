@@ -25,13 +25,11 @@ Note that some AppKeys and placement numbers may be affected by the app's Bundle
 ---
 
 ### CocoaPod
-- Latest version : 1.3.32
+- Latest version : 1.3.33
 - Changes
-  - Integrate rewarded-ad functionality into BannerView and NativeAdView.
-  - General stability improvements and minor bug fixes
+  - Add Japanese language support
 
 ### SPM
 - Latest version : 1.3.32
 - Changes
-  - Integrate rewarded-ad functionality into BannerView and NativeAdView.
-  - General stability improvements and minor bug fixes  
+  - Add Japanese language support

@@ -2,6 +2,10 @@
 
 # History
 ---
+
+### [1.3.33] - 2026-10-08
+- Add Japanese language support
+
 ### [1.3.32] - 2026-09-30
 - Integrate rewarded-ad functionality into BannerView and NativeAdView.
 - General stability improvements and minor bug fixes
