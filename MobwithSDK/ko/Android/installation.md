@@ -63,7 +63,8 @@ android:usesCleartextTraffic="true"
 - ADOP 광고를 송출하기 위해 링크를 참고하여 주세요.  
   [ADOP BidMad SDK 바로가기](https://github.com/bidmad/Bidmad-Android/blob/master/README.md#1-SDK-%EC%84%B8%ED%8C%85)  
 - MobWithSDK는 <span style="color:#FFFFFF; font-weight:bold;">ADOP BidMad SDK 3.25.** 버전</span>에 최적화 되어 있습니다.  
-- 아래는 모비위드 SDK에 세팅된 ADOP Adapter 입니다. 설정 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.
+- 아래는 모비위드 SDK에 세팅된 ADOP Adapter 입니다. 설정 참고 하시면 되며, API키 등 설정 해줘야 하는 값들은 협의된 내용을 토대로 적용 하시면 됩니다.   
+
 ```groovy
 implementation 'ad.helper.openbidding:admob-obh:3.25.0'
 implementation 'com.adop.sdk:bidmad-androidx:3.25.0'
@@ -263,6 +264,7 @@ implementation 'com.fsn.cauly:cauly-sdk:3.5.41'
 
 - Manifest 설정
   발급받은 애드팝콘 APP Key를 Manifest에 추가합니다.
+
 ```xml
   <application>
   ...
@@ -317,10 +319,12 @@ implementation ('com.naver.gfpsdk.mediation:nam-nda')
 - build.gradle 설정  
   Admob SDK를 build.gradle에 implementation 해야 합니다.
   (com.google.android.gms:play-services-ads:24.9.0 버전에 최적화 되어있습니다.)
+
 ```groovy
   implementation("com.google.android.gms:play-services-ads:24.9.0")
 ```
 - Manifasts 설정
+
 ```xml
 <manifest>
   <application>
