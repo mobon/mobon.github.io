@@ -45,3 +45,803 @@ table tr {
 /* .content {
     overflow: auto;
 } */
+
+
+/* 언어 전환 토글 (KO / EN) */
+.markdown-section .lang-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 0 8px;
+}
+
+.markdown-section .lang-icon {
+    display: flex;
+    margin-right: 8px;
+    color: #8a8a8a;
+}
+
+.markdown-section .lang-opt {
+    padding: 4px 12px;
+    border: 1px solid #5f5f5f;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    color: #9a9a9a;
+    text-decoration: none;
+}
+
+.markdown-section .lang-group {
+    display: flex;
+}
+
+.markdown-section .lang-opt:first-child {
+    border-radius: 6px 0 0 6px;
+}
+
+.markdown-section .lang-opt:last-child {
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+}
+
+.markdown-section .lang-opt.active {
+    background-color: #ea6f5a;
+    border-color: #ea6f5a;
+    color: #fff;
+}
+
+.markdown-section a.lang-opt:hover {
+    border-color: #ea6f5a;
+    color: #ea6f5a;
+}
+
+
+/* 홈(README) 화면 - 색상은 CSS 변수로 관리 (라이트 테마 작업 시 값 추가) */
+:root {
+    --home-card-bg: #353535;
+    --home-card-border: #4a4a4a;
+    --home-text: #e0e0e0;
+    --home-muted: #a8a8a8;
+    --home-accent: #ea6f5a;
+}
+
+.markdown-section .home-hero {
+    padding: 24px 0 8px;
+}
+
+.markdown-section .home-eyebrow {
+    margin: 0;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--home-accent);
+}
+
+.markdown-section h1.home-title {
+    margin: 6px 0 10px;
+    font-size: 2.4em;
+    color: var(--home-text);
+    border: none;
+}
+
+.markdown-section .home-desc {
+    margin: 0;
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: var(--home-muted);
+}
+
+.markdown-section .home-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+}
+
+.markdown-section .home-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--home-card-bg);
+    border: 1px solid var(--home-card-border);
+    border-top: 3px solid var(--home-accent);
+    border-radius: 8px;
+}
+
+.markdown-section .home-card-label {
+    margin: 0 0 8px;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--home-text);
+}
+
+.markdown-section .home-card-desc {
+    flex: 1;
+    margin: 0 0 16px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--home-muted);
+}
+
+.markdown-section a.home-card-main {
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.markdown-section .home-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--home-card-border);
+}
+
+.markdown-section .home-card-links a {
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--home-muted);
+    text-decoration: none;
+}
+
+.markdown-section .home-card-links a:hover,
+.markdown-section a.home-card-main:hover {
+    color: var(--home-accent);
+    text-decoration: underline;
+}
+
+
+/* 사이드바 - 색상은 CSS 변수로 관리 */
+:root {
+    --sb-bg: #333333;
+    --sb-border: #2a2a2a;
+    --sb-text: #c8c8c8;
+    --sb-muted: #9a9a9a;
+    --sb-hover-bg: rgba(255, 255, 255, 0.05);
+    --sb-active-bg: rgba(234, 111, 90, 0.12);
+    --sb-accent: #ea6f5a;
+    --sb-guide: #4a4a4a;
+    --sb-row-h: 34px;
+    --sb-group: #e6e6e6;
+    --sb-guide-active: rgba(234, 111, 90, 0.4);
+    --sb-input-bg: rgba(0, 0, 0, 0.2);
+    --sb-text-strong: #ffffff;
+}
+
+body .sidebar {
+    background-color: var(--sb-bg);
+    border-right: 1px solid var(--sb-border);
+    padding-top: 24px;
+}
+
+/* 검색창 */
+body .sidebar .search {
+    margin: 0 16px 16px;
+    padding: 0;
+    border-bottom: none;
+}
+
+body .sidebar .search input {
+    padding: 8px 12px;
+    background-color: var(--sb-input-bg);
+    border: 1px solid var(--sb-guide);
+    border-radius: 8px;
+    color: var(--sb-text);
+    font-size: 0.95em;
+}
+
+body .sidebar .search input:focus {
+    border-color: var(--sb-accent);
+    outline: none;
+}
+
+/* 사이트 이름(SDK Guide) 숨김 - index.html의 name 설정은 유지 */
+body .sidebar > h1 {
+    display: none;
+}
+
+/* 메뉴 공통 */
+body .sidebar .sidebar-nav {
+    padding: 0 10px 60px;
+    line-height: 1.5;
+}
+
+body .sidebar ul {
+    margin: 0;
+}
+
+body .sidebar li {
+    margin: 2px 0;
+    position: relative;
+}
+
+body .sidebar ul li a,
+body .sidebar li > p {
+    display: block;
+    padding: 6px 12px;
+    line-height: 22px;
+    border-radius: 6px;
+    color: var(--sb-text);
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+body .sidebar ul li a:hover,
+body .sidebar li > p:hover {
+    background-color: var(--sb-hover-bg);
+    color: var(--sb-text-strong);
+}
+
+/* p 안의 링크 (Home 등) - 이중 여백 방지 */
+body .sidebar li > p > a {
+    padding: 0;
+    font-size: 1em;
+}
+
+body .sidebar li > p > a:hover {
+    background: none;
+}
+
+/* 1단계 그룹 (Android / iOS / Custom Adapter) */
+body .sidebar .sidebar-nav > ul > li {
+    margin-top: 10px;
+}
+
+body .sidebar li.folder.level-1 > p {
+    font-size: 1.07em;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--sb-group);
+    cursor: pointer;
+}
+
+/* 링크가 있는 그룹 제목(Custom Adapter)도 같은 모양으로 */
+body .sidebar li.folder.level-1 > p > a {
+    font-weight: inherit;
+    color: inherit;
+}
+
+/* 하위 메뉴: 들여쓰기 + 가이드 라인 */
+body .sidebar ul li ul {
+    margin-left: 14px;
+    padding-left: 8px;
+    border-left: 1px solid var(--sb-guide);
+}
+
+/* 하위 그룹 이름 (링크 없는 폴더: SDK Installation 등) */
+body .sidebar li.folder.level-2 {
+    color: var(--sb-text);
+    font-size: 1em;
+    font-weight: 500;
+    line-height: var(--sb-row-h);
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+body .sidebar li.folder.level-2 > ul {
+    margin-left: 2px;
+    line-height: 22px;
+}
+
+body .sidebar li.folder.level-2 > a {
+    margin-left: -12px;
+}
+
+/* 현재 페이지 */
+body .sidebar ul li.active > a {
+    background-color: var(--sb-active-bg);
+    color: var(--sb-accent);
+    font-weight: 600;
+}
+
+/* 페이지 내 섹션 목록 */
+body .sidebar ul.app-sub-sidebar {
+    border-left-color: var(--sb-guide-active);
+}
+
+body .sidebar ul.app-sub-sidebar li a {
+    padding: 4px 12px;
+    line-height: 20px;
+    font-size: 0.9em;
+    color: var(--sb-muted);
+}
+
+body .sidebar ul.app-sub-sidebar li.active > a {
+    background: none;
+    color: var(--sb-accent);
+}
+
+/* 비어 있는 메뉴 항목 숨김 */
+body .sidebar li.file:empty {
+    display: none;
+}
+
+/* 하단 메뉴 토글 버튼 배경 */
+body .sidebar-toggle {
+    background-color: var(--sb-bg);
+}
+
+/* 문서 공용 컴포넌트 - 단계 흐름(doc-flow), 링크 리스트(doc-list) / 색상은 CSS 변수로 관리 */
+:root {
+    --doc-box-bg: #353535;
+    --doc-box-border: #4a4a4a;
+    --doc-box-text: #e0e0e0;
+    --doc-box-muted: #a8a8a8;
+    --doc-box-accent: #ea6f5a;
+    --doc-box-on-accent: #ffffff;
+}
+
+/* 단계 흐름 */
+.markdown-section .doc-flow {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0 20px;
+}
+
+.markdown-section .doc-flow-step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    background-color: var(--doc-box-bg);
+    border: 1px solid var(--doc-box-border);
+    border-radius: 8px;
+}
+
+.markdown-section .doc-flow-num {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--doc-box-accent);
+    color: var(--doc-box-on-accent);
+    font-size: 0.85em;
+    font-weight: 700;
+}
+
+.markdown-section .doc-flow p {
+    margin: 0;
+}
+
+.markdown-section .doc-flow-title {
+    font-size: 0.95em;
+    font-weight: 700;
+    color: var(--doc-box-text);
+}
+
+.markdown-section .doc-flow-desc {
+    margin-top: 2px !important;
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: var(--doc-box-muted);
+}
+
+/* 링크 리스트 (항목별 박스, 간격 분리) */
+.markdown-section .doc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.markdown-section .doc-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    background-color: var(--doc-box-bg);
+    border: 1px solid var(--doc-box-border);
+    border-radius: 8px;
+}
+
+.markdown-section .doc-list p {
+    margin: 0;
+}
+
+.markdown-section .doc-list-title {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--doc-box-text);
+}
+
+.markdown-section .doc-list-desc {
+    margin-top: 2px !important;
+    font-size: 0.86em;
+    color: var(--doc-box-muted);
+}
+
+.markdown-section .doc-list-links {
+    display: flex;
+    flex: none;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 16px;
+    font-size: 0.86em;
+}
+
+.markdown-section .doc-list-links a {
+    white-space: nowrap;
+    color: var(--doc-box-muted);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.markdown-section .doc-list-links a.doc-list-main {
+    color: var(--doc-box-accent);
+    font-weight: 700;
+}
+
+.markdown-section .doc-list-links a:hover {
+    color: var(--doc-box-accent);
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .markdown-section .doc-list-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* 문서 이미지(스크린샷) - 단독으로 들어간 이미지는 본문 폭에 맞춤 */
+:root {
+    --doc-img-border: #4a4a4a;
+}
+
+.markdown-section p > img:only-child {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--doc-img-border);
+    border-radius: 8px;
+}
+
+/* 본문 가독성 보정 - 굵은 글씨 / !> 경고 박스 글자색 (테마 기본값이 배경에 묻히는 문제) */
+:root {
+    --doc-strong: #e6e6e6;
+    --doc-tip-text: #c8c8c8;
+}
+
+body .markdown-section strong {
+    color: var(--doc-strong);
+}
+
+body .markdown-section p.tip {
+    color: var(--doc-tip-text);
+}
+
+/* 플랫폼별 탭 (docsify-tabs) */
+:root {
+    --docsifytabs-border-color: var(--doc-box-border);
+    --docsifytabs-border-radius-px: 8px;
+    --docsifytabs-tab-background: transparent;
+    --docsifytabs-tab-background--active: var(--doc-box-bg);
+    --docsifytabs-tab-color: var(--doc-box-muted);
+    --docsifytabs-tab-color--active: var(--doc-box-text);
+    --docsifytabs-tab-highlight-color: var(--doc-box-accent);
+    --docsifytabs-content-background: var(--doc-box-bg);
+    --docsifytabs-content-padding: 20px;
+}
+
+.markdown-section .docsify-tabs__tab {
+    font-weight: 600;
+}
+
+/* 절차 소단계(h4) 아래 세부 항목 제목(h5) - 소단계보다 작고 본문보다 크게 */
+.markdown-section h5 {
+    margin: 28px 0 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--doc-box-text);
+}
+
+/* 절차 소단계 라벨 - #### <span class="step-label">STEP 1</span>제목 */
+.markdown-section h4 .step-label {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 3px 9px;
+    border: 1px solid var(--doc-box-accent);
+    border-radius: 999px;
+    color: var(--doc-box-accent);
+    font-size: 0.6em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    vertical-align: 3px;
+}
+
+/* History 타임라인 - ### 버전 <span class="release-date">날짜</span><span class="release-badge">Latest</span> */
+:root {
+    --release-line: var(--doc-box-border);
+    --release-dot-bg: #3f3f3f;
+    --release-glow: rgba(234, 111, 90, 0.2);
+}
+
+.markdown-section h3:has(.release-date),
+.markdown-section h3:has(.release-date) + ul {
+    position: relative;
+    margin-left: 10px;
+    padding-left: 28px;
+    border-left: 2px solid var(--release-line);
+}
+
+.markdown-section h3:has(.release-date) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 26px;
+    padding-bottom: 8px;
+    font-size: 1.3em;
+    color: var(--doc-box-text);
+}
+
+.markdown-section h3:has(.release-date)::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 32px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--doc-box-accent);
+    border-radius: 50%;
+    background-color: var(--release-dot-bg);
+}
+
+.markdown-section h3:has(.release-badge)::before {
+    background-color: var(--doc-box-accent);
+    box-shadow: 0 0 0 4px var(--release-glow);
+}
+
+.markdown-section h3 .release-date {
+    padding: 2px 10px;
+    border: 1px solid var(--doc-box-border);
+    border-radius: 999px;
+    color: var(--doc-box-muted);
+    font-size: 0.55em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+/* 날짜가 없는 버전은 날짜 표시를 숨김 (타임라인·자동 접기는 유지) */
+.markdown-section h3 .release-date:empty {
+    display: none;
+}
+
+.markdown-section h3 .release-badge {
+    padding: 2px 9px;
+    border-radius: 999px;
+    background-color: var(--doc-box-accent);
+    color: var(--doc-box-on-accent);
+    font-size: 0.5em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.markdown-section h3:has(.release-date) + ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 4px;
+    padding-bottom: 18px;
+    list-style: none;
+}
+
+.markdown-section h3:has(.release-date) + ul > li {
+    margin: 0;
+    padding: 8px 14px;
+    background-color: var(--doc-box-bg);
+    border: 1px solid var(--doc-box-border);
+    border-radius: 6px;
+    color: var(--doc-box-text);
+}
+
+.markdown-section h3:has(.release-date) + ul > li + li {
+    margin-top: 6px;
+}
+
+/* History 연/월 색인 + 월 단위 접기 (index.html 플러그인이 has-release-index, release-month, details.history-month 생성) */
+:root {
+    --release-gutter: 72px;
+    --release-month-w: 54px;
+}
+
+.markdown-section.has-release-index h3:has(.release-date),
+.markdown-section.has-release-index h3:has(.release-date) + ul {
+    margin-left: var(--release-gutter);
+}
+
+.markdown-section .release-month {
+    position: absolute;
+    left: calc(var(--release-gutter) * -1);
+    top: 22px;
+    width: var(--release-month-w);
+    text-align: right;
+    line-height: 1.2;
+}
+
+.markdown-section .release-month-year {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--doc-box-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.markdown-section .release-month-name {
+    display: block;
+    color: var(--doc-box-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.markdown-section details.history-month {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.markdown-section details.history-month > summary {
+    position: relative;
+    margin-left: var(--release-gutter);
+    padding: 16px 0 16px 28px;
+    border-left: 2px dashed var(--release-line);
+    cursor: pointer;
+    list-style: none;
+}
+
+.markdown-section details.history-month > summary::-webkit-details-marker {
+    display: none;
+}
+
+.markdown-section details.history-month > summary .release-month {
+    top: 14px;
+}
+
+.markdown-section details.history-month > summary::before {
+    content: "+";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    margin-top: -9px;
+    border: 1px solid var(--doc-box-accent);
+    border-radius: 50%;
+    background-color: var(--release-dot-bg);
+    color: var(--doc-box-accent);
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.markdown-section details.history-month[open] > summary::before {
+    content: "−";
+}
+
+.markdown-section details.history-month[open] > summary {
+    border-left-style: solid;
+}
+
+.markdown-section .history-month-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--doc-box-border);
+    border-radius: 999px;
+    background-color: var(--doc-box-bg);
+    color: var(--doc-box-text);
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.markdown-section details.history-month > summary:hover .history-month-label {
+    border-color: var(--doc-box-accent);
+    color: var(--doc-box-accent);
+}
+
+.markdown-section .history-month-range {
+    color: var(--doc-box-muted);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* 펼친 월 목록 끝의 접기 버튼 */
+.markdown-section .history-month-close {
+    position: relative;
+    margin-left: var(--release-gutter);
+    padding: 6px 0 22px 28px;
+    border-left: 2px dashed var(--release-line);
+}
+
+.markdown-section .history-month-close button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border: 1px solid var(--doc-box-border);
+    border-radius: 999px;
+    background-color: var(--doc-box-bg);
+    color: var(--doc-box-muted);
+    font: inherit;
+    font-size: 0.85em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.markdown-section .history-month-close button::before {
+    content: "▲";
+    font-size: 0.7em;
+}
+
+.markdown-section .history-month-close button:hover {
+    border-color: var(--doc-box-accent);
+    color: var(--doc-box-accent);
+}
+
+/* 좁은 화면: 월 색인 칸을 줄임 */
+@media (max-width: 600px) {
+    :root {
+        --release-gutter: 46px;
+        --release-month-w: 34px;
+    }
+
+    .markdown-section .release-month-year {
+        font-size: 10px;
+    }
+
+    .markdown-section .release-month-name {
+        font-size: 12px;
+    }
+
+    .markdown-section .history-month-range {
+        display: none;
+    }
+}
+
+/* [임시] 가이드 문서 개선 작업 안내 배너 - 작업 완료 후 삭제 */
+.markdown-section .doc-notice {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin: 0 0 28px;
+    padding: 14px 18px;
+    background-color: #282828;
+    border-left: 4px solid #ea6f5a;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.9em;
+    line-height: 1.65;
+    color: #b4b4b4;
+}
+
+.markdown-section .doc-notice-icon {
+    flex: none;
+    margin-top: 1px;
+    color: #ea6f5a;
+}
+
+.markdown-section .doc-notice p {
+    margin: 0;
+}
+
+.markdown-section .doc-notice .doc-notice-title {
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: #ea6f5a;
+}

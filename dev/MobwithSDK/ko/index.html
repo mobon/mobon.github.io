@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SDK Guide</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <link rel="stylesheet" href="../custom.css">
+  <script src="../cache-bust.js"></script>
+</head>
+
+<body>
+  <div id="app">Wait...</div>
+  <script>
+    window.$docsify = {
+      name: 'SDK Guide',
+      loadSidebar: true,
+      auto2top: true,
+      subMaxLevel: 2,
+      sidebarDisplayLevel: 0,
+      search: "auto",
+      // 플랫폼별 탭 (docsify-tabs) - sync: 같은 이름의 탭을 페이지 전체에서 함께 전환, persist: 선택한 탭 기억
+      tabs: {
+        persist: true,
+        sync: true,
+        theme: 'classic',
+        tabComments: true,
+        tabHeadings: true
+      },
+      plugins: [
+        // 언어 전환 토글 (KO / EN) - 현재 경로를 기준으로 상대 언어 페이지 링크를 자동 생성
+        // md 파일 상단의 기존 '🌐 <a ...>' 링크 줄은 자동으로 숨김 처리
+        function (hook, vm) {
+          var CURRENT = 'ko';
+          var OTHER = 'en';
+          var GLOBE = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+          hook.afterEach(function (html) {
+            html = html.replace(/<p>\s*🌐[\s\S]*?<\/p>/, '');
+            var href = '../' + OTHER + '/#' + (vm.route.path || '/');
+            var opt = function (code) {
+              var label = code.toUpperCase();
+              return code === CURRENT
+                ? '<span class="lang-opt active">' + label + '</span>'
+                : '<a class="lang-opt" href="' + href + '">' + label + '</a>';
+            };
+            var toggle =
+              '<div class="lang-toggle">' +
+              '<span class="lang-icon">' + GLOBE + '</span>' +
+              '<span class="lang-group">' + opt('ko') + opt('en') + '</span>' +
+              '</div>';
+            return toggle + html;
+          });
+        },
+        // History 타임라인 - 연/월 색인 + 월 단위 자동 접기
+        // (release-date가 있는 ### 버전 제목 기준. 릴리스가 있는 최근 KEEP_MONTHS개 달은 펼치고, 그 이전은 달별로 접음)
+        // (기준은 오늘 날짜가 아니라 가장 최근 릴리스 날짜. 날짜가 비어 있는 버전은 바로 위 버전과 같은 달로 묶음)
+        // (펼친 달의 목록 끝에는 접기 버튼을 추가)
+        function (hook) {
+          var KEEP_MONTHS = 2;
+          var T = {
+            month: function (m) { return m + '월'; },
+            count: function (n) { return '릴리스 ' + n + '개'; },
+            collapse: function (m) { return m + '월 접기'; }
+          };
+          function mark(y, m, showYear) {
+            return '<span class="release-month">' +
+              (showYear ? '<span class="release-month-year">' + y + '</span>' : '') +
+              '<span class="release-month-name">' + T.month(m) + '</span></span>';
+          }
+          function version(h) {
+            var c = h.cloneNode(true);
+            Array.prototype.forEach.call(
+              c.querySelectorAll('.release-date, .release-badge, .release-month'),
+              function (s) { s.remove(); }
+            );
+            return c.textContent.trim();
+          }
+          hook.doneEach(function () {
+            var section = document.querySelector('.markdown-section');
+            if (!section || section.classList.contains('has-release-index')) return;
+            if (section.querySelector('details.history-older, details.history-month')) return;
+            var heads = Array.prototype.filter.call(
+              section.querySelectorAll('h3'),
+              function (h) { return h.querySelector('.release-date'); }
+            );
+            if (!heads.length) return;
+            // 월 그룹 만들기
+            var groups = [], cur = null;
+            heads.forEach(function (h) {
+              var t = h.querySelector('.release-date').textContent.trim();
+              var key = /^\d{4}-\d{2}-\d{2}$/.test(t) ? t.slice(0, 7) : (cur ? cur.key : '');
+              if (!key) return;
+              if (!cur || cur.key !== key) {
+                cur = { key: key, y: key.slice(0, 4), m: Number(key.slice(5, 7)), heads: [] };
+                groups.push(cur);
+              }
+              cur.heads.push(h);
+            });
+            if (!groups.length) return;
+            section.classList.add('has-release-index');
+            var prevY = null;
+            groups.forEach(function (g, i) {
+              var showYear = g.y !== prevY;
+              prevY = g.y;
+              if (i < KEEP_MONTHS) {
+                g.heads[0].insertAdjacentHTML('afterbegin', mark(g.y, g.m, showYear));
+                return;
+              }
+              var first = g.heads[0];
+              var stop = groups[i + 1] ? groups[i + 1].heads[0] : null;
+              var vers = g.heads.map(version);
+              var range = vers.length > 1 ? vers[0] + ' – ' + vers[vers.length - 1] : vers[0];
+              var details = document.createElement('details');
+              details.className = 'history-month';
+              details.innerHTML = '<summary>' + mark(g.y, g.m, showYear) +
+                '<span class="history-month-label">' + T.count(g.heads.length) +
+                '<span class="history-month-range">' + range + '</span></span></summary>';
+              first.parentNode.insertBefore(details, first);
+              var node = first;
+              while (node && node !== stop) {
+                var next = node.nextSibling;
+                details.appendChild(node);
+                node = next;
+              }
+              // 펼친 목록 끝에 접기 버튼 (접은 뒤에는 접힌 줄이 버튼이 있던 자리에 오도록 스크롤 보정)
+              var close = document.createElement('div');
+              close.className = 'history-month-close';
+              close.innerHTML = '<button type="button">' + T.collapse(g.m) + '</button>';
+              close.querySelector('button').addEventListener('click', function () {
+                var summary = details.querySelector('summary');
+                var before = this.getBoundingClientRect().top;
+                details.open = false;
+                window.scrollBy(0, summary.getBoundingClientRect().top - before);
+              });
+              details.appendChild(close);
+            });
+          });
+        },
+        // [임시] 가이드 문서 개선 작업 안내 배너 - 작업 완료 후 이 function 블록을 삭제
+        function (hook) {
+          var notice =
+            '<div class="doc-notice">' +
+            '<span class="doc-notice-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>' +
+            '<div class="doc-notice-body">' +
+            '<p class="doc-notice-title">가이드 문서 개선 작업 안내</p>' +
+            '<p>보다 나은 연동 경험을 제공하기 위해 가이드 문서를 순차적으로 개선하고 있습니다. 작업 기간 동안 일부 문서의 구성이나 표기 방식이 서로 다를 수 있는 점 양해 부탁드립니다.</p>' +
+            '</div>' +
+            '</div>';
+          hook.afterEach(function (html) {
+            return notice + html;
+          });
+        }
+      ]
+    }
+  </script>
+ 
+
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" />
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-groovy.min.js"></script>
+  <!-- 코드 색상 표시 언어 추가: Swift / Kotlin / Ruby(Podfile) / Objective-C(objc, c 필요) / JSON -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-swift.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-kotlin.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-ruby.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-objectivec.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-json.min.js"></script>
+
+</body>
+</html>
