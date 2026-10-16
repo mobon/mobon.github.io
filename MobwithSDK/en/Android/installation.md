@@ -15,13 +15,13 @@ allprojects {
     }
 }
 ```
-- Add `com.google.android.gms:play-services-ads-identifier` and the latest version of the MobWith SDK to your app-level `build.gradle`.  
+- Add `com.google.android.gms:play-services-ads-identifier` and the latest version of the MobWith SDK to your app-level `build.gradle`.
 
-```groovy
-dependencies {
+  ```groovy
+  dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
     implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.108'
+    implementation 'io.github.mobon:mobwithSDK:1.0.110'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```

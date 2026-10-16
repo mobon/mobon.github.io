@@ -2,11 +2,10 @@
 
 ## Latest Version & Changes
 ---
-### Latest Version: 1.0.108
+### Latest Version: 1.0.110
 
 ### Changes
-- Implement localization for interstitial/rewarded ads
-- Fix rewarded banner bug
+- Added a `destroy()` function to release native ad resources.
 
 ## Supported Environment
 ---
