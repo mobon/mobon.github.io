@@ -1,11 +1,10 @@
-🌐 <a href="../en/#/Android/freePassAd">View English Guide</a>
+# FreePass AD <!-- {docsify-ignore} -->
 
-## FreePass AD <!-- {docsify-ignore} -->
+MobwithFreePassAdView를 이용하여 광고 클릭 시 일정 기간 동안 광고를 노출하지 않는 상품을 지원하는 방법을 안내합니다.
 
-### 광고 로드 방법
-----
-FreePass AD는 광고 클릭 시 일정 기간 동안 광고를 노출하지 않는 상품을 지원하기 위한 AdView입니다.  
-실제 광고 미노출 기간에 대한 제어는 개발자가 직접 구현해야 하며, 이를 위한 필요한 기능을 제공합니다.  
+?> 실제 광고 미노출 기간에 대한 제어는 개발자가 직접 구현해야 하며, SDK는 이를 위해 필요한 기능을 제공합니다.
+
+## 광고 로드 방법
 
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
@@ -53,22 +52,22 @@ freePassAdView.setAdListener(new iFreePassBannerCallback() {
 bannerView.loadAd();
 ```
 
-### FreePassAdView 기능
-| 메서드                                                             | Description            |
-|:----------------------------------------------------------------|:-----------------------|
-| setBannerUnitId(String unitId)                                  | 발급 받은 UnitId 설정        |
-| setMcLogoImage(Drawable logoImage)                              | 광고에 표시될 매체사 로고 이미지를 설정 |
-| loadAd()                                                        | 광고 요청                  |
-| destroyAd()                                                     | 광고 리소스 해제              |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능         |
-| MobwithFreePassAdView.getLastAdClickedTime(Context context)     | 마지막 광고 클릭 시간           |
+## FreePassAdView 기능
 
-### 광고 클릭 설정
-----
-광고 클릭 시 onAdClicked() 콜백을 통해 광고 클릭 시간이 전달됩니다.  
-해당 값을 활용하여 광고 미노출 기간을 제어할 수 있습니다.  
+| 메서드 | 설명 |
+|---|---|
+| `setBannerUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `setMcLogoImage(Drawable logoImage)` | 광고에 표시될 매체사 로고 이미지를 설정 |
+| `loadAd()` | 광고 요청 |
+| `destroyAd()` | 광고 리소스 해제 |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | 카테고리 타겟팅 광고 기능 |
+| `MobwithFreePassAdView.getLastAdClickedTime(Context context)` | 마지막 광고 클릭 시간 |
 
-또한, 광고 클릭 시간을 별도로 확인해야 하는 경우에는 아래 함수를 통해 조회할 수 있습니다.  
+## 광고 클릭 설정
+
+광고 클릭 시 `onAdClicked()` 콜백을 통해 광고 클릭 시간이 전달됩니다. 해당 값을 활용하여 광고 미노출 기간을 제어할 수 있습니다.<br>
+광고 클릭 시간을 별도로 확인해야 하는 경우에는 아래 함수를 통해 조회할 수 있습니다.
+
 ```java
 Date clickedTime = MobwithFreePassAdView.getLastAdClickedTime(context);
 ```

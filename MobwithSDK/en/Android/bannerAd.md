@@ -1,28 +1,28 @@
-🌐 <a href="../ko/#/Android/bannerAd">한국어 가이드</a>
+# Banner AD <!-- {docsify-ignore} -->
 
-## Banner AD <!-- {docsify-ignore} -->
+This page describes how to display a banner ad using MobwithBannerView.
 
-### Defining the Banner Ad View
-----
-Add a view that serves as the container for the banner ad to your layout XML file.  
-We recommend using FrameLayout for the banner container (ViewGroup) where the ad will be displayed.  
-Since the ad size is automatically adjusted based on the ad being shown, please configure your layout according to the guide below for proper display.  
+## Defining the Banner Ad View
+
+Add a view that serves as the container for the banner ad to your layout XML file.<br>
+We recommend using a FrameLayout for the banner container (ViewGroup) that displays the ad.<br>
+The size of the ad is adjusted automatically depending on the ad being displayed, so please refer to the guide below to set up the layout for proper display.
 
 ```xml
 ....
 <FrameLayout
   android:id="@+id/bannerContainer"
   android:layout_width="match_parent"
-  android:layout_height="wrap_content"  (Set the desired height value (dp) as needed.)
+  android:layout_height="wrap_content"  (Set the desired height (dp) as needed.)
   />
 ....
 ```
 
-### How to Load an Ad
-----
-To request a banner ad, you need to configure MobWithBannerView.  
-The UNIT_ID issued to you must be set for each ad view.  
-Below is an example of configuring a BannerView and requesting an ad.  
+## How to Load Ads
+
+To request a banner ad, you need to set up MobWithBannerView.<br>
+You must set the issued UNIT_ID value for each ad view. Below is example code that sets up a BannerView and requests an ad.
+
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // The UNIT_ID issued for each ad view must be set.
@@ -55,71 +55,64 @@ banner.setAdListener(new iBannerCallback() {
 // Request the ad.
 banner.loadAd();
 ```
-### Banner Ad Features
-| Method                                                             | Description                                                |
-|:----------------------------------------------------------------|:-----------------------------------------------------------|
-| setBannerUnitId(String unitId)                                  | Set the issued UnitId                                      |
-| loadAd()                                                        | Request an ad                                              |
-| showNextAd()                                                    | Request the next ad                                        |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature                              |
-| setUserKey(String userKey)                                      | Set the UserKey                                            |
-| setServiceId(String serviceId)              | Set the ServiceId                                          |
-| setMediaId(String mediaId)                | Set the MediaId                                            |
-| setInterval(Int second)                                         | Ad refresh interval (parameter in seconds)                 |
-| restart()                                                       | Restart ad refresh                                         |
-| stop()                                                          | Stop ad refresh                                            |
-| destroy()                                                       | Release ad resources                                       |
-| setUseHouseBanner(boolean isUse)                                | Whether to use house banner                                |
-| MobwithSDK.getInstance().setFullScreenMode(bollean isUse)       | Whether to use the fullscreen size feature for direct ads  |
-| setAdScale(int heightDp)                                        | Script ad height adjustment feature                        |
 
-### Ad Refresh
-----
+## Banner Ad Features
+
+| Method | Description |
+|---|---|
+| `setBannerUnitId(String unitId)` | Set the issued UnitId |
+| `loadAd()` | Request an ad |
+| `showNextAd()` | Request the next ad |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `setUserKey(String userKey)` | Set the issued UserKey |
+| `setServiceId(String serviceId)` | Set the issued ServiceId |
+| `setMediaId(String mediaId)` | Set the issued MediaId |
+| `setInterval(Int second)` | Ad refresh (parameter in seconds) |
+| `restart()` | Restart ad refresh |
+| `stop()` | Stop ad refresh |
+| `destroy()` | Release ad resources |
+| `setUseHouseBanner(boolean isUse)` | Whether to use the house banner |
+| `MobwithSDK.getInstance().setFullScreenMode(bollean isUse)` | Whether to use the full-screen size feature for direct ads |
+| `setAdScale(int heightDp)` | Script ad height adjustment feature |
+
+## Ad Refresh
+
+Using `setInterval()`, you can automatically refresh banner ads at a fixed interval.
+
 ```java
 ...
 bannerView.setInterval(60); // Auto-refresh every 60 seconds
 ...
 ```
 
-Using this function, you can automatically refresh the banner ad at fixed time intervals.  
-The refresh interval must be set in seconds, with a minimum value of 60 seconds.  
-If a value smaller than 60 seconds is entered, it will automatically be applied as 60 seconds.
-However, setting the value to 0 disables the auto-refresh feature.  
-The default value is 0, and after configuring it, the ad must be loaded once initially for auto-refresh to work correctly.
-Additionally, if you no longer plan to use the Banner ad, you must call the destroyAd() function.  
+| Item | Value |
+|---|---|
+| Unit | Seconds |
+| Minimum | 60 seconds (values smaller than 60 are automatically applied as 60 seconds) |
+| Default | 0 (setting it to 0 disables auto-refresh) |
 
-```java
-...
-bannerView.destroyAd(); // Call this when you no longer use the Banner ad
-...
-```
+?> You must load the ad once after setting the interval for auto-refresh to work properly.
 
-The two functions below let you stop or restart ad auto-refresh.  
-By default, whether to auto-refresh is managed internally by the view, but you can use these functions to control it explicitly when needed.  
-However, if setInterval() is set to 0, auto-refresh is disabled, so the stop/restart functions will not work.  
-Also, to use these functions properly, you must set the refresh interval with setInterval() and then load the ad at least once initially.  
+You can stop or restart ad auto-refresh using the two functions below.<br>
+By default, the view manages auto-refresh internally, but you can use these when you need to control it explicitly.
 
 ```java
 ...
 bannerView.restart(); // Restart ad auto-refresh
 ...
-```
-
-```java
-...
 bannerView.stop(); // Stop ad auto-refresh
 ...
 ```
 
-#### *Notes on the Ad Refresh Feature
-Even if you configure the ad auto-refresh feature via setInterval(), if ad reception fails, auto-refresh may not work afterward.  
-In this case, please note that you need to directly call loadAd() again to properly reload the ad.  
+?> If `setInterval()` is set to 0, auto-refresh is disabled, so the stop/restart functions do not work.<br>
+To use the stop/restart functions properly, set the refresh interval with `setInterval()` and then load the ad once.
 
-### Releasing Ad Resources
-----
-Calling the function above will reset the ad object.  
-If auto-refresh is configured, that behavior will also be stopped together.  
-Therefore, it is recommended to call this when you no longer plan to use the relevant banner view.
+!> Even if you set auto-refresh with `setInterval()`, auto-refresh may stop working after an ad fails to be received.<br>
+In this case, you must call `loadAd()` again yourself to reload the ad properly.
+
+## Releasing Ad Resources
+
+Calling the function below initializes the ad object. If auto-refresh is set, it is also stopped.
 
 ```java
 ...
@@ -127,13 +120,16 @@ bannerView.destroyAd(); // Call this when you no longer use the Banner ad
 ...
 ```
 
-### House Banner Feature
-----
-If an ad is currently loading or no displayable ad is available, a house banner can be shown.  
-You can configure whether to use the house banner via the setUseHouseBanner() function, which defaults to false.  
-When using the house banner, unlike the previous example, the banner object created must be added to the View before the ad is received.
-However, even when using the house banner, once an ad has been displayed at least once, the house banner will no longer be shown afterward.  
-Please refer to the details below for usage instructions.
+!> When you no longer use the Banner ad, **you must call the `destroyAd()` function**.
+
+## House Banner Feature
+
+While an ad is loading or when there is no ad available to display, a house banner can be displayed.<br>
+You can set whether to use the house banner via `setUseHouseBanner()`, and the default value is `false`.<br>
+When using the house banner, unlike the previous example, you must add the banner object to the View before the ad is received.
+
+?> Even when using the house banner, once an ad has been displayed at least once, the house banner is no longer displayed afterward.
+
 ```java
     MobWithBannerView banner = new MobwithBannerView(this)
         .setBannerUnitId(YOUR_UNIT_ID)
@@ -165,16 +161,16 @@ Please refer to the details below for usage instructions.
 banner.loadAd();
 ```
 
-### Using FullScreen Banner
-----
-This can be used when you want to display a direct banner ad in a form that fills the entire screen.  
-You can configure whether to use Full Screen banner mode via the MobwithSDK.getInstance().setFullScreenMode() function, which defaults to false.
-Note: To use Full Screen Mode, you must directly set the height of the container view that holds the banner ad to your desired size.  
-Please refer to the details below for usage instructions.
+## Using the FullScreen Banner
+
+You can use this when you want to display a banner direct ad so that it fills the screen.<br>
+You can set whether to use the Full Screen banner via `MobwithSDK.getInstance().setFullScreenMode()`, and the default value is `false`.
+
+!> To use Full Screen Mode, you must **set the height of the container view** that will contain the banner ad to the desired size yourself.
 
 ```java
 MobwithSDK.getInstance().setFullScreenMode(true);
-```  
+```
 
 ```xml
 ....
@@ -186,17 +182,19 @@ MobwithSDK.getInstance().setFullScreenMode(true);
 ....
 ```
 
-### Script Ad Ratio Adjustment Feature
-For Script-type banner ads, the ad size is automatically adjusted to fit the specified Container size.  
-Note: The height (dp) of the ContainerLayout must be set.
+## Script Ad Ratio Adjustment
+
+For Script-type banner ads, the ad size is adjusted automatically to fit the specified Container size.
+
+!> You **must set the height (dp)** of the ContainerLayout.
 
 ```java
 banner.setAdScale(80);  // The height of the Script-type banner ad is set to fit an 80dp height.
 ```
 
-### Banner Ad Close Feature
-Support for the banner ad close feature is provided.  
-When this listener is registered, a close button is added to the top-left corner of the banner.
+## Banner Ad Close Feature
+
+The banner ad close feature is supported. When you register this listener, a close button is added to the top-left of the banner.
 
 ```java
 banner.setCloseBtn(new MobwithBannerView.OnCloseListener() {
@@ -207,16 +205,17 @@ banner.setCloseBtn(new MobwithBannerView.OnCloseListener() {
 });
 ```
 
-### Rewarded Banner Feature
-To use the Reward Banner feature, you must set the UserKey, ServiceId, and MediaId issued by the operations team.   
-⚠ Required: If any of UserKey, ServiceId, or MediaId is missing, rewards will not be granted.
+## Reward Banner Feature
 
-| Parameter | Description                       |
-|:----------|:----------------------------------|
-| userKey   | A unique identifier that distinguishes each user                                  |
-| mediaId   | A unique identifier that distinguishes each media (service)                       |
-| serviceId | An identifier that distinguishes the placement or service within the media where ads are displayed |
+When using the reward banner feature, you must set the UserKey, ServiceId, and MediaId issued by the operations team.
 
+!> If **any one of UserKey, ServiceId, or MediaId is missing, the reward will not be paid.**
+
+| Parameter | Description |
+|---|---|
+| `userKey` | A unique identifier that distinguishes the user |
+| `mediaId` | A unique identifier that distinguishes the media (service) |
+| `serviceId` | An identifier that distinguishes the location/service where the ad is displayed within the media |
 
 ```java
 banner.setUserKey("Set the UserKey");

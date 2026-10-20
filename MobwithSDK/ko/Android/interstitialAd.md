@@ -1,15 +1,12 @@
-🌐 <a href="../en/#/Android/interstitialAd">View English Guide</a>
+# Interstitial AD <!-- {docsify-ignore} -->
 
-## Interstitial AD <!-- {docsify-ignore} -->
+InterstitialDialog를 이용하여 화면 전체에 전면 광고를 표시하는 방법을 안내합니다.
 
-### 광고 로드 방법
-----
-전면 광고는 광고 load()가 성공적으로 완료된 이후, 원하는 시점에 show()를 호출하여 노출하는 방식으로 동작합니다.  
-광고 로드에 성공한 경우, 아래와 같이 호출하여 광고를 화면에 표시할 수 있습니다.  
+## 광고 로드 방법
 
-전면 광고를 요청하려면 InterstitialDialog 설정이 필요합니다.  
-각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
-아래는 InterstitialDialog 설정하고 광고를 요청하는 예시 코드입니다.
+전면 광고는 `load()`가 성공적으로 완료된 이후, 원하는 시점에 `show()`를 호출하여 노출하는 방식으로 동작합니다.<br>
+전면 광고를 요청하려면 InterstitialDialog 설정이 필요하며, 각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다. 아래는 InterstitialDialog를 설정하고 광고를 요청하는 예시 코드입니다.
+
 ```java
 InterstitialDialog interstitialDialog = new InterstitialDialog(activity)    //Activity context를 전달해주셔야 합니다.    
         .setBackCancel(true)    //뒤로가기 버튼 클릭시 종료 여부
@@ -62,26 +59,30 @@ interstitialDialog.setAdListener(new iInterstitialCallback() {
 interstitialDialog.load();
 ```
 
-### 광고 송출
-----
+## 광고 송출
+
+광고 로드에 성공한 경우, 아래와 같이 호출하여 광고를 화면에 표시할 수 있습니다.
+
 ```java
 if (interstitialDialog.isLoaded()) {
     interstitialDialog.show();
 }
 ```
 
-### 전면 광고 기능
-| 메서드                                                       | Description           |
-|:----------------------------------------------------------|:----------------------|
-| setUnitId(String unitId)                                  | 발급 받은 UnitId 설정       |
-| load()                                                        | 광고 요청                 |
-| isLoaded()                                                        | 광고 요청 성공 여부           |
-| show()                                                        | 광고 송출                 |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
-| setBackCancel(boolean isUse)                          | 뒤로가기 버튼 광고 닫기 여부 설정   |
+## 전면 광고 기능
 
-### Click Event KeyCode
-| KeyCode  | Description               |
-|:--------:|:--------------------------|
-| CLOSE_AD | 광고창을 닫는 버튼을 눌렀을때 |
-| ADCLICK  | 광고를 클릭한 경우          |
+| 메서드 | 설명 |
+|---|---|
+| `setUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `load()` | 광고 요청 |
+| `isLoaded()` | 광고 요청 성공 여부 |
+| `show()` | 광고 송출 |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | 카테고리 타겟팅 광고 기능 |
+| `setBackCancel(boolean isUse)` | 뒤로가기 버튼 광고 닫기 여부 설정 |
+
+## Click Event KeyCode
+
+| KeyCode | 설명 |
+|---|---|
+| `CLOSE_AD` | 광고창을 닫는 버튼을 눌렀을 때 |
+| `ADCLICK` | 광고를 클릭한 경우 |

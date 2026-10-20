@@ -1,11 +1,11 @@
-🌐 <a href="../en/#/Android/rewardAd">View English Guide</a>
+# Reward AD <!-- {docsify-ignore} -->
 
-## Reward AD <!-- {docsify-ignore} -->
+MobwithRewardVideoDialog를 이용하여 광고를 본 사용자에게 리워드를 지급하는 리워드 광고의 사용 방법을 안내합니다.
 
-### 광고 로드 방법
-광고를 본 사용자에게 리워드를 지급하기 위한 광고 입니다.   
-리워드 광고는 광고 load가 성공적으로 완료되면 원하는 시점에 노출(show) 하는 프로세스로 진행됩니다.
-----
+## 광고 로드 방법
+
+리워드 광고는 `load()`가 성공적으로 완료되면 원하는 시점에 `show()`로 노출하는 방식으로 동작합니다.
+
 ```java
 //광고 객체 생성 시 Activity를 전달해주시는 걸 권장합니다.
 MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(activity)     //Activity context를 전달해주셔야 합니다.
@@ -59,8 +59,9 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
 //광고 show() 이전에 광고를 로드 해야합니다.
 rewardVideoDialog.load();
 ```
-### 광고 송출
-----
+
+## 광고 송출
+
 ```java
 // onLoadedAdInfo에서 result가 성공일 경우
 // isLoaded() 함수를 통해 로드된 광고가 존재하는지 확인 할 수 있습니다.
@@ -69,11 +70,12 @@ if (rewardVideoDialog.isLoaded()) {
 }
 ```
 
-### 리워드 광고 기능
-| 메서드                                                             | Description           |
-|:----------------------------------------------------------------|:----------------------|
-| setUnitId(String unitId)                                        | 발급 받은 UnitId 설정       |
-| load()                                                          | 광고 요청                 |
-| isLoaded()                                                      | 광고 요청 성공 여부           |
-| show()                                                          | 광고 송출                 |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능        |
+## 리워드 광고 기능
+
+| 메서드 | 설명 |
+|---|---|
+| `setUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `load()` | 광고 요청 |
+| `isLoaded()` | 광고 요청 성공 여부 |
+| `show()` | 광고 송출 |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | 카테고리 타겟팅 광고 기능 |

@@ -1,11 +1,11 @@
-🌐 <a href="../ko/#/Android/rewardAd">한국어 가이드</a>
+# Reward AD <!-- {docsify-ignore} -->
 
-## Reward AD <!-- {docsify-ignore} -->
+This page describes how to use reward ads that provide a reward to users who watch an ad, using MobwithRewardVideoDialog.
 
-### How to Load the Ad
-This ad is used to grant a reward to users who watch the ad.   
-Reward ads work by displaying (show) the ad at the desired time once the ad load has completed successfully.
-----
+## How to Load Ads
+
+Reward ads work by calling `show()` at the desired time after `load()` has completed successfully.
+
 ```java
 // We recommend passing an Activity when creating the ad object.
 MobwithRewardVideoDialog rewardVideoDialog = new MobwithRewardVideoDialog(activity)     // You must pass the Activity context.
@@ -59,8 +59,9 @@ rewardVideoDialog.setAdListener(new iRewardAdsCallback() {
 // You must load the ad before calling show().
 rewardVideoDialog.load();
 ```
-### Displaying the Ad
-----
+
+## Showing Ads
+
 ```java
 // When result is success in onLoadedAdInfo
 // You can check whether a loaded ad exists via the isLoaded() function.
@@ -69,13 +70,12 @@ if (rewardVideoDialog.isLoaded()) {
 }
 ```
 
-### Reward Ad Features
-| Method                                                          | Description           |
-|:----------------------------------------------------------------|:----------------------|
-| setUnitId(String unitId)                                        | Set the issued UnitId |
-| load()                                                          | Request the ad        |
-| isLoaded()                                                      | Whether the ad request succeeded |
-| show()                                                          | Display the ad        |
-| destroy()                                                       | Release ad resources  |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature |
-| close()                                                         | Close the ad          |
+## Reward Ad Features
+
+| Method | Description |
+|---|---|
+| `setUnitId(String unitId)` | Set the issued UnitId |
+| `load()` | Request an ad |
+| `isLoaded()` | Whether the ad request succeeded |
+| `show()` | Show the ad |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |

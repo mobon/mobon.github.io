@@ -1,17 +1,13 @@
-🌐 <a href="../en/#/Android/frameBannerAd">View English Guide</a>
+# Smart Frame Banner AD <!-- {docsify-ignore} -->
 
-## Frame Banner AD <!-- {docsify-ignore} -->
+MobwithFrameBannerView를 이용하여 광고주로부터 제공받은 주요 에셋을 지정된 프레임 구조로 배치하여 노출하는 배너 광고의 사용 방법을 안내합니다.
 
-### FrameBannerView Native Container 설정
-----
+## FrameBannerView Native Container 설정
 
-MobwithFrameBannerView는 광고주로부터 제공받은 주요 에셋들을 배치하여 노출하는 형태의 광고입니다.  
-지정된 프레임 구조로 구성된 배너 광고입니다.   
+FrameBannerView는 Sortlist의 FrameAD 외에 직광고 및 네트워크 광고를 노출하기 위해 네이티브 레이아웃 설정이 필요합니다.<br>
+아래는 네이티브 레이아웃을 설정하는 예시 코드입니다.
 
-FrameBannerView는 Sortlist의 FrameAD 외에 직광고 및 네트워크 광고를 노출하기 위해 네이티브 레이아웃 설정이 필요합니다.  
-아래는 네이티브 레이아웃을 설정하는 예시 코드입니다.   
-
-##### 체크사항: 사용 시 배경색을 흰색으로 설정해 주세요.
+!> 사용 시 **배경색을 흰색으로 설정**해 주세요.
 
 ```xml
 <ConstraintLayout
@@ -102,13 +98,14 @@ android:layout_height="wrap_content" >
 
 ```
 
-### 광고 로드 방법
-----
-adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다.  
-mediaContainerView는 반드시 GroupView 중 하나로 구성되어야 하며, imageViewAD를 포함하는 구조여야 합니다.  
-또한, 레이아웃은 FrameLayout 사용을 권장합니다.  
-이는 미디에이션을 지원하는 외부 SDK 중 Native AD를 제공하는 각 SDK마다 요구하는 규격이 상이하기 때문입니다.  
-([MobwithFrameBannerView 파라미터 정의 참조](#MobwithFrameBannerView-파라미터-정의))
+## 광고 로드 방법
+
+각 파라미터는 [MobwithFrameBannerView 파라미터 정의](/Android/frameBannerAd?id=mobwithframebannerview-파라미터-정의-native-layout)를 참고해 주세요.
+
+!> adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다.
+
+?> mediaContainerView는 반드시 GroupView 중 하나로 구성되어야 하며, imageViewAD를 포함하는 구조여야 합니다. 또한 레이아웃은 FrameLayout 사용을 권장합니다.<br>
+미디에이션을 지원하는 외부 SDK 중 Native AD를 제공하는 각 SDK마다 요구하는 규격이 다르기 때문입니다.
 
 ```java
 ....
@@ -151,34 +148,35 @@ frameBannerView.loadAd();
 ....
 ```
 
-### FrameBannerView 기능
-| 메서드                                                       | Description          |
-|:----------------------------------------------------------|:---------------------|
-| setUnitId(String unitId)                                  | 발급 받은 UnitId 설정      |
-| loadAd()                                                        | 광고 요청                |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능       |
-| performAdClicked()                                        | 광고 클릭 이벤트 발생    |
+## FrameBannerView 기능
 
-### MobwithFrameBannerView 파라미터 정의 (Native Layout)
+| 메서드 | 설명 |
+|---|---|
+| `setUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `loadAd()` | 광고 요청 |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | 카테고리 타겟팅 광고 기능 |
+| `performAdClicked()` | 광고 클릭 이벤트 발생 |
 
-|         파라미터 명          | Description                                                                                                                                                |
-|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         context         | Context                                                                                                                                                    |
-|      containerView      | 광고를 표시할 각 View들을 담고있는 레이아웃 (기타 각 View의 ID를 확인하지 못하게 되는경우 광고가 제대로 표시되지 않을 수 있다.)                                                                            |
-|  mediaViewContainerID   | 광고 Image를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. <br>가급적 FrameLayout의 사용을 권장합니다.<br>ViewGroup에 따라 미디어(사진, 동영상) 광고가 노출되지 않을 수 있으니, 반드시 광고 노출 여부를 확인하시기 바랍니다. |
-|      adImageViewID      | 광고 Image를 표시할 ImageView의 레이아웃 ID                                                                                                                           |
-|    adLogoImageViewID    | 광고주 로고를 표시할 ImageView의 레이아웃 ID                                                                                                                             |
-|       titleViewID       | 광고 Title을 표시할 TextView의 레이아웃 ID                                                                                                                            |
-|    descriptionViewID    | 광고에 대한 설명이 표시될 TextView의 레이아웃 ID                                                                                                                           |
-|    gotoSiteButtonID     | 광고 사이트 이동에 대한 메세지가 출력될 TextView의 레이아웃 ID                                                                                                                   |
-| infoLogoViewContainerID | 광고 Info Logo를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. AppLovin 미디에이션을 위해 사용한다.                                                                               |
-|   infoLogoImageViewID   | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID                                                                                                                       |
+## MobwithFrameBannerView 파라미터 정의 (Native Layout)
 
-### 서브 레이아웃 기능
-----
-필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.  
-사용 방법은 위와 동일하나, MobwithNativeAdView 생성 시 전달하는 파라미터가 상이합니다.  
-아래는 이에 대한 예시입니다.
+| 파라미터 | 설명 |
+|---|---|
+| `context` | Context |
+| `containerView` | 광고를 표시할 각 View들을 담고 있는 레이아웃 (각 View의 ID를 확인하지 못하는 경우 광고가 제대로 표시되지 않을 수 있습니다.) |
+| `mediaViewContainerID` | 광고 Image를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID.<br>가급적 FrameLayout의 사용을 권장합니다.<br>ViewGroup에 따라 미디어(사진, 동영상) 광고가 노출되지 않을 수 있으니, 반드시 광고 노출 여부를 확인하시기 바랍니다. |
+| `adImageViewID` | 광고 Image를 표시할 ImageView의 레이아웃 ID |
+| `adLogoImageViewID` | 광고주 로고를 표시할 ImageView의 레이아웃 ID |
+| `titleViewID` | 광고 Title을 표시할 TextView의 레이아웃 ID |
+| `descriptionViewID` | 광고에 대한 설명이 표시될 TextView의 레이아웃 ID |
+| `gotoSiteButtonID` | 광고 사이트 이동에 대한 메시지가 출력될 TextView의 레이아웃 ID |
+| `infoLogoViewContainerID` | 광고 Info Logo를 표시할 ImageView를 감싸는 ViewGroup 레이아웃 ID. AppLovin 미디에이션을 위해 사용합니다. |
+| `infoLogoImageViewID` | 광고 Info Logo를 표시할 ImageView의 레이아웃 ID |
+
+## 서브 레이아웃 기능
+
+필요에 따라 직광고와 네트워크 광고에 서로 다른 레이아웃을 적용할 수 있는 기능입니다.<br>
+사용 방법은 위와 동일하나, 생성 시 전달하는 파라미터가 다릅니다. 아래는 이에 대한 예시입니다.
+
 ```java
 ....
 MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(

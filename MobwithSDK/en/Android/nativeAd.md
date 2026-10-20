@@ -1,13 +1,11 @@
-🌐 <a href="../ko/#/Android/nativeAd">한국어 가이드 보기 (View Korean Guide)</a>
+# Native AD <!-- {docsify-ignore} -->
 
-## Native AD <!-- {docsify-ignore} -->
+This page describes how to display ad data in a layout you build yourself using MobwithNativeAdView.
 
-### Native Container Setup
-----
-MobwithNativeAdView is an AdView that binds ad data to each view after the user builds their own layout and passes that view to the SDK.
+## Native Container Setup
 
-A custom native layout configuration is required.  
-Below is example code for building a native layout.
+MobwithNativeAdView is an AdView that, after you build a layout yourself and pass it to the SDK, binds ad data to each View.<br>
+A custom native layout is required. Below is example code for building a native layout.
 
 ```xml
 <ConstraintLayout
@@ -105,14 +103,14 @@ android:layout_height="wrap_content" >
 
 ```
 
-### How to Load an Ad
-----
-- Based on the layout configured above, build the data to be displayed in the Custom Native Layout.
-([See MobwithNativeAdView Parameter Definitions](#MobwithNativeAdView-Parameter-Definitions-Native-Layout))
-- If the IDs of each View within the adview_container are not correctly resolved, the ad may not display properly.
-- mediaContainerView must be one of the GroupView types and must contain imageViewAD.  
-  Using FrameLayout for this layout is recommended.  
-  This is because each external SDK that supports Native AD via mediation has different requirements for this structure.
+## How to Load Ads
+
+Configure the data to be displayed in the Custom Native Layout based on the layout set above. For each parameter, refer to [MobwithNativeAdView Parameter Definitions](/Android/nativeAd?id=mobwithnativeadview-parameter-definitions-native-layout).
+
+!> If the id of each View in adview_container cannot be identified properly, the ad may not be displayed correctly.
+
+?> mediaContainerView must be composed of one of the GroupViews and must contain imageViewAD. We also recommend using a FrameLayout for the layout.<br>
+This is because each external SDK that provides Native AD through mediation has different requirements.
 
 ```java
 ....
@@ -151,67 +149,68 @@ nativeAdView.loadAd();
 ....
 ```
 
-### Native AD Features
-| Method                                                             | Description                                                |
-|:----------------------------------------------------------------|:-----------------------------------------------------------|
-| setUnitId(String unitId)                                        | Set the issued UnitId                                      |
-| loadAd()                                                        | Request an ad                                              |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category-targeted ad feature                               |
-| setCategory(List<String> categories)                            | Category-targeted ad feature                               |
-| setUserKey(String userKey)                                      | Set the UserKey                                            |
-| setServiceId(String serviceId)              | Set the ServiceId                                          |
-| setMediaId(String mediaId)                | Set the MediaId                                            |
-| setCampaignCodes(List<String> campaignCodes)                    | Set targeting campaign codes                               |
-| performAdClicked()                                              | Trigger an ad click event                                  |
+## Native AD Features
 
-### MobwithNativeAdView Parameter Definitions (Native Layout)
+| Method | Description |
+|---|---|
+| `setUnitId(String unitId)` | Set the issued UnitId |
+| `loadAd()` | Request an ad |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `setCategory(List<String> categories)` | Category targeting ad feature |
+| `setUserKey(String userKey)` | Set the issued UserKey |
+| `setServiceId(String serviceId)` | Set the issued ServiceId |
+| `setMediaId(String mediaId)` | Set the issued MediaId |
+| `setCampaignCodes(List<String> campaignCodes)` | Set targeting campaign codes |
+| `performAdClicked()` | Trigger an ad click event |
 
-|         Parameter          | Description                                                                                                                                                |
-|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         context         | Context                                                                                                                                                    |
-|         unitId          | The issued ad unit ID                                                                                                                                           |
-|      containerView      | The layout containing the views that will display the ad. (If the IDs of these views cannot be resolved, the ad may not display correctly.)                                                                            |
-|  mediaViewContainerID   | The ViewGroup layout ID wrapping the ImageView that displays the ad image. <br>Using FrameLayout is recommended.<br>Depending on the ViewGroup used, media (photo, video) ads may not display, so be sure to verify ad display. |
-|      adImageViewID      | The layout ID of the ImageView that displays the ad image. (Set to -1 if not used.)                                                                                               |
-|    adLogoImageViewID    | The layout ID of the ImageView that displays the advertiser's logo. (Set to -1 if not used.)                                                                                                 |
-|       titleViewID       | The layout ID of the TextView that displays the ad title. (Set to -1 if not used.)                                                                                                |
-|    descriptionViewID    | The layout ID of the TextView that displays the ad description. (Set to -1 if not used.)                                                                                               |
-|    gotoSiteButtonID     | The layout ID of the TextView that displays the message for navigating to the ad site. (Set to -1 if not used.)                                                                                       |
-| infoLogoViewContainerID | The ViewGroup layout ID wrapping the ImageView that displays the ad info logo. Used for AppLovin mediation. (Set to -1 if not used.)                                                   |
-|   infoLogoImageViewID   | The layout ID of the ImageView that displays the ad info logo. (Set to -1 if not used.)                                                                                           |
+## MobwithNativeAdView Parameter Definitions (Native Layout)
 
-### When the Ad Click Button Cannot Be Used
-----
+| Parameter | Description |
+|---|---|
+| `context` | Context |
+| `unitId` | The issued ad unit id |
+| `containerView` | The layout that contains each View for displaying the ad (if the ID of each View cannot be identified, the ad may not display correctly). |
+| `mediaViewContainerID` | The layout ID of the ViewGroup that wraps the ImageView displaying the ad image.<br>Using a FrameLayout is recommended where possible.<br>Depending on the ViewGroup, media (image, video) ads may not be displayed, so be sure to check whether the ad is displayed. |
+| `adImageViewID` | The layout ID of the ImageView that displays the ad image (set to -1 if not used). |
+| `adLogoImageViewID` | The layout ID of the ImageView that displays the advertiser logo (set to -1 if not used). |
+| `titleViewID` | The layout ID of the TextView that displays the ad title (set to -1 if not used). |
+| `descriptionViewID` | The layout ID of the TextView that displays the ad description (set to -1 if not used). |
+| `gotoSiteButtonID` | The layout ID of the TextView that displays the message for navigating to the ad site (set to -1 if not used). |
+| `infoLogoViewContainerID` | The layout ID of the ViewGroup that wraps the ImageView displaying the ad Info Logo. Used for AppLovin mediation (set to -1 if not used). |
+| `infoLogoImageViewID` | The layout ID of the ImageView that displays the ad Info Logo (set to -1 if not used). |
+
+## When the Ad Click Button Cannot Be Used
+
+Calling the method below produces the same effect as clicking the ad.
+
 ```java
 ....
 nativeAdView.performAdClicked();
 ....
 ```
 
-Calling the method above can produce the same effect as clicking the ad.
+## Main Ad Image ScaleType
 
-### Main Ad Image ScaleType Application Feature
+This feature lets you directly specify the ScaleType for the main ad image (prevents image distortion).<br>
+When set to `true`, the ScaleType you specify is applied to the main image view (`R.id.imageViewAd`).
 
-This feature allows you to directly specify the ScaleType for the ad's main image. (Prevents image distortion)
-When set to true, the ScaleType specified by the user is applied directly to the main image view (R.id.imageViewAd).
-
-----
 ```java
 ....
 nativeAdView.useImageViewScaleType(true);
 ....
 ```
 
-### Sub-Layout Feature
-----
-- This feature allows different layouts to be applied to direct ads and network ads as needed.   
+## Sub-Layout Feature
 
-  | Parameter                                           | Description       |
-  |:----------------------------------------------------|:------------------|
-  | directAdViewItemModel                               | Direct ad layout        |
-  | nativeAdViewItemModel                               | Network ad layout     |
-- Usage is the same as above, but the parameters passed when creating MobwithNativeAdView differ.  
-  Below is an example of this.
+This feature lets you apply different layouts to direct ads and network ads as needed.
+
+| Parameter | Description |
+|---|---|
+| `directAdViewItemModel` | Direct ad layout |
+| `nativeAdViewItemModel` | Network ad layout |
+
+Usage is the same as above, but the parameters passed when creating MobwithNativeAdView are different. Below is an example.
+
 ```java
 ....
 nativeAdView = new MobwithNativeAdView(
@@ -261,19 +260,20 @@ nativeAdView.loadAd();
 ....
 ```
 
-### Rewarded Banner Feature
-To use the Reward Banner feature, you must set the UserKey, ServiceId, and MediaId issued by the operations team.   
-⚠ Required: If any of UserKey, ServiceId, or MediaId is missing, rewards will not be granted.
+## Reward Banner Feature
 
-| Parameter | Description                       |
-|:----------|:----------------------------------|
-| userKey   | A unique identifier that distinguishes each user                                  |
-| mediaId   | A unique identifier that distinguishes each media (service)                       |
-| serviceId | An identifier that distinguishes the placement or service within the media where ads are displayed |
+When using the reward banner feature, you must set the UserKey, ServiceId, and MediaId issued by the operations team.
 
+!> If **any one of UserKey, ServiceId, or MediaId is missing, the reward will not be paid.**
+
+| Parameter | Description |
+|---|---|
+| `userKey` | A unique identifier that distinguishes the user |
+| `mediaId` | A unique identifier that distinguishes the media (service) |
+| `serviceId` | An identifier that distinguishes the location/service where the ad is displayed within the media |
 
 ```java
-banner.setUserKey("Set the UserKey");
-banner.setServiceId("Set the ServiceId");
-banner.setMediaId("Set the MediaId");
+nativeAdView.setUserKey("Issued UserKey");
+nativeAdView.setServiceId("Issued ServiceId");
+nativeAdView.setMediaId("Issued MediaId");
 ```

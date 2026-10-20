@@ -1,17 +1,13 @@
-🌐 <a href="../ko/#/Android/frameBannerAd">한국어 가이드</a>
+# Smart Frame Banner AD <!-- {docsify-ignore} -->
 
-## Frame Banner AD <!-- {docsify-ignore} -->
+This page describes how to use MobwithFrameBannerView, a banner ad that places key assets provided by the advertiser in a fixed frame structure.
 
-### FrameBannerView Native Container Setup
-----
+## FrameBannerView Native Container Setup
 
-MobwithFrameBannerView is an ad that displays the key assets provided by the advertiser arranged in a layout.  
-It is a banner ad composed of a specified frame structure.   
+In addition to Sortlist FrameAD, FrameBannerView requires a native layout to display direct ads and network ads.<br>
+Below is example code for setting up the native layout.
 
-In addition to Sortlist's FrameAD, FrameBannerView requires a native layout setup in order to display direct ads and network ads.  
-Below is example code for setting up the native layout.   
-
-##### Note: When using this, please set the background color to white.
+!> When using it, **set the background color to white**.
 
 ```xml
 <ConstraintLayout
@@ -102,13 +98,14 @@ android:layout_height="wrap_content" >
 
 ```
 
-### How to Load the Ad
-----
-If the id of each View within adview_container is not correctly recognized, the ad may not display correctly.  
-mediaContainerView must be composed of one of the GroupViews and must have a structure that includes imageViewAD.  
-Also, we recommend using FrameLayout for the layout.  
-This is because the required specifications differ for each external SDK that provides Native AD among those supporting mediation.  
-([See MobwithFrameBannerView parameter definitions](#mobwithframebannerview-parameter-definitions-native-layout))
+## How to Load Ads
+
+For each parameter, refer to [MobwithFrameBannerView Parameter Definitions](/Android/frameBannerAd?id=mobwithframebannerview-parameter-definitions-native-layout).
+
+!> If the id of each View in adview_container cannot be identified properly, the ad may not be displayed correctly.
+
+?> mediaContainerView must be composed of one of the GroupViews and must contain imageViewAD. We also recommend using a FrameLayout for the layout.<br>
+This is because each external SDK that provides Native AD through mediation has different requirements.
 
 ```java
 ....
@@ -151,34 +148,35 @@ frameBannerView.loadAd();
 ....
 ```
 
-### FrameBannerView Features
-| Method                                                          | Description          |
-|:----------------------------------------------------------------|:---------------------|
-| setUnitId(String unitId)                                        | Set the issued UnitId |
-| loadAd()                                                        | Request the ad       |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature |
-| performAdClicked()                                              | Trigger an ad click event |
+## FrameBannerView Features
 
-### MobwithFrameBannerView Parameter Definitions (Native Layout)
+| Method | Description |
+|---|---|
+| `setUnitId(String unitId)` | Set the issued UnitId |
+| `loadAd()` | Request an ad |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `performAdClicked()` | Trigger an ad click event |
 
-|       Parameter Name    | Description                                                                                                                                                |
-|:-----------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         context         | Context                                                                                                                                                    |
-|      containerView      | The layout containing each View that will display the ad. (If the ID of each View cannot be recognized, the ad may not display correctly.)                  |
-|  mediaViewContainerID   | The ViewGroup layout ID wrapping the ImageView that will display the ad Image. <br>We recommend using FrameLayout where possible.<br>Depending on the ViewGroup, media (image, video) ads may not be displayed, so be sure to verify whether the ad is displayed. |
-|      adImageViewID      | The layout ID of the ImageView that will display the ad Image                                                                                              |
-|    adLogoImageViewID    | The layout ID of the ImageView that will display the advertiser logo                                                                                       |
-|       titleViewID       | The layout ID of the TextView that will display the ad Title                                                                                               |
-|    descriptionViewID    | The layout ID of the TextView that will display the ad description                                                                                         |
-|    gotoSiteButtonID     | The layout ID of the TextView that will display the message for navigating to the ad site                                                                  |
-| infoLogoViewContainerID | The ViewGroup layout ID wrapping the ImageView that will display the ad Info Logo. Used for AppLovin mediation.                                             |
-|   infoLogoImageViewID   | The layout ID of the ImageView that will display the ad Info Logo                                                                                          |
+## MobwithFrameBannerView Parameter Definitions (Native Layout)
 
-### Sub Layout Feature
-----
-This feature allows you to apply different layouts to direct ads and network ads as needed.  
-The usage is the same as above, but the parameters passed when creating MobwithNativeAdView differ.  
-Below is an example of this.
+| Parameter | Description |
+|---|---|
+| `context` | Context |
+| `containerView` | The layout that contains each View for displaying the ad (if the ID of each View cannot be identified, the ad may not display correctly). |
+| `mediaViewContainerID` | The layout ID of the ViewGroup that wraps the ImageView displaying the ad image.<br>Using a FrameLayout is recommended where possible.<br>Depending on the ViewGroup, media (image, video) ads may not be displayed, so be sure to check whether the ad is displayed. |
+| `adImageViewID` | The layout ID of the ImageView that displays the ad image |
+| `adLogoImageViewID` | The layout ID of the ImageView that displays the advertiser logo |
+| `titleViewID` | The layout ID of the TextView that displays the ad title |
+| `descriptionViewID` | The layout ID of the TextView that displays the ad description |
+| `gotoSiteButtonID` | The layout ID of the TextView that displays the message for navigating to the ad site |
+| `infoLogoViewContainerID` | The layout ID of the ViewGroup that wraps the ImageView displaying the ad Info Logo. Used for AppLovin mediation. |
+| `infoLogoImageViewID` | The layout ID of the ImageView that displays the ad Info Logo |
+
+## Sub-Layout Feature
+
+This feature lets you apply different layouts to direct ads and network ads as needed.<br>
+Usage is the same as above, but the parameters passed at creation are different. Below is an example.
+
 ```java
 ....
 MobwithFrameBannerView mobwithFrameBannerView = new MobwithFrameBannerView(

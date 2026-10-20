@@ -1,11 +1,10 @@
-🌐 <a href="../en/#/Android/smartAd">View English Guide</a>
+# Smart AD <!-- {docsify-ignore} -->
 
+카테고리 매핑을 통한 스마트 광고(카테고리 타겟팅)의 사용 방법을 안내합니다.<br>
+스마트 광고를 사용하는 경우 `setMobwithAdCategoryModel()`을 통해 카테고리를 설정해야 합니다.
 
-## Smart AD (카테고리 타겟팅) <!-- {docsify-ignore} -->
-카테고리 매핑을 통한 스마트 광고를 사용하시는 경우 setMobwithAdCategoryModel()를 통해서 카테고리 설정이 필요합니다.
+## 광고 로드 방법
 
-### 광고 로드 방법
-----
 ```java
 /**
   업체코드 : 업체코드 값

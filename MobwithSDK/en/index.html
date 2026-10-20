@@ -8,7 +8,31 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   
-  <link rel="stylesheet" href="../custom.css">
+  <!-- 라이트 / 다크 테마: 라이트 = vue.css(코드블록 포함), 다크 = dark.css + prism-tomorrow(코드블록) -->
+  <link rel="stylesheet" id="theme-light" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" id="theme-dark" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css">
+  <link rel="stylesheet" id="theme-dark-code" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
+  <script>
+    // 테마 적용 - 저장된 선택이 없으면 라이트로 시작. 선택은 localStorage에 기억
+    (function () {
+      var KEY = 'mobwith-guide-theme';
+      function apply(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        document.getElementById('theme-light').disabled = theme === 'dark';
+        document.getElementById('theme-dark').disabled = theme !== 'dark';
+        document.getElementById('theme-dark-code').disabled = theme !== 'dark';
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      apply(saved === 'dark' ? 'dark' : 'light');
+      window.toggleGuideTheme = function () {
+        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        apply(next);
+        try { localStorage.setItem(KEY, next); } catch (e) {}
+      };
+    })();
+  </script>
+  <!-- custom.css는 cache-bust.js가 버전 값을 붙여 불러옴 (테마 CSS보다 뒤에 와야 함) -->
   <script src="../cache-bust.js"></script>
 </head>
 
@@ -37,6 +61,13 @@
           var CURRENT = 'en';
           var OTHER = 'ko';
           var GLOBE = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+          // 라이트 / 다크 모드 전환 버튼 (현재 모드의 반대 아이콘 표시, 아이콘 전환은 custom.css에서 처리)
+          var SUN = '<svg class="icon-sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+          var MOON = '<svg class="icon-moon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+          var THEME_BTN = '<button type="button" class="theme-toggle" title="Toggle light / dark mode" aria-label="Toggle light / dark mode">' + SUN + MOON + '</button>';
+          document.addEventListener('click', function (e) {
+            if (e.target.closest && e.target.closest('.theme-toggle')) window.toggleGuideTheme();
+          });
           hook.afterEach(function (html) {
             html = html.replace(/<p>\s*🌐[\s\S]*?<\/p>/, '');
             var href = '../' + OTHER + '/#' + (vm.route.path || '/');
@@ -50,6 +81,7 @@
               '<div class="lang-toggle">' +
               '<span class="lang-icon">' + GLOBE + '</span>' +
               '<span class="lang-group">' + opt('ko') + opt('en') + '</span>' +
+              THEME_BTN +
               '</div>';
             return toggle + html;
           });
@@ -161,13 +193,11 @@
 
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" />
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css">
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-groovy.min.js"></script>
   <!-- 코드 색상 표시 언어 추가: Swift / Kotlin / Ruby(Podfile) / Objective-C(objc, c 필요) / JSON -->

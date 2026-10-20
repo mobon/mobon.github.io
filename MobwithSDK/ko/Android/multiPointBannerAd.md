@@ -1,12 +1,12 @@
-🌐 <a href="../en/#/Android/multiPointBannerAd">View English Guide</a>
+# MultiPointBanner AD <!-- {docsify-ignore} -->
 
-## Multi Point Banner AD <!-- {docsify-ignore} -->
-해당 광고의 기능은 MobwithPointBannerView와 동일한 기능을 제공하지만, 단일 광고만 표시하는 기존 뷰와 달리 최대 5개의 광고를 좌우 스크롤 형태로 노출하는 BannerView입니다.  
+MobwithMultiPointBannerView를 이용하여 최대 5개의 포인트 배너 광고를 좌우 스크롤 형태로 표시하는 방법을 안내합니다.<br>
+[PointBanner AD](/Android/pointBannerAd.md)의 MobwithPointBannerView와 동일한 기능을 제공하지만, 단일 광고만 표시하는 기존 뷰와 달리 최대 5개의 광고를 노출합니다.
 
-단, 포인트 제공 가능 여부 등 일부 기능은 SDK 내부 로직에 의해 처리됩니다.  
-해당 기능의 변경이 필요한 경우 별도 문의가 필요합니다.
+?> 포인트 제공 가능 여부 등 일부 기능은 SDK 내부 로직에 의해 처리됩니다. 해당 기능의 변경이 필요한 경우 별도로 문의해 주세요.
 
-### 광고 로드 방법
+## 광고 로드 방법
+
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
 
@@ -51,13 +51,14 @@ pointBannerView.setAdListener(new iMultiPointBannerCallback() {
 bannerView.loadAd();
 ```
 
-### Multi Point Banner AD 기능
-| 메서드                                                             | Description                        |
-|:----------------------------------------------------------------|:-----------------------------------|
-| setBannerUnitIds(String[] unitIds)                              | 발급 받은 UnitId 설정 (최대 5개까지 적용)       |
-| loadAd()                                                        | 광고 요청                              |
-| restart()                                                       | 광고 새로고침 재시작                        |
-| stop()                                                          | 광고 새로고침 중단                         |
-| destroyAd()                                                     | 광고 리소스 해제                          |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | 카테고리 타겟팅 광고 기능                     |
-| setRewarded(int index)                                          | 특정 인덱스의 배너에 대해 포인트가 지급되었음을 SDK에 전달 |
+## MultiPointBanner AD 기능
+
+| 메서드 | 설명 |
+|---|---|
+| `setBannerUnitIds(String[] unitIds)` | 발급받은 UnitId 설정 (최대 5개까지 적용) |
+| `loadAd()` | 광고 요청 |
+| `restart()` | 광고 새로고침 재시작 |
+| `stop()` | 광고 새로고침 중단 |
+| `destroyAd()` | 광고 리소스 해제 |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | 카테고리 타겟팅 광고 기능 |
+| `setRewarded(int index)` | 특정 인덱스의 배너에 대해 포인트가 지급되었음을 SDK에 전달 |

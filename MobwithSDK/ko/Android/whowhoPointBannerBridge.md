@@ -1,13 +1,12 @@
-🌐 <a href="../en/#/Android/whowhoPointBannerBridge">View English Guide</a>
+# WhoWhoPointBannerBridge <!-- {docsify-ignore} -->
 
-## WhoWho Point Banner Bridge <!-- {docsify-ignore} -->
-웹뷰 기반의 하이브리드 앱에서 MobwithPointBannerView와 동일한 광고를 추가하기 위해 필요한 기능이 구현되어 있습니다.  
-사용 방법은 아래를 참고하시면 됩니다.
+MobwithWhoWhoPointBannerBridge를 이용하여 웹뷰 기반의 하이브리드 앱에 MobwithPointBannerView와 동일한 광고를 추가하는 방법을 안내합니다.
 
-### 광고 로드 방법
-----
+## 광고 로드 방법
 
-1. MobwithWhoWhoPointBannerBridge 객체를 생성합니다.
+#### <span class="step-label">STEP 1</span>MobwithWhoWhoPointBannerBridge 생성
+
+WebView에서 JavaScript를 사용하도록 설정한 뒤 MobwithWhoWhoPointBannerBridge 객체를 생성합니다.
 
 ```java
 MobwithWhoWhoPointBannerBridge mobwithPointBannerBridge;
@@ -29,7 +28,9 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-2. User ID 및 Frame Element ID 설정
+#### <span class="step-label">STEP 2</span>User ID 및 Frame Element ID 설정
+
+포인트 적립 대상을 구분하기 위한 User ID와, 웹 페이지 내에서 광고가 표시될 위치의 element id를 설정합니다.
 
 ```java
 // User ID는 포인트 적립 대상을 구분하기 위한 사용자 구분값 입니다.
@@ -39,7 +40,9 @@ mobwithPointBannerBridge.setUserID("{User Id}");
 mobwithPointBannerBridge.setFrameElementId("{Frame Element Id}");
 ```
 
-3. WebViewClient 설정
+#### <span class="step-label">STEP 3</span>WebViewClient 설정
+
+페이지 로딩이 완료되면 `onPageLoaded()`를 호출하도록 WebViewClient를 설정합니다.
 
 ```java
 mWebView.setWebViewClient(new WebViewClient() {
@@ -54,16 +57,15 @@ mWebView.setWebViewClient(new WebViewClient() {
 });
 ```
 
-4. 페이지 로딩
+#### <span class="step-label">STEP 4</span>페이지 로딩
 
 ```java
 mWebView.loadUrl(bannerUrl);
 ```
 
-5. destroy() 함수 호출
+#### <span class="step-label">STEP 5</span>destroy() 호출
 
-MobwithWhoWhoPointBannerBridge를 사용하는 WebView 및 Activity가 파괴되는 시점에 destroy() 를 호출해 주셔야 합니다.  
-여기에서는 Activity가 Destroy되는 시점에 호출하고 있습니다.
+MobwithWhoWhoPointBannerBridge를 사용하는 WebView 및 Activity가 파괴되는 시점에 `destroy()`를 호출해 주셔야 합니다. 아래 예시는 Activity가 Destroy되는 시점에 호출합니다.
 
 ```java
 @Override

@@ -1,19 +1,14 @@
-🌐 <a href="../ko/#/Android/splashAd">한국어 가이드 보기 (View Korean Guide)</a>
+# Splash AD <!-- {docsify-ignore} -->
 
-## Splash AD <!-- {docsify-ignore} -->
+This page describes how to display an ad on the splash screen using MobwithSplashBannerView.
 
-### What is a Splash Ad?
----- 
-An ad object for displaying ads on the splash screen.
+## How to Load Ads
 
-### How to Load an Ad
----- 
-The UNIT_ID issued for MobwithSplashBannerView must be set.  
-Below is example code for setting up MobwithSplashBannerView and requesting an ad.
+#### <span class="step-label">STEP 1</span>Implement the layout
+
+Implement the Layout where the splash ad will be displayed. Below is example code.
 
 ```xml
-You need to implement the layout that will display the splash ad. Below is example code.
-
 ...
 <FrameLayout
     android:id="@+id/adContainer"
@@ -21,8 +16,11 @@ You need to implement the layout that will display the splash ad. Below is examp
     android:layout_height="wrap_content"
 />
 ...
-
 ```
+
+#### <span class="step-label">STEP 2</span>Create and request the ad
+
+You must set the issued UNIT_ID value for MobwithSplashBannerView. Below is example code that sets up MobwithSplashBannerView and requests an ad.
 
 ```java
 // The UNIT_ID issued for each ad view must be set. This is required.
@@ -49,35 +47,38 @@ splashBanner.setAdListener(new MobwithSplashBannerView.OnSplashAdListener() {
 // Request the ad.
 splashBanner.loadAd();
 ```
-### MobwithSplashBannerView Parameters
 
-| Parameter                      | Description                                                         |
-|:--------------------------|:--------------------------------------------------------------------|
-| Context context           | The Activity Context from which the ad is served                                           |
-| ViewGroup layoutContainer | Layout (ViewGroup) that will display the splash ad                                       |
-| String unitId             | The issued UnitId                                                         |
+## MobwithSplashBannerView Parameters
 
-### Banner Ad Features
+| Parameter | Description |
+|---|---|
+| `Context context` | The Activity Context where the ad will be displayed |
+| `ViewGroup layoutContainer` | The layout (ViewGroup) where the splash ad will be displayed |
+| `String unitId` | The issued UnitId |
 
-| Method                                                              | Description                     |
-|:-----------------------------------------------------------------|:--------------------------------|
-| setBannerUnitId(String unitId)                                   | Set the issued UnitId                 |
-| loadAd()                                                         | Request an ad                           |
-| setAdListener(MobwithSplashBannerView.OnSplashListener listener) | Ad callback                     |
-| setTimeOutSec(int seconds)                                       | Ad request timeout duration (seconds).  <br>If ad loading is not completed within this time, the ad load failure callback is delivered.               |
-| setFadeDuration(long durationMs)                                       | Set fade in/out duration (ms)               |
-| destroy()                                                        | Release ad resources                       |
+## Banner Ad Features
 
-### Ad Request Timeout
-You can set the ad request wait time.  
-Enter the value in seconds; the default is 5 seconds.
+| Method | Description |
+|---|---|
+| `setBannerUnitId(String unitId)` | Set the issued UnitId |
+| `loadAd()` | Request an ad |
+| `setAdListener(MobwithSplashBannerView.OnSplashListener listener)` | Ad callback |
+| `setTimeOutSec(int seconds)` | Ad request timeout (seconds).<br>If the ad does not finish loading within this time, the ad load failure callback is delivered. |
+| `setFadeDuration(long durationMs)` | Set the fade in/out duration (ms) |
+| `destroy()` | Release ad resources |
+
+## Ad Request Timeout
+
+You can set the waiting time for the ad request. Enter the value in seconds; the default is 5 seconds.
+
 ```java
 splashBanner.setTimeOutSec(5);
 ```
 
-### SplashAdListener
+## SplashAdListener
+
 Implement OnSplashListener to receive callbacks for each splash ad event.
-See below for details.
+
 ```java
 new MobwithSplashBannerView.OnSplashAdListener() {
     @Override
@@ -93,13 +94,10 @@ new MobwithSplashBannerView.OnSplashAdListener() {
 
 ```
 
+## Releasing Ad Resources
 
-
-### Releasing Ad Resources
-----
-Calling the function below resets the ad object.  
-If auto-refresh is enabled, this action will also stop it.  
-Therefore, it is recommended to call this when the banner view is no longer in use.
+Calling the function below initializes the ad object. If auto-refresh is set, it is also stopped.<br>
+Therefore, we recommend calling it when the banner view is no longer used.
 
 ```java
 ...

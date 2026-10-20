@@ -1,10 +1,10 @@
-🌐 <a href="../ko/#/Android/smartAd">한국어 가이드</a>
+# Smart AD <!-- {docsify-ignore} -->
 
-## Smart AD (Category Targeting) <!-- {docsify-ignore} -->
-If you use smart ads through category mapping, you need to configure the category via setMobwithAdCategoryModel().
+This page describes how to use smart ads (category targeting) through category mapping.<br>
+When using smart ads, you must set the category via `setMobwithAdCategoryModel()`.
 
-### How to Load the Ad
-----
+## How to Load Ads
+
 ```java
 /**
   Company Code : Company code value

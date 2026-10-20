@@ -1,11 +1,10 @@
-🌐 <a href="../ko/#/Android/freePassAd">한국어 가이드</a>
+# FreePass AD <!-- {docsify-ignore} -->
 
-## FreePass AD <!-- {docsify-ignore} -->
+This page describes how to use MobwithFreePassAdView to support products that hide ads for a certain period after an ad is clicked.
 
-### How to Load the Ad
-----
-FreePass AD is an AdView that supports a product that does not display ads for a certain period after the ad is clicked.  
-Control of the actual ad non-display period must be implemented by the developer directly, and the SDK provides the functions needed for this.  
+?> The developer must implement the control of the actual ad-free period, and the SDK provides the features needed for this.
+
+## How to Load Ads
 
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
@@ -53,22 +52,22 @@ freePassAdView.setAdListener(new iFreePassBannerCallback() {
 bannerView.loadAd();
 ```
 
-### FreePassAdView Features
-| Method                                                          | Description            |
-|:----------------------------------------------------------------|:-----------------------|
-| setBannerUnitId(String unitId)                                  | Set the issued UnitId  |
-| setMcLogoImage(Drawable logoImage)                              | Set the media company logo image to be displayed in the ad |
-| loadAd()                                                        | Request the ad         |
-| destroyAd()                                                     | Release ad resources   |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature |
-| MobwithFreePassAdView.getLastAdClickedTime(Context context)     | Last ad click time     |
+## FreePassAdView Features
 
-### Ad Click Settings
-----
-When the ad is clicked, the ad click time is delivered through the onAdClicked() callback.  
-You can use this value to control the ad non-display period.  
+| Method | Description |
+|---|---|
+| `setBannerUnitId(String unitId)` | Set the issued UnitId |
+| `setMcLogoImage(Drawable logoImage)` | Set the media logo image displayed on the ad |
+| `loadAd()` | Request an ad |
+| `destroyAd()` | Release ad resources |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `MobwithFreePassAdView.getLastAdClickedTime(Context context)` | Last ad click time |
 
-Also, if you need to check the ad click time separately, you can query it using the function below.  
+## Ad Click Settings
+
+When an ad is clicked, the click time is delivered through the `onAdClicked()` callback. You can use this value to control the ad-free period.<br>
+If you need to check the ad click time separately, you can retrieve it with the function below.
+
 ```java
 Date clickedTime = MobwithFreePassAdView.getLastAdClickedTime(context);
 ```

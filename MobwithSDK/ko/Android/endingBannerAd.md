@@ -1,10 +1,10 @@
-🌐 <a href="../en/#/Android/endingBannerAd">View English Guide</a>
+# EndingBanner AD <!-- {docsify-ignore} -->
 
-## Ending Banner AD <!-- {docsify-ignore} -->
+EndingBannerView를 이용하여 엔딩 배너 광고를 표시하는 방법을 안내합니다.
 
-### EndingBannerView 정의
-----
-Ending Banner 광고의 컨테이너 역할을 하는 뷰를 레이아웃 XML 파일에 추가합니다.
+## EndingBannerView 정의
+
+Ending Banner 광고의 컨테이너 역할을 하는 뷰를 레이아웃 XML 파일에 추가합니다.<br>
 광고를 표시할 배너 컨테이너(ViewGroup)는 FrameLayout 사용을 권장합니다.
 
 ```xml
@@ -17,14 +17,12 @@ Ending Banner 광고의 컨테이너 역할을 하는 뷰를 레이아웃 XML �
 ....
 ```
 
-### 광고 로드 방법
----- 
-EndingBannerView는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다.  
-아래는 EndingBannerView를 설정하고 광고를 요청하는 예시 코드입니다.
+## 광고 로드 방법
 
-※ EndingBannerView 구현 시 주의사항   
-iEndingBannerCallback 리스너의 onLoadedAdInfo() 콜백을 받았을 때 (광고 로딩 완료 시점) EndingBannerView를 Container에 Add하시기 바랍니다.   
-Dialog 같은 경우 Show 하기 전에 광고를 로드하여 Container에 Add하게 되면 화면이 두번 그려질 수 있습니다.
+EndingBannerView에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다. 아래는 EndingBannerView를 설정하고 광고를 요청하는 예시 코드입니다.
+
+!> `iEndingBannerCallback` 리스너의 `onLoadedAdInfo()` 콜백을 받았을 때(광고 로딩 완료 시점) **EndingBannerView를 Container에 추가**하시기 바랍니다.<br>
+Dialog의 경우 Show 하기 전에 광고를 로드하여 Container에 추가하면 화면이 두 번 그려질 수 있습니다.
 
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
@@ -64,18 +62,21 @@ endingBannerView.setAdListener(new iEndingBannerCallback() {
 endingBannerView.loadAd();
 ```
 
-### 배너 광고 기능
-| 메서드                                          | Description     |
-|:---------------------------------------------|:----------------|
-| setBannerUnitId(String unitId)               | 발급 받은 UnitId 설정 |
-| loadAd()                                     | 광고 요청           |
-| setCategory(List<String> categories)         | 카테고리 타겟팅 광고 기능  |
-| setCampaignCodes(List<String> campaignCodes) | 타겟팅 캠페인 코드 설정   |
-| performAdClick() | 광고 클릭 이벤트 전달 기능 |
-| destroy()                                    | 광고 리소스 해제       |
+## 배너 광고 기능
 
-### 광고 카테고리 설정
-category에 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
+| 메서드 | 설명 |
+|---|---|
+| `setBannerUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `loadAd()` | 광고 요청 |
+| `setCategory(List<String> categories)` | 카테고리 타겟팅 광고 기능 |
+| `setCampaignCodes(List<String> campaignCodes)` | 타겟팅 캠페인 코드 설정 |
+| `performAdClick()` | 광고 클릭 이벤트 전달 기능 |
+| `destroy()` | 광고 리소스 해제 |
+
+## 광고 카테고리 설정
+
+category에 카테고리 값을 문자열 배열로 설정하여, 설정된 카테고리에 알맞은 광고를 표시할 수 있습니다.
+
 ```java
 endingBannerView.setCategory(Arrays.asList(
      "A0001",
@@ -86,9 +87,10 @@ endingBannerView.setCategory(Arrays.asList(
 ));
 ```
 
+## 광고 캠페인 코드 설정
 
-### 광고 캠페인 코드 설정
-campaignCodes 카테고리 값을 문자열 배열로 설정하여 설정된 카테고리에 알맞는 광고를 표시할 수 있습니다.
+campaignCodes에 캠페인 코드를 문자열 배열로 설정하여, 해당 캠페인의 광고를 표시할 수 있습니다.
+
 ```java
 endingBannerView.setCampaignCodes(Arrays.asList(
     "03b7a807c94f4beeb4115a23b2a5c39a",
@@ -98,11 +100,13 @@ endingBannerView.setCampaignCodes(Arrays.asList(
 ));
 
 ```
-* 캠페인 코드 값의 경우 협의된 내용을 참고 하시기 바랍니다.
 
+?> 캠페인 코드 값은 협의된 내용을 참고하시기 바랍니다.
 
-### 광고 리소스 해제
-광고가 더 이상 필요하지 않은 경우, destroy() 함수를 호출하여 광고 리소스를 해제 합니다.
+## 광고 리소스 해제
+
+광고가 더 이상 필요하지 않은 경우, `destroy()` 함수를 호출하여 광고 리소스를 해제합니다.
+
 ```java
 endingBannerView.destroy();
 ```

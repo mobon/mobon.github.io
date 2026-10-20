@@ -1,15 +1,10 @@
-🌐 <a href="../ko/#/iOS/rewardAd">한국어 가이드</a>
+# Reward AD <!-- {docsify-ignore} -->
 
-## Reward AD <!-- {docsify-ignore} -->
-
+This page describes how to use MobWithRewardAd to show an ad to the user and provide a reward.
 
 ## MobWithRewardAd
----
-You can display a reward ad on screen using MobWithRewardAd.  
-Through this ad, you can show ads to users and provide rewards.  
-Please refer to the example below for the usage of MobWithRewardAd.
 
-
+Create a MobWithRewardAd and call `loadAd()` to request an ad.
 
 ```swift
 let rewardAd = MobWithRewardAd.init()
@@ -20,57 +15,66 @@ rewardAd.unitId = "{Unit ID}"
 rewardAd.loadAd()
 ```
 
-### loadAd()
-Loads the ad.  
-For interstitial banners, loading the ad and displaying it on screen are separated, and for fast display of the ad, we recommend loading the ad in advance before the point at which the ad is actually displayed.
+For reward ads, loading the ad and displaying it are separated. After confirming that the ad is loaded, call `show()` to display it.
 
-### isLoaded()
-Checks whether an ad is loaded in the object.  
-Returns true if an ad is loaded, and false otherwise.  
-If an ad is not loaded, calling show() will fail.
+```swift
+if rewardAd.isLoaded() {
+    rewardAd.show()
+}
+```
 
-### show()
-If there is a loaded ad, displays the interstitial banner on screen.  
-Whether an ad is loaded can be checked via the isLoaded() function.
-
-
-
-
-
-
-
-
+| Method | Description |
+|---|---|
+| `loadAd()` | Loads the ad. To display the ad quickly, we recommend loading it in advance before the ad is actually displayed. |
+| `isLoaded()` | Returns `true` if an ad is loaded, and `false` otherwise. If an ad is not loaded, calling `show()` will fail. |
+| `show()` | Displays the reward ad on screen if a loaded ad exists. |
 
 ## MobWithRewardAdDelegate
----
-This is the delegate that can receive each event of MobWithRewardAd.  
-Please refer to the following for the description of each callback function.
 
-### mobWithRewardAdDidReceived(_ rewardAd: MobWithRewardAd?)
-Called when an ad is received.  
-After receiving this message, you must call the show() function for the ad to be displayed.  
-rewardAd is the object on which this event was called.
+This is the delegate that receives each event of MobWithRewardAd.<br>
+The `rewardAd` parameter of every callback is the object on which the event occurred.
 
-### mobWithRewardAdDidFailToReceive(_ rewardAd: MobWithRewardAd?)
-Called when an ad could not be received.  
-rewardAd is the object on which this event was called.
+| Callback | When it is called |
+|---|---|
+| `mobWithRewardAdDidReceived(_:)` | When an ad is received. You must then call `show()` for the ad to be displayed. |
+| `mobWithRewardAdDidFailToReceive(_:)` | When an ad could not be received |
+| `mobWithRewardAdClicked(_:)` | When the ad is clicked |
+| `mobWithRewardAdDidOpend(_:)` | When the ad is displayed on screen |
+| `mobWithRewardAdDidOpenFailed(_:)` | When the ad fails to be displayed on screen |
+| `mobWithRewardAdClosed(_:)` | When the displayed ad is closed |
+| `mobWithRewardAdCanReward(_:)` | When the reward condition is met |
 
-###  mobWithRewardAdClicked(_ rewardAd: MobWithRewardAd?)
-Called when the ad is clicked.  
-rewardAd is the object on which this event was called.
+?> Grant the user's reward when you receive the `mobWithRewardAdCanReward(_:)` callback.
 
-### mobWithRewardAdDidOpend(_ rewardAd: MobWithRewardAd?) 
-Called when the ad is displayed on screen.  
-rewardAd is the object on which this event was called.
+```swift
+extension ViewController: MobWithRewardAdDelegate {
 
-### mobWithRewardAdDidOpenFailed(_ rewardAd: MobWithRewardAd?)
-Called when the ad failed to be displayed on screen.  
-rewardAd is the object on which this event was called.  
+    func mobWithRewardAdDidReceived(_ rewardAd: MobWithRewardAd?) {
+        // Ad received
+    }
 
-### mobWithRewardAdClosed(_ rewardAd: MobWithRewardAd?)
-Called when an open ad is closed.  
-rewardAd is the object on which this event was called.
+    func mobWithRewardAdDidFailToReceive(_ rewardAd: MobWithRewardAd?) {
+        // Ad reception failed
+    }
 
-### mobWithRewardAdCanReward(_ rewardAd: MobWithRewardAd?) 
-Called when the reward provision condition is met.  
-rewardAd is the object on which this event was called.
+    func mobWithRewardAdClicked(_ rewardAd: MobWithRewardAd?) {
+        // Ad clicked
+    }
+
+    func mobWithRewardAdDidOpend(_ rewardAd: MobWithRewardAd?) {
+        // Ad displayed
+    }
+
+    func mobWithRewardAdDidOpenFailed(_ rewardAd: MobWithRewardAd?) {
+        // Ad display failed
+    }
+
+    func mobWithRewardAdClosed(_ rewardAd: MobWithRewardAd?) {
+        // Ad closed
+    }
+
+    func mobWithRewardAdCanReward(_ rewardAd: MobWithRewardAd?) {
+        // Grant the reward
+    }
+}
+```

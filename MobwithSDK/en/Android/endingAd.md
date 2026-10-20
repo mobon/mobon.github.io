@@ -1,16 +1,13 @@
-🌐 <a href="../ko/#/Android/endingAd">한국어 가이드</a>
+# Ending AD <!-- {docsify-ignore} -->
 
-## Ending AD <!-- {docsify-ignore} -->
+This page describes how to display an ending ad that includes an exit button using EndingDialog.
 
-### How to Load an Ad
-----
-The ending ad banner is an ad type that includes an exit button.
-Once the ad's load() completes successfully, you can call show() at the desired point to display it.
-Additionally, you can receive and handle close events through the listener.
+## How to Load Ads
 
-To request an ending ad, you need to configure `EndingDialog`.
-The `UNIT_ID` issued to you must be set for each ad view.
-Below is an example of configuring `EndingDialog` and requesting an ad.
+The ending ad banner is an ad that includes an exit button.<br>
+Once `load()` completes successfully, you can call `show()` at the desired time to display it, and you can receive and handle the exit event through the listener.
+
+To request an ending ad, you need to set up EndingDialog, and you must set the issued UNIT_ID value for each ad view. Below is example code that sets up EndingDialog and requests an ad.
 
 ```java
 EndingDialog endingDialog = new EndingDialog(activity)      // You must pass the Activity context.
@@ -65,28 +62,30 @@ endingDialog.setAdListener(new iInterstitialCallback() {
 endingDialog.load();
 ```
 
-### Displaying the Ad
-----
+## Showing Ads
+
 ```java
 if(endingDialog.isLoaded()){
     endingDialog.show();
 }
 ```
 
-### Ending Ad Features
-| Method                                                       | Description           |
-|:------------------------------------------------------------|:-----------------------|
-| setUnitId(String unitId)                                  | Set the issued UnitId       |
-| load()                                                        | Request an ad                 |
-| isLoaded()                                                        | Whether the ad request succeeded           |
-| show()                                                        | Display the ad                 |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature        |
-| close()                                                 | Close the ad                 |
-| setBackCancel(boolean isUse)                          | Set whether the back button closes the ad   |
+## Ending Ad Features
 
-### Click Event KeyCode
-| KeyCode  | Description               |
-|:--------:|:--------------------------|
-| CLOSE_AD | When the close button on the ad window is pressed |
-| ADCLICK  | When the ad is clicked          |
-| CLOSE_APP| When the app exit button is pressed      |
+| Method | Description |
+|---|---|
+| `setUnitId(String unitId)` | Set the issued UnitId |
+| `load()` | Request an ad |
+| `isLoaded()` | Whether the ad request succeeded |
+| `show()` | Show the ad |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `close()` | Close the ad |
+| `setBackCancel(boolean isUse)` | Set whether the back button closes the ad |
+
+## Click Event KeyCode
+
+| KeyCode | Description |
+|---|---|
+| `CLOSE_AD` | When the button that closes the ad window is pressed |
+| `ADCLICK` | When the ad is clicked |
+| `CLOSE_APP` | When the app exit button is pressed |
