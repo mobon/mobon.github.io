@@ -4,14 +4,17 @@
 ## Interstitial AD <!-- {docsify-ignore} -->
 
 
-## MobWithInterstitailAd
+## MobWithInterstitialAd
 ---
-You can display an interstitial banner on screen using MobWithInterstitailAd.  
-Please refer to the example below for the usage of MobWithInterstitailAd.
+You can display an interstitial banner on screen using MobWithInterstitialAd.  
+Please refer to the example below for the usage of MobWithInterstitialAd.
+
+> The previous names `MobWithInterstitailAd` / `MobWithIntersitialAdDelegate` are deprecated but remain usable for now. Please use the new names below for new integrations.  
+> For details, see the [Migration Guide](/iOS/migration-guide.md).
 
 ```swift
 
-let interstitialAd = MobWithInterstitailAd.init()
+let interstitialAd = MobWithInterstitialAd.init()
 interstitialAd.rootViewController = self
 interstitialAd.adDelegate = self
 interstitialAd.unitId = "{Unit ID}"
@@ -36,27 +39,33 @@ Whether an ad is loaded can be checked via the isLoaded() function.
 <br>
 
 
-## MobWithIntersitialAdDelegate
+## MobWithInterstitialAdDelegate
 ---
-This is the delegate that can receive each event of MobWithInterstitailAd.  
+This is the delegate that can receive each event of MobWithInterstitialAd.  
 Please refer to the following for the description of each callback function.
 
-### mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitailAd?)
+?> The protocol name has changed, but the callback method names (`mobWithIntersitialAd...`) remain the same.
+
+### mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?)
 Called when an ad is received.  
 interstitialAd is the object on which this event was called.
 
-### mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?)
 Called when an ad could not be received.  
 interstitialAd is the object on which this event was called.
 
-### mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitialAd?)
 Called when the ad is clicked.  
 interstitialAd is the object on which this event was called.
 
-### mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitialAd?)
 Called when the ad is displayed on screen.  
 interstitialAd is the object on which this event was called.
 
-### mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?)
+Called when the ad fails to be displayed on screen.  
+interstitialAd is the object on which this event was called.
+
+### mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?)
 Called when an open ad is closed.  
 interstitialAd is the object on which this event was called.

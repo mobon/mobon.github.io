@@ -1,6 +1,7 @@
-🌐 <a href="../ko/#/CustomAdapter/AdMob/history">한국어 가이드</a>
+# History <!-- {docsify-ignore} -->
 
-## 1.0.0 (2026. 04. 21)
+Version history of the AdMob Adapter SDK.
 
----
-- 가이드 문서 최초배포
+### 1.0.0 <span class="release-date">2026-04-21</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Initial release

@@ -7,7 +7,6 @@
   - [Ad formats](Android/usage.md)
     - [Banner AD](Android/bannerAd.md)
     - [BannerWithArticle AD](Android/bannerWithArticleAd.md)
-    - 
     - [Native AD](Android/nativeAd.md)
     - [Native Loader AD](Android/nativeLoaderAd.md)
     - [Interstitial AD](Android/interstitialAd.md)
@@ -39,6 +38,7 @@
     - [Reward AD](iOS/rewardAd.md)
     - [Splash AD](iOS/SplashAd.md)
     - [HybridBannerBridge](iOS/HybridBannerBridge.md)
+  - [Migration Guide](iOS/migration-guide.md)
   - [History](iOS/history.md)
   
 - [Custom Adapter](CustomAdapter/base.md)

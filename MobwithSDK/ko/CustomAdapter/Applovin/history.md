@@ -1,6 +1,7 @@
-🌐 <a href="../en/#/CustomAdapter/Applovin/history">View English Guide</a>
+# History <!-- {docsify-ignore} -->
 
-## 1.0.0 (2026. 05. 19)
+AppLovin MAX Adapter SDK의 버전별 변경 이력입니다.
 
----
+### 1.0.0 <span class="release-date">2026-05-19</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
 - 가이드 문서 최초 배포

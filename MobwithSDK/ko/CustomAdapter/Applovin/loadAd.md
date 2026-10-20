@@ -1,83 +1,141 @@
-🌐 <a href="../en/#/CustomAdapter/Applovin/loadAd">View English Guide</a>
+# AppLovin MAX 광고 설정 <!-- {docsify-ignore} -->
 
+AppLovin MAX 관리자 콘솔에서 MobWith 광고를 송출하기 위한 미디에이션 설정 방법을 안내합니다.
 
-# 광고 설정
+?> 이미 AppLovin MAX로 광고를 송출하고 있다면, 앱에서 추가로 개발할 내용은 없습니다.<br>
+AppLovin MAX 광고 송출이 적용되어 있지 않다면 [Android](https://support.axon.ai/en/max/android/overview/integration) / [iOS](https://support.axon.ai/en/max/ios/overview/integration) AppLovin MAX 가이드를 먼저 참고해 주세요.
 
-## 광고 송출
+<div class="doc-flow">
+  <div class="doc-flow-step"><span class="doc-flow-num">1</span><div><p class="doc-flow-title">Custom Network 생성</p><p class="doc-flow-desc">MobWith Adapter 클래스명으로 Custom Network 등록</p></div></div>
+  <div class="doc-flow-step"><span class="doc-flow-num">2</span><div><p class="doc-flow-title">광고 유닛 생성</p><p class="doc-flow-desc">MobWith 광고를 노출할 AppLovin MAX 광고 유닛 생성</p></div></div>
+  <div class="doc-flow-step"><span class="doc-flow-num">3</span><div><p class="doc-flow-title">Custom Network 설정</p><p class="doc-flow-desc">광고 유닛에 MobWith 지면 번호와 CPM 연결</p></div></div>
+</div>
 
-AppLovin MAX 3rd Party Adapter의 경우 AppLovin MAX 미디에이션을 통해 광고를 송출합니다.  
-따라서 이미 AppLovin MAX 통해 광고를 송출하고 있는 경우 앱쪽에서는 별도로 추가할 내용은 없습니다.  
-만약 AppLovin MAX 광고 송출을 위한 기능 개발이 되어 있지 않은 경우 아래 링크를 통해 AppLovin MAX 광고 송출을 할 수 있도록 적용 하시면 됩니다.
+예시 화면은 'MOBON - 모비온' 앱의 배너 광고 기준입니다. 전면, 리워드 등 다른 광고 유형도 광고 유닛 생성을 제외하면 같은 방식으로 설정합니다.<br>
+이미 적용된 설정이 있다면 아래 내용을 참고하여 필요한 부분만 적용하시면 됩니다.
 
-* Android : [AppLovin MAX Android 가이드 바로가기](https://support.axon.ai/en/max/android/overview/integration)
-* iOS : [AppLovin MAX iOS 가이드 바로가기](https://support.axon.ai/en/max/ios/ad-formats/app-open-ads)
+## 1. Custom Network 생성 <!-- {docsify-ignore} -->
 
-## AppLovin MAX 관리자 콘솔 설정
+AppLovin MAX에서 MobWith SDK를 미디에이션하려면 Custom Network를 먼저 등록해야 합니다.
 
-위 링크는 AppLovin MAX 3rd-Party Adapter 적용을 위한 맞춤 이벤트 설정에 대한 안내 링크 입니다. 참고하시면 되며, 자세한 내용은 아래를 참고
-하시면됩니다.
+#### <span class="step-label">STEP 1</span>Custom Network 추가 화면 열기
 
-여기에서는 모비온 앱을 대상으로 하여, 광고 유닛을 새롭게 생성하는 부분부터 안내됩니다.    
-이미 적용된 내용이 있다면 아래 내용을 참고하셔서 적절히 활용하시면 됩니다.  
-예시의 경우 배너 광고를 대상으로 하며, 전면, 리워드 등 광고 유닛의 생성을 제외하면 동일하니 참고 바랍니다.
+좌측 메뉴 MAX > Mediation에서 Networks 탭을 엽니다.<br>
+화면 맨 아래의 **Click here to add a Custom Network**를 누릅니다.
 
-### 1. Custom Networks (Mobwith SDK) 생성
+![Networks 화면 - Custom Network 추가](./img/network_1.png)
 
-AppLovin SDK에서 Mobwith SDK를 Mediation 하기 위해서 Custom Network를 설정해야 합니다.
+#### <span class="step-label">STEP 2</span>Custom Network 정보 입력
 
-- <h5> MAX -> Mediation -> Networks 탭에 진입합니다.</h5>
-- <h5> 화면 최하단의 'Click here to add a Custom Network'에 진입합니다.</h5>
+Manage Network 화면에서 아래를 참고하여 값을 입력한 뒤 **Save**를 누릅니다.
 
-  ![network1](./img/network_1.png)
-- <h5> 아래 사진처럼 Custom Network를 생성합니다.</h5>
+![Custom Network 정보 입력 화면](./img/network_2.png)
 
-  ![network2](./img/network_2.png)
+| 필드 | 설명 |
+|---|---|
+| **Custom Network Name** | 미디에이션 광고 설정에서 항목을 구분하기 위한 이름입니다. 식별하기 쉬운 이름을 사용하세요. |
+| **iOS Adapter Class Name** | iOS 3rd-party 미디에이션 Adapter 클래스명입니다. 아래 Class Name의 iOS 값을 입력합니다. |
+| **Android / Fire OS Adapter Class Name** | Android 3rd-party 미디에이션 Adapter 클래스명입니다. 아래 Class Name의 Android 값을 입력합니다. |
 
-  |                   필드 명                   | 설명                                                                                                         |
-    |:----------------------------------------:|:-----------------------------------------------------------------------------------------------------------|
-  |         **Custom Network Name**          | 미디에이션 광고 설정에서 해당 항목을 구분하기 위한 이름입니다.<br>식별하기 쉬운 이름을 사용하세요.                                                  |
-  |        **IOS Adapter Class Name**        | IOS 3rd-party 미디에이션 Adapter 클래스명입니다. `MobwithAppLovinMediationAdapter`를 입력해주세요.                            |
-  | **Android / Fire OS Adapter Class Name** | Android 3rd-party 미디에이션 Adapter 클래스명입니다. `com.mobwith.applovinmediation.ApplovinMediationAdapter`를 입력해주세요. |
+##### Class Name
 
-- <h5> Custom Network 등록이 완료되면 아래의 화면처럼 구성됩니다.</h5>
+<!-- tabs:start -->
 
-  ![network3](./img/network_3.png)
+#### **Android**
 
-### 2. 광고 Unit 생성
+```text
+com.mobwith.applovinmediation.ApplovinMediationAdapter
+```
 
-해당 단계를 위해선 위의 [1. Custom Network Mobwith](#_1-custom-networks-mobwith-sdk-생성) SDK를 설정하여야 합니다.
+#### **iOS**
 
-- <h5> MAX -> Mediation -> Ad Units 탭에 진입합니다.</h5>
-- <h5> 화면 우측 상단의 'Create Ad Unit'에 진입합니다. 
+```text
+MobwithAppLovinMediationAdapter
+```
 
-단, 이미 Applovin MAX 광고를 생성한 경우 [Custom Network 설정](#custom-network-설정)으로 이동하여 프로세스를 완료해주세요.</h5>
+<!-- tabs:end -->
 
-  ![ad_1](./img/ad_units_1.png)
-- <h5> 원하는 광고 타입으로 광고를 설정합니다. (예시에선 Banner 광고로 설정함)</h5>
+#### <span class="step-label">STEP 3</span>등록 확인
 
-  ![ad_2](./img/ad_units_2.png)
-- #### Custom Network 설정
-<h5> 위 설정한 광고 Unit에 Custom Network를 설정합니다. 이 후 Mobwith에서 발급받은 unitId를 Custom Parameters에 예시 Json 포맷(예시 : {"unitId":"00000000", "adSize": "320x50"})에 맞춰 설정합니다.</h5>
+등록이 완료되면 Networks 목록에 입력한 이름의 Custom Network가 표시됩니다.
 
-  ![ad_3](./img/ad_units_3.png)   
-   
-|         필드 명          | 설명                                                                                      |
-    |:---------------------:|:----------------------------------------------------------------------------------------|
-| **App ID (optional)** | 앱에 할당된 고유 ID 값입니다.<br>식별하기 쉬운 이름을 사용하세요.                                                |
-|   **Placement ID**    | 게제위치 ID 입니다. <br>식별하기 쉬운 이름을 사용하세요.                                                     |
-| **Custom Parameters** | Adapter로 전달되는 파라미터입니다. JSON 형식을 사용합니다.<br><br>**Key 설명**<br>- `unitId` : MobWith 광고 지면 번호<br>- `adSize` : 배너 광고 크기 (`320x50`, `320x100`, `300x250` 중 맞는 사이즈로 선택)<br>&nbsp;&nbsp;&nbsp;&nbsp;※ 전면/리워드는 임의 값 사용 가능<br><br>**예시**<br>`{"unitId": "10892095", "adSize": "320x100" }` |
-|     **CPM Price**     | 광고가 1,000회 노출될 때 발생하는 광고 단가 입니다.                                                        |
+![Custom Network 등록 완료 화면](./img/network_3.png)
 
-- <h5>Ad Units 설정이 완료되면 아래와 같이 Ad Unit Id가 생성됩니다.</h5>
+## 2. 광고 유닛 생성 <!-- {docsify-ignore} -->
 
-  ![ad_4](./img/ad_units_4.png)
+?> 이미 AppLovin MAX 광고 유닛을 만들었다면 [3. Custom Network 설정](/CustomAdapter/Applovin/loadAd?id=_3-custom-network-설정)으로 이동합니다.
 
-[//]: # (### 3. AppLovin MAX SDK 적용)
+#### <span class="step-label">STEP 1</span>Ad Units로 이동
 
-[//]: # (앱 프로젝트에 AppLovin MAX 광고를 추가합니다. &#40;[AppLovin MAX SDK 설정 가이드]&#40;https://support.axon.ai/en/max/android/ad-formats/banner-and-mrec-ads&#41;&#41;)
+좌측 메뉴 MAX > Mediation에서 Ad Units 탭을 열고, 화면 우측 상단의 **Create Ad Unit**을 누릅니다.
 
-[//]: # (- <h5>위 과정에서 생성한 Ad Unit Id를 설정합니다. 아래의 예시는 Banner 광고 입니다. 자세한 사항은 위 SDK 설정 가이드를 참고하여 알맞는 포맷의 광고를 구현하시기 바랍니다. </h5>)
+![Ad Units 화면](./img/ad_units_1.png)
 
-[//]: # ()
+#### <span class="step-label">STEP 2</span>광고 유닛 정보 입력
 
-[//]: # (  ![ad_5]&#40;./img/ad_units_5.png&#41;)
+Name, Platform, Ad Type을 원하는 광고에 맞게 설정합니다. 예시는 Android 배너(Banner) 광고입니다.
+
+![광고 유닛 정보 입력 화면](./img/ad_units_2.png)
+
+## 3. Custom Network 설정 <!-- {docsify-ignore} -->
+
+1단계에서 등록한 Custom Network가 있어야 진행할 수 있습니다.
+
+#### <span class="step-label">STEP 1</span>Custom Network 값 입력
+
+광고 유닛 설정 화면의 Custom Networks 영역에서 1단계에서 등록한 Custom Network를 설정합니다. 아래를 참고하여 값을 입력합니다.
+
+![Custom Network 설정 화면](./img/ad_units_3.png)
+
+| 필드 | 설명 |
+|---|---|
+| **App ID (optional)** | 앱에 할당된 고유 ID 값입니다. 식별하기 쉬운 이름을 사용하세요. |
+| **Placement ID** | 게재위치 ID입니다. 식별하기 쉬운 이름을 사용하세요. |
+| **Custom Parameters** | Adapter로 전달되는 파라미터로, JSON 형식을 사용합니다. MobWith 광고 송출을 위해 **`unitId`가 포함된 값을 반드시 입력**해야 합니다. |
+| **CPM Price** | 광고가 1,000회 노출될 때 발생하는 광고 단가입니다. |
+
+!> CPM Price 값에 따라 MobWith 광고의 노출 빈도가 결정됩니다. 반드시 MobWith 담당자와 협의된 값을 입력해 주세요.
+
+##### Custom Parameters
+
+Custom Parameters 필드에 아래 형식의 JSON을 입력합니다.
+
+| Key | 설명 |
+|---|---|
+| `unitId` | MobWith 광고 지면 번호 **(필수)** |
+| `adSize` | 배너 광고 크기입니다. `320x50`, `320x100`, `300x250` 중 광고 유닛에 맞는 크기를 선택합니다. |
+
+##### 입력 예시
+
+<!-- tabs:start -->
+
+#### **배너**
+
+320x100 크기의 배너 광고 유닛에 설정하는 경우입니다.
+
+```json
+{"unitId": "10892095", "adSize": "320x100"}
+```
+
+#### **전면 / 리워드**
+
+전면, 리워드 광고는 `adSize`에 임의 값을 사용할 수 있습니다.
+
+```json
+{"unitId": "10892095", "adSize": "320x50"}
+```
+
+<!-- tabs:end -->
+
+?> 예시의 `10892095`는 샘플 값입니다. `unitId`에는 MobWith 담당자에게 별도로 안내받은 지면 번호를 입력해 주세요.<br>
+광고 유닛마다 서로 다른 지면 번호를 사용하므로, 각 광고 유닛에 맞는 지면 번호를 각각 입력해야 합니다.
+
+!> JSON 형식에 맞게 입력해야 합니다. Key와 값은 큰따옴표(")로 감싸고, 항목 사이는 쉼표(,)로 구분합니다.
+
+#### <span class="step-label">STEP 2</span>Ad Unit ID 확인
+
+설정이 완료되면 아래와 같이 Ad Unit ID가 생성됩니다.
+
+![Ad Unit ID 생성 화면](./img/ad_units_4.png)
+
+설정이 완료되었습니다.

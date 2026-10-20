@@ -3,14 +3,17 @@
 ## Interstitial AD <!-- {docsify-ignore} -->
 
 
-## MobWithInterstitailAd
+## MobWithInterstitialAd
 ---
-MobWithInterstitailAd를 이용하여 화면에 전면 광고를 표시 할 수 있습니다.  
-MobWithInterstitailAd의 사용은 아래 예시를 참고 하시면 됩니다.
+MobWithInterstitialAd를 이용하여 화면에 전면 광고를 표시 할 수 있습니다.  
+MobWithInterstitialAd의 사용은 아래 예시를 참고 하시면 됩니다.
+
+> 기존 이름인 `MobWithInterstitailAd` / `MobWithIntersitialAdDelegate`는 deprecated 되었으며, 당분간 계속 사용 가능합니다. 신규 연동 시에는 아래의 새 이름을 사용해 주세요.  
+> 자세한 내용은 [마이그레이션 가이드](/iOS/migration-guide.md)를 참고 바랍니다.
 
 ```swift
 
-let interstitialAd = MobWithInterstitailAd.init()
+let interstitialAd = MobWithInterstitialAd.init()
 interstitialAd.rootViewController = self
 interstitialAd.adDelegate = self
 interstitialAd.unitId = "{전달 받은 지면번호}"
@@ -35,27 +38,33 @@ interstitialAd.loadAd()
 <br>
 
 
-## MobWithIntersitialAdDelegate
+## MobWithInterstitialAdDelegate
 ---
-MobWithInterstitailAd의 각 이벤트를 전달 받을 수 있는 delegate 입니다.   
+MobWithInterstitialAd의 각 이벤트를 전달 받을 수 있는 delegate 입니다.   
 각 콜백 함수별 설명은 아래를 참고 바랍니다. 
 
-### mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitailAd?)
+?> 프로토콜 이름은 변경되었지만, 콜백 메서드 이름(`mobWithIntersitialAd...`)은 기존과 동일하게 유지됩니다.
+
+### mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?)
 광고를 수신한 경우 호출 됩니다.  
 interstitialAd는 해당 이벤트가 호출된 객체 입니다.
 
-### mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?)
 광고를 수신하지 못한 경우 호출 됩니다.  
 interstitialAd는 해당 이벤트가 호출된 객체 입니다.
 
-### mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitialAd?)
 광고를 클릭한 경우 호출 됩니다.  
 interstitialAd는 해당 이벤트가 호출된 객체 입니다.
 
-### mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitialAd?)
 광고가 화면에 표시되는 경우 호출 됩니다.  
 interstitialAd는 해당 이벤트가 호출된 객체 입니다.
 
-### mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitailAd?)
+### mobWithIntersitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?)
+광고를 화면에 표시하는데 실패한 경우 호출 됩니다.  
+interstitialAd는 해당 이벤트가 호출된 객체 입니다.
+
+### mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?)
 열려있는 광고를 닫은 경우에 호출 됩니다.  
 interstitialAd는 해당 이벤트가 호출된 객체 입니다.

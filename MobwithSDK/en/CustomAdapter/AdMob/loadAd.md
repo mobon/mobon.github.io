@@ -1,82 +1,173 @@
-🌐 <a href="../ko/#/CustomAdapter/AdMob/loadAd">한국어 가이드</a>
+# AdMob Ad Configuration <!-- {docsify-ignore} -->
 
-# Ad configuration
+This guide explains how to set up mediation in the AdMob admin console to serve MobWith ads.
 
-## Ad serving
-The AdMob 3rd Party Adapter serves ads through AdMob's mediation.  
-Therefore, if you are already serving ads through AdMob, there is nothing additional to add on the app side.  
-If functionality for serving ads via AdMob has not been developed, you can apply it via the links below so that you can serve AdMob ads.
-* Android : [Go to the AdMob Android guide](https://developers.google.com/admob/android/quick-start)
-* iOS : [Go to the AdMob iOS guide](https://developers.google.com/admob/ios/quick-start)
+?> If you already serve ads through AdMob, you do not need to develop anything additional in your app.<br>
+If AdMob ad serving is not yet applied, refer to the [Android](https://developers.google.com/admob/android/quick-start) / [iOS](https://developers.google.com/admob/ios/quick-start) AdMob guides first.
 
-## AdMob admin console setup
-[[AdMob Guide Link](https://support.google.com/admob/answer/13407144?hl=ko&ref_topic=13397014&sjid=17037658148373066852-NC)]   
-The link above is a guide for setting up a custom event to apply Google's 3rd-Party Adapter.  
-You can refer to it, and for details, please refer to the content below.
+<div class="doc-flow">
+  <div class="doc-flow-step"><span class="doc-flow-num">1</span><div><p class="doc-flow-title">Create an Ad Unit</p><p class="doc-flow-desc">Create the AdMob ad unit that will display MobWith ads</p></div></div>
+  <div class="doc-flow-step"><span class="doc-flow-num">2</span><div><p class="doc-flow-title">Create a Waterfall Source</p><p class="doc-flow-desc">Add a MobWith Adapter mapping to the Custom Event</p></div></div>
+  <div class="doc-flow-step"><span class="doc-flow-num">3</span><div><p class="doc-flow-title">Create a Mediation Group</p><p class="doc-flow-desc">Connect the MobWith source and eCPM to the ad unit</p></div></div>
+</div>
 
-Here, targeting the Mobon app, the guide starts from the part where you newly create an ad unit. (The process of creating an ad unit is omitted.)  
-If you already have something applied, refer to the content below and use it appropriately.  
-The example targets a banner ad, and except for creating ad units such as interstitial and reward, it is the same, so please take note.
+The example screens are based on a banner ad in the 'MOBON - 모비온' app. Other ad types such as interstitial and reward are set up the same way, except for creating the ad unit.<br>
+If you already have some settings applied, refer to the content below and apply only what you need. You can also refer to Google's [custom event setup guide](https://support.google.com/admob/answer/13407144?hl=en&ref_topic=13397014).
 
-### 1. Create an ad unit
-On the screen below, press the 'Add ad unit' button and create an AdMob ad unit following the guided process.  
-Once ad unit creation is complete, the created ad unit is shown in a list, like 'GuideBanner' in the screenshot below.  
-![admob 광고 유닛 생성 완료화면](./img/admob_3rd_init_create_adunit.png)  
+## 1. Create an Ad Unit <!-- {docsify-ignore} -->
 
-### 2. Create a Waterfall Source
-First, in the right panel, select Mediation -> Waterfall Source to navigate there.  
-Once the screen has changed, you can see a screen like the screenshot below.  
-![admob Waterfall Source1](./img/admob_3rd_init_addmapping.png)  
-Press 'Add mapping' at the bottom of the screenshot above.  
+In the left menu, select your app under Apps, then go to Ad units.<br>
+Press **Add ad unit** and follow the guided steps to create an ad unit. Once created, it appears in the list, like 'GuideBanner' in the screenshot below.
 
+![AdMob ad unit created](./img/admob_3rd_init_create_adunit.png)
 
-If a waterfall source is already registered, a screen like the screenshot below appears.  
-![admob Waterfall Source2](./img/admob_3rd_init_managemapping.png)  
-Here, press 'Manage mappings' as shown on the screen.  
+## 2. Create a Waterfall Source <!-- {docsify-ignore} -->
 
-When you press 'Add mapping' or 'Manage mappings' above, a screen like the screenshot below appears.  
-![admob waterfall source add](./img/admob_3rd_init_addmapping2.png)  
+#### <span class="step-label">STEP 1</span>Go to Waterfall sources
 
-If you have something already registered, it is shown in the form below.  
-![admob waterfall source 데이터 입력](./img/admob_3rd_init_input_addata.png)  
+In the left menu, open the Waterfall sources tab under Mediation. The Custom Event screen appears.
 
-When you press 'Add mapping' shown in the two screenshots above, one more set of input forms is added to the list, and enter the values by referring to the following.  
+#### <span class="step-label">STEP 2</span>Open the mapping input screen
 
-| Field name | Description |
-| :----: | :---- |
-| **Mapping Name** | A name to distinguish this item in the mediation ad settings.<br>Use a name that is easy to identify. |
-| **Network eCPM (optional)** | Enter the eCPM value.<br>Since it can be set separately later, it is not required.  |
-| **Class Name** | The 3rd-party mediation Adapter class name.<br><br>**Android**<br>`com.mobwith.admopmediation.AdmobMediationAdapter`<br><br>**iOS**<br>`MobwithAdMobMediationAdapter` |
-| **Parameter (optional)** | The parameters passed to the Adapter. Uses JSON format.<br><br>**Key descriptions**<br>- `unitId` : the MobWith ad placement number<br>- `adSize` : the banner ad size(choose the correct size among `320x50`, `320x100`, `300x250`)<br>&nbsp;&nbsp;&nbsp;&nbsp;※ For interstitial/reward, any value can be used<br><br>**Example**<br>`{"unitId": "10892095", "adSize": "320x100" }` |
+Open the mapping input screen as described below, depending on whether mappings are already registered.
 
-After entering the values by referring to the above, press the 'Save' button in the screenshot above to save the changes and move on to the next step.  
+<!-- tabs:start -->
 
-### 2. Create a Mediation Group
-Once you have completed the steps above, navigate to 'Mediation groups' as in the screenshot below.  
-![admob create mediation groups1](./img/admob_3rd_init_create_mediation_group.png)  
+#### **First-time Setup**
 
-When you press 'Create mediation group' in the screenshot above, a screen like the screenshot below is displayed.  
-![admob create mediation groups2](./img/admob_3rd_init_create_mediation_group2.png)  
-After selecting the ad type and platform to which mediation will be applied, press the 'Continue' button to move to the next step.  
+Press **Add mapping** at the bottom of the screen.
 
-When a screen like the screenshot below is displayed, enter an appropriate name in Name and then press 'Add ad units' at the bottom.  
-![admob create mediation groups3](./img/admob_3rd_init_creat_mediation_add_adunits.png)  
+![Waterfall source - no mappings registered](./img/admob_3rd_init_addmapping.png)
 
-Then a window for selecting an Ad Unit appears as in the screenshot below, and the items created in the waterfall source creation step above are displayed.  
-![admob create mediation groups3](./img/admob_3rd_init_create_mediation_waterfallsource.png)  
-After selecting the ad Unit to apply, press the 'Done' button.  
+The mapping input screen below appears.
 
-After that, when a screen like the next screenshot is displayed, enter values in 'Label' and 'eCPM'.  
-The frequency of Mobwith ad display is determined by the eCPM you set here, so you must enter the value agreed upon with our representative.  
-![admob create mediation groups4](./img/admob_3rd_init_create_mediation_input_ecpm.png)  
-Once the required values are entered, the 'Add' button becomes active; press that button to finish.  
+![Mapping input screen](./img/admob_3rd_init_addmapping2.png)
 
-When you press the 'Add' button and the addition of the waterfall source is complete, it is displayed on screen as in the screenshot below.   
-If you hover the cursor over the name and eCPM items you specified above, an edit icon is displayed, and you can click to edit, so please take note.
-![admob create mediation groups5](./img/admob_3rd_init_create_mediation_done_check1.png)  
+#### **Existing Mappings**
 
-After checking the applied content and if there are no problems, press the 'Save' button to save.  
-As in the screenshot below, when you press the 'Save' button and saving is complete, that button is disabled; press the 'X' button at the top-left to exit the screen.
-![admob create mediation groups6](./img/admob_3rd_init_create_mediation_done_check2.png)  
+Press **Manage mappings** on the screen.
 
-Completed!!
+![Waterfall source - mappings registered](./img/admob_3rd_init_managemapping.png)
+
+The mapping input screen appears with your existing items.
+
+![Input screen with existing mappings](./img/admob_3rd_init_input_addata.png)
+
+<!-- tabs:end -->
+
+#### <span class="step-label">STEP 3</span>Enter the mapping values
+
+On the mapping input screen, press **Add mapping** to add another set of input fields. Enter the values by referring to the table below.
+
+| Field | Description |
+|---|---|
+| **Mapping Name** | A name to identify this item in the mediation settings. Use a name that is easy to recognize. |
+| **Network eCPM (optional)** | The eCPM value. It can be set separately later, so it is not required. |
+| **Class Name** | The 3rd-party mediation Adapter class name. See Class Name below for the value for each platform. |
+| **Parameter (optional)** | Parameters passed to the Adapter, in JSON format. It is shown as optional on the AdMob screen, but **you must enter a value that includes `unitId`** to serve MobWith ads. |
+
+##### Class Name
+
+<!-- tabs:start -->
+
+#### **Android**
+
+```text
+com.mobwith.admopmediation.AdmobMediationAdapter
+```
+
+#### **iOS**
+
+```text
+MobwithAdMobMediationAdapter
+```
+
+<!-- tabs:end -->
+
+##### Parameter
+
+Enter JSON in the format below in the Parameter field of the mapping input screen.
+
+| Key | Description |
+|---|---|
+| `unitId` | MobWith ad placement number **(required)** |
+| `adSize` | The banner ad size. Choose the size that matches the ad unit from `320x50`, `320x100`, and `300x250`. |
+
+##### Input Examples
+
+<!-- tabs:start -->
+
+#### **Banner**
+
+For a 320x100 banner ad unit.
+
+```json
+{"unitId": "10892095", "adSize": "320x100"}
+```
+
+#### **Interstitial / Reward**
+
+For interstitial and reward ads, you can use any value for `adSize`.
+
+```json
+{"unitId": "10892095", "adSize": "320x50"}
+```
+
+<!-- tabs:end -->
+
+?> `10892095` in the examples is a sample value. For `unitId`, enter the placement number provided to you separately by your MobWith representative.<br>
+Each ad unit uses a different placement number, so enter the matching placement number for each ad unit.
+
+!> The value must be valid JSON. Wrap keys and values in double quotes ("), and separate items with commas (,).
+
+#### <span class="step-label">STEP 4</span>Save
+
+Once all values are entered, press **Save** and move on to the next step.
+
+## 3. Create a Mediation Group <!-- {docsify-ignore} -->
+
+#### <span class="step-label">STEP 1</span>Go to Mediation groups
+
+In the left menu, open the Mediation groups tab under Mediation and press **Create mediation group**.
+
+![Mediation groups screen](./img/admob_3rd_init_create_mediation_group.png)
+
+#### <span class="step-label">STEP 2</span>Select the ad format and platform
+
+Select the ad format and platform to apply mediation to, then press **Continue**.
+
+![Select ad format and platform](./img/admob_3rd_init_create_mediation_group2.png)
+
+#### <span class="step-label">STEP 3</span>Enter the group name
+
+Enter a recognizable name in Name. Ad unit format and Platform show the values you selected earlier.<br>
+Press **Add ad units** in the Ad units area at the bottom.
+
+![Mediation group details](./img/admob_3rd_init_creat_mediation_add_adunits.png)
+
+#### <span class="step-label">STEP 4</span>Select the ad unit
+
+In the Select ad units window, select the ad unit you created in Step 1, then press **Done**.
+
+![Select ad units](./img/admob_3rd_init_create_mediation_waterfallsource.png)
+
+#### <span class="step-label">STEP 5</span>Add the waterfall source
+
+In the Add ad source window, on the Waterfall tab, select the checkbox for the Custom Event row created in Step 2, then enter values in Label and Order (by eCPM).<br>
+Once a row is selected and the values are entered, press **Add**, which becomes active.
+
+!> The Order (by eCPM) value determines how often MobWith ads are displayed. Be sure to enter the value agreed upon with your MobWith representative.
+
+![Add ad source window](./img/admob_3rd_init_create_mediation_input_ecpm.png)
+
+#### <span class="step-label">STEP 6</span>Save
+
+Review the added item, then press **Save**. Hover over the name and eCPM items to show an edit icon, which you can use to change the values.
+
+![Added waterfall source](./img/admob_3rd_init_create_mediation_done_check1.png)
+
+Once saved, the Save button becomes inactive. Press the **X** at the top left to close the screen.
+
+![Saved](./img/admob_3rd_init_create_mediation_done_check2.png)
+
+The setup is complete.
