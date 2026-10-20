@@ -14,8 +14,6 @@
     --box-bg: #f7f7f8;
     --box-border: #e3e3e6;
     --dot-bg: #ffffff;
-    --notice-bg: #fdf3f1;
-    --notice-text: #4b5563;
     --lang-icon: #6b7280;
     --lang-border: #d1d5db;
     --lang-text: #6b7280;
@@ -43,8 +41,6 @@ html[data-theme="dark"] {
     --box-bg: #353535;
     --box-border: #4a4a4a;
     --dot-bg: #3f3f3f;
-    --notice-bg: #282828;
-    --notice-text: #b4b4b4;
     --lang-icon: #8a8a8a;
     --lang-border: #5f5f5f;
     --lang-text: #9a9a9a;
@@ -906,35 +902,4 @@ body .markdown-section p.tip {
     .markdown-section .history-month-range {
         display: none;
     }
-}
-
-/* [임시] 가이드 문서 개선 작업 안내 배너 - 작업 완료 후 삭제 */
-.markdown-section .doc-notice {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin: 0 0 28px;
-    padding: 14px 18px;
-    background-color: var(--notice-bg);
-    border-left: 4px solid var(--accent);
-    border-radius: 0 6px 6px 0;
-    font-size: 0.9em;
-    line-height: 1.65;
-    color: var(--notice-text);
-}
-
-.markdown-section .doc-notice-icon {
-    flex: none;
-    margin-top: 1px;
-    color: var(--accent);
-}
-
-.markdown-section .doc-notice p {
-    margin: 0;
-}
-
-.markdown-section .doc-notice .doc-notice-title {
-    margin-bottom: 4px;
-    font-weight: 600;
-    color: var(--accent);
 }

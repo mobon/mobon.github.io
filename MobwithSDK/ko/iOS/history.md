@@ -45,7 +45,7 @@ iOS SDK의 버전별 변경 이력입니다.
 - SPM 배포
 - 마이너 오류 수정
 
-### 1.3.22 <span class="release-date">2026-08-21</span> <!-- {docsify-ignore} -->
+### 1.3.22 (추가) <span class="release-date">2026-08-21</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter '12.14.0.1.3.21' 버전 배포
 
@@ -62,7 +62,7 @@ iOS SDK의 버전별 변경 이력입니다.
 - MobWithAdView(배너광고)의 useCloseButton 기능 삭제 (AdMob등 정책 이슈)
 - 마이너 오류 수정
 
-### 1.3.19 <span class="release-date"></span> <!-- {docsify-ignore} -->
+### 1.3.19 (추가) <span class="release-date">2026-07-28</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter '12.14.0.1.3.19' (AdManager 지원) 업데이트
 
