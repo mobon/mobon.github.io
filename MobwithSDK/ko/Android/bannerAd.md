@@ -230,3 +230,30 @@ banner.setUserKey("발급받은 UserKey");
 banner.setServiceId("발급받은 ServiceId");
 banner.setMediaId("발급받은 MediaId");
 ```
+
+[//]: # (#### 리워드 배너 속성 &#40;선택사항&#41;)
+
+[//]: # (리워드 배너의 크기, 글자 색상, 배경색상, 위치, 체크 이미지 등 속성을 설정할 수 있습니다.)
+
+[//]: # ()
+[//]: # (| Method       | Description                                |)
+
+[//]: # (|:-------------|:-------------------------------------------|)
+
+[//]: # (| position&#40;AffordanceView.Position position&#41;   | 포인트 뱃지의 위치 설정                    |)
+
+[//]: # (| sizeDp&#40;float sizeDp&#41;     | 포인트 뱃지의 사이즈 설정                  |)
+
+[//]: # (| textSizeDp&#40;float textSizeDp&#41; | 포인트 텍스트 사이즈 설정                  |)
+
+[//]: # (| textColor&#40;int color&#41; | 포인트 텍스트 색상 설정                    |)
+
+[//]: # (| backgroundColor&#40;int color&#41; | 포인트 뱃지의 배경 색상 설정               |)
+
+[//]: # (| backgroundColor&#40;int unrewardedColor, int rewardedColor&#41; | 포인트 뱃지의 배경 색상 설정&#40;미지급, 지급&#41; |)
+
+[//]: # (| checkedIcon&#40;Drawable drawable&#41; | 포인트 지급 아이콘 변경 &#40;선택사항&#41;         |)
+
+[//]: # (| checkedIconResource&#40;int resId&#41; | 포인트 지급 아이콘 변경 &#40;선택사항&#41;         |)
+
+[//]: # (| marginDp&#40;int marginDp&#41; | 뱃지와 광고 간격 설정                      |)

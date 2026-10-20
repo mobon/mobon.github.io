@@ -3,6 +3,13 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.110] - 2026-10-16 <!-- {docsify-ignore} -->
+- 네이티브 광고 리소스 해제 함수 destroy() 추가
+
+## [1.0.109] - 2026-10-16 <!-- {docsify-ignore} -->
+- 네이티브 광고 로드 시 중복 요청이 발생하지 않도록 로직 개선
+- MediationManager 객체 관리 고도화 및 MediationManager.release() 보완
+
 ## [1.0.108] - 2026-10-08 <!-- {docsify-ignore} -->
 - 전면/리워드 로컬라이징 구현
 - 리워드 배너 bug fix

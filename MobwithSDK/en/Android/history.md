@@ -3,6 +3,13 @@
 ## History <!-- {docsify-ignore} -->
 ---
 
+## [1.0.110] - 2026-10-16 <!-- {docsify-ignore} -->
+- Added a `destroy()` function to release native ad resources.
+
+## [1.0.109] - 2026-10-16 <!-- {docsify-ignore} -->
+- Improved logic to prevent duplicate requests when loading native ads.
+- Enhanced MediationManager lifecycle management and improved MediationManager.release().
+
 ## [1.0.108] - 2026-10-08 <!-- {docsify-ignore} -->
 - Implement localization for interstitial/rewarded ads
 - Fix rewarded banner bug
