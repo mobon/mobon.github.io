@@ -1,12 +1,12 @@
-🌐 <a href="../ko/#/Android/multiPointBannerAd">한국어 가이드</a>
+# MultiPointBanner AD <!-- {docsify-ignore} -->
 
-## Multi Point Banner AD <!-- {docsify-ignore} -->
-This ad provides the same functionality as MobwithPointBannerView, but unlike the existing view that displays only a single ad, it is a BannerView that exposes up to 5 ads in a horizontally scrollable form.  
+This page describes how to display up to 5 point banner ads in a horizontal scroll using MobwithMultiPointBannerView.<br>
+It provides the same features as MobwithPointBannerView in [PointBanner AD](/Android/pointBannerAd.md), but unlike the existing view that displays a single ad, it displays up to 5 ads.
 
-However, some features such as whether points can be provided are handled by the SDK's internal logic.  
-If you need to change this behavior, please contact us separately.
+?> Some features, such as whether points can be provided, are handled by internal SDK logic. If you need to change these features, please contact us separately.
 
-### How to Load the Ad
+## How to Load Ads
+
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
 
@@ -51,13 +51,14 @@ pointBannerView.setAdListener(new iMultiPointBannerCallback() {
 bannerView.loadAd();
 ```
 
-### Multi Point Banner AD Features
-| Method                                                          | Description                        |
-|:----------------------------------------------------------------|:-----------------------------------|
-| setBannerUnitIds(String[] unitIds)                              | Set the issued UnitIds (up to 5 can be applied) |
-| loadAd()                                                        | Request the ad                     |
-| restart()                                                       | Restart ad refresh                 |
-| stop()                                                          | Stop ad refresh                    |
-| destroyAd()                                                     | Release ad resources               |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature      |
-| setRewarded(int index)                                          | Notify the SDK that points have been granted for the banner at a specific index |
+## MultiPointBanner AD Features
+
+| Method | Description |
+|---|---|
+| `setBannerUnitIds(String[] unitIds)` | Set the issued UnitIds (up to 5) |
+| `loadAd()` | Request an ad |
+| `restart()` | Restart ad refresh |
+| `stop()` | Stop ad refresh |
+| `destroyAd()` | Release ad resources |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `setRewarded(int index)` | Notify the SDK that points have been paid for the banner at the given index |

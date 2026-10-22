@@ -1,15 +1,12 @@
-🌐 <a href="../ko/#/Android/interstitialAd">한국어 가이드</a>
+# Interstitial AD <!-- {docsify-ignore} -->
 
-## Interstitial AD <!-- {docsify-ignore} -->
+This page describes how to display a full-screen interstitial ad using InterstitialDialog.
 
-### How to Load the Ad
-----
-Interstitial ads work by calling show() at the desired time after the ad load() has completed successfully.  
-If the ad loads successfully, you can display it on screen by calling it as shown below.  
+## How to Load Ads
 
-To request an interstitial ad, you need to configure the InterstitialDialog.  
-You must set the issued UNIT_ID value for each ad view.  
-Below is example code for configuring the InterstitialDialog and requesting the ad.
+Interstitial ads work by calling `show()` at the desired time after `load()` has completed successfully.<br>
+To request an interstitial ad, you need to set up InterstitialDialog, and you must set the issued UNIT_ID value for each ad view. Below is example code that sets up InterstitialDialog and requests an ad.
+
 ```java
 InterstitialDialog interstitialDialog = new InterstitialDialog(activity)    // You must pass the Activity context.    
         .setBackCancel(true)    // Whether to close when the back button is clicked
@@ -62,27 +59,30 @@ interstitialDialog.setAdListener(new iInterstitialCallback() {
 interstitialDialog.load();
 ```
 
-### Displaying the Ad
-----
+## Showing Ads
+
+If the ad has loaded successfully, you can display it on screen by calling the following.
+
 ```java
 if (interstitialDialog.isLoaded()) {
     interstitialDialog.show();
 }
 ```
 
-### Interstitial Ad Features
-| Method                                                          | Description           |
-|:----------------------------------------------------------------|:----------------------|
-| setUnitId(String unitId)                                        | Set the issued UnitId |
-| load()                                                          | Request the ad        |
-| isLoaded()                                                      | Whether the ad request succeeded |
-| show()                                                          | Display the ad        |
-| setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel) | Category targeting ad feature |
-| close()                                                         | Close the ad          |
-| setBackCancel(boolean isUse)                                    | Set whether to close the ad with the back button |
+## Interstitial Ad Features
 
-### Click Event KeyCode
-| KeyCode  | Description               |
-|:--------:|:--------------------------|
-| CLOSE_AD | When the button to close the ad window is pressed |
-| ADCLICK  | When the ad is clicked    |
+| Method | Description |
+|---|---|
+| `setUnitId(String unitId)` | Set the issued UnitId |
+| `load()` | Request an ad |
+| `isLoaded()` | Whether the ad request succeeded |
+| `show()` | Show the ad |
+| `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | Category targeting ad feature |
+| `setBackCancel(boolean isUse)` | Set whether the back button closes the ad |
+
+## Click Event KeyCode
+
+| KeyCode | Description |
+|---|---|
+| `CLOSE_AD` | When the button that closes the ad window is pressed |
+| `ADCLICK` | When the ad is clicked |

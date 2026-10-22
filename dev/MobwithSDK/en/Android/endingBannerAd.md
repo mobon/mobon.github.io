@@ -1,11 +1,11 @@
-🌐 <a href="../ko/#/Android/endingBannerAd">한국어 가이드</a>
+# EndingBanner AD <!-- {docsify-ignore} -->
 
-## EndingBannerView <!-- {docsify-ignore} -->
+This page describes how to display an ending banner ad using EndingBannerView.
 
-### Definition of EndingBannerView
-----
-Add the view that acts as a container for the Ending Banner ad to your layout XML file.  
-It is recommended to use a FrameLayout as the banner container (ViewGroup) where the ad will be displayed.
+## Defining the EndingBannerView
+
+Add a view that serves as the container for the Ending Banner ad to your layout XML file.<br>
+We recommend using a FrameLayout for the banner container (ViewGroup) that displays the ad.
 
 ```xml
 ....
@@ -17,36 +17,40 @@ It is recommended to use a FrameLayout as the banner container (ViewGroup) where
     ....
 ```
 
-### How to Load Ads
----- 
-You must set the issued UNIT_ID value for EndingBannerView.  
-Below is an example code for setting up EndingBannerView and requesting an ad.
+## How to Load Ads
 
-**Important implementation note for EndingBannerView**  
-When you receive the onLoadedAdInfo() callback from the iEndingBannerCallback listener (which indicates the ad has finished loading), add the EndingBannerView to the container.  
-If you load the ad and add it to the container before showing a Dialog, the screen may be rendered twice.
+You must set the issued UNIT_ID value for EndingBannerView. Below is example code that sets up EndingBannerView and requests an ad.
+
+!> **Add the EndingBannerView to the Container** when you receive the `onLoadedAdInfo()` callback of the `iEndingBannerCallback` listener (when the ad has finished loading).<br>
+For a Dialog, if you load the ad and add it to the Container before showing it, the screen may be drawn twice.
 
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
-// You must set the issued UNIT_ID value for each ad view.
+// You must provide the issued UNIT_ID value for each ad view.
 EndingBannerView endingBannerView = new EndingBannerView(this)
-        .setBannerUnitId("Your Ad Unit ID");
+                                      .setBannerUnitId(YOUR_UNIT_ID)
+                                      .setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"))
+                                      .setCampaignCodes(Arrays.asList(
+                                              "campaign1",
+                                              "campaign2",
+                                              "campaign3",
+                                              ......));
 
 // Register the listener for the banner view.
 endingBannerView.setAdListener(new iEndingBannerCallback() {
-    @Override
-    public void onLoadedAdInfo(boolean result, String errorcode) {
-        if (result) {
-            // Called when the banner ad has finished loading
-            bannerContainer.removeAllViews();
-            // Add the banner view to the layout where you want to display the ad
-            bannerContainer.addView(endingBannerView);
-        } else {
-            // Called when banner ad display fails - even if automatic refresh is set via setInterval(), it will not refresh after failure.
-            endingBannerView.destroyAd();
-            endingBannerView = null;
-        }
+  @Override
+  public void onLoadedAdInfo(boolean result, String errorcode) {
+    if (result) {
+       // Called when the banner ad has finished loading
+       bannerContainer.removeAllViews();
+       // Add the banner view to the layout where you want to display the ad
+       bannerContainer.addView(endingBannerView);
+    } else {
+      // Called when banner ad display fails - even if automatic refresh is set via setInterval(), it will not refresh after failure.
+        endingBannerView.destroyAd();
+        endingBannerView = null;
     }
+  }
 
     @Override
     public void onAdClicked() {
@@ -55,21 +59,24 @@ endingBannerView.setAdListener(new iEndingBannerCallback() {
 });
 
 // Request the ad.
-        endingBannerView.loadAd();
+endingBannerView.loadAd();
 ```
 
-### Banner Ad Features
-| Method                                        | Description             |
-|:-----------------------------------------------|:------------------------|
-| setBannerUnitId(String unitId)                | Set the issued UnitId   |
-| loadAd()                                      | Request an ad           |
-| setCategory(List<String> categories)          | Set category targeting for ads |
-| setCampaignCodes(List<String> campaignCodes)  | Set targeting campaign codes |
-| performAdClick()                              | Trigger the ad click event |
-| destroy()                                     | Release ad resources    |
+## Banner Ad Features
 
-### Setting Ad Categories
-You can set the category values as a string array to display ads that match the specified categories.
+| Method | Description |
+|---|---|
+| `setBannerUnitId(String unitId)` | Set the issued UnitId |
+| `loadAd()` | Request an ad |
+| `setCategory(List<String> categories)` | Category targeting ad feature |
+| `setCampaignCodes(List<String> campaignCodes)` | Set targeting campaign codes |
+| `performAdClick()` | Deliver an ad click event |
+| `destroy()` | Release ad resources |
+
+## Setting Ad Categories
+
+Set category as an array of strings to display ads matching the specified categories.
+
 ```java
 endingBannerView.setCategory(Arrays.asList(
      "A0001",
@@ -80,9 +87,10 @@ endingBannerView.setCategory(Arrays.asList(
 ));
 ```
 
+## Setting Campaign Codes
 
-### Setting Campaign Codes
-You can set campaign codes as a string array to display ads that match the specified campaigns.
+Set campaignCodes as an array of strings to display ads for the specified campaigns.
+
 ```java
 endingBannerView.setCampaignCodes(Arrays.asList(
     "03b7a807c94f4beeb4115a23b2a5c39a",
@@ -92,11 +100,13 @@ endingBannerView.setCampaignCodes(Arrays.asList(
 ));
 
 ```
-* Please refer to the agreed terms for the campaign code values.
 
+?> Please refer to the agreed specifications for campaign code values.
 
-### Destroy the Ad Object
-When the ad is no longer needed, call the destroy() function to release the ad resources.
+## Releasing Ad Resources
+
+When the ad is no longer needed, call the `destroy()` function to release ad resources.
+
 ```java
 endingBannerView.destroy();
 ```

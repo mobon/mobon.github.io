@@ -1,13 +1,11 @@
-🌐 <a href="../ko/#/Android/hybridBannerBridge">한국어 가이드 보기 (View Korean Guide)</a>
+# HybridBannerBridge <!-- {docsify-ignore} -->
 
-## HybridBannerBridge <!-- {docsify-ignore} -->
+This page describes how to display ads on web pages in a hybrid app (WebView) using HybridBannerBridge.
 
-### What is HybridBannerBridge?
-----
-A bridge for displaying ads in hybrid apps.
+## 1. Assign Ad Slots on the Web Page
 
-### Assigning Ad Slots to Display Ads on a Web Page
-Refer to the following to assign the ad slot(s) that will display ads on the web page.
+Refer to the following to assign ad slots on the web page where ads will be displayed. The example below displays two ads on the web screen.
+
 ```html
 <html>
     .... 
@@ -21,28 +19,16 @@ Refer to the following to assign the ad slot(s) that will display ads on the web
 </html>
 ```
 
-In the example above, the bridge is used to display 2 ads within the web page.
+| Attribute | Description |
+|---|---|
+| `class` | Fixed as `mobwith-banner`. |
+| `data-placement-id-ios` | The iOS placement number (Unit ID) assigned to the slot. |
+| `data-placement-id-android` | The Android placement number (Unit ID) assigned to the slot. |
+| `data-zone-type` | The ad type code to display. The ad type code is provided along with the placement number. |
 
-The class name of the div tag should always be set as follows:
-```html
-class="mobwith-banner"
-```
+## 2. Create the Bridge and Configure the WebView
 
-Set data-placement-id-ios and data-placement-id-android to the placement ID assigned to that ad slot.
-```html
-data-placement-id-ios="{ Assigned ad placement ID (for iOS) }"
-data-placement-id-android="{ Assigned ad placement ID (for Android) }"
-```
-
-Set data-zone-type to the type of ad to be displayed.  
-The ad type code is provided along with the placement ID.
-```html
-data-zone-type="{ Ad type code }"
-```
-
-
-### WebView Setup and HybridBannerBridge Registration
-Refer to the following to create a HybridBannerBridge and then configure the WebView.
+Refer to the following to create a HybridBannerBridge and configure the WebView.
 
 ```java
 public class MainActivity extends AppCompatActivity {
@@ -97,40 +83,45 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
-### Notifying Page Load Completion
-When the page finishes loading (at the point of the WebView's onPageFinished), call the function below to load and display the actual ad.  
-The parameter is the placementId of the WebPage where the ad will be placed.
-※ Note: Manual ad request
-Pass true to start loading the ad immediately after the page finishes loading, or false to request the ad manually.
+## 3. Notify Page Load Completion
+
+When the page finishes loading (at the WebView's `onPageFinished`), call the following function to load and display ads.<br>
+For the parameter, enter the placementId of the WebPage where the ads will be placed.<br>
+When it is called, HybridBannerBridge detects the ad slots and handles ad loading and display automatically.
+
 ```java
-bridge.webViewFinishLoad(boolean shouldRequestAd);  //Pass true to start loading the ad immediately after the page finishes loading, or false to request the ad manually.
+bridge.webViewFinishLoad(true);     // Pass true to start loading ads immediately when the page finishes loading, or false to request ads manually.
 ```
-Once this function is called, HybridBannerBridge checks the ad slot and automatically handles ad loading and display.
 
+?> Pass `true` to start loading ads immediately when the page finishes loading, or `false` to request ads manually. For manual requests, refer to [Manual Ad Request](/Android/hybridBannerBridge?id=manual-ad-request) below.
 
-### Manual ad request
-You can request or refresh ads from the web page by calling 'window.MobwithBridge.refresh()' from JavaScript.  
-The following example shows how to add a button that manually requests or refreshes ads when tapped.  
+## Ad Options
 
-```swift
+### Manual Ad Request
+
+You can request or refresh ads from the web page by calling `window.MobwithBridge.refresh()` in JavaScript.<br>
+The following example refreshes ads when a separate button is tapped.
+
+```html
 <button type="button" onclick="window.MobwithBridge && window.MobwithBridge.refresh();">
     Load Ad
 </button>
 ```
 
+### Setting Ad Categories
 
+Set category as an array of strings to display ads matching the specified categories.
 
-
-### Ad Category Settings
-Set category values as a string array to display ads matching the configured categories.
 ```java
 bridge.setCategory(Arrays.asList("A0001", "A0002", "A0003", "A0004"));
 ```
-* For category values, please refer to the agreed-upon values.
 
+?> Please refer to the agreed specifications for category values.
 
-### Ad Campaign Code Settings
-Set campaignCodes values as a string array to display ads matching the configured campaign codes.
+### Setting Campaign Codes
+
+Set campaignCodes as an array of strings to display ads for the specified campaigns.
+
 ```java
 bridge.setCampaignCodes(Arrays.asList(
     "03b7a807c94f4beeb4115a23b2a5c39a",
@@ -140,4 +131,5 @@ bridge.setCampaignCodes(Arrays.asList(
 ));
 
 ```
-* For campaign code values, please refer to the agreed-upon values.
+
+?> Please refer to the agreed specifications for campaign code values.

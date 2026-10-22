@@ -1,110 +1,115 @@
-🌐 <a href="../ko/#/iOS/SplashAd">한국어 가이드</a>
+# Splash AD <!-- {docsify-ignore} -->
 
-## MMSplashAd  <!-- {docsify-ignore} -->
+This page describes how to display an ad on the splash screen using MMSplashAd.
 
-This is an ad object used to display ads on the splash screen.
+## Creating an Ad
+
+Create an MMSplashAd and set its delegate.
 
 ```swift
-let splashAd = MMSplashAd(viewController: self, unitId: "{ Your Ad Unit ID }", rootView: self.view)
+let splashAd = MMSplashAd(viewController: self, unitId: "{Unit ID}", rootView: self.view)
 splashAd.delegate = self
 splashAd.timeOutSec = 5
 
 splashAd.loadAd()
 ```
 
+| Parameter | Required | Description |
+|---|---|---|
+| `viewController` | Required | Pass the ViewController where the ad will be displayed. If `rootView` is not set, the splash ad is displayed on the main view of the passed ViewController, and it may be covered if other views overlap the ad area. |
+| `unitId` | Required | Pass the placement number (Unit ID) to be used for the ad. |
+| `rootView` | Optional | Pass the view where the SplashAd will be displayed. We recommend passing a view of the same size as the ViewController's main view. Recommended if you have views, such as an app logo, that should not be covered by the ad. |
 
-### Initialization Function Parameters
-| Parameter Name | Description |
-| :----: | :---- |
-| **viewController** | Required. <br> Pass the ViewController where the ad will be displayed. <br> If rootView is not set, the splash ad will be displayed on the main view of the passed ViewController, <br>and if there are other views covering the ad display area, it may be obscured. |
-| **unitId** | Required. <br> Pass the ad unit ID to be used for the ad. |
-| **rootView** | Optional. <br> Pass the view where the SplashAd will be displayed. <br> It is recommended to pass a view of the same size as the main view of the ViewController. <br> Recommended for use if you have views such as app logos that you want to avoid being covered by the ad.  <br> * Please be cautious as the ad may not display properly depending on the size and position of the passed view.|
+!> The ad may not display correctly depending on the size and position of the view passed as `rootView`.
 
-<br>
-<br>
-<br>
+## Requesting an Ad
 
+Call `loadAd()` to load the ad.
 
-### Ad Request
-Call the loadAd() function to load the ad.
 ```swift
 splashAd.loadAd()
 ```
 
-### Ad Request Timeout
-You can set the waiting time for the ad request.  
-If no ad response is received within the specified time, the ad load failure callback is triggered.
-Enter the time in seconds, and the default value is 5 seconds.
+You can set the waiting time for the ad request. If no ad response is received within the specified time, the ad load failure callback is delivered.
+
+| Property | Default | Description |
+|---|---|---|
+| `timeOutSec` | `5` | Ad request timeout (seconds). |
+
 ```swift
 splashAd.timeOutSec = 5
 ```
 
+## Removing the Ad Object
 
+Call `destroy()` to remove the current ad object.
 
-### Removing the Ad Object
-Call the destroy() function to remove the current ad object.  
-If the ad is loading, even if the ad is successfully received after calling this function, event callbacks will not be delivered. Please be aware of this.  
 ```swift
 splashAd.destroy()
 ```
 
+!> If you call `destroy()` while the ad is loading, event callbacks are not delivered even if the ad is received successfully afterward.
 
-### MMSplashAdDelegate
-Implement MMSplashAdDelegate to receive callbacks for each splash ad event. 
-Please refer to the details below.
+## MMSplashAdDelegate
+
+Implement MMSplashAdDelegate to receive callbacks for each splash ad event.
+
+| Callback | When it is called |
+|---|---|
+| `mobWithSplashAdDidReceived()` | When the splash ad is received |
+| `mobWithSplashAdFailToReceived()` | When the splash ad fails to be received |
+
 ```swift
 extension SplashViewController: MMSplashAdDelegate {
-    
+
     public func mobWithSplashAdDidReceived() {
         // Splash ad received
     }
-    
+
     public func mobWithSplashAdFailToReceived() {
         // Failed to receive splash ad
     }
 }
-
 ```
 
+## Full Example
 
-### Handling Ad Callback Events and Splash Screen Behavior  
-Please refer to the following for ad loading and callback event handling.
-* After a successful ad load, please delay for a certain period before moving to the next screen.
+Refer to the following for ad loading and callback event handling.
+
+?> After the ad loads successfully, wait for a certain period before moving to the next screen.
 
 ```swift
 class SplashViewController: UIViewController {
-    
+
     var splashAd: MMSplashAd?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        splashAd = MMSplashAd.init(viewController: self, unitId: "{ Your Ad Unit ID }")
+
+        splashAd = MMSplashAd.init(viewController: self, unitId: "{Unit ID}")
         splashAd?.delegate = self
-        splashAd.timeOutSec = 5
-        
+        splashAd?.timeOutSec = 5
+
         splashAd?.loadAd()
     }
-    
+
     func openNextVC() {
         // Implement navigation to the next screen
     }
 }
 
-
-
 extension SplashViewController: MMSplashAdDelegate {
+
     func mobWithSplashAdDidReceived() {
         // Ad loaded successfully. Wait an additional 3 seconds before moving to the next screen
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             self?.openNextVC()
         }
     }
-    
+
     func mobWithSplashAdFailToReceived() {
         // Ad load failed. Immediately move to the next screen
         openNextVC()
     }
 }
-
 ```

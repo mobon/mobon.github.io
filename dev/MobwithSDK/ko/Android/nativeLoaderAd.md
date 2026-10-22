@@ -1,11 +1,13 @@
-🌐 <a href="../en/#/Android/nativeLoaderAd">View English Guide</a>
+# Native Loader AD <!-- {docsify-ignore} -->
 
-## Native Loader AD <!-- {docsify-ignore} -->
-MobwithNativeAdLoader는 NativeAdView를 리스트 타입의 뷰에 노출하고자 할 때 적용 가능한 기능 입니다.
+MobwithNativeAdLoader를 이용하여 RecyclerView 같은 리스트 형태의 뷰에 네이티브 광고를 표시하는 방법을 안내합니다.
 
-### 광고 로드 방법
-----
-먼저 광고를 불러오기 위해 MobwithNativeAdLoader를 생성 및 초기화를 진행해 줍니다.
+## 광고 로드 방법
+
+#### <span class="step-label">STEP 1</span>MobwithNativeAdLoader 생성 및 초기화
+
+광고를 불러오기 위해 MobwithNativeAdLoader를 생성하고, 광고를 표시할 View를 설정합니다.
+
 ```java
 //MobwithNativeAdLoader 생성
 String[] adUnitIDs = new String[] { "광고 Unit ID" };   //1개 이상의 Unit를 설정해 주어야 합니다.
@@ -43,7 +45,11 @@ adLoader.setNativeADView(this,
 
 .......
 ```
-이후 RecyclerView등 리스트 타입 View의 Adapter 클래스에서 다음과 같이 광고View를 받아와서 화면에 표시해 줍니다.
+
+#### <span class="step-label">STEP 2</span>리스트에 광고 표시
+
+RecyclerView 등 리스트 형태 View의 Adapter 클래스에서 다음과 같이 광고 View를 받아와 화면에 표시합니다.
+
 ```java
 @Override
 public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -65,4 +71,5 @@ public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 }
 ...
 ```
-더 자세한 사항은 Sample앱을 참고 하시기 바랍니다.
+
+?> 더 자세한 사항은 Sample 앱을 참고하시기 바랍니다.

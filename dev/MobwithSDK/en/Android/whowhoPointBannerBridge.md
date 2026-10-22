@@ -1,13 +1,12 @@
-🌐 <a href="../ko/#/Android/whowhoPointBannerBridge">한국어 가이드</a>
+# WhoWhoPointBannerBridge <!-- {docsify-ignore} -->
 
-## WhoWho Point Banner Bridge <!-- {docsify-ignore} -->
-This implements the functionality needed to add the same ad as MobwithPointBannerView in a WebView-based hybrid app.  
-Please refer to the instructions below for usage.
+This page describes how to add the same ads as MobwithPointBannerView to WebView-based hybrid apps using MobwithWhoWhoPointBannerBridge.
 
-### How to Load the Ad
-----
+## How to Load Ads
 
-1. Create a MobwithWhoWhoPointBannerBridge object.
+#### <span class="step-label">STEP 1</span>Create MobwithWhoWhoPointBannerBridge
+
+Enable JavaScript in the WebView, then create a MobwithWhoWhoPointBannerBridge object.
 
 ```java
 MobwithWhoWhoPointBannerBridge mobwithPointBannerBridge;
@@ -29,7 +28,9 @@ protected void onCreate(Bundle savedInstanceState) {
 }
 ```
 
-2. Set the User ID and Frame Element ID
+#### <span class="step-label">STEP 2</span>Set the User ID and Frame Element ID
+
+Set the User ID that identifies the user for point accrual, and the element id of the location in the web page where the ad will be displayed.
 
 ```java
 // The User ID is a user identifier value used to distinguish the target for point accrual.
@@ -39,7 +40,9 @@ mobwithPointBannerBridge.setUserID("{User Id}");
 mobwithPointBannerBridge.setFrameElementId("{Frame Element Id}");
 ```
 
-3. Set the WebViewClient
+#### <span class="step-label">STEP 3</span>Set the WebViewClient
+
+Set the WebViewClient so that `onPageLoaded()` is called when the page finishes loading.
 
 ```java
 mWebView.setWebViewClient(new WebViewClient() {
@@ -54,16 +57,15 @@ mWebView.setWebViewClient(new WebViewClient() {
 });
 ```
 
-4. Load the page
+#### <span class="step-label">STEP 4</span>Load the page
 
 ```java
 mWebView.loadUrl(bannerUrl);
 ```
 
-5. Call the destroy() function
+#### <span class="step-label">STEP 5</span>Call destroy()
 
-You must call destroy() at the point when the WebView and Activity using MobwithWhoWhoPointBannerBridge are destroyed.  
-Here, it is called at the point when the Activity is destroyed.
+You must call `destroy()` when the WebView and Activity using MobwithWhoWhoPointBannerBridge are destroyed. The example below calls it when the Activity is destroyed.
 
 ```java
 @Override

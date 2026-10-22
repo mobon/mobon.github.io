@@ -1,59 +1,71 @@
-🌐 <a href="../ko/#/iOS/installation_base">한국어 가이드</a>
+# SDK Installation <!-- {docsify-ignore} -->
 
-## Install Using Swift Package Manager (SPM)
-Swift Package Manager (SPM) currently supports installation of the base framework only.  
-If you install the SDK using SPM, we recommend installing each mediation Adapter manually. Please refer to the [[Manual Installation > Installing Adapter Frameworks](/iOS/installation_base?id=installing-adapter-frameworks)] section below.
+This page describes how to install the MobWith SDK in your app project.<br>
+Choose one of the following installation methods: SPM, CocoaPods, or manual installation.
+
+| Installation Method | Base Framework | Mediation Adapters |
+|---|---|---|
+| SPM | Supported | Not supported (add them via manual installation) |
+| CocoaPods | Supported | Supported |
+| Manual Installation | Supported | Supported |
+
+## Install Using Swift Package Manager (SPM) <!-- {docsify-ignore} -->
+
+Swift Package Manager (SPM) currently supports installation of the base framework only.
+
+?> If you install the SDK using SPM, install each mediation Adapter manually by referring to Installing Adapter Frameworks in [Manual Installation](/iOS/installation_base?id=manual-installation) below.
 
 Use the following Git repository URL to add the package.
-```swift
+
+```text
 https://github.com/mobon/MobWithAdSDK_SPM
-
 ```
 
-### 1. Add the Package
-Add the package to your project using the Git repository URL shown above.  
-![](../../img/spm_add_package.png)
+#### <span class="step-label">STEP 1</span>Add the package
 
-### 2. Verify the Framework in Targets > Frameworks, Libraries, and Embedded Content
-Make sure that the `MobWithADSDK` framework has been added as shown in the screenshot below.  
-If it was not added automatically, click the **+** button to add the framework manually.
-![](../../img/spm_add_to_target.png)
+In your project settings, add the package under Packages using the Git repository URL above.
 
+![Adding the SPM package](../../img/spm_add_package.png)
 
+#### <span class="step-label">STEP 2</span>Verify the framework in your target
 
-## Install Using CocoaPods
----
-Please note that, starting from version 1.3.0, the way CocoaPods and the SDKs for mediation are applied has changed.  
-In particular, note that the pod name has changed from the previous 'MobWithAD' to 'MobWithAdSDK'.
+Make sure that the MobWithADSDK framework has been added under Targets > Frameworks, Libraries, and Embedded Content.<br>
+If it was not added automatically, click the **+** button to add the framework.
 
+![Framework added to the target](../../img/spm_add_to_target.png)
 
-### 1. Install MobWithAdSDK
-Add 'MobWithAdSDK' to your project's Podfile.  
-The example below installs the SDK by specifying version 1.3.30.
-```
-# CocoaPods source declarations. Note: the order matters, otherwise pods may not be fetched correctly.
+## Install Using CocoaPods <!-- {docsify-ignore} -->
 
-# Base repo.
-source 'https://cdn.cocoapods.org/'                   
+!> Starting from version 1.3.0, the way CocoaPods and the SDKs for mediation are applied has changed.<br>
+In particular, note that the pod name has **changed from `MobWithAD` to `MobWithAdSDK`**.
 
-# MobWithAdSDK repo.   
-source 'https://github.com/mobon/MobwithAdSpecs.git'  
+#### <span class="step-label">STEP 1</span>Install MobWithAdSDK
+
+Add `MobWithAdSDK` to your project's `Podfile`, then run `pod install`.<br>
+The example below installs the SDK by specifying version 1.3.33.
+
+```ruby
+# CocoaPods source declarations (the order matters, otherwise pods may not be fetched correctly)
+
+# Base repo
+source 'https://cdn.cocoapods.org/'
+
+# MobWithAdSDK repo
+source 'https://github.com/mobon/MobwithAdSpecs.git'
 
 # Add MobWithAdSDK
 pod 'MobWithAdSDK', '1.3.33'
-
 ```
 
-### 2. Add Adapter SDKs for Mediation
+#### <span class="step-label">STEP 2</span>Add Adapter SDKs for Mediation
 
-You must specify the same source as MobWithAdSDK.  
-Refer to the following for each mediation Adapter.
+Add the mediation Adapters you use to your `Podfile`. You must specify the same source as MobWithAdSDK.
 
-```
+```ruby
 # AdFit Adapter
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
 
-# Admob Adapter
+# AdMob Adapter
 pod 'MobWithAdMobAdapter', '12.14.0.1.3.21'
 # If you are using AdMob SDK 12.6.x, use the following Adapter version.
 # pod 'MobWithAdMobAdapter', '12.6.0.1.3.10'
@@ -73,94 +85,91 @@ pod 'MobWithLevelPlayAdapter', '9.2.0.0.1.3.1'
 # Pangle Adapter
 pod 'MobWithPangleAdapter', '7.8.0.4.1.3.1'
 
-# For BidMad, you must apply at least one of the BidMad Adapters as shown below.  
+# For BidMad, you must apply at least one of the BidMad Adapters as shown below.
 # For the BidMad Adapters, refer to each SDK's guide document in the Manual Installation section.
 pod 'MobWithBidMadAdapter', '6.13.6.1.3.21'
-pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
+pod 'BidmadAdmixerAdapter', '2.0.2.12.2'
 
 pod 'BidmadSDK/core', '= 6.13.6'             # Workaround for build errors
 
-
 # AdPopcorn Adapter (for NAM)
 pod 'MobWithAdPopcornAdapter', '3.3.2.1.3.26'
-
-
 ```
 
-### Adapter Version Rule
-Adapter versions follow the rule below. 
+##### Adapter Version Rule
+
+Adapter versions follow the rule below.
+
+```text
+[Version of the mediation target SDK].[Version of the MobWith SDK]
 ```
-[Version of the mediation target SDK].[Version of the Mobwith SDK]
-```
+
 For example, for MobWithAdFitAdapter:
-```
-# This means it is optimized for AdFit SDK version 3.21.15 and Mobwith SDK version 1.3.1.
+
+```ruby
+# This means it is optimized for AdFit SDK version 3.21.15 and MobWith SDK version 1.3.1.
 pod 'MobWithAdFitAdapter', '3.21.15.1.3.1'
 ```
-Each Adapter has a dependency on the version it supports, so installing an Adapter automatically installs the corresponding SDK version.  
-If you are already using a different version of the SDK, or using the same SDK through another ad SDK, a conflict may occur during pod installation or a different SDK version may be installed; depending on the SDK version this can cause errors when running the app, so caution is needed.  
-Therefore, it is best to align the versions you use, and we recommend matching the Adapter versions according to the rule above.  
-If you need support for a version of a mediation SDK that is not currently supported, please contact us separately.
 
-### Additional Settings per Mediation SDK
-Refer to each SDK's guide document in the Manual Installation section below and apply the additional settings.
+Each Adapter has a dependency on the SDK version it supports, so installing an Adapter automatically installs the corresponding SDK version.<br>
+If you are already using a different version of the SDK, or using the same SDK through another ad SDK, a conflict may occur during pod installation or a different SDK version may be installed, which can cause errors when running the app depending on the SDK version.<br>
+Therefore, we recommend matching your SDK versions and Adapter versions according to the rule above.
 
+?> If you need support for a version of a mediation SDK that is not currently supported, please contact us separately.
 
-### Handling Build Errors When Using BidMad
-When you add BidMad's mediation Adapter, a version of the BidMad SDK different from the one added as a dependency in MobWithBidMadAdapter may be installed.
-To prevent this, refer to the following to pin the build to a specific version, or align to the latest version where possible.   
-If you cannot find a MobWithBidMadAdapter that supports the latest version of BidMad, please contact us.  
+##### Additional Settings per Mediation SDK
 
-```
+Refer to each SDK's guide document in [Manual Installation](/iOS/installation_base?id=manual-installation) below and apply the additional settings.
+
+##### Handling Build Errors When Using BidMad
+
+When you add BidMad's mediation Adapter, a version of the BidMad SDK different from the one added as a dependency in MobWithBidMadAdapter may be installed.<br>
+To prevent this, refer to the following to pin a specific version, or align to the latest version where possible.<br>
+If you cannot find a MobWithBidMadAdapter that supports the latest version of BidMad, please contact us.
+
+```ruby
 ...
 
-pod 'MobWithBidMadAdapter', '6.13.3.1.3.1'
-pod 'BidmadAdmixerAdapter', '2.0.2.12.2'      
+pod 'MobWithBidMadAdapter', '6.13.6.1.3.21'
+pod 'BidmadAdmixerAdapter', '2.0.2.12.2'
 ...
 
-// Add at the end of the BidMad-related pod settings; we recommend matching it to the version of the mediation target SDK
-pod 'BidmadSDK/core', '= 6.13.3'            
-
+# Add at the end of the BidMad-related pod settings; we recommend matching it to the version of the mediation target SDK
+pod 'BidmadSDK/core', '= 6.13.6'
 ```
 
-If you installed the pods before adding the content above, you must reset the pod-related content and reinstall for the change to take effect properly.  
+?> If you installed the pods before adding the content above, you must reset the pod-related content and reinstall for the change to take effect.<br>
 (Delete the Pods folder, remove Podfile.lock, clear the contents of the DerivedData folder, etc.)
 
+## Manual Installation <!-- {docsify-ignore} -->
 
-<br><br>
+When installing the SDK manually, you must apply all of the items below.
 
-## Manual Installation
+!> When installing manually, you must refer to [Other Linker Setup](/iOS/installation_other?id=other-linker-setup) and **modify the Other Linker Flags value**.
+
+#### <span class="step-label">STEP 1</span>Install the base framework
+
+Download `MobWithADSDKFramework.xcframework` from [MobWithAdSDK_iOS](https://github.com/mobon/MobWithAdSDK_iOS).<br>
+Drag and drop the downloaded framework onto the General > Embedded Binaries section of your app project.
+
+#### <span class="step-label">STEP 2</span>Install Adapter frameworks
+
+Download the frameworks you need from the Adapter download links below, then install the main SDK for each Adapter by referring to its SDK installation guide.<br>
+To choose a version, refer to the Tags tab in the branch selection menu of the download page.
+
+| Adapter | Adapter Download | SDK Installation Guide |
+|---|---|---|
+| LevelPlay | [MobWithLevelPlayAdapter_iOS](https://github.com/mobon/MobWithLevelPlayAdapter_iOS) | [LevelPlay SDK](https://docs.unity.com/en-us/grow/levelplay/sdk/ios) |
+| AdFit | [MobWithAdFitAdapter_iOS](https://github.com/mobon/MobWithAdFitAdapter_iOS) | [AdFit SDK](https://adfit.github.io/adfit-ios-sdk/documentation/adfitsdk/) |
+| Cauly | [MobWithCaulyAdapter_iOS](https://github.com/mobon/MobWithCaulyAdapter_iOS) | [Cauly SDK](https://cauly.gitbook.io/cauly/ios/import-sdk) |
+| AdMob | [MobWithAdMobAdapter_iOS](https://github.com/mobon/MobWithAdMobAdapter_iOS) | [AdMob SDK](https://developers.google.com/admob/ios/quick-start?hl=ko) |
+| ADOP BidMad | [MobWithBidMadAdapter_iOS](https://github.com/mobon/MobWithBidMadAdapter_iOS) | [BidMad SDK](https://github.com/bidmad/Bidmad-iOS?tab=readme-ov-file#bidmadsdk-installation-guide) |
+| DT Exchange | [MobWithDTExchangeAdapter_iOS](https://github.com/mobon/MobWithDTExchangeAdapter_iOS) | [DT Exchange SDK](https://docs.digitalturbine.com/dt-exchange/publishers/sdk-configuration/integrating-the-ios-sdk) |
+| Pangle | [MobWithPangleAdapter_iOS](https://github.com/mobon/MobWithPangleAdapter_iOS) | [Pangle SDK](https://www.pangleglobal.com/integration/integrate-pangle-sdk-for-ios) |
+| InMobi | [MobWithInMobiAdapter_iOS](https://github.com/mobon/MobWithInMobiAdapter_iOS) | [InMobi SDK](https://support.inmobi.com/monetize/sdk-documentation/ios-guidelines/overview-ios-guidelines#option-1--integration-via-cocoapods) |
+
+?> For AdFit and Cauly, you can also download the SDK matching each version from the Adapter download page.
+
 ---
-When installing the SDK manually, you must apply all of the items below. 
 
-### Base Framework
-- Download MobWithADSDKFramework.xcframework from [[here](https://github.com/mobon/MobWithAdSDK_iOS)].
-- Drag and drop the downloaded framework onto the General > Embedded Binaries section of your app project.
-
-### Installing Adapter Frameworks
-Access each Adapter's download link below and download the framework you need.  
-To choose a version, refer to the Tags tab in the branch selection menu.
-Note: For AdFit and Cauly, you can download the SDK matching each version directly through the link, so download them together.
-- LevelPlay Adapter : [[Download link](https://github.com/mobon/MobWithLevelPlayAdapter_iOS)]
-- AdFit Adapter : [[Download link](https://github.com/mobon/MobWithAdFitAdapter_iOS)]
-- Cauly Adapter : [[Download link](https://github.com/mobon/MobWithCaulyAdapter_iOS)]
-- AdMob Adapter : [[Download link](https://github.com/mobon/MobWithAdMobAdapter_iOS)]
-- Adop Bidmad Adapter : [[Download link](https://github.com/mobon/MobWithBidMadAdapter_iOS)]
-- DTExchange Adapter : [[Download link](https://github.com/mobon/MobWithDTExchangeAdapter_iOS)]
-- Pangle Adapter : [[Download link](https://github.com/mobon/MobWithPangleAdapter_iOS)]
-- InMobi Adapter : [[Download link](https://github.com/mobon/MobWithInMobiAdapter_iOS)]
-
-<br> 
-
-Next, refer to the SDK guide document links below to install the main framework for each Adapter.  
-- LevelPlay SDK : [[Guide link](https://docs.unity.com/en-us/grow/levelplay/sdk/ios)]
-- AdFit SDK : [[Guide link](https://adfit.github.io/adfit-ios-sdk/documentation/adfitsdk/)]
-- Cauly SDK : [[Guide link](https://cauly.gitbook.io/cauly/ios/import-sdk)]
-- AdMob SDK : [[Guide link](https://developers.google.com/admob/ios/quick-start?hl=ko)]
-- Adop Bidmad SDK : [[Guide link](https://github.com/bidmad/Bidmad-iOS?tab=readme-ov-file#bidmadsdk-installation-guide)]
-- DTExchange SDK : [[Guide link](https://docs.digitalturbine.com/dt-exchange/publishers/sdk-configuration/integrating-the-ios-sdk)]
-- Pangle SDK : [[Guide link](https://www.pangleglobal.com/integration/integrate-pangle-sdk-for-ios)]
-- InMobi SDK : [[Guide link](https://support.inmobi.com/monetize/sdk-documentation/ios-guidelines/overview-ios-guidelines#option-1--integration-via-cocoapods)]
-
-
-When installing manually, you must refer to [here (Other Linker setup)](/iOS/installation_other_en?id=other-linker-setup) and modify the Other Linker value.
+**Next Step** : Configure your project in [Project Configuration](/iOS/installation_other.md).

@@ -11,7 +11,7 @@ AdMob SDK가 설치되어 있지 않다면 [Android](https://developers.google.c
 AdMob Adapter는 MobWith SDK를 통해 광고를 송출하므로, MobWith SDK의 기본 설정이 먼저 필요합니다.
 
 - Android : SDK Installation 문서의 [Gradle 설정](/Android/installation?id=gradle-설정)에서 저장소(mavenCentral, jitpack)를 추가하고, [권한 설정](/Android/installation?id=권한-설정)을 적용합니다.<br>MobWith SDK 의존성은 해당 문서가 아닌 아래 2단계의 설정을 사용합니다.
-- iOS : SDK Installation 문서의 [CocoaPods 사용하여 설치](/iOS/installation_base?id=cocoapods-사용하여-설치)를 참고하여 MobWith SDK를 설치합니다.
+- iOS : SDK Installation 문서의 [CocoaPods를 이용하여 설치](/iOS/installation_base?id=cocoapods를-이용하여-설치)를 참고하여 MobWith SDK를 설치합니다.
 
 ?> MobWith SDK 자체의 미디에이션(AdFit, BidMad 등 다른 광고 네트워크 연동)은 AdMob Adapter 연동과 별개의 기능입니다. 협의된 경우에만 SDK Installation 문서의 각 네트워크 SDK 추가 항목을 참고하여 적용합니다.
 

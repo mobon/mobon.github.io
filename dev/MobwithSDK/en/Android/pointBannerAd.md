@@ -1,15 +1,12 @@
-🌐 <a href="../ko/#/Android/pointBannerAd">한국어 가이드</a>
+# PointBanner AD <!-- {docsify-ignore} -->
 
-## Point Banner AD <!-- {docsify-ignore} -->
-This ad view is a banner view that includes functionality and UI for providing rewards when the ad is clicked.  
+This page describes how to display a banner that includes features and UI for providing a reward when an ad is clicked, using MobwithPointBannerView.
 
-The logic related to providing rewards must be implemented by the developer directly. Currently, it is designed based on a scenario where rewards are provided upon ad click or impression.
-No separate reward-specific callback is provided.  
+?> The developer must implement the reward logic, which is currently designed around providing a reward when an ad is clicked or displayed.<br>
+No dedicated reward callback is provided, so implement it using the callback events delivered when an ad loads successfully and when an ad is clicked.
 
-Please implement the related processing using the callback events delivered upon successful ad load and ad click.
+## How to Load Ads
 
-### How to Load the Ad
-----
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
 

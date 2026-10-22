@@ -1,19 +1,14 @@
-🌐 <a href="../ko/#/iOS/interstitailAd">한국어 가이드</a>
+# Interstitial AD <!-- {docsify-ignore} -->
 
+This page describes how to display a full-screen interstitial ad using MobWithInterstitialAd.
 
-## Interstitial AD <!-- {docsify-ignore} -->
-
+!> **Deprecated** : `MobWithInterstitailAd` / `MobWithIntersitialAdDelegate` are deprecated as of SDK 1.3.34. Please use `MobWithInterstitialAd` / `MobWithInterstitialAdDelegate` instead. For details, see the [Migration Guide](/iOS/migration-guide.md).
 
 ## MobWithInterstitialAd
----
-You can display an interstitial banner on screen using MobWithInterstitialAd.  
-Please refer to the example below for the usage of MobWithInterstitialAd.
 
-> The previous names `MobWithInterstitailAd` / `MobWithIntersitialAdDelegate` are deprecated but remain usable for now. Please use the new names below for new integrations.  
-> For details, see the [Migration Guide](/iOS/migration-guide.md).
+Create a MobWithInterstitialAd and call `loadAd()` to request an ad.
 
 ```swift
-
 let interstitialAd = MobWithInterstitialAd.init()
 interstitialAd.rootViewController = self
 interstitialAd.adDelegate = self
@@ -22,50 +17,61 @@ interstitialAd.unitId = "{Unit ID}"
 interstitialAd.loadAd()
 ```
 
-### loadAd()
-Loads the ad.  
-For interstitial banners, loading the ad and displaying it on screen are separated, and for fast display of the ad, we recommend loading the ad in advance before the point at which the ad is actually displayed.
+For interstitial ads, loading the ad and displaying it are separated. After confirming that the ad is loaded, call `show()` to display it.
 
-### isLoaded()
-Checks whether an ad is loaded in the object.  
-Returns true if an ad is loaded, and false otherwise.  
-If an ad is not loaded, calling show() will fail.
+```swift
+if interstitialAd.isLoaded() {
+    interstitialAd.show()
+}
+```
 
-### show()
-If there is a loaded ad, displays the interstitialAd on screen.  
-Whether an ad is loaded can be checked via the isLoaded() function.
-
-<br>
-<br>
-
+| Method | Description |
+|---|---|
+| `loadAd()` | Loads the ad. To display the ad quickly, we recommend loading it in advance before the ad is actually displayed. |
+| `isLoaded()` | Returns `true` if an ad is loaded, and `false` otherwise. If an ad is not loaded, calling `show()` will fail. |
+| `show()` | Displays the interstitial ad on screen if a loaded ad exists. |
 
 ## MobWithInterstitialAdDelegate
----
-This is the delegate that can receive each event of MobWithInterstitialAd.  
-Please refer to the following for the description of each callback function.
 
-?> The protocol name has changed, but the callback method names (`mobWithIntersitialAd...`) remain the same.
+This is the delegate that receives each event of MobWithInterstitialAd.<br>
+The `interstitialAd` parameter of every callback is the object on which the event occurred.
 
-### mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?)
-Called when an ad is received.  
-interstitialAd is the object on which this event was called.
+!> **Deprecated** : The `mobWithIntersitialAd…` callback methods are deprecated as of SDK 1.3.34. Please use the `mobWithInterstitialAd…` methods instead. For details, see the [Migration Guide](/iOS/migration-guide.md).
 
-### mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?)
-Called when an ad could not be received.  
-interstitialAd is the object on which this event was called.
+| Callback | When it is called |
+|---|---|
+| `mobWithInterstitialAdDidReceived(_:)` | When an ad is received |
+| `mobWithInterstitialAdDidFailToReceive(_:)` | When an ad could not be received |
+| `mobWithInterstitialAdClicked(_:)` | When the ad is clicked |
+| `mobWithInterstitialAdDidOpened(_:)` | When the ad is displayed on screen |
+| `mobWithInterstitialAdDidOpenFailed(_:)` | When the ad fails to be displayed on screen |
+| `mobWithInterstitialAdDidClosed(_:)` | When the displayed ad is closed |
 
-### mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitialAd?)
-Called when the ad is clicked.  
-interstitialAd is the object on which this event was called.
+```swift
+extension ViewController: MobWithInterstitialAdDelegate {
 
-### mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitialAd?)
-Called when the ad is displayed on screen.  
-interstitialAd is the object on which this event was called.
+    func mobWithInterstitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
+        // Ad received
+    }
 
-### mobWithIntersitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?)
-Called when the ad fails to be displayed on screen.  
-interstitialAd is the object on which this event was called.
+    func mobWithInterstitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?) {
+        // Ad reception failed
+    }
 
-### mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?)
-Called when an open ad is closed.  
-interstitialAd is the object on which this event was called.
+    func mobWithInterstitialAdClicked(_ interstitialAd: MobWithInterstitialAd?) {
+        // Ad clicked
+    }
+
+    func mobWithInterstitialAdDidOpened(_ interstitialAd: MobWithInterstitialAd?) {
+        // Ad displayed
+    }
+
+    func mobWithInterstitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?) {
+        // Ad display failed
+    }
+
+    func mobWithInterstitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
+        // Ad closed
+    }
+}
+```

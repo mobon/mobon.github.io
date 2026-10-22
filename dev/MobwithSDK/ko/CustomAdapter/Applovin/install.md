@@ -11,7 +11,7 @@ AppLovin MAX SDK가 설치되어 있지 않다면 [Android](https://support.axon
 AppLovin MAX Adapter는 MobWith SDK를 통해 광고를 송출하므로, MobWith SDK의 기본 설정이 먼저 필요합니다.
 
 - Android : SDK Installation 문서의 [Gradle 설정](/Android/installation?id=gradle-설정)에서 저장소(mavenCentral, jitpack)를 추가하고, [권한 설정](/Android/installation?id=권한-설정)을 적용합니다.<br>MobWith SDK 의존성은 해당 문서가 아닌 아래 2단계의 설정을 사용합니다.
-- iOS : SDK Installation 문서의 [CocoaPods 사용하여 설치](/iOS/installation_base?id=cocoapods-사용하여-설치)를 참고하여 MobWith SDK를 설치합니다.
+- iOS : SDK Installation 문서의 [CocoaPods를 이용하여 설치](/iOS/installation_base?id=cocoapods를-이용하여-설치)를 참고하여 MobWith SDK를 설치합니다.
 
 ?> MobWith SDK 자체의 미디에이션(AdFit, BidMad 등 다른 광고 네트워크 연동)은 AppLovin MAX Adapter 연동과 별개의 기능입니다. 협의된 경우에만 SDK Installation 문서의 각 네트워크 SDK 추가 항목을 참고하여 적용합니다.
 
@@ -19,6 +19,14 @@ AppLovin MAX Adapter는 MobWith SDK를 통해 광고를 송출하므로, MobWith
 
 플랫폼별로 아래 의존성을 추가합니다.<br>
 Android는 AppLovin MAX Adapter, AppLovin MAX SDK, MobWith SDK를 함께 추가하고, iOS는 AppLovin MAX Adapter만 추가합니다. (iOS의 MobWith SDK는 1단계에서 설치합니다.)
+
+| 플랫폼 | Adapter 버전 | 최소 MobWith SDK 버전 |
+|---|---|---|
+| Android | 1.1.1 | 1.0.111 |
+| iOS | 1.1.0 | 1.3.34 |
+
+!> AppLovin MAX Adapter Android 1.1.1 / iOS 1.1.0부터 **필요한 MobWith SDK 최소 버전이 올라갔습니다.**<br>
+이전 버전의 MobWith SDK를 사용하고 있다면 MobWith SDK를 위 버전 이상으로 먼저 업데이트한 뒤 Adapter를 업데이트해 주세요.
 
 <!-- tabs:start -->
 
@@ -28,15 +36,15 @@ app 모듈의 `build.gradle(.kts)` 파일 `dependencies` 블록에 추가합니�
 
 ```kotlin
 // AppLovin MAX Mediation Adapter
-implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.0.0-alpha")
+implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.1.1")
 
 // AppLovin MAX SDK
 implementation("com.applovin:applovin-sdk:+@aar")
 
-// MobWith SDK (원활한 광고 송출을 위해 반드시 1.0.80 버전을 사용해야 합니다)
+// MobWith SDK (최소 1.0.111)
 implementation("com.google.android.gms:play-services-ads:23.0.0")
 implementation("com.google.android.gms:play-services-ads-identifier:17.1.0")
-implementation("io.github.mobon:mobwithSDK:1.0.80")
+implementation("io.github.mobon:mobwithSDK:1.0.111")
 implementation("com.github.Dimezis:BlurView:version-3.2.0")
 ```
 

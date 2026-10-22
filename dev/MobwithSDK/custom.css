@@ -1,3 +1,62 @@
+/* ==========================================================================
+   라이트 / 다크 테마 색상 (모든 색상은 이 변수만 사용)
+   - 기본은 라이트, <html data-theme="dark">일 때 다크 값으로 바뀜
+   - 모드 전환과 저장은 index.html의 테마 스크립트가 처리
+   ========================================================================== */
+:root {
+    --theme-color: #d9553d;          /* docsify 테마의 링크·강조 색 */
+    --accent: #d9553d;
+    --accent-glow: rgba(217, 85, 61, 0.18);
+    --on-accent: #ffffff;
+    --text-strong: #1f2937;
+    --text-muted: #6b7280;
+    --tip-text: #34495e;
+    --box-bg: #f7f7f8;
+    --box-border: #e3e3e6;
+    --dot-bg: #ffffff;
+    --lang-icon: #6b7280;
+    --lang-border: #d1d5db;
+    --lang-text: #6b7280;
+    --sb-bg: #f7f7f8;
+    --sb-border: #e3e3e6;
+    --sb-text: #374151;
+    --sb-muted: #6b7280;
+    --sb-hover-bg: rgba(0, 0, 0, 0.04);
+    --sb-active-bg: rgba(217, 85, 61, 0.1);
+    --sb-guide: #e0e0e4;
+    --sb-group: #111827;
+    --sb-guide-active: rgba(217, 85, 61, 0.4);
+    --sb-input-bg: #ffffff;
+    --sb-text-strong: #111827;
+}
+
+html[data-theme="dark"] {
+    --theme-color: #ea6f5a;
+    --accent: #ea6f5a;
+    --accent-glow: rgba(234, 111, 90, 0.2);
+    --on-accent: #ffffff;
+    --text-strong: #e0e0e0;
+    --text-muted: #a8a8a8;
+    --tip-text: #c8c8c8;
+    --box-bg: #353535;
+    --box-border: #4a4a4a;
+    --dot-bg: #3f3f3f;
+    --lang-icon: #8a8a8a;
+    --lang-border: #5f5f5f;
+    --lang-text: #9a9a9a;
+    --sb-bg: #333333;
+    --sb-border: #2a2a2a;
+    --sb-text: #c8c8c8;
+    --sb-muted: #9a9a9a;
+    --sb-hover-bg: rgba(255, 255, 255, 0.05);
+    --sb-active-bg: rgba(234, 111, 90, 0.12);
+    --sb-guide: #4a4a4a;
+    --sb-group: #e6e6e6;
+    --sb-guide-active: rgba(234, 111, 90, 0.4);
+    --sb-input-bg: rgba(0, 0, 0, 0.2);
+    --sb-text-strong: #ffffff;
+}
+
 /* 테이블 행 배경색 제거 */
 table tr {
     background-color: #00000000 !important;
@@ -58,17 +117,17 @@ table tr {
 .markdown-section .lang-icon {
     display: flex;
     margin-right: 8px;
-    color: #8a8a8a;
+    color: var(--lang-icon);
 }
 
 .markdown-section .lang-opt {
     padding: 4px 12px;
-    border: 1px solid #5f5f5f;
+    border: 1px solid var(--lang-border);
     font-size: 0.8em;
     font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 1.4;
-    color: #9a9a9a;
+    color: var(--lang-text);
     text-decoration: none;
 }
 
@@ -86,24 +145,55 @@ table tr {
 }
 
 .markdown-section .lang-opt.active {
-    background-color: #ea6f5a;
-    border-color: #ea6f5a;
-    color: #fff;
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
 }
 
 .markdown-section a.lang-opt:hover {
-    border-color: #ea6f5a;
-    color: #ea6f5a;
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* 라이트 / 다크 모드 전환 버튼 (언어 전환 토글 옆) */
+.markdown-section .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 27px;
+    margin-left: 8px;
+    padding: 0;
+    border: 1px solid var(--lang-border);
+    border-radius: 6px;
+    background: none;
+    color: var(--lang-text);
+    cursor: pointer;
+}
+
+.markdown-section .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* 현재 모드의 반대 아이콘을 표시 (라이트: 달, 다크: 해) */
+.markdown-section .theme-toggle .icon-sun,
+html[data-theme="dark"] .markdown-section .theme-toggle .icon-moon {
+    display: none;
+}
+
+html[data-theme="dark"] .markdown-section .theme-toggle .icon-sun {
+    display: block;
 }
 
 
-/* 홈(README) 화면 - 색상은 CSS 변수로 관리 (라이트 테마 작업 시 값 추가) */
+/* 홈(README) 화면 - 색상은 CSS 변수로 관리 */
 :root {
-    --home-card-bg: #353535;
-    --home-card-border: #4a4a4a;
-    --home-text: #e0e0e0;
-    --home-muted: #a8a8a8;
-    --home-accent: #ea6f5a;
+    --home-card-bg: var(--box-bg);
+    --home-card-border: var(--box-border);
+    --home-text: var(--text-strong);
+    --home-muted: var(--text-muted);
+    --home-accent: var(--accent);
 }
 
 .markdown-section .home-hero {
@@ -195,19 +285,8 @@ table tr {
 
 /* 사이드바 - 색상은 CSS 변수로 관리 */
 :root {
-    --sb-bg: #333333;
-    --sb-border: #2a2a2a;
-    --sb-text: #c8c8c8;
-    --sb-muted: #9a9a9a;
-    --sb-hover-bg: rgba(255, 255, 255, 0.05);
-    --sb-active-bg: rgba(234, 111, 90, 0.12);
-    --sb-accent: #ea6f5a;
-    --sb-guide: #4a4a4a;
+    --sb-accent: var(--accent);
     --sb-row-h: 34px;
-    --sb-group: #e6e6e6;
-    --sb-guide-active: rgba(234, 111, 90, 0.4);
-    --sb-input-bg: rgba(0, 0, 0, 0.2);
-    --sb-text-strong: #ffffff;
 }
 
 body .sidebar {
@@ -338,6 +417,11 @@ body .sidebar ul li.active > a {
     font-weight: 600;
 }
 
+/* 라이트 테마(vue.css)의 현재 메뉴 오른쪽 테두리 제거 */
+body .sidebar ul li.active > a {
+    border-right: none;
+}
+
 /* 페이지 내 섹션 목록 */
 body .sidebar ul.app-sub-sidebar {
     border-left-color: var(--sb-guide-active);
@@ -348,6 +432,11 @@ body .sidebar ul.app-sub-sidebar li a {
     line-height: 20px;
     font-size: 0.9em;
     color: var(--sb-muted);
+}
+
+/* 라이트 테마(vue.css)의 섹션 목록 앞 '-' 표시 제거 */
+body .sidebar ul.app-sub-sidebar li::before {
+    content: none;
 }
 
 body .sidebar ul.app-sub-sidebar li.active > a {
@@ -367,12 +456,12 @@ body .sidebar-toggle {
 
 /* 문서 공용 컴포넌트 - 단계 흐름(doc-flow), 링크 리스트(doc-list) / 색상은 CSS 변수로 관리 */
 :root {
-    --doc-box-bg: #353535;
-    --doc-box-border: #4a4a4a;
-    --doc-box-text: #e0e0e0;
-    --doc-box-muted: #a8a8a8;
-    --doc-box-accent: #ea6f5a;
-    --doc-box-on-accent: #ffffff;
+    --doc-box-bg: var(--box-bg);
+    --doc-box-border: var(--box-border);
+    --doc-box-text: var(--text-strong);
+    --doc-box-muted: var(--text-muted);
+    --doc-box-accent: var(--accent);
+    --doc-box-on-accent: var(--on-accent);
 }
 
 /* 단계 흐름 */
@@ -495,7 +584,7 @@ body .sidebar-toggle {
 
 /* 문서 이미지(스크린샷) - 단독으로 들어간 이미지는 본문 폭에 맞춤 */
 :root {
-    --doc-img-border: #4a4a4a;
+    --doc-img-border: var(--box-border);
 }
 
 .markdown-section p > img:only-child {
@@ -508,8 +597,8 @@ body .sidebar-toggle {
 
 /* 본문 가독성 보정 - 굵은 글씨 / !> 경고 박스 글자색 (테마 기본값이 배경에 묻히는 문제) */
 :root {
-    --doc-strong: #e6e6e6;
-    --doc-tip-text: #c8c8c8;
+    --doc-strong: var(--text-strong);
+    --doc-tip-text: var(--tip-text);
 }
 
 body .markdown-section strong {
@@ -562,8 +651,8 @@ body .markdown-section p.tip {
 /* History 타임라인 - ### 버전 <span class="release-date">날짜</span><span class="release-badge">Latest</span> */
 :root {
     --release-line: var(--doc-box-border);
-    --release-dot-bg: #3f3f3f;
-    --release-glow: rgba(234, 111, 90, 0.2);
+    --release-dot-bg: var(--dot-bg);
+    --release-glow: var(--accent-glow);
 }
 
 .markdown-section h3:has(.release-date),
@@ -813,35 +902,4 @@ body .markdown-section p.tip {
     .markdown-section .history-month-range {
         display: none;
     }
-}
-
-/* [임시] 가이드 문서 개선 작업 안내 배너 - 작업 완료 후 삭제 */
-.markdown-section .doc-notice {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    margin: 0 0 28px;
-    padding: 14px 18px;
-    background-color: #282828;
-    border-left: 4px solid #ea6f5a;
-    border-radius: 0 6px 6px 0;
-    font-size: 0.9em;
-    line-height: 1.65;
-    color: #b4b4b4;
-}
-
-.markdown-section .doc-notice-icon {
-    flex: none;
-    margin-top: 1px;
-    color: #ea6f5a;
-}
-
-.markdown-section .doc-notice p {
-    margin: 0;
-}
-
-.markdown-section .doc-notice .doc-notice-title {
-    margin-bottom: 4px;
-    font-weight: 600;
-    color: #ea6f5a;
 }

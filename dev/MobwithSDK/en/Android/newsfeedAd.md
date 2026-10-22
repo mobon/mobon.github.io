@@ -1,12 +1,11 @@
-🌐 <a href="../ko/#/Android/newsfeedAd">한국어 가이드</a>
+# Newsfeed AD <!-- {docsify-ignore} -->
 
+This page describes how to display a text banner showing a one-line article using MobwithArticleBannerView.
 
-## Newsfeed Banner AD <!-- {docsify-ignore} -->
-This is a text-type banner view that displays a single-line article.  
-This view is implemented with a UI that fits a height value of 30dp. If the height of the placement is smaller than 30dp, the UI may not display correctly on the screen.
+!> The UI of this view is implemented for a **height of 30dp**, so if the placement height is smaller than 30dp, the UI may not be displayed properly.
 
-### How to Load the Ad
-----
+## How to Load Ads
+
 ```java
 MobwithArticleBannerView adArticleBannerView =  new MobwithArticleBannerView(this)
 adArticleBannerView.setAdListener(new iArticleBannerCallback() {

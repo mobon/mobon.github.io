@@ -2,7 +2,13 @@
 
 iOS SDK의 버전별 변경 이력입니다.
 
-### 1.3.33 <span class="release-date">2026-10-08</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.34 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- MobWithAdView, MMNativeAdView에 리워드 Affordance 커스텀 기능 추가 (`MWAffordanceConfiguration`)
+- MMNativeAdView 영상 광고 송출 기능 추가
+- 일부 API 이름 오타 수정 (기존 이름 deprecated, [Migration Guide](/iOS/migration-guide.md) 참고)
+
+### 1.3.33 <span class="release-date">2026-10-08</span> <!-- {docsify-ignore} -->
 
 - 일본어 지원 추가
 
@@ -45,7 +51,7 @@ iOS SDK의 버전별 변경 이력입니다.
 - SPM 배포
 - 마이너 오류 수정
 
-### 1.3.22 <span class="release-date">2026-08-21</span> <!-- {docsify-ignore} -->
+### 1.3.22 (추가) <span class="release-date">2026-08-21</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter '12.14.0.1.3.21' 버전 배포
 
@@ -62,7 +68,7 @@ iOS SDK의 버전별 변경 이력입니다.
 - MobWithAdView(배너광고)의 useCloseButton 기능 삭제 (AdMob등 정책 이슈)
 - 마이너 오류 수정
 
-### 1.3.19 <span class="release-date"></span> <!-- {docsify-ignore} -->
+### 1.3.19 (추가) <span class="release-date">2026-07-28</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter '12.14.0.1.3.19' (AdManager 지원) 업데이트
 

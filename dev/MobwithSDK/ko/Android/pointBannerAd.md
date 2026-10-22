@@ -1,15 +1,12 @@
-🌐 <a href="../en/#/Android/pointBannerAd">View English Guide</a>
+# PointBanner AD <!-- {docsify-ignore} -->
 
-## Point Banner AD <!-- {docsify-ignore} -->
-해당 광고뷰는 광고 클릭 시 리워드를 제공하기 위한 기능 및 UI가 포함된 배너뷰입니다.  
+MobwithPointBannerView를 이용하여 광고 클릭 시 리워드를 제공하기 위한 기능 및 UI가 포함된 배너를 표시하는 방법을 안내합니다.
 
-리워드 제공과 관련된 로직은 개발자가 직접 구현해야 하며, 현재는 광고 클릭 또는 노출 시 리워드 제공 시나리오를 기준으로 설계되어 있습니다.
-별도의 리워드 전용 콜백은 제공되지 않습니다.  
+?> 리워드 제공과 관련된 로직은 개발자가 직접 구현해야 하며, 현재는 광고 클릭 또는 노출 시 리워드를 제공하는 시나리오를 기준으로 설계되어 있습니다.<br>
+별도의 리워드 전용 콜백은 제공되지 않으므로, 광고 로드 성공 및 광고 클릭 시 전달되는 콜백 이벤트를 활용해 구현하시기 바랍니다.
 
-관련 처리는 광고 로드 성공 및 광고 클릭 시 전달되는 콜백 이벤트를 활용해 구현하시기 바랍니다.
+## 광고 로드 방법
 
-### 광고 로드 방법
-----
 ```java
 LinearLayout banner_container = findViewById(R.id.banner_container);
 

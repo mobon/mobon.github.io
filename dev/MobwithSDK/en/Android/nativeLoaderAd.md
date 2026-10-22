@@ -1,11 +1,13 @@
-🌐 <a href="../ko/#/Android/nativeLoaderAd">한국어 가이드</a>
+# Native Loader AD <!-- {docsify-ignore} -->
 
-## Native Loader AD <!-- {docsify-ignore} -->
-MobwithNativeAdLoader is a feature you can apply when you want to display a NativeAdView in a list-type view.
+This page describes how to display native ads in list-type views such as RecyclerView using MobwithNativeAdLoader.
 
-### How to Load the Ad
-----
-First, create and initialize a MobwithNativeAdLoader to load the ad.
+## How to Load Ads
+
+#### <span class="step-label">STEP 1</span>Create and initialize MobwithNativeAdLoader
+
+To load ads, create MobwithNativeAdLoader and set the View for displaying ads.
+
 ```java
 // Create MobwithNativeAdLoader
 String[] adUnitIDs = new String[] { "Ad Unit ID" };   // You must set one or more Units.
@@ -43,7 +45,11 @@ adLoader.setNativeADView(this,
 
 .......
 ```
-Then, in the Adapter class of a list-type View such as RecyclerView, retrieve the ad View and display it on screen as shown below.
+
+#### <span class="step-label">STEP 2</span>Display ads in the list
+
+In the Adapter class of a list-type View such as RecyclerView, get the ad View as shown below and display it on screen.
+
 ```java
 @Override
 public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -65,4 +71,5 @@ public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 }
 ...
 ```
-For more details, please refer to the Sample app.
+
+?> For more details, please refer to the Sample app.

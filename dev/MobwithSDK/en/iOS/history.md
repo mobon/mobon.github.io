@@ -45,7 +45,7 @@ Version history of the iOS SDK.
 - Release at SPM
 - Fixed minor bugs
 
-### 1.3.22 <span class="release-date">2026-08-21</span> <!-- {docsify-ignore} -->
+### 1.3.22 (Additional) <span class="release-date">2026-08-21</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter released '12.14.0.1.3.21'
 
@@ -62,7 +62,7 @@ Version history of the iOS SDK.
 - Removed 'useCloseButton' from MobWithAdView (Banner Ad) to comply with AdMob and other advertising policies.
 - Minor bug fixes
 
-### 1.3.19 <span class="release-date"></span> <!-- {docsify-ignore} -->
+### 1.3.19 (Additional) <span class="release-date">2026-07-28</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter '12.14.0.1.3.19' (Support AdManager) Update
 
