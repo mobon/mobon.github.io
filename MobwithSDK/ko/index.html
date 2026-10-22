@@ -112,7 +112,10 @@
           }
           hook.doneEach(function () {
             var section = document.querySelector('.markdown-section');
-            if (!section || section.classList.contains('has-release-index')) return;
+            if (!section) return;
+            // 페이지 이동 시 .markdown-section 요소가 재사용되므로, 이미 처리한 페이지인지는 색인 요소로 판단하고 표시 클래스는 새로 설정
+            if (section.querySelector('.release-month')) { section.classList.add('has-release-index'); return; }
+            section.classList.remove('has-release-index');
             if (section.querySelector('details.history-older, details.history-month')) return;
             var heads = Array.prototype.filter.call(
               section.querySelectorAll('h3'),

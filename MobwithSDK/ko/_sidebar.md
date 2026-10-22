@@ -49,5 +49,6 @@
   - AppLovin MAX 3rd-Party Adapter
     - [SDK Installation](CustomAdapter/Applovin/install.md)
     - [Ad Configuration](CustomAdapter/Applovin/loadAd.md)
-    - [History](CustomAdapter/Applovin/history.md)
+    - [History (Android)](CustomAdapter/Applovin/history_android.md)
+    - [History (iOS)](CustomAdapter/Applovin/history_ios.md)
   

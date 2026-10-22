@@ -159,25 +159,6 @@ nativeAdView.performAdClicked()
 
 !> 해당 광고는 실제로 광고를 수신해도 `rootViewController`가 설정되지 않으면 광고를 받지 못한 것으로 처리되니 주의 바랍니다.
 
-### 리워드 광고 기능 활성화
-
-?> SDK 1.3.32 이상에서 지원합니다.
-
-광고에서 리워드 기능을 활성화하는 경우, 아래 값을 반드시 설정해야 합니다.<br>
-`mediaId`와 `serviceId`는 매체에서 직접 지정한 값을 사용하거나, 전달받은 값이 있다면 동일하게 설정해 주세요.
-
-| 항목 | 설명 |
-|---|---|
-| `mediaId` | 매체(서비스)를 구분하는 고유 식별자입니다. |
-| `serviceId` | 매체 내 광고가 노출되는 지면 또는 서비스 위치를 구분하는 식별자입니다. `mediaId`의 하위 값이며, 하나의 매체에 여러 지면이나 노출 위치가 있는 경우 이를 구분하는 데 사용합니다. |
-| `userKey` | 사용자 ID 등 사용자를 식별하기 위한 값입니다. 매체에서 관리하는 고유한 값을 설정해 주세요. |
-
-```swift
-nativeAdView.mediaId = "{Media ID}"
-nativeAdView.serviceId = "{Service ID}"
-nativeAdView.userKey = "{User Key}"
-```
-
 ## MobWithNativeAdLoader
 
 MobWithNativeAdLoader는 UITableView 같은 리스트 형태의 뷰에 MMNativeAdView 광고를 표시할 때 유용한 기능입니다.
@@ -309,4 +290,33 @@ extension ViewController: MobWithNativeAdLoaderDelegate {
         // 광고 수신 실패
     }
 }
+```
+
+## 리워드 광고 기능 활성화
+
+?> SDK 1.3.32 이상에서 지원합니다.
+
+광고에서 리워드 기능을 활성화하는 경우, 아래 값을 반드시 설정해야 합니다.<br>
+`mediaId`와 `serviceId`는 매체에서 직접 지정한 값을 사용하거나, 전달받은 값이 있다면 동일하게 설정해 주세요.
+
+| 항목 | 설명 |
+|---|---|
+| `mediaId` | 매체(서비스)를 구분하는 고유 식별자입니다. |
+| `serviceId` | 매체 내 광고가 노출되는 지면 또는 서비스 위치를 구분하는 식별자입니다. `mediaId`의 하위 값이며, 하나의 매체에 여러 지면이나 노출 위치가 있는 경우 이를 구분하는 데 사용합니다. |
+| `userKey` | 사용자 ID 등 사용자를 식별하기 위한 값입니다. 매체에서 관리하는 고유한 값을 설정해 주세요. |
+
+```swift
+nativeAdView.mediaId = "{Media ID}"
+nativeAdView.serviceId = "{Service ID}"
+nativeAdView.userKey = "{User Key}"
+```
+
+### 리워드 Affordance 커스텀
+
+?> SDK 1.3.34 이상에서 지원합니다.
+
+리워드 광고에 표시되는 Affordance의 스타일을 변경할 수 있습니다. 설정 방법과 파라미터는 [Banner AD의 리워드 Affordance 커스텀](/iOS/banner?id=리워드-affordance-커스텀)을 참고해 주세요.
+
+```swift
+nativeAdView.affordanceConfig = affordanceConfig
 ```

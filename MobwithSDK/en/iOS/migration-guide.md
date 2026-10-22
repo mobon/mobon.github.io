@@ -2,7 +2,7 @@
 
 This page describes how to migrate following the API name corrections.
 
-?> Some API names in MobWithADSDKFramework v1.3.x have been corrected for typos.<br>
+?> Some API names in MobWithADSDKFramework v1.3.34 have been corrected for typos.<br>
 Backward compatibility is maintained, and you can migrate to the new names gradually.
 
 ## Changes Summary
@@ -11,6 +11,7 @@ Backward compatibility is maintained, and you can migrate to the new names gradu
 |---|---|---|
 | `MobWithInterstitailAd` | `MobWithInterstitialAd` | v1.3.34 |
 | `MobWithIntersitialAdDelegate` | `MobWithInterstitialAdDelegate` | v1.3.34 |
+| `mobWithIntersitialAd…` delegate methods (6) | `mobWithInterstitialAd…` | v1.3.34 |
 | `init(webVeiw:)` | `init(webView:)` | v1.3.34 |
 
 ## Migration Steps
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MobWithIntersitialAdDelegate {  // Deprecated warning
-    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitailAd?) {
+    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitailAd?) {  // Deprecated warning
         // Ad received successfully
     }
 }
@@ -65,7 +66,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MobWithInterstitialAdDelegate {  // Correct spelling
-    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad received successfully
     }
 }
@@ -120,7 +121,7 @@ extension ViewController: MobWithInterstitialAdDelegate {  // Correct spelling
     [self.interstitialAd loadAd];
 }
 
-- (void)mobWithIntersitialAdDidReceived:(MobWithInterstitialAd *)interstitialAd {
+- (void)mobWithInterstitialAdDidReceived:(MobWithInterstitialAd *)interstitialAd {
     // Ad received successfully
 }
 
@@ -149,18 +150,20 @@ let bridge = MMHybridBannerBridge(webView: webView)  // Correct spelling
 
 ### MobWithInterstitialAdDelegate
 
-The parameter types of all delegate methods have been updated.
+As of SDK 1.3.34, typos in the delegate method names have been corrected. All methods use `MobWithInterstitialAd?` as the parameter type.
 
-| Method | Previous Parameter Type | New Parameter Type |
-|---|---|---|
-| `mobWithIntersitialAdClicked(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidReceived(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidFailToReceive(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidOpend(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidOpenFailed(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidClosed(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
+| Previous (Deprecated) | New Name (Recommended) |
+|---|---|
+| `mobWithIntersitialAdClicked(_:)` | `mobWithInterstitialAdClicked(_:)` |
+| `mobWithIntersitialAdDidReceived(_:)` | `mobWithInterstitialAdDidReceived(_:)` |
+| `mobWithIntersitialAdDidFailToReceive(_:)` | `mobWithInterstitialAdDidFailToReceive(_:)` |
+| `mobWithIntersitialAdDidOpend(_:)` | `mobWithInterstitialAdDidOpened(_:)` |
+| `mobWithIntersitialAdDidOpenFailed(_:)` | `mobWithInterstitialAdDidOpenFailed(_:)` |
+| `mobWithIntersitialAdDidClosed(_:)` | `mobWithInterstitialAdDidClosed(_:)` |
 
-?> The protocol name has changed, but the method names remain the same. Only the parameter types need to be updated.
+?> In addition to `Intersitial`, the spelling `Opend` → `Opened` has also been corrected in `DidOpend`.
+
+!> Do not implement both the previous and the new method for the same event. The SDK handles this internally, but unexpected issues may occur. Please replace the previous methods with the new ones.
 
 ## Auto-Fix in Xcode
 
@@ -174,16 +177,18 @@ The parameter types of all delegate methods have been updated.
 ### Bulk Replace Across the Project
 
 1. In the Xcode menu, select Edit > Find > Find and Replace in Project... (`Cmd + Shift + F`)
-2. Enter the text to find and replace.
+2. Enter the text to find and replace in the following order.
    - `MobWithInterstitailAd` → `MobWithInterstitialAd`
    - `MobWithIntersitialAdDelegate` → `MobWithInterstitialAdDelegate`
+   - `mobWithIntersitialAdDidOpend` → `mobWithInterstitialAdDidOpened`
+   - `mobWithIntersitialAd` → `mobWithInterstitialAd`
 3. Click **Replace All** to update all occurrences.
 
 ## FAQ
 
 ### Q1. What happens if I don't update my existing code?
 
-It works normally. Only deprecation warnings are shown, and there are no functional issues.
+It works normally. Only deprecation warnings are shown, and there are no functional issues. For delegate methods, if the new name is not implemented, the method with the previous name is still called.
 
 ```swift
 // Shows a warning but works fine
@@ -215,6 +220,8 @@ let newAd = MobWithInterstitialAd()
 To correct spelling errors in class and protocol names.
 
 - `Interstitail` → `Interstitial` (correct English spelling)
+- `Intersitial` → `Interstitial` (delegate protocol and methods)
+- `Opend` → `Opened`
 - `webVeiw` → `webView` (correct spelling)
 
 ## Version History
@@ -223,6 +230,7 @@ To correct spelling errors in class and protocol names.
 
 - Added `MobWithInterstitialAd` class (deprecated `MobWithInterstitailAd`)
 - Added `MobWithInterstitialAdDelegate` protocol (deprecated `MobWithIntersitialAdDelegate`)
+- Corrected the delegate method names of `MobWithInterstitialAdDelegate` to `mobWithInterstitialAd…` (deprecated `mobWithIntersitialAd…`)
 - Added `MMHybridBannerBridge.init(webView:)` (deprecated `init(webVeiw:)`)
 
 ## Recommended Migration Timeline

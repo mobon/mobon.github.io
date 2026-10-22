@@ -160,6 +160,7 @@ nativeAdView.loadAd();
 | `setUserKey(String userKey)` | Set the issued UserKey |
 | `setServiceId(String serviceId)` | Set the issued ServiceId |
 | `setMediaId(String mediaId)` | Set the issued MediaId |
+| `setAffordanceStyle(AffordanceStyle style)` | Set the reward Affordance style (SDK 1.0.111 or later) |
 | `setCampaignCodes(List<String> campaignCodes)` | Set targeting campaign codes |
 | `performAdClicked()` | Trigger an ad click event |
 
@@ -277,3 +278,22 @@ nativeAdView.setUserKey("Issued UserKey");
 nativeAdView.setServiceId("Issued ServiceId");
 nativeAdView.setMediaId("Issued MediaId");
 ```
+
+### Customizing the Reward Affordance
+
+?> Supported in SDK 1.0.111 or later.
+
+You can change the style of the Affordance displayed on reward banners. For display conditions and methods, see [Customizing the Reward Affordance in Banner AD](/Android/bannerAd?id=customizing-the-reward-affordance).
+
+```java
+nativeAdView.setAffordanceStyle(AffordanceStyle.builder()
+        .position(AffordanceView.Position.BOTTOM_LEFT)
+        .sizeDp(36f)
+        .textSizeDp(12f)
+        .textColor(Color.BLACK)
+        .backgroundColor(Color.BLUE)
+        .marginDp(8)
+        .build());
+```
+
+?> Changes take effect after the ad is loaded again (`loadAd()`).

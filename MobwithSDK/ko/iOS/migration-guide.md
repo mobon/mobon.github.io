@@ -2,7 +2,7 @@
 
 API 이름 수정에 따른 마이그레이션 방법을 안내합니다.
 
-?> MobWithADSDKFramework v1.3.x에서 일부 API 이름의 오타가 수정되었습니다.<br>
+?> MobWithADSDKFramework v1.3.34에서 일부 API 이름의 오타가 수정되었습니다.<br>
 기존 코드와의 호환성은 그대로 유지되며, 점진적으로 새로운 이름으로 마이그레이션할 수 있습니다.
 
 ## 변경 사항 요약
@@ -11,6 +11,7 @@ API 이름 수정에 따른 마이그레이션 방법을 안내합니다.
 |---|---|---|
 | `MobWithInterstitailAd` | `MobWithInterstitialAd` | v1.3.34 |
 | `MobWithIntersitialAdDelegate` | `MobWithInterstitialAdDelegate` | v1.3.34 |
+| `mobWithIntersitialAd…` delegate 메서드 (6개) | `mobWithInterstitialAd…` | v1.3.34 |
 | `init(webVeiw:)` | `init(webView:)` | v1.3.34 |
 
 ## 마이그레이션 방법
@@ -40,7 +41,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MobWithIntersitialAdDelegate {  // Deprecated 경고 표시
-    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitailAd?) {
+    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitailAd?) {  // Deprecated 경고 표시
         // 광고 수신 성공
     }
 }
@@ -65,7 +66,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MobWithInterstitialAdDelegate {  // 올바른 철자
-    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 수신 성공
     }
 }
@@ -120,7 +121,7 @@ extension ViewController: MobWithInterstitialAdDelegate {  // 올바른 철자
     [self.interstitialAd loadAd];
 }
 
-- (void)mobWithIntersitialAdDidReceived:(MobWithInterstitialAd *)interstitialAd {
+- (void)mobWithInterstitialAdDidReceived:(MobWithInterstitialAd *)interstitialAd {
     // 광고 수신 성공
 }
 
@@ -149,18 +150,20 @@ let bridge = MMHybridBannerBridge(webView: webView)  // 올바른 철자
 
 ### MobWithInterstitialAdDelegate
 
-모든 delegate 메서드의 파라미터 타입이 변경되었습니다.
+SDK 1.3.34부터 delegate 메서드 이름의 오타가 수정되었습니다. 파라미터 타입은 모두 `MobWithInterstitialAd?`를 사용합니다.
 
-| 메서드 | 기존 파라미터 타입 | 새 파라미터 타입 |
-|---|---|---|
-| `mobWithIntersitialAdClicked(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidReceived(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidFailToReceive(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidOpend(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidOpenFailed(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
-| `mobWithIntersitialAdDidClosed(_:)` | `MobWithInterstitailAd?` | `MobWithInterstitialAd?` |
+| 기존 (Deprecated) | 새 이름 (권장) |
+|---|---|
+| `mobWithIntersitialAdClicked(_:)` | `mobWithInterstitialAdClicked(_:)` |
+| `mobWithIntersitialAdDidReceived(_:)` | `mobWithInterstitialAdDidReceived(_:)` |
+| `mobWithIntersitialAdDidFailToReceive(_:)` | `mobWithInterstitialAdDidFailToReceive(_:)` |
+| `mobWithIntersitialAdDidOpend(_:)` | `mobWithInterstitialAdDidOpened(_:)` |
+| `mobWithIntersitialAdDidOpenFailed(_:)` | `mobWithInterstitialAdDidOpenFailed(_:)` |
+| `mobWithIntersitialAdDidClosed(_:)` | `mobWithInterstitialAdDidClosed(_:)` |
 
-?> 프로토콜 이름은 변경되었지만, 메서드 이름은 그대로 유지됩니다. 파라미터 타입만 변경하면 됩니다.
+?> `DidOpend`는 `Intersitial` 외에 `Opend` → `Opened` 철자도 함께 수정되었습니다.
+
+!> 같은 이벤트에 기존 메서드와 새 메서드를 함께 구현하지 마세요. SDK 내부에서 처리하지만 예상하지 못한 문제가 생길 수 있습니다. 기존 메서드는 새 메서드로 바꿔 주세요.
 
 ## Xcode에서 자동 수정하기
 
@@ -174,16 +177,18 @@ let bridge = MMHybridBannerBridge(webView: webView)  // 올바른 철자
 ### 전체 프로젝트 일괄 수정
 
 1. Xcode 메뉴에서 Edit > Find > Find and Replace in Project...를 선택합니다. (`Cmd + Shift + F`)
-2. 찾을 내용과 바꿀 내용을 입력합니다.
+2. 찾을 내용과 바꿀 내용을 아래 순서대로 입력합니다.
    - `MobWithInterstitailAd` → `MobWithInterstitialAd`
    - `MobWithIntersitialAdDelegate` → `MobWithInterstitialAdDelegate`
+   - `mobWithIntersitialAdDidOpend` → `mobWithInterstitialAdDidOpened`
+   - `mobWithIntersitialAd` → `mobWithInterstitialAd`
 3. **Replace All**을 눌러 일괄 수정합니다.
 
 ## FAQ
 
 ### Q1. 기존 코드를 수정하지 않으면 어떻게 되나요?
 
-정상적으로 동작합니다. Deprecated 경고만 표시되며, 기능상 문제는 없습니다.
+정상적으로 동작합니다. Deprecated 경고만 표시되며, 기능상 문제는 없습니다. delegate 메서드도 새 이름으로 구현되어 있지 않으면 기존 이름의 메서드가 그대로 호출됩니다.
 
 ```swift
 // 경고는 뜨지만 정상 작동
@@ -215,6 +220,8 @@ let newAd = MobWithInterstitialAd()
 클래스 및 프로토콜 이름의 철자 오류를 수정하기 위해서입니다.
 
 - `Interstitail` → `Interstitial` (올바른 영문 철자)
+- `Intersitial` → `Interstitial` (delegate 프로토콜·메서드)
+- `Opend` → `Opened`
 - `webVeiw` → `webView` (올바른 철자)
 
 ## 변경 이력
@@ -223,6 +230,7 @@ let newAd = MobWithInterstitialAd()
 
 - `MobWithInterstitialAd` 클래스 추가 (기존 `MobWithInterstitailAd` deprecated)
 - `MobWithInterstitialAdDelegate` 프로토콜 추가 (기존 `MobWithIntersitialAdDelegate` deprecated)
+- `MobWithInterstitialAdDelegate`의 delegate 메서드 이름을 `mobWithInterstitialAd…`로 수정 (기존 `mobWithIntersitialAd…` deprecated)
 - `MMHybridBannerBridge.init(webView:)` 추가 (기존 `init(webVeiw:)` deprecated)
 
 ## 권장 마이그레이션 일정

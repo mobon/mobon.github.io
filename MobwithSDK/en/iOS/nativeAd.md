@@ -159,25 +159,6 @@ Some external SDKs being mediated also require `rootViewController` to be set fo
 
 !> For such ads, even if an ad is actually received, it is treated as not received if `rootViewController` is not set.
 
-### Enabling Reward Ads
-
-?> Supported in SDK 1.3.32 or later.
-
-When enabling the reward feature in an ad, you must configure the following values.<br>
-Use the values assigned by the media platform for `mediaId` and `serviceId`. If values have already been provided, use them as received.
-
-| Field | Description |
-|---|---|
-| `mediaId` | A unique identifier for the media platform or service. |
-| `serviceId` | An identifier for the ad placement or service location within the media platform. It is a child value of `mediaId` and distinguishes multiple placements or locations within the same platform. |
-| `userKey` | A value used to identify the user, such as a user ID. Set this to a unique value managed by the media platform. |
-
-```swift
-nativeAdView.mediaId = "{Media ID}"
-nativeAdView.serviceId = "{Service ID}"
-nativeAdView.userKey = "{User Key}"
-```
-
 ## MobWithNativeAdLoader
 
 MobWithNativeAdLoader is useful when displaying MMNativeAdView ads in list-type views such as UITableView.
@@ -309,4 +290,33 @@ extension ViewController: MobWithNativeAdLoaderDelegate {
         // Ad reception failed
     }
 }
+```
+
+## Enabling Reward Ads
+
+?> Supported in SDK 1.3.32 or later.
+
+When enabling the reward feature in an ad, you must configure the following values.<br>
+Use the values assigned by the media platform for `mediaId` and `serviceId`. If values have already been provided, use them as received.
+
+| Field | Description |
+|---|---|
+| `mediaId` | A unique identifier for the media platform or service. |
+| `serviceId` | An identifier for the ad placement or service location within the media platform. It is a child value of `mediaId` and distinguishes multiple placements or locations within the same platform. |
+| `userKey` | A value used to identify the user, such as a user ID. Set this to a unique value managed by the media platform. |
+
+```swift
+nativeAdView.mediaId = "{Media ID}"
+nativeAdView.serviceId = "{Service ID}"
+nativeAdView.userKey = "{User Key}"
+```
+
+### Customizing the Reward Affordance
+
+?> Supported in SDK 1.3.34 or later.
+
+You can change the style of the Affordance displayed on reward ads. For setup and parameters, see [Customizing the Reward Affordance in Banner AD](/iOS/banner?id=customizing-the-reward-affordance).
+
+```swift
+nativeAdView.affordanceConfig = affordanceConfig
 ```

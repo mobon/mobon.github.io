@@ -36,41 +36,41 @@ if interstitialAd.isLoaded() {
 MobWithInterstitialAd의 각 이벤트를 전달받을 수 있는 delegate입니다.<br>
 모든 콜백의 `interstitialAd` 파라미터는 해당 이벤트가 발생한 객체입니다.
 
-?> 프로토콜 이름은 변경되었지만, 콜백 메서드 이름(`mobWithIntersitialAd...`)은 기존과 동일하게 유지됩니다.
+!> **Deprecated** : `mobWithIntersitialAd…` 콜백 메서드는 SDK 1.3.34부터 deprecated 되었습니다. 대신 `mobWithInterstitialAd…` 메서드를 사용해 주세요. 자세한 내용은 [Migration Guide](/iOS/migration-guide.md)를 참고 바랍니다.
 
 | 콜백 | 호출 시점 |
 |---|---|
-| `mobWithIntersitialAdDidReceived(_:)` | 광고를 수신한 경우 |
-| `mobWithIntersitialAdDidFailToReceive(_:)` | 광고를 수신하지 못한 경우 |
-| `mobWithIntersitialAdClicked(_:)` | 광고를 클릭한 경우 |
-| `mobWithIntersitialAdDidOpend(_:)` | 광고가 화면에 표시된 경우 |
-| `mobWithIntersitialAdDidOpenFailed(_:)` | 광고를 화면에 표시하는 데 실패한 경우 |
-| `mobWithIntersitialAdDidClosed(_:)` | 표시된 광고를 닫은 경우 |
+| `mobWithInterstitialAdDidReceived(_:)` | 광고를 수신한 경우 |
+| `mobWithInterstitialAdDidFailToReceive(_:)` | 광고를 수신하지 못한 경우 |
+| `mobWithInterstitialAdClicked(_:)` | 광고를 클릭한 경우 |
+| `mobWithInterstitialAdDidOpened(_:)` | 광고가 화면에 표시된 경우 |
+| `mobWithInterstitialAdDidOpenFailed(_:)` | 광고를 화면에 표시하는 데 실패한 경우 |
+| `mobWithInterstitialAdDidClosed(_:)` | 표시된 광고를 닫은 경우 |
 
 ```swift
 extension ViewController: MobWithInterstitialAdDelegate {
 
-    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 수신 성공
     }
 
-    func mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 수신 실패
     }
 
-    func mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdClicked(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 클릭
     }
 
-    func mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidOpened(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 표시
     }
 
-    func mobWithIntersitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 표시 실패
     }
 
-    func mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 닫기
     }
 }

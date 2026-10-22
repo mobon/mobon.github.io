@@ -20,6 +20,14 @@ The AppLovin MAX Adapter serves ads through the MobWith SDK, so the basic setup 
 Add the dependencies below for each platform.<br>
 On Android, add the AppLovin MAX Adapter, the AppLovin MAX SDK, and the MobWith SDK together. On iOS, add only the AppLovin MAX Adapter. (On iOS, the MobWith SDK is installed in Step 1.)
 
+| Platform | Adapter Version | Minimum MobWith SDK Version |
+|---|---|---|
+| Android | 1.1.1 | 1.0.111 |
+| iOS | 1.1.0 | 1.3.34 |
+
+!> Starting with AppLovin MAX Adapter Android 1.1.1 / iOS 1.1.0, **the minimum required MobWith SDK version has been raised.**<br>
+If you are using an older version of the MobWith SDK, update the MobWith SDK to the version above or later first, and then update the Adapter.
+
 <!-- tabs:start -->
 
 #### **Android**
@@ -28,15 +36,15 @@ Add the following to the `dependencies` block of your app module's `build.gradle
 
 ```kotlin
 // AppLovin MAX Mediation Adapter
-implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.0.0-alpha")
+implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.1.1")
 
 // AppLovin MAX SDK
 implementation("com.applovin:applovin-sdk:+@aar")
 
-// MobWith SDK (version 1.0.80 is required for proper ad serving)
+// MobWith SDK (minimum 1.0.111)
 implementation("com.google.android.gms:play-services-ads:23.0.0")
 implementation("com.google.android.gms:play-services-ads-identifier:17.1.0")
-implementation("io.github.mobon:mobwithSDK:1.0.80")
+implementation("io.github.mobon:mobwithSDK:1.0.111")
 implementation("com.github.Dimezis:BlurView:version-3.2.0")
 ```
 

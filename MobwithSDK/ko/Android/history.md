@@ -2,7 +2,12 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.110 <span class="release-date">2026-10-16</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.111 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- MobwithBannerView, MobwithNativeAdView에 리워드 Affordance 커스텀 기능 추가 (`AffordanceStyle`)
+- MobwithNativeAdView 영상 광고 송출 기능 추가
+
+### 1.0.110 <span class="release-date">2026-10-16</span> <!-- {docsify-ignore} -->
 
 - 네이티브 광고 리소스 해제 함수 destroy() 추가
 

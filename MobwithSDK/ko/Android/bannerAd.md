@@ -67,6 +67,7 @@ banner.loadAd();
 | `setUserKey(String userKey)` | 발급받은 UserKey 설정 |
 | `setServiceId(String serviceId)` | 발급받은 ServiceId 설정 |
 | `setMediaId(String mediaId)` | 발급받은 MediaId 설정 |
+| `setAffordanceStyle(AffordanceStyle style)` | 리워드 Affordance 스타일 설정 (SDK 1.0.111 이상) |
 | `setInterval(Int second)` | 광고 새로고침 (파라미터는 초 단위) |
 | `restart()` | 광고 새로고침 재시작 |
 | `stop()` | 광고 새로고침 중단 |
@@ -223,29 +224,40 @@ banner.setServiceId("발급받은 ServiceId");
 banner.setMediaId("발급받은 MediaId");
 ```
 
-[//]: # (#### 리워드 배너 속성 &#40;선택사항&#41;)
+### 리워드 Affordance 커스텀
 
-[//]: # (리워드 배너의 크기, 글자 색상, 배경색상, 위치, 체크 이미지 등 속성을 설정할 수 있습니다.)
+?> SDK 1.0.111 이상에서 지원합니다.
 
-[//]: # ()
-[//]: # (| Method       | Description                                |)
+리워드 배너에 표시되는 Affordance(리워드 지급 여부를 표시하는 뱃지)의 위치, 크기, 텍스트, 배경 색상, 지급 아이콘을 변경할 수 있습니다.<br>
+`AffordanceStyle.builder()`로 스타일을 만든 뒤 `setAffordanceStyle()`로 설정합니다.
 
-[//]: # (|:-------------|:-------------------------------------------|)
+!> Affordance는 위의 UserKey, ServiceId, MediaId를 설정하고 **관리자 페이지에서 해당 기능을 활성화**한 경우에만 표시됩니다.
 
-[//]: # (| position&#40;AffordanceView.Position position&#41;   | 포인트 뱃지의 위치 설정                    |)
+```java
+banner.setAffordanceStyle(AffordanceStyle.builder()
+        .position(AffordanceView.Position.BOTTOM_LEFT)
+        .sizeDp(36f)
+        .textSizeDp(12f)
+        .textColor(Color.BLACK)
+        .backgroundColor(Color.BLUE)
+        .marginDp(8)
+        .build());
+```
 
-[//]: # (| sizeDp&#40;float sizeDp&#41;     | 포인트 뱃지의 사이즈 설정                  |)
+| 메서드 | 설명 |
+|---|---|
+| `position(AffordanceView.Position position)` | 표시 위치 설정. `TOP_LEFT` / `TOP_RIGHT` / `BOTTOM_LEFT` / `BOTTOM_RIGHT` |
+| `sizeDp(float sizeDp)` | Affordance 크기 설정 (dp) |
+| `textSizeDp(float textSizeDp)` | 텍스트 크기 설정 (dp) |
+| `textColor(int color)` | 텍스트 색상 설정 |
+| `backgroundColor(int color)` | 배경 색상 설정 |
+| `unrewardedBackgroundColor(int color)` | 리워드 지급 전 배경 색상 설정 |
+| `rewardedBackgroundColor(int color)` | 리워드 지급 후 배경 색상 설정 |
+| `checkedIcon(Drawable drawable)` | 리워드 지급 아이콘 변경 |
+| `checkedIconResId(int resId)` | 리워드 지급 아이콘 변경 (리소스 ID) |
+| `marginDp(int marginDp)` | Affordance와 광고 사이 간격 설정 (dp) |
 
-[//]: # (| textSizeDp&#40;float textSizeDp&#41; | 포인트 텍스트 사이즈 설정                  |)
+`unrewardedBackgroundColor()`와 `rewardedBackgroundColor()`를 모두 설정하면 각각의 색상이 적용되고, 하나만 설정하면 설정한 색상이 지급 전/후 모두에 적용됩니다.<br>
+메서드를 호출하지 않은 항목은 SDK 기본값이 적용됩니다.
 
-[//]: # (| textColor&#40;int color&#41; | 포인트 텍스트 색상 설정                    |)
-
-[//]: # (| backgroundColor&#40;int color&#41; | 포인트 뱃지의 배경 색상 설정               |)
-
-[//]: # (| backgroundColor&#40;int unrewardedColor, int rewardedColor&#41; | 포인트 뱃지의 배경 색상 설정&#40;미지급, 지급&#41; |)
-
-[//]: # (| checkedIcon&#40;Drawable drawable&#41; | 포인트 지급 아이콘 변경 &#40;선택사항&#41;         |)
-
-[//]: # (| checkedIconResource&#40;int resId&#41; | 포인트 지급 아이콘 변경 &#40;선택사항&#41;         |)
-
-[//]: # (| marginDp&#40;int marginDp&#41; | 뱃지와 광고 간격 설정                      |)
+?> 변경한 설정은 광고를 다시 로드(`loadAd()`)해야 반영됩니다.

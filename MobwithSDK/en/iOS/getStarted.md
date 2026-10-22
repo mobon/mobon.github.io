@@ -16,14 +16,18 @@ For Objective-C projects, please refer to the additional settings in [Project Co
 
 | Installation Method | Latest Version | How to Install |
 |---|---|---|
-| SPM | 1.3.33 | [Install Using SPM](/iOS/installation_base?id=install-using-swift-package-manager-spm) |
-| CocoaPods | 1.3.33 | [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods) |
+| SPM | 1.3.34 | [Install Using SPM](/iOS/installation_base?id=install-using-swift-package-manager-spm) |
+| CocoaPods | 1.3.34 | [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods) |
 
 For the change history of each version, please refer to [History](/iOS/history.md).
 
 !> Some important bugs have been fixed in versions 1.3.0 and above, so please set the **minimum version to 1.3.2 or higher**.
 
 ?> Starting from version 1.3.0, the integration with external SDKs required for mediation has been separated into dedicated Adapter SDKs. For details, please refer to [Add Adapter SDKs for Mediation](/iOS/installation_base?id=step-2add-adapter-sdks-for-mediation).
+
+## Migration Notice
+
+Some API names were changed in SDK 1.3.34. Existing code continues to work. For the changes and how to update your code, see the [Migration Guide](/iOS/migration-guide.md).
 
 ## Placement Number(Unit ID) / App Key
 

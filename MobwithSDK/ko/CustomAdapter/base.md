@@ -39,7 +39,8 @@ Custom Adapter SDK는 앱에서 MobWith SDK를 직접 호출하지 않고, 사�
     <div class="doc-list-links">
       <a class="doc-list-main" href="#/CustomAdapter/Applovin/install">SDK Installation</a>
       <a href="#/CustomAdapter/Applovin/loadAd">Ad Configuration</a>
-      <a href="#/CustomAdapter/Applovin/history">History</a>
+      <a href="#/CustomAdapter/Applovin/history_android">History (Android)</a>
+      <a href="#/CustomAdapter/Applovin/history_ios">History (iOS)</a>
     </div>
   </div>
 </div>

@@ -103,6 +103,41 @@ mobWithAdView.serviceId = "{Service ID}"
 mobWithAdView.userKey = "{User Key}"
 ```
 
+### Customizing the Reward Affordance
+
+?> Supported in SDK 1.3.34 or later.
+
+You can change the size, position, colors, and other styles of the Affordance (the badge that shows whether the reward has been paid) displayed on reward ads.<br>
+Create an `MWAffordanceConfiguration` and set it to `affordanceConfig`.
+
+!> The Affordance is displayed only when `mediaId`, `serviceId`, and `userKey` above are set and **the feature is enabled on the admin page**.
+
+```swift
+let affordanceConfig = MWAffordanceConfiguration(
+    size: 35,
+    position: .bottomLeft,
+    backgroundColor: .systemGreen,
+    textColor: .white,
+    rewardedIcon: UIImage(named: "{Reward icon}")
+)
+
+mobWithAdView.affordanceConfig = affordanceConfig
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `size` | `CGFloat` | Size of the Affordance (pt). **(Required)** |
+| `position` | `MWAffordancePosition?` | Display position. `.topLeft` / `.topRight` / `.bottomLeft` / `.bottomRight` |
+| `font` | `UIFont?` | Text font. |
+| `backgroundColor` | `UIColor?` | Background color. |
+| `textColor` | `UIColor?` | Text color. |
+| `rewardedIcon` | `UIImage?` | Reward-paid icon. |
+| `padding` | `CGFloat?` | Padding around the Affordance. |
+
+If you pass `nil` for any parameter other than `size`, the default value is used.
+
+?> Changes are applied immediately to the ad currently being displayed.
+
 ## MobWithADViewDelegate
 
 The callback events of MobWithAdView are delivered via MobWithADViewDelegate.

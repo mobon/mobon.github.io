@@ -2,7 +2,12 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.110 <span class="release-date">2026-10-16</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.111 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Added reward Affordance customization to MobwithBannerView and MobwithNativeAdView (`AffordanceStyle`).
+- Added video ad serving to MobwithNativeAdView.
+
+### 1.0.110 <span class="release-date">2026-10-16</span> <!-- {docsify-ignore} -->
 
 - Added a `destroy()` function to release native ad resources.
 

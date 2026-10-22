@@ -20,6 +20,14 @@ AppLovin MAX Adapter는 MobWith SDK를 통해 광고를 송출하므로, MobWith
 플랫폼별로 아래 의존성을 추가합니다.<br>
 Android는 AppLovin MAX Adapter, AppLovin MAX SDK, MobWith SDK를 함께 추가하고, iOS는 AppLovin MAX Adapter만 추가합니다. (iOS의 MobWith SDK는 1단계에서 설치합니다.)
 
+| 플랫폼 | Adapter 버전 | 최소 MobWith SDK 버전 |
+|---|---|---|
+| Android | 1.1.1 | 1.0.111 |
+| iOS | 1.1.0 | 1.3.34 |
+
+!> AppLovin MAX Adapter Android 1.1.1 / iOS 1.1.0부터 **필요한 MobWith SDK 최소 버전이 올라갔습니다.**<br>
+이전 버전의 MobWith SDK를 사용하고 있다면 MobWith SDK를 위 버전 이상으로 먼저 업데이트한 뒤 Adapter를 업데이트해 주세요.
+
 <!-- tabs:start -->
 
 #### **Android**
@@ -28,15 +36,15 @@ app 모듈의 `build.gradle(.kts)` 파일 `dependencies` 블록에 추가합니�
 
 ```kotlin
 // AppLovin MAX Mediation Adapter
-implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.0.0-alpha")
+implementation("io.github.mobon:MobwithApplovinMediationAdapter:1.1.1")
 
 // AppLovin MAX SDK
 implementation("com.applovin:applovin-sdk:+@aar")
 
-// MobWith SDK (원활한 광고 송출을 위해 반드시 1.0.80 버전을 사용해야 합니다)
+// MobWith SDK (최소 1.0.111)
 implementation("com.google.android.gms:play-services-ads:23.0.0")
 implementation("com.google.android.gms:play-services-ads-identifier:17.1.0")
-implementation("io.github.mobon:mobwithSDK:1.0.80")
+implementation("io.github.mobon:mobwithSDK:1.0.111")
 implementation("com.github.Dimezis:BlurView:version-3.2.0")
 ```
 

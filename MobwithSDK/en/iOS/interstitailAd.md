@@ -36,41 +36,41 @@ if interstitialAd.isLoaded() {
 This is the delegate that receives each event of MobWithInterstitialAd.<br>
 The `interstitialAd` parameter of every callback is the object on which the event occurred.
 
-?> The protocol name has changed, but the callback method names (`mobWithIntersitialAd...`) remain the same.
+!> **Deprecated** : The `mobWithIntersitialAd…` callback methods are deprecated as of SDK 1.3.34. Please use the `mobWithInterstitialAd…` methods instead. For details, see the [Migration Guide](/iOS/migration-guide.md).
 
 | Callback | When it is called |
 |---|---|
-| `mobWithIntersitialAdDidReceived(_:)` | When an ad is received |
-| `mobWithIntersitialAdDidFailToReceive(_:)` | When an ad could not be received |
-| `mobWithIntersitialAdClicked(_:)` | When the ad is clicked |
-| `mobWithIntersitialAdDidOpend(_:)` | When the ad is displayed on screen |
-| `mobWithIntersitialAdDidOpenFailed(_:)` | When the ad fails to be displayed on screen |
-| `mobWithIntersitialAdDidClosed(_:)` | When the displayed ad is closed |
+| `mobWithInterstitialAdDidReceived(_:)` | When an ad is received |
+| `mobWithInterstitialAdDidFailToReceive(_:)` | When an ad could not be received |
+| `mobWithInterstitialAdClicked(_:)` | When the ad is clicked |
+| `mobWithInterstitialAdDidOpened(_:)` | When the ad is displayed on screen |
+| `mobWithInterstitialAdDidOpenFailed(_:)` | When the ad fails to be displayed on screen |
+| `mobWithInterstitialAdDidClosed(_:)` | When the displayed ad is closed |
 
 ```swift
 extension ViewController: MobWithInterstitialAdDelegate {
 
-    func mobWithIntersitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidReceived(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad received
     }
 
-    func mobWithIntersitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidFailToReceive(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad reception failed
     }
 
-    func mobWithIntersitialAdClicked(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdClicked(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad clicked
     }
 
-    func mobWithIntersitialAdDidOpend(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidOpened(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad displayed
     }
 
-    func mobWithIntersitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidOpenFailed(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad display failed
     }
 
-    func mobWithIntersitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
+    func mobWithInterstitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad closed
     }
 }

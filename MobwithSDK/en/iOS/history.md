@@ -2,7 +2,13 @@
 
 Version history of the iOS SDK.
 
-### 1.3.33 <span class="release-date">2026-10-08</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.34 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Add reward Affordance customization to MobWithAdView and MMNativeAdView (`MWAffordanceConfiguration`)
+- Add video ad serving to MMNativeAdView
+- Fix typos in some API names (old names deprecated, see the [Migration Guide](/iOS/migration-guide.md))
+
+### 1.3.33 <span class="release-date">2026-10-08</span> <!-- {docsify-ignore} -->
 
 - Add Japanese language support
 

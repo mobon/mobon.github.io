@@ -16,14 +16,18 @@ Objective-C 프로젝트의 경우 [Project Configuration](/iOS/installation_oth
 
 | 설치 방식 | 최신 버전 | 설치 방법 |
 |---|---|---|
-| SPM | 1.3.33 | [SPM을 이용하여 설치](/iOS/installation_base?id=spm을-이용하여-설치) |
-| CocoaPods | 1.3.33 | [CocoaPods를 이용하여 설치](/iOS/installation_base?id=cocoapods를-이용하여-설치) |
+| SPM | 1.3.34 | [SPM을 이용하여 설치](/iOS/installation_base?id=spm을-이용하여-설치) |
+| CocoaPods | 1.3.34 | [CocoaPods를 이용하여 설치](/iOS/installation_base?id=cocoapods를-이용하여-설치) |
 
 버전별 변경 내역은 [History](/iOS/history.md)를 참고 바랍니다.
 
 !> 1.3.0 이상 버전에서 일부 중요한 오류가 수정되었으므로, **최소 버전을 1.3.2 이상**으로 설정하시기 바랍니다.
 
 ?> 1.3.0 버전부터 미디에이션에 필요한 외부 SDK 연동 부분이 별도 Adapter SDK로 분리되었습니다. 자세한 내용은 [미디에이션을 위한 Adapter SDK 추가](/iOS/installation_base?id=step-2미디에이션을-위한-adapter-sdk-추가)를 참고 바랍니다.
+
+## 마이그레이션 안내
+
+SDK 1.3.34에서 일부 API 이름이 변경되었습니다. 기존 코드는 그대로 동작하며, 변경 내용과 수정 방법은 [Migration Guide](/iOS/migration-guide.md)를 참고 바랍니다.
 
 ## 지면번호 / App Key
 

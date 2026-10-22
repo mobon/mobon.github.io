@@ -67,6 +67,7 @@ banner.loadAd();
 | `setUserKey(String userKey)` | Set the issued UserKey |
 | `setServiceId(String serviceId)` | Set the issued ServiceId |
 | `setMediaId(String mediaId)` | Set the issued MediaId |
+| `setAffordanceStyle(AffordanceStyle style)` | Set the reward Affordance style (SDK 1.0.111 or later) |
 | `setInterval(Int second)` | Ad refresh (parameter in seconds) |
 | `restart()` | Restart ad refresh |
 | `stop()` | Stop ad refresh |
@@ -222,3 +223,41 @@ banner.setUserKey("Set the UserKey");
 banner.setServiceId("Set the ServiceId");
 banner.setMediaId("Set the MediaId");
 ```
+
+### Customizing the Reward Affordance
+
+?> Supported in SDK 1.0.111 or later.
+
+You can change the position, size, text, background color, and reward-paid icon of the Affordance (the badge that shows whether the reward has been paid) displayed on reward banners.<br>
+Build a style with `AffordanceStyle.builder()` and set it with `setAffordanceStyle()`.
+
+!> The Affordance is displayed only when the UserKey, ServiceId, and MediaId above are set and **the feature is enabled on the admin page**.
+
+```java
+banner.setAffordanceStyle(AffordanceStyle.builder()
+        .position(AffordanceView.Position.BOTTOM_LEFT)
+        .sizeDp(36f)
+        .textSizeDp(12f)
+        .textColor(Color.BLACK)
+        .backgroundColor(Color.BLUE)
+        .marginDp(8)
+        .build());
+```
+
+| Method | Description |
+|---|---|
+| `position(AffordanceView.Position position)` | Sets the display position. `TOP_LEFT` / `TOP_RIGHT` / `BOTTOM_LEFT` / `BOTTOM_RIGHT` |
+| `sizeDp(float sizeDp)` | Sets the Affordance size (dp) |
+| `textSizeDp(float textSizeDp)` | Sets the text size (dp) |
+| `textColor(int color)` | Sets the text color |
+| `backgroundColor(int color)` | Sets the background color |
+| `unrewardedBackgroundColor(int color)` | Sets the background color before the reward is paid |
+| `rewardedBackgroundColor(int color)` | Sets the background color after the reward is paid |
+| `checkedIcon(Drawable drawable)` | Changes the reward-paid icon |
+| `checkedIconResId(int resId)` | Changes the reward-paid icon (resource ID) |
+| `marginDp(int marginDp)` | Sets the spacing between the Affordance and the ad (dp) |
+
+If you set both `unrewardedBackgroundColor()` and `rewardedBackgroundColor()`, each color is applied separately. If you set only one, that color is applied both before and after the reward is paid.<br>
+For items whose methods are not called, the SDK default values are applied.
+
+?> Changes take effect after the ad is loaded again (`loadAd()`).

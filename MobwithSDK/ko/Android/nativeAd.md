@@ -160,6 +160,7 @@ nativeAdView.loadAd();
 | `setUserKey(String userKey)` | 발급받은 UserKey 설정 |
 | `setServiceId(String serviceId)` | 발급받은 ServiceId 설정 |
 | `setMediaId(String mediaId)` | 발급받은 MediaId 설정 |
+| `setAffordanceStyle(AffordanceStyle style)` | 리워드 Affordance 스타일 설정 (SDK 1.0.111 이상) |
 | `setCampaignCodes(List<String> campaignCodes)` | 타겟팅 캠페인 코드 설정 |
 | `performAdClicked()` | 광고 클릭 이벤트 발생 |
 
@@ -278,29 +279,21 @@ nativeAdView.setServiceId("발급받은 ServiceId");
 nativeAdView.setMediaId("발급받은 MediaId");
 ```
 
-[//]: # (#### 리워드 배너 속성 &#40;선택사항&#41;)
+### 리워드 Affordance 커스텀
 
-[//]: # (리워드 배너의 크기, 글자 색상, 배경색상, 위치, 체크 이미지 등 속성을 설정할 수 있습니다.)
+?> SDK 1.0.111 이상에서 지원합니다.
 
-[//]: # ()
-[//]: # (| Method       | Description                                |)
+리워드 배너에 표시되는 Affordance의 스타일을 변경할 수 있습니다. 표시 조건과 메서드는 [Banner AD의 리워드 Affordance 커스텀](/Android/bannerAd?id=리워드-affordance-커스텀)을 참고해 주세요.
 
-[//]: # (|:-------------|:-------------------------------------------|)
+```java
+nativeAdView.setAffordanceStyle(AffordanceStyle.builder()
+        .position(AffordanceView.Position.BOTTOM_LEFT)
+        .sizeDp(36f)
+        .textSizeDp(12f)
+        .textColor(Color.BLACK)
+        .backgroundColor(Color.BLUE)
+        .marginDp(8)
+        .build());
+```
 
-[//]: # (| position&#40;AffordanceView.Position position&#41;   | 포인트 뱃지의 위치 설정                    |)
-
-[//]: # (| sizeDp&#40;float sizeDp&#41;     | 포인트 뱃지의 사이즈 설정                  |)
-
-[//]: # (| textSizeDp&#40;float textSizeDp&#41; | 포인트 텍스트 사이즈 설정                  |)
-
-[//]: # (| textColor&#40;int color&#41; | 포인트 텍스트 색상 설정                    |)
-
-[//]: # (| backgroundColor&#40;int color&#41; | 포인트 뱃지의 배경 색상 설정               |)
-
-[//]: # (| backgroundColor&#40;int unrewardedColor, int rewardedColor&#41; | 포인트 뱃지의 배경 색상 설정&#40;미지급, 지급&#41; |)
-
-[//]: # (| checkedIcon&#40;Drawable drawable&#41; | 포인트 지급 아이콘 변경 &#40;선택사항&#41;         |)
-
-[//]: # (| checkedIconResource&#40;int resId&#41; | 포인트 지급 아이콘 변경 &#40;선택사항&#41;         |)
-
-[//]: # (| marginDp&#40;int marginDp&#41; | 뱃지와 광고 간격 설정                      |)
+?> 변경한 설정은 광고를 다시 로드(`loadAd()`)해야 반영됩니다.

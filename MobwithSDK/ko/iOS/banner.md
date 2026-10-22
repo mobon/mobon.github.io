@@ -103,6 +103,41 @@ mobWithAdView.serviceId = "{Service ID}"
 mobWithAdView.userKey = "{User Key}"
 ```
 
+### 리워드 Affordance 커스텀
+
+?> SDK 1.3.34 이상에서 지원합니다.
+
+리워드 광고에 표시되는 Affordance(리워드 지급 여부를 표시하는 뱃지)의 크기, 위치, 색상 등을 변경할 수 있습니다.<br>
+`MWAffordanceConfiguration`을 생성하여 `affordanceConfig`에 설정합니다.
+
+!> Affordance는 위의 `mediaId`, `serviceId`, `userKey`를 설정하고 **관리자 페이지에서 해당 기능을 활성화**한 경우에만 표시됩니다.
+
+```swift
+let affordanceConfig = MWAffordanceConfiguration(
+    size: 35,
+    position: .bottomLeft,
+    backgroundColor: .systemGreen,
+    textColor: .white,
+    rewardedIcon: UIImage(named: "{리워드 지급 아이콘}")
+)
+
+mobWithAdView.affordanceConfig = affordanceConfig
+```
+
+| 파라미터 | 타입 | 설명 |
+|---|---|---|
+| `size` | `CGFloat` | Affordance 크기(pt)입니다. **(필수)** |
+| `position` | `MWAffordancePosition?` | 표시 위치입니다. `.topLeft` / `.topRight` / `.bottomLeft` / `.bottomRight` |
+| `font` | `UIFont?` | 텍스트 폰트입니다. |
+| `backgroundColor` | `UIColor?` | 배경 색상입니다. |
+| `textColor` | `UIColor?` | 텍스트 색상입니다. |
+| `rewardedIcon` | `UIImage?` | 리워드 지급 아이콘입니다. |
+| `padding` | `CGFloat?` | Affordance 주위 여백입니다. |
+
+`size`를 제외한 항목을 `nil`로 전달하면 기본값이 사용됩니다.
+
+?> 변경한 설정은 현재 표시 중인 광고에 바로 반영됩니다.
+
 ## MobWithADViewDelegate
 
 MobWithAdView의 콜백 이벤트는 MobWithADViewDelegate를 통해 전달됩니다.
