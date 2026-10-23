@@ -63,7 +63,7 @@ Add the mediation Adapters you use to your `Podfile`. You must specify the same 
 
 ```ruby
 # AdFit Adapter
-pod 'MobWithAdFitAdapter', '3.21.24.1.3.2'
+pod 'MobWithAdFitAdapter', '3.21.24.1.3.34'
 
 # AdMob Adapter
 pod 'MobWithAdMobAdapter', '12.14.0.1.3.21'

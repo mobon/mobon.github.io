@@ -2,7 +2,11 @@
 
 Version history of the iOS SDK.
 
-### 1.3.34 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.34 (Additional) <span class="release-date">2026-10-23</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Updated MobWithAdFitAdapter to 3.21.24.1.3.34 (AdFit SDK 3.21.24 / MobWith SDK 1.3.34)
+
+### 1.3.34 <span class="release-date">2026-10-22</span> <!-- {docsify-ignore} -->
 
 - Add reward Affordance customization to MobWithAdView and MMNativeAdView (`MWAffordanceConfiguration`)
 - Add video ad serving to MMNativeAdView

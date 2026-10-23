@@ -2,7 +2,11 @@
 
 iOS SDK의 버전별 변경 이력입니다.
 
-### 1.3.34 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.34 (추가) <span class="release-date">2026-10-23</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- MobWithAdFitAdapter 3.21.24.1.3.34 업데이트 (AdFit SDK 3.21.24 / MobWith SDK 1.3.34)
+
+### 1.3.34 <span class="release-date">2026-10-22</span> <!-- {docsify-ignore} -->
 
 - MobWithAdView, MMNativeAdView에 리워드 Affordance 커스텀 기능 추가 (`MWAffordanceConfiguration`)
 - MMNativeAdView 영상 광고 송출 기능 추가
