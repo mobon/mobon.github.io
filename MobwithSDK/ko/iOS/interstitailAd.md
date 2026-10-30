@@ -46,6 +46,7 @@ MobWithInterstitialAd의 각 이벤트를 전달받을 수 있는 delegate입니
 | `mobWithInterstitialAdDidOpened(_:)` | 광고가 화면에 표시된 경우 |
 | `mobWithInterstitialAdDidOpenFailed(_:)` | 광고를 화면에 표시하는 데 실패한 경우 |
 | `mobWithInterstitialAdDidClosed(_:)` | 표시된 광고를 닫은 경우 |
+| `mobwithAdViewOpenInAppLanding(ad:params:)` | 인앱 랜딩 광고를 클릭한 경우 (SDK 1.3.35 이상). [인앱 랜딩](/iOS/banner?id=인앱-랜딩) 참고 |
 
 ```swift
 extension ViewController: MobWithInterstitialAdDelegate {
@@ -72,6 +73,10 @@ extension ViewController: MobWithInterstitialAdDelegate {
 
     func mobWithInterstitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
         // 광고 닫기
+    }
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // 인앱 랜딩 광고 클릭 (SDK 1.3.35 이상)
     }
 }
 ```

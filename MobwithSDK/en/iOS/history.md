@@ -2,7 +2,13 @@
 
 Version history of the iOS SDK.
 
-### 1.3.34 (Additional) <span class="release-date">2026-10-23</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.35 <span class="release-date">2026-10-30</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Added in-app landing on ad click (`mobwithAdViewOpenInAppLanding(ad:params:)`, see [In-App Landing](/iOS/banner?id=in-app-landing))
+- Added support for interstitial-type / banner-type SplashAd
+- Updated MobWithAdPopcornAdapter to 3.3.2.1.3.34 (AdPopcorn SDK 3.3.2 / MobWith SDK 1.3.34)
+
+### 1.3.34 (Additional) <span class="release-date">2026-10-23</span> <!-- {docsify-ignore} -->
 
 - Updated MobWithAdFitAdapter to 3.21.24.1.3.34 (AdFit SDK 3.21.24 / MobWith SDK 1.3.34)
 

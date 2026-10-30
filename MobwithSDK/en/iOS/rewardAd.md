@@ -43,6 +43,7 @@ The `rewardAd` parameter of every callback is the object on which the event occu
 | `mobWithRewardAdDidOpenFailed(_:)` | When the ad fails to be displayed on screen |
 | `mobWithRewardAdClosed(_:)` | When the displayed ad is closed |
 | `mobWithRewardAdCanReward(_:)` | When the reward condition is met |
+| `mobwithAdViewOpenInAppLanding(ad:params:)` | When an in-app landing ad is clicked (SDK 1.3.35 or later). See [In-App Landing](/iOS/banner?id=in-app-landing) |
 
 ?> Grant the user's reward when you receive the `mobWithRewardAdCanReward(_:)` callback.
 
@@ -75,6 +76,10 @@ extension ViewController: MobWithRewardAdDelegate {
 
     func mobWithRewardAdCanReward(_ rewardAd: MobWithRewardAd?) {
         // Grant the reward
+    }
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // In-app landing ad clicked (SDK 1.3.35 or later)
     }
 }
 ```

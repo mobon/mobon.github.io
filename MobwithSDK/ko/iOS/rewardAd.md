@@ -43,6 +43,7 @@ MobWithRewardAd의 각 이벤트를 전달받을 수 있는 delegate입니다.<b
 | `mobWithRewardAdDidOpenFailed(_:)` | 광고를 화면에 표시하는 데 실패한 경우 |
 | `mobWithRewardAdClosed(_:)` | 표시된 광고를 닫은 경우 |
 | `mobWithRewardAdCanReward(_:)` | 리워드 제공 조건을 충족한 경우 |
+| `mobwithAdViewOpenInAppLanding(ad:params:)` | 인앱 랜딩 광고를 클릭한 경우 (SDK 1.3.35 이상). [인앱 랜딩](/iOS/banner?id=인앱-랜딩) 참고 |
 
 ?> 사용자 보상은 `mobWithRewardAdCanReward(_:)` 콜백을 받은 경우에 지급해 주세요.
 
@@ -75,6 +76,10 @@ extension ViewController: MobWithRewardAdDelegate {
 
     func mobWithRewardAdCanReward(_ rewardAd: MobWithRewardAd?) {
         // 리워드 지급
+    }
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // 인앱 랜딩 광고 클릭 (SDK 1.3.35 이상)
     }
 }
 ```

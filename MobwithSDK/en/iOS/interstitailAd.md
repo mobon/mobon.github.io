@@ -46,6 +46,7 @@ The `interstitialAd` parameter of every callback is the object on which the even
 | `mobWithInterstitialAdDidOpened(_:)` | When the ad is displayed on screen |
 | `mobWithInterstitialAdDidOpenFailed(_:)` | When the ad fails to be displayed on screen |
 | `mobWithInterstitialAdDidClosed(_:)` | When the displayed ad is closed |
+| `mobwithAdViewOpenInAppLanding(ad:params:)` | When an in-app landing ad is clicked (SDK 1.3.35 or later). See [In-App Landing](/iOS/banner?id=in-app-landing) |
 
 ```swift
 extension ViewController: MobWithInterstitialAdDelegate {
@@ -72,6 +73,10 @@ extension ViewController: MobWithInterstitialAdDelegate {
 
     func mobWithInterstitialAdDidClosed(_ interstitialAd: MobWithInterstitialAd?) {
         // Ad closed
+    }
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // In-app landing ad clicked (SDK 1.3.35 or later)
     }
 }
 ```

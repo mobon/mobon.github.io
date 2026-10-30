@@ -2,7 +2,13 @@
 
 iOS SDK의 버전별 변경 이력입니다.
 
-### 1.3.34 (추가) <span class="release-date">2026-10-23</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.35 <span class="release-date">2026-10-30</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 광고 클릭 시 인앱 랜딩 기능 추가 (`mobwithAdViewOpenInAppLanding(ad:params:)`, [인앱 랜딩](/iOS/banner?id=인앱-랜딩) 참고)
+- SplashAd 전면형 / 배너형 광고 지원
+- MobWithAdPopcornAdapter 3.3.2.1.3.34 업데이트 (AdPopcorn SDK 3.3.2 / MobWith SDK 1.3.34)
+
+### 1.3.34 (추가) <span class="release-date">2026-10-23</span> <!-- {docsify-ignore} -->
 
 - MobWithAdFitAdapter 3.21.24.1.3.34 업데이트 (AdFit SDK 3.21.24 / MobWith SDK 1.3.34)
 

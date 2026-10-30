@@ -134,7 +134,8 @@ mobWithAdView.affordanceConfig = affordanceConfig
 | `rewardedIcon` | `UIImage?` | Reward-paid icon. |
 | `padding` | `CGFloat?` | Padding around the Affordance. |
 
-If you pass `nil` for any parameter other than `size`, the default value is used.
+If you pass `nil` for any parameter other than `size`, the default value is used.<br>
+If you set `affordanceConfig` to `nil`, the default Affordance settings are restored.
 
 ?> Changes are applied immediately to the ad currently being displayed.
 
@@ -148,6 +149,7 @@ The callback events of MobWithAdView are delivered via MobWithADViewDelegate.
 | `mobWithAdViewDidFailToReceiveAd()` | When an ad fails to be received |
 | `mobWithAdViewClickedAd()` | When the ad is clicked |
 | `mobWithAdViewClose(_ banner: MobWithAdView?)` | When the close button (`useCloseButton`) is used and the close button is pressed |
+| `mobwithAdViewOpenInAppLanding(ad:params:)` | When an in-app landing ad is clicked (SDK 1.3.35 or later). See [In-App Landing](/iOS/banner?id=in-app-landing) |
 
 ```swift
 class ViewController: UIViewController {
@@ -180,8 +182,45 @@ extension ViewController: MobWithADViewDelegate {
         // Close button pressed
         print(#function)
     }
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // In-app landing ad clicked (SDK 1.3.35 or later)
+        print(#function)
+    }
 }
 ```
+
+## In-App Landing
+
+?> Supported in SDK 1.3.35 or later.
+
+When an ad is clicked, you can display the landing screen inside your app instead of an external browser. In-app landing is available after consultation with MobWith.<br>
+When an ad configured for in-app landing is clicked, the SDK does not open the landing page and instead delivers the `mobwithAdViewOpenInAppLanding(ad:params:)` callback. Your app displays the landing screen itself using the received values.
+
+!> If you use in-app landing, you **must implement** `mobwithAdViewOpenInAppLanding(ad:params:)`. If it is not implemented, no landing screen is displayed when the ad is clicked.
+
+```swift
+extension ViewController: MobWithADViewDelegate {
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // Display the in-app landing screen using the params values
+    }
+}
+```
+
+| Parameter | Type | Description |
+|---|---|---|
+| `ad` | `AnyObject` | The ad object that triggered the callback. Use it to identify which ad the callback came from when you receive callbacks from multiple ads. See the table below for the object passed. |
+| `params` | `Dictionary<String, String>` | The query parameters of the landing URL. For the keys and values passed, refer to the agreed specifications. |
+
+The callback with the same name is available in the following delegates.
+
+| Delegate | Ad Format | Object passed as `ad` |
+|---|---|---|
+| [MobWithADViewDelegate](/iOS/banner?id=mobwithadviewdelegate) | Banner AD, Native AD | `MobWithAdView`, `MMNativeAdView` |
+| [MobWithInterstitialAdDelegate](/iOS/interstitailAd?id=mobwithinterstitialaddelegate) | Interstitial AD | `MobWithInterstitialAd` |
+| [MobWithRewardAdDelegate](/iOS/rewardAd?id=mobwithrewardaddelegate) | Reward AD | `MobWithRewardAd` |
+| [MMHybridBannerBridgeDelegate](/iOS/HybridBannerBridge?id=mmhybridbannerbridgedelegate) | HybridBannerBridge | `MMHybridBannerBridge` |
 
 ## Releasing the Ad View
 

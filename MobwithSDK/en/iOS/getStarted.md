@@ -16,8 +16,8 @@ For Objective-C projects, please refer to the additional settings in [Project Co
 
 | Installation Method | Latest Version | How to Install |
 |---|---|---|
-| SPM | 1.3.34 | [Install Using SPM](/iOS/installation_base?id=install-using-swift-package-manager-spm) |
-| CocoaPods | 1.3.34 | [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods) |
+| SPM | 1.3.35 | [Install Using SPM](/iOS/installation_base?id=install-using-swift-package-manager-spm) |
+| CocoaPods | 1.3.35 | [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods) |
 
 For the change history of each version, please refer to [History](/iOS/history.md).
 

@@ -16,8 +16,8 @@ Objective-C 프로젝트의 경우 [Project Configuration](/iOS/installation_oth
 
 | 설치 방식 | 최신 버전 | 설치 방법 |
 |---|---|---|
-| SPM | 1.3.34 | [SPM을 이용하여 설치](/iOS/installation_base?id=spm을-이용하여-설치) |
-| CocoaPods | 1.3.34 | [CocoaPods를 이용하여 설치](/iOS/installation_base?id=cocoapods를-이용하여-설치) |
+| SPM | 1.3.35 | [SPM을 이용하여 설치](/iOS/installation_base?id=spm을-이용하여-설치) |
+| CocoaPods | 1.3.35 | [CocoaPods를 이용하여 설치](/iOS/installation_base?id=cocoapods를-이용하여-설치) |
 
 버전별 변경 내역은 [History](/iOS/history.md)를 참고 바랍니다.
 

@@ -134,7 +134,8 @@ mobWithAdView.affordanceConfig = affordanceConfig
 | `rewardedIcon` | `UIImage?` | 리워드 지급 아이콘입니다. |
 | `padding` | `CGFloat?` | Affordance 주위 여백입니다. |
 
-`size`를 제외한 항목을 `nil`로 전달하면 기본값이 사용됩니다.
+`size`를 제외한 항목을 `nil`로 전달하면 기본값이 사용됩니다.<br>
+`affordanceConfig`에 `nil`을 설정하면 기본 Affordance 설정으로 돌아갑니다.
 
 ?> 변경한 설정은 현재 표시 중인 광고에 바로 반영됩니다.
 
@@ -148,6 +149,7 @@ MobWithAdView의 콜백 이벤트는 MobWithADViewDelegate를 통해 전달됩�
 | `mobWithAdViewDidFailToReceiveAd()` | 광고 수신에 실패한 경우 |
 | `mobWithAdViewClickedAd()` | 광고를 클릭한 경우 |
 | `mobWithAdViewClose(_ banner: MobWithAdView?)` | 닫기 버튼(`useCloseButton`)을 사용하고, 닫기 버튼을 누른 경우 |
+| `mobwithAdViewOpenInAppLanding(ad:params:)` | 인앱 랜딩 광고를 클릭한 경우 (SDK 1.3.35 이상). [인앱 랜딩](/iOS/banner?id=인앱-랜딩) 참고 |
 
 ```swift
 class ViewController: UIViewController {
@@ -180,8 +182,45 @@ extension ViewController: MobWithADViewDelegate {
         // 닫기 버튼을 누른 경우
         print(#function)
     }
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // 인앱 랜딩 광고 클릭 (SDK 1.3.35 이상)
+        print(#function)
+    }
 }
 ```
+
+## 인앱 랜딩
+
+?> SDK 1.3.35 이상에서 지원합니다.
+
+광고를 클릭했을 때 외부 브라우저 대신 앱 안에서 랜딩 화면을 표시할 수 있습니다. 인앱 랜딩은 모비위드와 협의한 뒤 사용할 수 있습니다.<br>
+인앱 랜딩으로 설정된 광고를 클릭하면 SDK는 랜딩 페이지를 열지 않고 `mobwithAdViewOpenInAppLanding(ad:params:)` 콜백을 전달합니다. 앱에서는 전달받은 값으로 랜딩 화면을 직접 표시합니다.
+
+!> 인앱 랜딩을 사용하는 경우 `mobwithAdViewOpenInAppLanding(ad:params:)`를 **반드시 구현**해 주세요. 구현하지 않으면 광고를 클릭해도 랜딩 화면이 표시되지 않습니다.
+
+```swift
+extension ViewController: MobWithADViewDelegate {
+
+    func mobwithAdViewOpenInAppLanding(ad: AnyObject, params: Dictionary<String, String>) {
+        // params 값을 이용하여 앱 내 랜딩 화면 표시
+    }
+}
+```
+
+| 파라미터 | 타입 | 설명 |
+|---|---|---|
+| `ad` | `AnyObject` | 콜백이 발생한 광고 객체입니다. 여러 광고에서 콜백을 받는 경우 어떤 광고에서 발생했는지 구분할 때 사용합니다. 전달되는 객체는 아래 표를 참고해 주세요. |
+| `params` | `Dictionary<String, String>` | 랜딩 URL의 쿼리 파라미터입니다. 전달되는 키와 값은 협의된 내용을 참고해 주세요. |
+
+같은 이름의 콜백을 아래 delegate에서 사용할 수 있습니다.
+
+| Delegate | 광고 유형 | `ad`로 전달되는 객체 |
+|---|---|---|
+| [MobWithADViewDelegate](/iOS/banner?id=mobwithadviewdelegate) | Banner AD, Native AD | `MobWithAdView`, `MMNativeAdView` |
+| [MobWithInterstitialAdDelegate](/iOS/interstitailAd?id=mobwithinterstitialaddelegate) | Interstitial AD | `MobWithInterstitialAd` |
+| [MobWithRewardAdDelegate](/iOS/rewardAd?id=mobwithrewardaddelegate) | Reward AD | `MobWithRewardAd` |
+| [MMHybridBannerBridgeDelegate](/iOS/HybridBannerBridge?id=mmhybridbannerbridgedelegate) | HybridBannerBridge | `MMHybridBannerBridge` |
 
 ## 광고 뷰 해제
 
