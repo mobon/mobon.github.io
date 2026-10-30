@@ -11,7 +11,9 @@ project 단위 `build.gradle`에 저장소를 추가합니다. 사용하는 SDK 
 
 ##### SDK 1.0.112 이상
 
-`buildscript`와 `allprojects`에 MobWith maven 저장소를 추가합니다. 이 저장소에서는 `io.github.mobon` 그룹만 가져오도록 `includeGroup`을 지정합니다.
+`allprojects`의 `repositories`에 jitpack과 MobWith maven 저장소를 모두 추가합니다. MobWith maven 저장소에서는 `io.github.mobon` 그룹만 가져오도록 `includeGroup`을 지정합니다.
+
+!> **jitpack과 MobWith maven 저장소는 모두 필수로 설정해야 합니다.**
 
 ```groovy
 allprojects {
@@ -32,6 +34,8 @@ allprojects {
 ##### SDK 1.0.110 이하
 
 `mavenCentral()`과 jitpack 저장소를 추가합니다.
+
+!> **jitpack 저장소는 필수로 설정해야 합니다.**
 
 ```groovy
 allprojects {
