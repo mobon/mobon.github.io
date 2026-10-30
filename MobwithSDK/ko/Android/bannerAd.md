@@ -76,6 +76,21 @@ banner.loadAd();
 | `MobwithSDK.getInstance().setFullScreenMode(bollean isUse)` | 직광고 풀스크린 사이즈 기능 사용 여부 |
 | `setAdScale(int heightDp)` | Script 광고 높이 조정 기능 |
 
+## 인앱 랜딩 콜백
+
+인앱 랜딩 광고를 클릭하면 SDK가 브라우저를 실행하지 않고 `onInAppLanding()`으로 랜딩 정보를 전달합니다. 앱에서 전달받은 정보로 직접 화면을 이동하려는 경우 `iBannerCallback`에 구현합니다. (SDK 1.0.112 이상)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // 인앱 랜딩 정보 전달 - 앱에서 직접 화면 이동 처리
+}
+...
+```
+
+?> `onInAppLanding()`은 기본 구현이 제공되므로 구현하지 않아도 컴파일 오류가 발생하지 않습니다. 인앱 랜딩 광고를 사용하는 경우에는 구현이 필요합니다.
+
 ## 광고 새로고침
 
 `setInterval()`을 사용하면 배너 광고를 일정 시간 간격으로 자동 갱신할 수 있습니다.
@@ -226,7 +241,7 @@ banner.setMediaId("발급받은 MediaId");
 
 ### 리워드 Affordance 커스텀
 
-?> SDK 1.0.111 이상에서 지원합니다.
+?> SDK 1.0.112 이상에서 지원합니다.
 
 리워드 배너에 표시되는 Affordance(리워드 지급 여부를 표시하는 뱃지)의 위치, 크기, 텍스트, 배경 색상, 지급 아이콘을 변경할 수 있습니다.<br>
 `AffordanceStyle.builder()`로 스타일을 만든 뒤 `setAffordanceStyle()`로 설정합니다.

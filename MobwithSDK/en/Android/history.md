@@ -2,7 +2,17 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.111 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.112 <span class="release-date">2026-10-30</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Added the in-app landing callback `onInAppLanding()`.
+- Added the reward feature to the point banner HybridBridgeBanner.
+- Added the SortList weight (`exlItlSeq`) parameter.
+- Added the Appier SDK version parameter.
+- Changed the Appier (Aistra) SDK dependency to optional (see the SDK Installation page).
+- Updated the splash ad UI (bottom, full-screen, video).
+- Changed the maven repository: SDK 1.0.112 or later requires the MobWith maven repository to be configured in the project-level `build.gradle` (see the SDK Installation page).
+
+### 1.0.111 <span class="release-date">2026-10-22</span> <!-- {docsify-ignore} -->
 
 - Added reward Affordance customization to MobwithBannerView and MobwithNativeAdView (`AffordanceStyle`).
 - Added video ad serving to MobwithNativeAdView.

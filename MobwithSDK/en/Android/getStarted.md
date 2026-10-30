@@ -15,7 +15,7 @@ This page describes the supported environment, latest version, and integration s
 
 | Latest Version | How to Install |
 |---|---|
-| 1.0.111 | [SDK Installation](/Android/installation.md) |
+| 1.0.112 | [SDK Installation](/Android/installation.md) |
 
 For the change history of each version, please refer to [History](/Android/history.md).
 

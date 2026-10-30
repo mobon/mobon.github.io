@@ -7,7 +7,42 @@ Gradle 설정과 권한 설정을 적용한 뒤, 협의된 미디에이션 SDK�
 
 #### <span class="step-label">STEP 1</span>저장소 추가
 
-project 단위 `build.gradle`에 `mavenCentral()`과 jitpack 저장소를 추가합니다.
+project 단위 `build.gradle`에 저장소를 추가합니다. 사용하는 SDK 버전에 따라 설정이 다릅니다.
+
+##### SDK 1.0.112 이상
+
+`buildscript`와 `allprojects`에 MobWith maven 저장소를 추가합니다. 이 저장소에서는 `io.github.mobon` 그룹만 가져오도록 `includeGroup`을 지정합니다.
+
+```groovy
+buildscript {
+    repositories {
+        maven {
+            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            content {
+                includeGroup 'io.github.mobon'
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            content {
+                includeGroup 'io.github.mobon'
+            }
+        }
+    }
+}
+```
+
+##### SDK 1.0.111 이하
+
+`mavenCentral()`과 jitpack 저장소를 추가합니다.
 
 ```groovy
 allprojects {
@@ -27,7 +62,7 @@ app 단위 `build.gradle`에 `com.google.android.gms:play-services-ads-identifie
 dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
     implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.111'
+    implementation 'io.github.mobon:mobwithSDK:1.0.112'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
@@ -55,6 +90,16 @@ android:usesCleartextTraffic="true"
 ...>
 </application>
 </manifest>
+```
+
+## Appier SDK 추가 (선택)
+
+SDK 1.0.112부터 Appier(Aistra) SDK는 MobWith SDK에 포함되어 있지 않습니다. Appier를 사용하는 경우 app 단위 `build.gradle`에 아래 의존성을 추가합니다.
+
+```groovy
+dependencies {
+    implementation 'com.appier:aistra-android:2.0.0'
+}
 ```
 
 ## 미디에이션 SDK 추가

@@ -10,7 +10,7 @@ If the AppLovin MAX SDK is not installed yet, refer to the [Android](https://sup
 
 The AppLovin MAX Adapter serves ads through the MobWith SDK, so the basic setup of the MobWith SDK is required first.
 
-- Android : In the SDK Installation guide, add the repositories (mavenCentral, jitpack) from [Gradle Configuration](/Android/installation?id=gradle-configuration) and apply [Permissions](/Android/installation?id=permissions).<br>For the MobWith SDK dependency, use the settings in Step 2 below instead of the version in that guide.
+- Android : In the SDK Installation guide, add the repositories that match the MobWith SDK version you use from [Gradle Configuration](/Android/installation?id=gradle-configuration) and apply [Permissions](/Android/installation?id=permissions).<br>For the MobWith SDK dependency, use the settings in Step 2 below instead of the version in that guide.
 - iOS : Install the MobWith SDK by referring to [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods) in the SDK Installation guide.
 
 ?> Mediation within the MobWith SDK itself (integration with other ad networks such as AdFit and BidMad) is a separate feature from the AppLovin MAX Adapter integration. Apply it only if agreed upon, by referring to each network's SDK section in the SDK Installation guide.

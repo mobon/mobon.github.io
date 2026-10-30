@@ -28,7 +28,6 @@ MobwithSplashBannerView splashBanner = new MobwithSplashBannerView(
         context,
         adContainer,  //Layout (ViewGroup) that will display the splash ad
         unitID, //Issued UNIT_ID
-        true,  //Whether it is an interstitial-style ad (true: interstitial, false: bottom banner)
 );
 
 // Register the banner view's listener.
@@ -60,12 +59,12 @@ splashBanner.loadAd();
 
 | Method | Description |
 |---|---|
-| `setBannerUnitId(String unitId)` | Set the issued UnitId |
+| `setUnitId(String unitId)` | Set the issued UnitId |
 | `loadAd()` | Request an ad |
-| `setAdListener(MobwithSplashBannerView.OnSplashListener listener)` | Ad callback |
+| `setAdListener(MobwithSplashBannerView.OnSplashAdListener listener)` | Ad callback |
 | `setTimeOutSec(int seconds)` | Ad request timeout (seconds).<br>If the ad does not finish loading within this time, the ad load failure callback is delivered. |
 | `setFadeDuration(long durationMs)` | Set the fade in/out duration (ms) |
-| `destroy()` | Release ad resources |
+| `destroyAd()` | Release ad resources |
 
 ## Ad Request Timeout
 
@@ -77,7 +76,7 @@ splashBanner.setTimeOutSec(5);
 
 ## SplashAdListener
 
-Implement OnSplashListener to receive callbacks for each splash ad event.
+Implement OnSplashAdListener to receive callbacks for each splash ad event.
 
 ```java
 new MobwithSplashBannerView.OnSplashAdListener() {

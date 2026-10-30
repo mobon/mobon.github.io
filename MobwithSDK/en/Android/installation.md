@@ -7,7 +7,42 @@ Apply the Gradle configuration and permissions, then add any mediation SDKs that
 
 #### <span class="step-label">STEP 1</span>Add repositories
 
-Add `mavenCentral()` and the jitpack repository to your project-level `build.gradle`.
+Add the repositories to your project-level `build.gradle`. The configuration differs depending on the SDK version you use.
+
+##### SDK 1.0.112 or later
+
+Add the MobWith maven repository to both `buildscript` and `allprojects`. Specify `includeGroup` so that only the `io.github.mobon` group is fetched from this repository.
+
+```groovy
+buildscript {
+    repositories {
+        maven {
+            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            content {
+                includeGroup 'io.github.mobon'
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            content {
+                includeGroup 'io.github.mobon'
+            }
+        }
+    }
+}
+```
+
+##### SDK 1.0.111 or earlier
+
+Add `mavenCentral()` and the jitpack repository.
 
 ```groovy
 allprojects {
@@ -27,7 +62,7 @@ Add `com.google.android.gms:play-services-ads-identifier` and the latest version
   dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
     implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.111'
+    implementation 'io.github.mobon:mobwithSDK:1.0.112'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
@@ -55,6 +90,16 @@ android:usesCleartextTraffic="true"
 ...>
 </application>
 </manifest>
+```
+
+## Adding the Appier SDK (Optional)
+
+As of SDK 1.0.112, the Appier (Aistra) SDK is not included in the MobWith SDK. If you use Appier, add the following dependency to your app-level `build.gradle`.
+
+```groovy
+dependencies {
+    implementation 'com.appier:aistra-android:2.0.0'
+}
 ```
 
 ## Adding Mediation SDKs

@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
 
-        bridge = new HybridBannerBridge.attach(this, webView);
+        bridge = HybridBannerBridge.attach(this, webView);
         bridge.setOnAdListener(new HybridBannerBridge.OnAdListener() {
             @Override
             public void onAdLoaded() {
@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 ## 3. Notify Page Load Completion
 
 When the page finishes loading (at the WebView's `onPageFinished`), call the following function to load and display ads.<br>
-For the parameter, enter the placementId of the WebPage where the ads will be placed.<br>
 When it is called, HybridBannerBridge detects the ad slots and handles ad loading and display automatically.
 
 ```java
@@ -133,3 +132,18 @@ bridge.setCampaignCodes(Arrays.asList(
 ```
 
 ?> Please refer to the agreed specifications for campaign code values.
+
+### In-App Landing Callback
+
+When an in-app landing ad is clicked, the SDK passes the landing information through `onInAppLanding()` instead of opening a browser. Implement it in `HybridBannerBridge.OnAdListener` if you want your app to handle the screen transition itself with the received information. (SDK 1.0.112 or later)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // In-app landing information is delivered - handle the screen transition in your app
+}
+...
+```
+
+?> `onInAppLanding()` has a default implementation, so omitting it does not cause a compile error. Implement it if you use in-app landing ads.

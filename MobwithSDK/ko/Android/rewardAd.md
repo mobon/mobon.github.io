@@ -79,3 +79,18 @@ if (rewardVideoDialog.isLoaded()) {
 | `isLoaded()` | 광고 요청 성공 여부 |
 | `show()` | 광고 송출 |
 | `setMobwithAdCategoryModel(MobwithAdCategoryModel categoryModel)` | 카테고리 타겟팅 광고 기능 |
+
+## 인앱 랜딩 콜백
+
+인앱 랜딩 광고를 클릭하면 SDK가 브라우저를 실행하지 않고 `onInAppLanding()`으로 랜딩 정보를 전달합니다. 앱에서 전달받은 정보로 직접 화면을 이동하려는 경우 `iRewardAdsCallback`에 구현합니다. (SDK 1.0.112 이상)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // 인앱 랜딩 정보 전달 - 앱에서 직접 화면 이동 처리
+}
+...
+```
+
+?> `onInAppLanding()`은 기본 구현이 제공되므로 구현하지 않아도 컴파일 오류가 발생하지 않습니다. 인앱 랜딩 광고를 사용하는 경우에는 구현이 필요합니다.

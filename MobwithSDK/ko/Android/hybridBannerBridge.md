@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
 
-        bridge = new HybridBannerBridge.attach(this, webView);
+        bridge = HybridBannerBridge.attach(this, webView);
         bridge.setOnAdListener(new HybridBannerBridge.OnAdListener() {
             @Override
             public void onAdLoaded() {
@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 ## 3. 페이지 로딩 완료 알림
 
 페이지 로딩이 완료되면(WebView의 `onPageFinished` 시점) 실제 광고 로드 및 표시를 위해 아래 함수를 호출합니다.<br>
-파라미터는 광고를 배치할 WebPage의 placementId를 입력합니다.<br>
 호출되면 HybridBannerBridge가 광고 지면을 확인하여 광고 로딩 및 표시를 자동으로 처리합니다.
 
 ```java
@@ -133,3 +132,18 @@ bridge.setCampaignCodes(Arrays.asList(
 ```
 
 ?> 캠페인 코드 값은 협의된 내용을 참고하시기 바랍니다.
+
+### 인앱 랜딩 콜백
+
+인앱 랜딩 광고를 클릭하면 SDK가 브라우저를 실행하지 않고 `onInAppLanding()`으로 랜딩 정보를 전달합니다. 앱에서 전달받은 정보로 직접 화면을 이동하려는 경우 `HybridBannerBridge.OnAdListener`에 구현합니다. (SDK 1.0.112 이상)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // 인앱 랜딩 정보 전달 - 앱에서 직접 화면 이동 처리
+}
+...
+```
+
+?> `onInAppLanding()`은 기본 구현이 제공되므로 구현하지 않아도 컴파일 오류가 발생하지 않습니다. 인앱 랜딩 광고를 사용하는 경우에는 구현이 필요합니다.

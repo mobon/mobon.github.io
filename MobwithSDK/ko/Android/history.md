@@ -2,7 +2,17 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.111 <span class="release-date">2026-10-22</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.112 <span class="release-date">2026-10-30</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 인앱 랜딩 콜백 `onInAppLanding()` 추가
+- 포인트 배너 HybridBridgeBanner 리워드 기능 추가
+- SortList 가중치(`exlItlSeq`) 파라미터 추가
+- Appier SDK 버전 파라미터 추가
+- Appier(Aistra) SDK 의존성을 선택 사항으로 변경 (SDK Installation 문서 참고)
+- 스플래시 광고 UI 수정 (하단형, 전면형, 영상)
+- maven 저장소 변경: SDK 1.0.112 이상은 project `build.gradle`에 MobWith maven 저장소 설정 필요 (SDK Installation 문서 참고)
+
+### 1.0.111 <span class="release-date">2026-10-22</span> <!-- {docsify-ignore} -->
 
 - MobwithBannerView, MobwithNativeAdView에 리워드 Affordance 커스텀 기능 추가 (`AffordanceStyle`)
 - MobwithNativeAdView 영상 광고 송출 기능 추가

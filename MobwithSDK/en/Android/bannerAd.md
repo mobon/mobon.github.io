@@ -76,6 +76,21 @@ banner.loadAd();
 | `MobwithSDK.getInstance().setFullScreenMode(bollean isUse)` | Whether to use the full-screen size feature for direct ads |
 | `setAdScale(int heightDp)` | Script ad height adjustment feature |
 
+## In-App Landing Callback
+
+When an in-app landing ad is clicked, the SDK passes the landing information through `onInAppLanding()` instead of opening a browser. Implement it in `iBannerCallback` if you want your app to handle the screen transition itself with the received information. (SDK 1.0.112 or later)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // In-app landing information is delivered - handle the screen transition in your app
+}
+...
+```
+
+?> `onInAppLanding()` has a default implementation, so omitting it does not cause a compile error. Implement it if you use in-app landing ads.
+
 ## Ad Refresh
 
 Using `setInterval()`, you can automatically refresh banner ads at a fixed interval.

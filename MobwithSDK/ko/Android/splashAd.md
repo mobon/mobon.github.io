@@ -28,7 +28,6 @@ MobwithSplashBannerView splashBanner = new MobwithSplashBannerView(
         context,
         adContainer,  //스플래시 광고를 송출할 레이아웃(ViewGroup)
         unitID, //발급받은 UNIT_ID
-        true,  //전면형 광고 여부 (true:전면, false:하단 배너)
 );
 
 // 배너뷰의 리스너를 등록합니다.
@@ -60,12 +59,12 @@ splashBanner.loadAd();
 
 | 메서드 | 설명 |
 |---|---|
-| `setBannerUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `setUnitId(String unitId)` | 발급받은 UnitId 설정 |
 | `loadAd()` | 광고 요청 |
-| `setAdListener(MobwithSplashBannerView.OnSplashListener listener)` | 광고 Callback |
+| `setAdListener(MobwithSplashBannerView.OnSplashAdListener listener)` | 광고 Callback |
 | `setTimeOutSec(int seconds)` | 광고 요청 타임아웃 시간 (초).<br>해당 시간 내 광고 로딩이 완료되지 않으면 광고 로딩 실패 콜백이 전달됩니다. |
 | `setFadeDuration(long durationMs)` | 페이드 In/Out 지속시간 설정 (ms) |
-| `destroy()` | 광고 리소스 해제 |
+| `destroyAd()` | 광고 리소스 해제 |
 
 ## 광고 요청 타임아웃
 
@@ -77,7 +76,7 @@ splashBanner.setTimeOutSec(5);
 
 ## SplashAdListener
 
-OnSplashListener를 구현하여 스플래시 광고의 각 이벤트에 대한 콜백을 전달받을 수 있습니다.
+OnSplashAdListener를 구현하여 스플래시 광고의 각 이벤트에 대한 콜백을 전달받을 수 있습니다.
 
 ```java
 new MobwithSplashBannerView.OnSplashAdListener() {
