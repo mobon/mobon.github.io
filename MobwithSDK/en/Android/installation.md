@@ -40,7 +40,7 @@ allprojects {
 }
 ```
 
-##### SDK 1.0.111 or earlier
+##### SDK 1.0.110 or earlier
 
 Add `mavenCentral()` and the jitpack repository.
 
