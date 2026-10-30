@@ -17,7 +17,7 @@ Add the MobWith maven repository to both `buildscript` and `allprojects`. Specif
 buildscript {
     repositories {
         maven {
-            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            url 'https://maven.mobwithad.com/ad/maven-repo'
             content {
                 includeGroup 'io.github.mobon'
             }
@@ -31,7 +31,7 @@ allprojects {
         mavenCentral()
         maven { url 'https://jitpack.io' }
         maven {
-            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            url 'https://maven.mobwithad.com/ad/maven-repo'
             content {
                 includeGroup 'io.github.mobon'
             }

@@ -17,7 +17,7 @@ project 단위 `build.gradle`에 저장소를 추가합니다. 사용하는 SDK 
 buildscript {
     repositories {
         maven {
-            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            url 'https://maven.mobwithad.com/ad/maven-repo'
             content {
                 includeGroup 'io.github.mobon'
             }
@@ -31,7 +31,7 @@ allprojects {
         mavenCentral()
         maven { url 'https://jitpack.io' }
         maven {
-            url 'https://img.mobwithad.com/ad/imgfile/maven-repo'
+            url 'https://maven.mobwithad.com/ad/maven-repo'
             content {
                 includeGroup 'io.github.mobon'
             }
