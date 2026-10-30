@@ -1,5 +1,5 @@
 (() => {
-    const VERSION = "202610300240";
+    const VERSION = "202610410240";
     // custom.css도 같은 버전 값을 붙여 불러옴 (스타일 변경이 캐시 때문에 늦게 반영되는 문제 방지)
     document.write('<link rel="stylesheet" href="../custom.css?v=' + VERSION + '">');
 
