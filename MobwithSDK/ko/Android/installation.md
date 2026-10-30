@@ -14,7 +14,6 @@ project 단위 `build.gradle`에 저장소를 추가합니다. 사용하는 SDK 
 `buildscript`와 `allprojects`에 MobWith maven 저장소를 추가합니다. 이 저장소에서는 `io.github.mobon` 그룹만 가져오도록 `includeGroup`을 지정합니다.
 
 ```groovy
-
 allprojects {
     repositories {
         google()

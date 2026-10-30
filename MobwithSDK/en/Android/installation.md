@@ -14,17 +14,6 @@ Add the repositories to your project-level `build.gradle`. The configuration dif
 Add the MobWith maven repository to both `buildscript` and `allprojects`. Specify `includeGroup` so that only the `io.github.mobon` group is fetched from this repository.
 
 ```groovy
-buildscript {
-    repositories {
-        maven {
-            url 'https://maven.mobwithad.com/ad/maven-repo'
-            content {
-                includeGroup 'io.github.mobon'
-            }
-        }
-    }
-}
-
 allprojects {
     repositories {
         google()
