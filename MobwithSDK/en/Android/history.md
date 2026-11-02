@@ -2,7 +2,11 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.112 <span class="release-date">2026-10-30</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.113 <span class="release-date">2026-11-02</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Fixed an intermittent crash of GIF ads that occurred while releasing image resources.
+
+### 1.0.112 <span class="release-date">2026-10-30</span> <!-- {docsify-ignore} -->
 
 - Added the in-app landing callback `onInAppLanding()`.
 - Added the reward feature to the point banner HybridBridgeBanner.

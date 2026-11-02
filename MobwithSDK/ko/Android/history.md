@@ -2,7 +2,11 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.112 <span class="release-date">2026-10-30</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.113 <span class="release-date">2026-11-02</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 이미지 리소스 해제 과정에서 GIF 광고가 간헐적으로 크래시하던 문제 수정
+
+### 1.0.112 <span class="release-date">2026-10-30</span> <!-- {docsify-ignore} -->
 
 - 인앱 랜딩 콜백 `onInAppLanding()` 추가
 - 포인트 배너 HybridBridgeBanner 리워드 기능 추가

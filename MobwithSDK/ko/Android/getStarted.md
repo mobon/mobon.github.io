@@ -15,7 +15,7 @@ MobWith SDK를 Android 앱에 연동하기 위한 지원 환경, 최신 버전, 
 
 | 최신 버전 | 설치 방법 |
 |---|---|
-| 1.0.112 | [SDK Installation](/Android/installation.md) |
+| 1.0.113 | [SDK Installation](/Android/installation.md) |
 
 버전별 변경 내역은 [History](/Android/history.md)를 참고 바랍니다.
 
