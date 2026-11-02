@@ -20,13 +20,13 @@ The size of the ad is adjusted automatically depending on the ad being displayed
 
 ## How to Load Ads
 
-To request a banner ad, you need to set up MobWithBannerView.<br>
+To request a banner ad, you need to set up MobwithBannerView.<br>
 You must set the issued UNIT_ID value for each ad view. Below is example code that sets up a BannerView and requests an ad.
 
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // The UNIT_ID issued for each ad view must be set.
-MobWithBannerView banner = new MobwithBannerView(this)
+MobwithBannerView banner = new MobwithBannerView(this)
         .setBannerUnitId(YOUR_UNIT_ID);
 
 // Register the listener for the banner view.
@@ -68,13 +68,14 @@ banner.loadAd();
 | `setServiceId(String serviceId)` | Set the issued ServiceId |
 | `setMediaId(String mediaId)` | Set the issued MediaId |
 | `setAffordanceStyle(AffordanceStyle style)` | Set the reward Affordance style (SDK 1.0.111 or later) |
-| `setInterval(Int second)` | Ad refresh (parameter in seconds) |
+| `setInterval(int interval)` | Ad refresh (parameter in seconds) |
 | `restart()` | Restart ad refresh |
 | `stop()` | Stop ad refresh |
-| `destroy()` | Release ad resources |
+| `destroyAd()` | Release ad resources |
 | `setUseHouseBanner(boolean isUse)` | Whether to use the house banner |
-| `MobwithSDK.getInstance().setFullScreenMode(bollean isUse)` | Whether to use the full-screen size feature for direct ads |
+| `MobwithSDK.getInstance().setFullScreenMode(boolean isUse)` | Whether to use the full-screen size feature for direct ads |
 | `setAdScale(int heightDp)` | Script ad height adjustment feature |
+| `setCloseBtn(MobwithBannerView.OnCloseListener listener)` | Show the close button and set the close listener |
 
 ## In-App Landing Callback
 
@@ -106,6 +107,9 @@ bannerView.setInterval(60); // Auto-refresh every 60 seconds
 | Unit | Seconds |
 | Minimum | 60 seconds (values smaller than 60 are automatically applied as 60 seconds) |
 | Default | 0 (setting it to 0 disables auto-refresh) |
+
+?> If a refresh interval is configured on the server, it takes precedence over the value set with `setInterval()`.<br>
+In this case, auto-refresh may work according to the server setting even if `setInterval()` is set to 0, and if the server value is not 0, a minimum of 60 seconds is applied.
 
 ?> You must load the ad once after setting the interval for auto-refresh to work properly.
 
@@ -147,7 +151,7 @@ When using the house banner, unlike the previous example, you must add the banne
 ?> Even when using the house banner, once an ad has been displayed at least once, the house banner is no longer displayed afterward.
 
 ```java
-    MobWithBannerView banner = new MobwithBannerView(this)
+    MobwithBannerView banner = new MobwithBannerView(this)
         .setBannerUnitId(YOUR_UNIT_ID)
 // Enable house banner usage, default is false.
   banner.setUseHouseBanner(true);
@@ -239,6 +243,23 @@ banner.setServiceId("Set the ServiceId");
 banner.setMediaId("Set the MediaId");
 ```
 
+### Reward Callback
+
+?> Supported in SDK 1.0.112 or later.
+
+When a banner ad is clicked while the reward Affordance is displayed in the reward-paid state, `onRewarded()` is called after `onAdClicked()`. Implement it in `iBannerCallback`.
+
+```java
+...
+@Override
+public void onRewarded() {
+    // Called when the ad is clicked in the reward-paid state
+}
+...
+```
+
+?> `onRewarded()` has a default implementation, so omitting it does not cause a compile error.
+
 ### Customizing the Reward Affordance
 
 ?> Supported in SDK 1.0.111 or later.
@@ -265,14 +286,14 @@ banner.setAffordanceStyle(AffordanceStyle.builder()
 | `sizeDp(float sizeDp)` | Sets the Affordance size (dp) |
 | `textSizeDp(float textSizeDp)` | Sets the text size (dp) |
 | `textColor(int color)` | Sets the text color |
-| `backgroundColor(int color)` | Sets the background color |
-| `unrewardedBackgroundColor(int color)` | Sets the background color before the reward is paid |
-| `rewardedBackgroundColor(int color)` | Sets the background color after the reward is paid |
+| `backgroundColor(int color)` | Sets the background color (applied both before and after the reward is paid) |
+| `backgroundColor(int unrewardedColor, int rewardedColor)` | Sets the background colors before and after the reward is paid separately |
 | `checkedIcon(Drawable drawable)` | Changes the reward-paid icon |
-| `checkedIconResId(int resId)` | Changes the reward-paid icon (resource ID) |
+| `checkedIconResource(int resId)` | Changes the reward-paid icon (resource ID) |
 | `marginDp(int marginDp)` | Sets the spacing between the Affordance and the ad (dp) |
 
-If you set both `unrewardedBackgroundColor()` and `rewardedBackgroundColor()`, each color is applied separately. If you set only one, that color is applied both before and after the reward is paid.<br>
+`backgroundColor(int color)` applies the same color both before and after the reward is paid, while `backgroundColor(int unrewardedColor, int rewardedColor)` applies each color separately.<br>
 For items whose methods are not called, the SDK default values are applied.
 
-?> Changes take effect after the ad is loaded again (`loadAd()`).
+?> You can call it before or after loading the ad, and it is applied immediately to an Affordance that is already displayed.<br>
+The setting applies only to that banner view, and passing `null` restores the SDK defaults.

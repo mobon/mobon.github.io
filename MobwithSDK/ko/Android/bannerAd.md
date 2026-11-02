@@ -20,13 +20,13 @@ MobwithBannerView를 이용하여 배너 광고를 표시하는 방법을 안내
 
 ## 광고 로드 방법
 
-배너 광고를 요청하려면 MobWithBannerView 설정이 필요합니다.<br>
+배너 광고를 요청하려면 MobwithBannerView 설정이 필요합니다.<br>
 각 광고 뷰에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다. 아래는 BannerView를 설정하고 광고를 요청하는 예시 코드입니다.
 
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
 // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
-MobWithBannerView banner = new MobwithBannerView(this)
+MobwithBannerView banner = new MobwithBannerView(this)
                                       .setBannerUnitId(YOUR_UNIT_ID);
 
 // 배너뷰의 리스너를 등록합니다.
@@ -68,13 +68,14 @@ banner.loadAd();
 | `setServiceId(String serviceId)` | 발급받은 ServiceId 설정 |
 | `setMediaId(String mediaId)` | 발급받은 MediaId 설정 |
 | `setAffordanceStyle(AffordanceStyle style)` | 리워드 Affordance 스타일 설정 (SDK 1.0.111 이상) |
-| `setInterval(Int second)` | 광고 새로고침 (파라미터는 초 단위) |
+| `setInterval(int interval)` | 광고 새로고침 (파라미터는 초 단위) |
 | `restart()` | 광고 새로고침 재시작 |
 | `stop()` | 광고 새로고침 중단 |
-| `destroy()` | 광고 리소스 해제 |
+| `destroyAd()` | 광고 리소스 해제 |
 | `setUseHouseBanner(boolean isUse)` | 하우스 배너 사용 여부 |
-| `MobwithSDK.getInstance().setFullScreenMode(bollean isUse)` | 직광고 풀스크린 사이즈 기능 사용 여부 |
+| `MobwithSDK.getInstance().setFullScreenMode(boolean isUse)` | 직광고 풀스크린 사이즈 기능 사용 여부 |
 | `setAdScale(int heightDp)` | Script 광고 높이 조정 기능 |
+| `setCloseBtn(MobwithBannerView.OnCloseListener listener)` | 닫기 버튼 표시 및 닫기 리스너 설정 |
 
 ## 인앱 랜딩 콜백
 
@@ -106,6 +107,9 @@ bannerView.setInterval(60); //60초마다 자동 갱신
 | 단위 | 초(Second) |
 | 최솟값 | 60초 (60초보다 작은 값을 입력하면 자동으로 60초로 적용) |
 | 기본값 | 0 (0으로 설정하면 자동 갱신 비활성화) |
+
+?> 서버에 새로고침 간격이 설정되어 있으면 `setInterval()`로 설정한 값보다 우선 적용됩니다.<br>
+이 경우 `setInterval()`을 0으로 설정했더라도 서버 설정에 따라 자동 갱신이 동작할 수 있으며, 서버 설정 값이 0이 아니면 최소 60초가 적용됩니다.
 
 ?> 설정 후 최초 1회 광고를 로드해야 자동 갱신이 정상적으로 동작합니다.
 
@@ -147,7 +151,7 @@ bannerView.destroyAd(); //더 이상 Banner 광고를 사용하지 않는 시점
 ?> 하우스 배너를 사용하는 경우에도 광고가 한 번이라도 노출되면 이후에는 하우스 배너가 표시되지 않습니다.
 
 ```java
-  MobWithBannerView banner = new MobwithBannerView(this)
+  MobwithBannerView banner = new MobwithBannerView(this)
                                  .setBannerUnitId(YOUR_UNIT_ID)
   //하우스 배너 사용 설정, 기본값은 false 입니다.
   banner.setUseHouseBanner(true);
@@ -239,9 +243,26 @@ banner.setServiceId("발급받은 ServiceId");
 banner.setMediaId("발급받은 MediaId");
 ```
 
-### 리워드 Affordance 커스텀
+### 리워드 콜백
 
 ?> SDK 1.0.112 이상에서 지원합니다.
+
+리워드 Affordance가 리워드 지급 상태로 표시된 상태에서 배너 광고를 클릭하면 `onAdClicked()` 다음에 `onRewarded()`가 호출됩니다. `iBannerCallback`에 구현합니다.
+
+```java
+...
+@Override
+public void onRewarded() {
+    // 리워드 지급 상태에서 광고 클릭 시 호출
+}
+...
+```
+
+?> `onRewarded()`는 기본 구현이 제공되므로 구현하지 않아도 컴파일 오류가 발생하지 않습니다.
+
+### 리워드 Affordance 커스텀
+
+?> SDK 1.0.111 이상에서 지원합니다.
 
 리워드 배너에 표시되는 Affordance(리워드 지급 여부를 표시하는 뱃지)의 위치, 크기, 텍스트, 배경 색상, 지급 아이콘을 변경할 수 있습니다.<br>
 `AffordanceStyle.builder()`로 스타일을 만든 뒤 `setAffordanceStyle()`로 설정합니다.
@@ -265,14 +286,14 @@ banner.setAffordanceStyle(AffordanceStyle.builder()
 | `sizeDp(float sizeDp)` | Affordance 크기 설정 (dp) |
 | `textSizeDp(float textSizeDp)` | 텍스트 크기 설정 (dp) |
 | `textColor(int color)` | 텍스트 색상 설정 |
-| `backgroundColor(int color)` | 배경 색상 설정 |
-| `unrewardedBackgroundColor(int color)` | 리워드 지급 전 배경 색상 설정 |
-| `rewardedBackgroundColor(int color)` | 리워드 지급 후 배경 색상 설정 |
+| `backgroundColor(int color)` | 배경 색상 설정 (리워드 지급 전/후 동일 적용) |
+| `backgroundColor(int unrewardedColor, int rewardedColor)` | 리워드 지급 전/후 배경 색상을 각각 설정 |
 | `checkedIcon(Drawable drawable)` | 리워드 지급 아이콘 변경 |
-| `checkedIconResId(int resId)` | 리워드 지급 아이콘 변경 (리소스 ID) |
+| `checkedIconResource(int resId)` | 리워드 지급 아이콘 변경 (리소스 ID) |
 | `marginDp(int marginDp)` | Affordance와 광고 사이 간격 설정 (dp) |
 
-`unrewardedBackgroundColor()`와 `rewardedBackgroundColor()`를 모두 설정하면 각각의 색상이 적용되고, 하나만 설정하면 설정한 색상이 지급 전/후 모두에 적용됩니다.<br>
+`backgroundColor(int color)`는 리워드 지급 전/후에 같은 색상을 적용하고, `backgroundColor(int unrewardedColor, int rewardedColor)`는 지급 전/후 색상을 각각 적용합니다.<br>
 메서드를 호출하지 않은 항목은 SDK 기본값이 적용됩니다.
 
-?> 변경한 설정은 광고를 다시 로드(`loadAd()`)해야 반영됩니다.
+?> 광고 로드 전후 모두 호출할 수 있으며, 이미 표시 중인 Affordance에는 즉시 반영됩니다.<br>
+설정은 해당 배너뷰에만 적용되며, `null`을 전달하면 SDK 기본값으로 돌아갑니다.
