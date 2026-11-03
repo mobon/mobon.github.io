@@ -21,8 +21,11 @@ Ending Banner 광고의 컨테이너 역할을 하는 뷰를 레이아웃 XML �
 
 EndingBannerView에는 발급받은 UNIT_ID 값을 반드시 설정해야 합니다. 아래는 EndingBannerView를 설정하고 광고를 요청하는 예시 코드입니다.
 
-!> `iEndingBannerCallback` 리스너의 `onLoadedAdInfo()` 콜백을 받았을 때(광고 로딩 완료 시점) **EndingBannerView를 Container에 추가**하시기 바랍니다.<br>
+!> `iBannerCallback` 리스너의 `onLoadedAdInfo()` 콜백을 받았을 때(광고 로딩 완료 시점) **EndingBannerView를 Container에 추가**하시기 바랍니다.<br>
 Dialog의 경우 Show 하기 전에 광고를 로드하여 Container에 추가하면 화면이 두 번 그려질 수 있습니다.
+
+?> 광고 유형에 따라 광고 로딩이 완료되면 SDK가 EndingBannerView를 기존에 추가된 부모 뷰에서 제거하고 광고를 구성합니다.<br>
+로드 전에 Container에 미리 추가하면 Container에서 제거될 수 있으므로, 위 안내대로 `onLoadedAdInfo()` 콜백에서 추가해 주세요.
 
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
@@ -37,7 +40,7 @@ EndingBannerView endingBannerView = new EndingBannerView(this)
                                               ......));
 
 // 배너뷰의 리스너를 등록합니다.
-endingBannerView.setAdListener(new iEndingBannerCallback() {
+endingBannerView.setListener(new iBannerCallback() {
   @Override
   public void onLoadedAdInfo(boolean result, String errorcode) {
     if (result) {
@@ -46,8 +49,8 @@ endingBannerView.setAdListener(new iEndingBannerCallback() {
        // 광고를 띄우고자 하는 layout 에 배너뷰를 삽입합니다.
        bannerContainer.addView(endingBannerView);
     } else {
-      // 배너 광고 노출 실패 시 호출 - setInterval()을 통해 자동 갱신을 설정했어도 실패한 경우 갱신되지 않음.
-        endingBannerView.destroyAd();
+      // 배너 광고 로딩 실패 시 호출
+        endingBannerView.destroy();
         endingBannerView = null;     
     }
   }
@@ -67,11 +70,29 @@ endingBannerView.loadAd();
 | 메서드 | 설명 |
 |---|---|
 | `setBannerUnitId(String unitId)` | 발급받은 UnitId 설정 |
+| `setListener(iBannerCallback listener)` | 광고 이벤트 리스너 설정 |
 | `loadAd()` | 광고 요청 |
 | `setCategory(List<String> categories)` | 카테고리 타겟팅 광고 기능 |
 | `setCampaignCodes(List<String> campaignCodes)` | 타겟팅 캠페인 코드 설정 |
 | `performAdClick()` | 광고 클릭 이벤트 전달 기능 |
 | `destroy()` | 광고 리소스 해제 |
+
+?> `loadAd()`는 광고를 로딩 중일 때 다시 호출하면 무시됩니다. 로딩이 끝나 `onLoadedAdInfo()` 콜백이 호출된 후에 다시 호출해 주세요.
+
+## 인앱 랜딩 콜백
+
+인앱 랜딩 광고를 클릭하면 SDK가 브라우저를 실행하지 않고 `onInAppLanding()`으로 랜딩 정보를 전달합니다. 앱에서 전달받은 정보로 직접 화면을 이동하려는 경우 `iBannerCallback`에 구현합니다. (SDK 1.0.112 이상)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // 인앱 랜딩 정보 전달 - 앱에서 직접 화면 이동 처리
+}
+...
+```
+
+?> `onInAppLanding()`은 기본 구현이 제공되므로 구현하지 않아도 컴파일 오류가 발생하지 않습니다. 인앱 랜딩 광고를 사용하는 경우에는 구현이 필요합니다.
 
 ## 광고 카테고리 설정
 
@@ -110,3 +131,5 @@ endingBannerView.setCampaignCodes(Arrays.asList(
 ```java
 endingBannerView.destroy();
 ```
+
+?> `destroy()`를 호출하면 설정한 리스너도 함께 해제되므로, 다시 사용하려면 `setListener()`를 다시 설정해야 합니다.

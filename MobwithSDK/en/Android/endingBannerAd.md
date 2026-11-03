@@ -21,8 +21,11 @@ We recommend using a FrameLayout for the banner container (ViewGroup) that displ
 
 You must set the issued UNIT_ID value for EndingBannerView. Below is example code that sets up EndingBannerView and requests an ad.
 
-!> **Add the EndingBannerView to the Container** when you receive the `onLoadedAdInfo()` callback of the `iEndingBannerCallback` listener (when the ad has finished loading).<br>
+!> **Add the EndingBannerView to the Container** when you receive the `onLoadedAdInfo()` callback of the `iBannerCallback` listener (when the ad has finished loading).<br>
 For a Dialog, if you load the ad and add it to the Container before showing it, the screen may be drawn twice.
+
+?> Depending on the ad type, once the ad has finished loading, the SDK removes the EndingBannerView from the parent view it was previously added to and builds the ad.<br>
+If you add it to the Container before loading, it may be removed from the Container, so add it in the `onLoadedAdInfo()` callback as described above.
 
 ```java
 FrameLayout bannerContainer = findViewById(R.id.bannerContainer);
@@ -37,7 +40,7 @@ EndingBannerView endingBannerView = new EndingBannerView(this)
                                               ......));
 
 // Register the listener for the banner view.
-endingBannerView.setAdListener(new iEndingBannerCallback() {
+endingBannerView.setListener(new iBannerCallback() {
   @Override
   public void onLoadedAdInfo(boolean result, String errorcode) {
     if (result) {
@@ -46,8 +49,8 @@ endingBannerView.setAdListener(new iEndingBannerCallback() {
        // Add the banner view to the layout where you want to display the ad
        bannerContainer.addView(endingBannerView);
     } else {
-      // Called when banner ad display fails - even if automatic refresh is set via setInterval(), it will not refresh after failure.
-        endingBannerView.destroyAd();
+      // Called when the banner ad fails to load
+        endingBannerView.destroy();
         endingBannerView = null;
     }
   }
@@ -67,11 +70,29 @@ endingBannerView.loadAd();
 | Method | Description |
 |---|---|
 | `setBannerUnitId(String unitId)` | Set the issued UnitId |
+| `setListener(iBannerCallback listener)` | Set the ad event listener |
 | `loadAd()` | Request an ad |
 | `setCategory(List<String> categories)` | Category targeting ad feature |
 | `setCampaignCodes(List<String> campaignCodes)` | Set targeting campaign codes |
 | `performAdClick()` | Deliver an ad click event |
 | `destroy()` | Release ad resources |
+
+?> If you call `loadAd()` while an ad is loading, the call is ignored. Call it again after loading finishes and the `onLoadedAdInfo()` callback has been invoked.
+
+## In-App Landing Callback
+
+When an in-app landing ad is clicked, the SDK passes the landing information through `onInAppLanding()` instead of opening a browser. Implement it in `iBannerCallback` if you want your app to handle the screen transition itself with the received information. (SDK 1.0.112 or later)
+
+```java
+...
+@Override
+public void onInAppLanding(Map<String, String> inAppLandingData) {
+    // In-app landing information is delivered - handle the screen transition in your app
+}
+...
+```
+
+?> `onInAppLanding()` has a default implementation, so omitting it does not cause a compile error. Implement it if you use in-app landing ads.
 
 ## Setting Ad Categories
 
@@ -110,3 +131,5 @@ When the ad is no longer needed, call the `destroy()` function to release ad res
 ```java
 endingBannerView.destroy();
 ```
+
+?> Calling `destroy()` also releases the listener you set, so you must set it again with `setListener()` before reusing the view.
