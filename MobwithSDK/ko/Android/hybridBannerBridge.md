@@ -8,12 +8,24 @@ HybridBannerBridge를 이용하여 하이브리드 앱(WebView)의 웹 페이지
 
 ```html
 <html>
-    .... 
-    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="android_zone_id" data-zone-type="05" > </div>
-    
     ....
-    
-    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="android_zone_id" data-zone-type="02" > </div>
+    <div class="mobwith-banner"
+         data-placement-id-ios="ios_zone_id"
+         data-placement-id-android="android_zone_id"
+         data-zone-type="05"
+         data-media-id="media_id"
+         data-service-id="service_id">
+    </div>
+
+    ....
+
+    <div class="mobwith-banner"
+         data-placement-id-ios="ios_zone_id"
+         data-placement-id-android="android_zone_id"
+         data-zone-type="02"
+         data-media-id="media_id"
+         data-service-id="service_id">
+    </div>
     ....
 
 </html>
@@ -25,6 +37,10 @@ HybridBannerBridge를 이용하여 하이브리드 앱(WebView)의 웹 페이지
 | `data-placement-id-ios` | 해당 지면 위치에 할당받은 iOS용 광고 지면번호를 지정합니다. |
 | `data-placement-id-android` | 해당 지면 위치에 할당받은 Android용 광고 지면번호를 지정합니다. |
 | `data-zone-type` | 노출할 광고 타입 코드를 지정합니다. 광고 타입 코드는 지면번호와 함께 전달됩니다. |
+| `data-media-id` | 매체(서비스)를 구분하는 고유 식별자입니다. 리워드 광고 기능을 사용하는 경우 협의된 값을 지정합니다. 사용하지 않는 경우 생략할 수 있습니다. |
+| `data-service-id` | 매체 내 광고가 노출되는 지면 또는 서비스 위치를 구분하는 식별자입니다. 리워드 광고 기능을 사용하는 경우 협의된 값을 지정합니다. 사용하지 않는 경우 생략할 수 있습니다. |
+
+?> `data-media-id`, `data-service-id`는 SDK 1.0.112 이상에서 지원합니다.
 
 ## 2. 브릿지 생성 및 웹뷰 설정
 

@@ -8,12 +8,24 @@ Refer to the following to assign ad slots on the web page where ads will be disp
 
 ```html
 <html>
-    .... 
-    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="android_zone_id" data-zone-type="05" > </div>
-    
     ....
-    
-    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="android_zone_id" data-zone-type="02" > </div>
+    <div class="mobwith-banner"
+         data-placement-id-ios="ios_zone_id"
+         data-placement-id-android="android_zone_id"
+         data-zone-type="05"
+         data-media-id="media_id"
+         data-service-id="service_id">
+    </div>
+
+    ....
+
+    <div class="mobwith-banner"
+         data-placement-id-ios="ios_zone_id"
+         data-placement-id-android="android_zone_id"
+         data-zone-type="02"
+         data-media-id="media_id"
+         data-service-id="service_id">
+    </div>
     ....
 
 </html>
@@ -25,6 +37,10 @@ Refer to the following to assign ad slots on the web page where ads will be disp
 | `data-placement-id-ios` | The iOS placement number (Unit ID) assigned to the slot. |
 | `data-placement-id-android` | The Android placement number (Unit ID) assigned to the slot. |
 | `data-zone-type` | The ad type code to display. The ad type code is provided along with the placement number. |
+| `data-media-id` | A unique identifier for the media platform or service. Specify the agreed value when using the reward ad feature. It can be omitted if you do not use it. |
+| `data-service-id` | An identifier for the ad placement or service location within the media platform. Specify the agreed value when using the reward ad feature. It can be omitted if you do not use it. |
+
+?> `data-media-id` and `data-service-id` are supported in SDK 1.0.112 or later.
 
 ## 2. Create the Bridge and Configure the WebView
 

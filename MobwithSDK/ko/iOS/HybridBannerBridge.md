@@ -11,11 +11,23 @@ MMHybridBannerBridge를 이용하여 하이브리드 앱(WKWebView)의 웹 페�
 ```html
 <html>
     ....
-    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="android_zone_id" data-zone-type="05" data-media-id="media_id" data-service-id="service_id"> </div>
+    <div class="mobwith-banner"
+         data-placement-id-ios="ios_zone_id"
+         data-placement-id-android="android_zone_id"
+         data-zone-type="05"
+         data-media-id="media_id"
+         data-service-id="service_id">
+    </div>
 
     ....
 
-    <div class="mobwith-banner" data-placement-id-ios="ios_zone_id" data-placement-id-android="android_zone_id" data-zone-type="02" data-media-id="media_id" data-service-id="service_id"> </div>
+    <div class="mobwith-banner"
+         data-placement-id-ios="ios_zone_id"
+         data-placement-id-android="android_zone_id"
+         data-zone-type="02"
+         data-media-id="media_id"
+         data-service-id="service_id">
+    </div>
     ....
 
 </html>
