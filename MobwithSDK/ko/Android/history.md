@@ -16,7 +16,7 @@ Android SDK의 버전별 변경 이력입니다.
 - 스플래시 광고 UI 수정 (하단형, 전면형, 영상)
 - maven 저장소 변경: SDK 1.0.112 이상은 project `build.gradle`에 MobWith maven 저장소 설정 필요 (SDK Installation 문서 참고)
 
-### 1.0.111 <span class="release-date">2026-10-22</span> <!-- {docsify-ignore} -->
+### 1.0.111 <span class="release-date">2026-10-22</span><span class="release-badge deprecated">Deprecated</span> <!-- {docsify-ignore} -->
 
 - MobwithBannerView, MobwithNativeAdView에 리워드 Affordance 커스텀 기능 추가 (`AffordanceStyle`)
 - MobwithNativeAdView 영상 광고 송출 기능 추가
@@ -49,11 +49,11 @@ Android SDK의 버전별 변경 이력입니다.
 
 - ADID bug fix
 
-### 1.0.104 <span class="release-date">2026-09-28</span> <!-- {docsify-ignore} -->
+### 1.0.104 <span class="release-date">2026-09-28</span><span class="release-badge deprecated">Deprecated</span> <!-- {docsify-ignore} -->
 
 - SDK 리소스 정리
 
-### 1.0.103 <span class="release-date">2026-09-22</span> <!-- {docsify-ignore} -->
+### 1.0.103 <span class="release-date">2026-09-22</span><span class="release-badge deprecated">Deprecated</span> <!-- {docsify-ignore} -->
 
 - Adpopcorn NAM 연동
 - 스플래시 배너 UI 변경

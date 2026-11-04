@@ -28,6 +28,8 @@
     --sb-guide-active: rgba(217, 85, 61, 0.4);
     --sb-input-bg: #ffffff;
     --sb-text-strong: #111827;
+    --release-deprecated-text: #6b7280;
+    --release-deprecated-border: #9ca3af;
 }
 
 html[data-theme="dark"] {
@@ -55,6 +57,8 @@ html[data-theme="dark"] {
     --sb-guide-active: rgba(234, 111, 90, 0.4);
     --sb-input-bg: rgba(0, 0, 0, 0.2);
     --sb-text-strong: #ffffff;
+    --release-deprecated-text: #a8a8a8;
+    --release-deprecated-border: #6b6b6b;
 }
 
 /* 테이블 행 배경색 제거 */
@@ -717,6 +721,12 @@ body .markdown-section p.tip {
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+}
+
+.markdown-section h3 .release-badge.deprecated {
+    background-color: transparent;
+    border: 1px solid var(--release-deprecated-border);
+    color: var(--release-deprecated-text);
 }
 
 .markdown-section h3:has(.release-date) + ul {

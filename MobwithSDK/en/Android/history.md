@@ -16,7 +16,7 @@ This page lists the version history of the Android SDK.
 - Updated the splash ad UI (bottom, full-screen, video).
 - Changed the maven repository: SDK 1.0.112 or later requires the MobWith maven repository to be configured in the project-level `build.gradle` (see the SDK Installation page).
 
-### 1.0.111 <span class="release-date">2026-10-22</span> <!-- {docsify-ignore} -->
+### 1.0.111 <span class="release-date">2026-10-22</span><span class="release-badge deprecated">Deprecated</span> <!-- {docsify-ignore} -->
 
 - Added reward Affordance customization to MobwithBannerView and MobwithNativeAdView (`AffordanceStyle`).
 - Added video ad serving to MobwithNativeAdView.
@@ -49,11 +49,11 @@ This page lists the version history of the Android SDK.
 
 - ADID bug fix
 
-### 1.0.104 <span class="release-date">2026-09-28</span> <!-- {docsify-ignore} -->
+### 1.0.104 <span class="release-date">2026-09-28</span><span class="release-badge deprecated">Deprecated</span> <!-- {docsify-ignore} -->
 
 - SDK Resource Cleanup
 
-### 1.0.103 <span class="release-date">2026-09-22</span> <!-- {docsify-ignore} -->
+### 1.0.103 <span class="release-date">2026-09-22</span><span class="release-badge deprecated">Deprecated</span> <!-- {docsify-ignore} -->
 
 - Adpopcorn NAM ad integration
 - Splash banner UI updated
