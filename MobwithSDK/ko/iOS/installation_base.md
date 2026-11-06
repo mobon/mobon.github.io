@@ -42,7 +42,7 @@ Targets > Frameworks, Libraries, and Embedded Content에 MobWithADSDK 프레임�
 #### <span class="step-label">STEP 1</span>MobWithAdSDK 설치
 
 프로젝트의 `Podfile`에 `MobWithAdSDK`를 추가한 뒤 `pod install`을 실행합니다.<br>
-아래는 1.3.35 버전을 지정해서 SDK를 설치하는 예시입니다.
+아래는 1.3.36 버전을 지정해서 SDK를 설치하는 예시입니다.
 
 ```ruby
 # CocoaPods 소스 지정 (순서에 따라 정상적으로 가져오지 못할 수 있으니 주의 바랍니다)
@@ -54,7 +54,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'
 
 # MobWithAdSDK 추가
-pod 'MobWithAdSDK', '1.3.35'
+pod 'MobWithAdSDK', '1.3.36'
 ```
 
 #### <span class="step-label">STEP 2</span>미디에이션을 위한 Adapter SDK 추가
@@ -66,7 +66,7 @@ pod 'MobWithAdSDK', '1.3.35'
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.34'
 
 # AdMob Adapter
-pod 'MobWithAdMobAdapter', '12.14.0.1.3.21'
+pod 'MobWithAdMobAdapter', '13.2.0.1.3.36'
 # AdMob SDK 12.6.X 버전을 사용하는 경우 아래를 적용하시면 됩니다.
 # pod 'MobWithAdMobAdapter', '12.6.0.1.3.10'
 

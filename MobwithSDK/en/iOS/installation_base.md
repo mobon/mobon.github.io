@@ -42,7 +42,7 @@ In particular, note that the pod name has **changed from `MobWithAD` to `MobWith
 #### <span class="step-label">STEP 1</span>Install MobWithAdSDK
 
 Add `MobWithAdSDK` to your project's `Podfile`, then run `pod install`.<br>
-The example below installs the SDK by specifying version 1.3.35.
+The example below installs the SDK by specifying version 1.3.36.
 
 ```ruby
 # CocoaPods source declarations (the order matters, otherwise pods may not be fetched correctly)
@@ -54,7 +54,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/mobon/MobwithAdSpecs.git'
 
 # Add MobWithAdSDK
-pod 'MobWithAdSDK', '1.3.35'
+pod 'MobWithAdSDK', '1.3.36'
 ```
 
 #### <span class="step-label">STEP 2</span>Add Adapter SDKs for Mediation
@@ -66,7 +66,7 @@ Add the mediation Adapters you use to your `Podfile`. You must specify the same 
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.34'
 
 # AdMob Adapter
-pod 'MobWithAdMobAdapter', '12.14.0.1.3.21'
+pod 'MobWithAdMobAdapter', '13.2.0.1.3.36'
 # If you are using AdMob SDK 12.6.x, use the following Adapter version.
 # pod 'MobWithAdMobAdapter', '12.6.0.1.3.10'
 
