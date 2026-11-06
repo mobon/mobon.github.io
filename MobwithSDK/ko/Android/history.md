@@ -2,7 +2,14 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.113 <span class="release-date">2026-11-02</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.114 <span class="release-date">2026-11-06</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 잠금화면 상태에서 광고를 클릭했을 때 랜딩이 정상적으로 동작하지 않던 문제 수정
+- 리워드 광고 화면에 "닫으면 혜택을 받을 수 없다"는 안내 문구 표시 추가
+- 배너/네이티브 광고 뷰에 `getMediationAdapter()` 추가
+- AdFit SDK 최적화 버전 변경 (3.21.10 → 3.23.3)
+
+### 1.0.113 <span class="release-date">2026-11-02</span> <!-- {docsify-ignore} -->
 
 - 이미지 리소스 해제 과정에서 GIF 광고가 간헐적으로 크래시하던 문제 수정
 

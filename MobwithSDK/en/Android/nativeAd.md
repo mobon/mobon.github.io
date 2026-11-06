@@ -163,6 +163,7 @@ nativeAdView.loadAd();
 | `setAffordanceStyle(AffordanceStyle style)` | Set the reward Affordance style (SDK 1.0.111 or later) |
 | `setCampaignCodes(List<String> campaignCodes)` | Set targeting campaign codes |
 | `performAdClicked()` | Trigger an ad click event |
+| `getMediationAdapter()` | Returns whether the displayed ad is an external SDK (mediation) ad (SDK 1.0.114 or later) |
 
 ## MobwithNativeAdView Parameter Definitions (Native Layout)
 

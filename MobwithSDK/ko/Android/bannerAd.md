@@ -72,6 +72,7 @@ banner.loadAd();
 | `restart()` | 광고 새로고침 재시작 |
 | `stop()` | 광고 새로고침 중단 |
 | `destroyAd()` | 광고 리소스 해제 |
+| `getMediationAdapter()` | 노출된 광고가 외부 SDK(미디에이션) 광고인지 여부 반환 (SDK 1.0.114 이상) |
 | `setUseHouseBanner(boolean isUse)` | 하우스 배너 사용 여부 |
 | `MobwithSDK.getInstance().setFullScreenMode(boolean isUse)` | 직광고 풀스크린 사이즈 기능 사용 여부 |
 | `setAdScale(int heightDp)` | Script 광고 높이 조정 기능 |

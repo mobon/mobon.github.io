@@ -49,9 +49,9 @@ Add `com.google.android.gms:play-services-ads-identifier` and the latest version
 
 ```groovy
   dependencies {
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.113'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.3.0'
+    implementation 'com.google.android.gms:play-services-ads:25.4.0'
+    implementation 'io.github.mobon:mobwithSDK:1.0.114'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
@@ -99,8 +99,8 @@ If you serve ads from other ad networks through mediation, add the SDKs of the n
 
 To serve AdFit ads, refer to the [AdFit SDK](https://github.com/adfit/adfit-android-sdk) guide.
 
-- The MobWith SDK is optimized for **AdFit SDK (`com.kakao.adfit:ads-base:3.21.10`)**.
-- Depending on your situation, you may need to additionally apply a different version or type of SDK than the library specified in the guide (`com.kakao.adfit:ads-base:3.21.10`). (You will be notified separately if this applies.)
+- The MobWith SDK is optimized for **AdFit SDK (`com.kakao.adfit:ads-base:3.23.3`)**.
+- Depending on your situation, you may need to additionally apply a different version or type of SDK than the library specified in the guide (`com.kakao.adfit:ads-base:3.23.3`). (You will be notified separately if this applies.)
 
 !> When using the NativeAdView feature, you must use a **FrameLayout** for `R.id.mediaContainerView`.<br>
 (Because the parent class of MediaView is FrameLayout, this ensures media (image, video) ads are displayed correctly.)
@@ -386,7 +386,7 @@ You need to add Manifest attributes to serve ADMANAGER ads.
 ##### build.gradle configuration
 
 ```groovy
-    implementation("com.google.android.gms:play-services-ads:24.9.0")
+    implementation("com.google.android.gms:play-services-ads:25.4.0")
 ```
 
 ### Adding the Admob Mediation SDK
@@ -395,10 +395,10 @@ To serve Admob Mediation ads, refer to the [Admob SDK](https://developers.google
 
 ##### build.gradle configuration
 
-You must implement the Admob SDK in `build.gradle`. (Optimized for `com.google.android.gms:play-services-ads:24.9.0`.)
+You must implement the Admob SDK in `build.gradle`. (Optimized for `com.google.android.gms:play-services-ads:25.4.0`.)
 
 ```groovy
-    implementation("com.google.android.gms:play-services-ads:24.9.0")
+    implementation("com.google.android.gms:play-services-ads:25.4.0")
 ```
 
 ##### Manifest configuration
