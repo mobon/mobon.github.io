@@ -53,9 +53,9 @@ app 단위 `build.gradle`에 `com.google.android.gms:play-services-ads-identifie
 
 ```groovy
 dependencies {
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    implementation 'com.google.android.gms:play-services-ads:24.9.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.113'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.3.0'
+    implementation 'com.google.android.gms:play-services-ads:25.4.0'
+    implementation 'io.github.mobon:mobwithSDK:1.0.114'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```
@@ -103,8 +103,8 @@ dependencies {
 
 AdFit 광고를 송출하려면 [AdFit SDK](https://github.com/adfit/adfit-android-sdk) 가이드를 참고해 주세요.
 
-- MobWithSDK는 **AdFit SDK(`com.kakao.adfit:ads-base:3.21.10`)** 버전에 최적화되어 있습니다.
-- 상황에 따라 가이드에 명시된 라이브러리(`com.kakao.adfit:ads-base:3.21.10`)가 아닌 다른 버전 또는 타입의 SDK를 추가로 적용해야 할 수 있습니다. (해당되는 경우 별도로 안내됩니다.)
+- MobWithSDK는 **AdFit SDK(`com.kakao.adfit:ads-base:3.23.3`)** 버전에 최적화되어 있습니다.
+- 상황에 따라 가이드에 명시된 라이브러리(`com.kakao.adfit:ads-base:3.23.3`)가 아닌 다른 버전 또는 타입의 SDK를 추가로 적용해야 할 수 있습니다. (해당되는 경우 별도로 안내됩니다.)
 
 !> NativeAdView 기능 사용 시, `R.id.mediaContainerView`에는 반드시 **FrameLayout**을 사용해야 합니다.<br>
 (MediaView의 상위 클래스가 FrameLayout이기 때문에, 미디어(이미지, 동영상) 광고가 정상적으로 노출됩니다.)
@@ -390,7 +390,7 @@ ADMANAGER 광고 송출을 위한 Manifest 속성 추가가 필요합니다.
 ##### build.gradle 설정
 
 ```groovy
-implementation("com.google.android.gms:play-services-ads:24.9.0")
+implementation("com.google.android.gms:play-services-ads:25.4.0")
 ```
 
 ### Admob Mediation SDK 추가
@@ -399,10 +399,10 @@ Admob Mediation 광고를 송출하려면 [Admob SDK](https://developers.google.
 
 ##### build.gradle 설정
 
-Admob SDK를 `build.gradle`에 implementation 해야 합니다. (`com.google.android.gms:play-services-ads:24.9.0` 버전에 최적화되어 있습니다.)
+Admob SDK를 `build.gradle`에 implementation 해야 합니다. (`com.google.android.gms:play-services-ads:25.4.0` 버전에 최적화되어 있습니다.)
 
 ```groovy
-implementation("com.google.android.gms:play-services-ads:24.9.0")
+implementation("com.google.android.gms:play-services-ads:25.4.0")
 ```
 
 ##### Manifest 설정
