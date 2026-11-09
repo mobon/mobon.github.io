@@ -298,3 +298,16 @@ For items whose methods are not called, the SDK default values are applied.
 
 ?> You can call it before or after loading the ad, and it is applied immediately to an Affordance that is already displayed.<br>
 The setting applies only to that banner view, and passing `null` restores the SDK defaults.
+
+
+### Returning whether the ad is an external SDK (mediation) ad
+
+?> Supported in SDK 1.0.114 and above.
+
+Returns whether the displayed ad is an external SDK (mediation) ad.
+
+```java
+getMediationAdapter() //true: external SDK (mediation) ad, false: JSON ad
+```
+
+!>Note: Please call this only when result in onLoadedAdInfo(boolean result, String errorcode) is true.

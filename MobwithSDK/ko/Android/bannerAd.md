@@ -298,3 +298,14 @@ banner.setAffordanceStyle(AffordanceStyle.builder()
 
 ?> 광고 로드 전후 모두 호출할 수 있으며, 이미 표시 중인 Affordance에는 즉시 반영됩니다.<br>
 설정은 해당 배너뷰에만 적용되며, `null`을 전달하면 SDK 기본값으로 돌아갑니다.
+
+
+### 외부 SDK(미디에이션) 광고 여부 반환
+?> SDK 1.0.114 이상에서 지원합니다.
+
+송출 된 광고가 외부 SDK(미디에이션) 광고인지 여부 반환
+```java
+getMediationAdapter() //true : 외부 SDK(미디에이션) 광고, false : Json 광고
+```
+
+!>주의사항 : onLoadedAdInfo(boolean result, String errorcode)의 `result`가 `true`일 때 호출해 주세요.

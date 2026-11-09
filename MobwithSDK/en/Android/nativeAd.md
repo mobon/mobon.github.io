@@ -298,3 +298,16 @@ nativeAdView.setAffordanceStyle(AffordanceStyle.builder()
 ```
 
 ?> Changes take effect after the ad is loaded again (`loadAd()`).
+
+
+### Returning whether the ad is an external SDK (mediation) ad
+
+?> Supported in SDK 1.0.114 and above.
+
+Returns whether the displayed ad is an external SDK (mediation) ad.
+
+```java
+getMediationAdapter() //true: external SDK (mediation) ad, false: JSON ad
+```
+
+!>Note: Please call this only when result in onLoadedAdInfo(boolean result, String errorcode) is true.

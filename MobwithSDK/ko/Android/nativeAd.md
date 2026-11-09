@@ -298,3 +298,14 @@ nativeAdView.setAffordanceStyle(AffordanceStyle.builder()
 ```
 
 ?> 변경한 설정은 광고를 다시 로드(`loadAd()`)해야 반영됩니다.
+
+
+### 외부 SDK(미디에이션) 광고 여부 반환
+?> SDK 1.0.114 이상에서 지원합니다.
+
+송출 된 광고가 외부 SDK(미디에이션) 광고인지 여부 반환   
+```java
+getMediationAdapter() //true : 외부 SDK(미디에이션) 광고, false : Json 광고
+```
+
+!>주의사항 : onLoadedAdInfo(boolean result, String errorcode)의 `result`가 `true`일 때 호출해 주세요.
