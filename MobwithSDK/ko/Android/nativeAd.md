@@ -163,7 +163,7 @@ nativeAdView.loadAd();
 | `setAffordanceStyle(AffordanceStyle style)` | 리워드 Affordance 스타일 설정 (SDK 1.0.111 이상) |
 | `setCampaignCodes(List<String> campaignCodes)` | 타겟팅 캠페인 코드 설정 |
 | `performAdClicked()` | 광고 클릭 이벤트 발생 |
-| `getMediationAdapter()` | 노출된 광고가 외부 SDK(미디에이션) 광고인지 여부 반환 (SDK 1.0.114 이상) |
+| `getMediationAdapter()` | 노출된 광고가 외부 SDK(미디에이션) 광고인지 여부 반환. `onLoadedAdInfo(boolean result, String errorStr)`의 `result`가 `true`일 때 사용해 주세요. (SDK 1.0.114 이상) |
 
 ## MobwithNativeAdView 파라미터 정의 (Native Layout)
 

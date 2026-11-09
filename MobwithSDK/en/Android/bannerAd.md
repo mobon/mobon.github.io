@@ -72,7 +72,7 @@ banner.loadAd();
 | `restart()` | Restart ad refresh |
 | `stop()` | Stop ad refresh |
 | `destroyAd()` | Release ad resources |
-| `getMediationAdapter()` | Returns whether the displayed ad is an external SDK (mediation) ad (SDK 1.0.114 or later) |
+| `getMediationAdapter()` | Returns whether the displayed ad is an external SDK (mediation) ad. Use it when `result` in `onLoadedAdInfo(boolean result, String errorcode)` is `true`. (SDK 1.0.114 or later) |
 | `setUseHouseBanner(boolean isUse)` | Whether to use the house banner |
 | `MobwithSDK.getInstance().setFullScreenMode(boolean isUse)` | Whether to use the full-screen size feature for direct ads |
 | `setAdScale(int heightDp)` | Script ad height adjustment feature |
