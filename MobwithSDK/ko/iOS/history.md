@@ -2,7 +2,12 @@
 
 iOS SDK의 버전별 변경 이력입니다.
 
-### 1.3.36 <span class="release-date">2026-11-06</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.37 <span class="release-date">2026-11-09</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 전면 광고 / 리워드 광고에 스크립트 광고 송출 추가
+- 기타 기능 안정화 및 마이너 오류 수정
+
+### 1.3.36 <span class="release-date">2026-11-06</span> <!-- {docsify-ignore} -->
 
 - MobWithAdMobAdapter 13.2.0.1.3.36 업데이트 (AdMob SDK 13.2.0 / MobWith SDK 1.3.36)
 - 리워드 광고 화면의 일본어 문구 수정

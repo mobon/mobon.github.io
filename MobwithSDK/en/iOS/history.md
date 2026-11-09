@@ -2,7 +2,12 @@
 
 Version history of the iOS SDK.
 
-### 1.3.36 <span class="release-date">2026-11-06</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.37 <span class="release-date">2026-11-09</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Added script ad delivery for interstitial / reward ads
+- General stability improvements and minor bug fixes
+
+### 1.3.36 <span class="release-date">2026-11-06</span> <!-- {docsify-ignore} -->
 
 - Updated MobWithAdMobAdapter to 13.2.0.1.3.36 (AdMob SDK 13.2.0 / MobWith SDK 1.3.36)
 - Updated Japanese text on the reward ad screen
