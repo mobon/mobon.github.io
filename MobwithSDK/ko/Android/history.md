@@ -2,7 +2,11 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.115 <span class="release-date">2026-11-09</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.116 <span class="release-date">2026-11-10</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 네이티브 광고 뷰에 하우스 배너 사용 여부 설정 `setUseHouseBanner()` 추가
+
+### 1.0.115 <span class="release-date">2026-11-09</span> <!-- {docsify-ignore} -->
 
 - Script Interstitial 기능 배포
 

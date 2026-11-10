@@ -164,6 +164,8 @@ nativeAdView.loadAd();
 | `setCampaignCodes(List<String> campaignCodes)` | 타겟팅 캠페인 코드 설정 |
 | `performAdClicked()` | 광고 클릭 이벤트 발생 |
 | `getMediationAdapter()` | 노출된 광고가 외부 SDK(미디에이션) 광고인지 여부 반환. `onLoadedAdInfo(boolean result, String errorStr)`의 `result`가 `true`일 때 사용해 주세요. (SDK 1.0.114 이상) |
+| `setUseHouseBanner(boolean isUse)` | 하우스 배너 사용 여부 설정 (기본값 `false`, SDK 1.0.116 이상) |
+| `destroy()` | 광고 뷰를 떼어내고 리소스를 해제. 해제 후 `loadAd()`를 다시 호출할 수 있음 (SDK 1.0.110 이상) |
 
 ## MobwithNativeAdView 파라미터 정의 (Native Layout)
 
@@ -201,6 +203,40 @@ nativeAdView.performAdClicked();
 nativeAdView.useImageViewScaleType(true);
 ....
 ```
+
+## 하우스 배너 기능
+
+?> SDK 1.0.116 이상에서 지원합니다.
+
+광고 요청이 완료된 시점부터 실제 광고가 송출되기 전까지 하우스 배너 이미지를 표시하는 기능입니다. (기본값 `false`)<br>
+`true`로 설정하면 광고를 표시하는 컨테이너에 하우스 배너 이미지가 표시되고, 실제 광고가 송출되면 사라집니다.<br>
+`false`로 설정하면 이미 표시 중인 하우스 배너도 즉시 제거됩니다.
+
+```java
+....
+nativeAdView.setUseHouseBanner(true);
+....
+```
+
+?> 하우스 배너를 클릭하면 `onAdClicked()`가 호출됩니다.
+
+!> 광고가 채워지지 않은 경우(노필/실패)에는 `onLoadedAdInfo`의 `result`가 `false`로 전달되며, 하우스 배너는 사라지지 않고 그대로 유지됩니다.
+
+## 광고 해제
+
+광고를 더 이상 사용하지 않는 시점에 `destroy()`를 호출하여 광고 뷰와 리소스를 해제합니다. 메인 스레드에서 호출해 주세요.
+
+```java
+@Override
+protected void onDestroy() {
+    if (nativeAdView != null) {
+        nativeAdView.destroy();
+    }
+    super.onDestroy();
+}
+```
+
+?> `destroy()` 호출 후에도 `loadAd()`를 다시 호출하여 광고를 불러올 수 있습니다.
 
 ## 서브 레이아웃 기능
 

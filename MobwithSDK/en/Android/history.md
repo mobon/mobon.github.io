@@ -2,7 +2,11 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.115 <span class="release-date">2026-11-09</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.116 <span class="release-date">2026-11-10</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Added `setUseHouseBanner()` to the native ad view to set whether to use the house banner.
+
+### 1.0.115 <span class="release-date">2026-11-09</span> <!-- {docsify-ignore} -->
 
 - Released the Script Interstitial feature.
 

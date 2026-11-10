@@ -164,6 +164,8 @@ nativeAdView.loadAd();
 | `setCampaignCodes(List<String> campaignCodes)` | Set targeting campaign codes |
 | `performAdClicked()` | Trigger an ad click event |
 | `getMediationAdapter()` | Returns whether the displayed ad is an external SDK (mediation) ad. Use it when `result` in `onLoadedAdInfo(boolean result, String errorStr)` is `true`. (SDK 1.0.114 or later) |
+| `setUseHouseBanner(boolean isUse)` | Set whether to use the house banner (default `false`, SDK 1.0.116 or later) |
+| `destroy()` | Detaches the ad view and releases its resources. `loadAd()` can be called again afterward (SDK 1.0.110 or later) |
 
 ## MobwithNativeAdView Parameter Definitions (Native Layout)
 
@@ -201,6 +203,40 @@ When set to `true`, the ScaleType you specify is applied to the main image view 
 nativeAdView.useImageViewScaleType(true);
 ....
 ```
+
+## House Banner Feature
+
+?> Supported in SDK 1.0.116 and above.
+
+Displays a house banner image from the moment the ad request completes until the actual ad is shown. (Default: `false`)<br>
+When set to `true`, a house banner image is displayed in the container that shows the ad, and it disappears once the actual ad is shown.<br>
+When set to `false`, a house banner that is already displayed is removed immediately.
+
+```java
+....
+nativeAdView.setUseHouseBanner(true);
+....
+```
+
+?> `onAdClicked()` is called when the house banner is clicked.
+
+!> If no ad is filled (no fill/failure), `result` in `onLoadedAdInfo` is delivered as `false`, and the house banner stays displayed.
+
+## Releasing the Ad
+
+When the ad is no longer needed, call `destroy()` to detach the ad view and release its resources. Call it on the main thread.
+
+```java
+@Override
+protected void onDestroy() {
+    if (nativeAdView != null) {
+        nativeAdView.destroy();
+    }
+    super.onDestroy();
+}
+```
+
+?> You can call `loadAd()` again to load an ad after calling `destroy()`.
 
 ## Sub-Layout Feature
 
