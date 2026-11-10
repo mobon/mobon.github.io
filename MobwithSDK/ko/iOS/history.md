@@ -2,7 +2,11 @@
 
 iOS SDK의 버전별 변경 이력입니다.
 
-### 1.3.37 <span class="release-date">2026-11-09</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.38 <span class="release-date">2026-11-10</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 기타 기능 안정화 및 마이너 오류 수정
+
+### 1.3.37 <span class="release-date">2026-11-09</span> <!-- {docsify-ignore} -->
 
 - 전면 광고 / 리워드 광고에 스크립트 광고 송출 추가
 - 기타 기능 안정화 및 마이너 오류 수정

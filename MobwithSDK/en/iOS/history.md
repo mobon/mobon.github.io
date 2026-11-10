@@ -2,7 +2,11 @@
 
 Version history of the iOS SDK.
 
-### 1.3.37 <span class="release-date">2026-11-09</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.38 <span class="release-date">2026-11-10</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- General stability improvements and minor bug fixes
+
+### 1.3.37 <span class="release-date">2026-11-09</span> <!-- {docsify-ignore} -->
 
 - Added script ad delivery for interstitial / reward ads
 - General stability improvements and minor bug fixes
