@@ -51,7 +51,7 @@ Add `com.google.android.gms:play-services-ads-identifier` and the latest version
   dependencies {
     implementation 'com.google.android.gms:play-services-ads-identifier:18.3.0'
     implementation 'com.google.android.gms:play-services-ads:25.4.0'
-    implementation 'io.github.mobon:mobwithSDK:1.0.117'
+    implementation 'io.github.mobon:mobwithSDK:1.0.118'
     implementation 'com.github.Dimezis:BlurView:version-3.2.0'
 }
 ```

@@ -2,7 +2,11 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.117 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.118 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 네이티브 광고 뷰의 하우스 배너 디자인 변경 (좌측 정렬, 폰트 크기, 색상 조절)
+
+### 1.0.117 <span class="release-date">2026-11-11</span> <!-- {docsify-ignore} -->
 
 - 네이티브 광고 뷰의 하우스 배너 디자인 변경 (아이콘과 문구로 표시, 클릭 시 동작 제거)
 
