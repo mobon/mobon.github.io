@@ -2,7 +2,11 @@
 
 Version history of the iOS SDK.
 
-### 1.3.38 <span class="release-date">2026-11-10</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.39 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- General stability improvements and minor bug fixes
+
+### 1.3.38 <span class="release-date">2026-11-10</span> <!-- {docsify-ignore} -->
 
 - General stability improvements and minor bug fixes
 
