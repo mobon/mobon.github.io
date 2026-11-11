@@ -37,7 +37,7 @@ android:layout_height="wrap_content" >
         android:background="#ffffccff"
         android:layout_marginTop="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mediaContainerView"
+        app:layout_constraintTop_toBottomOf="@id/mediaViewContainerID"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
         />
@@ -52,10 +52,10 @@ android:layout_height="wrap_content" >
         android:text="{ Title }"
         android:textColor="#ff00ff"
         android:textStyle="italic"
-        app:layout_constraintLeft_toRightOf="@id/imageViewLogo"
-        app:layout_constraintTop_toTopOf="@id/imageViewLogo"
-        app:layout_constraintRight_toLeftOf="@id/buttonGo"
-        app:layout_constraintBottom_toTopOf="@id/textViewDesc"
+        app:layout_constraintLeft_toRightOf="@id/adLogoImageViewID"
+        app:layout_constraintTop_toTopOf="@id/adLogoImageViewID"
+        app:layout_constraintRight_toLeftOf="@id/gotoSiteButtonID"
+        app:layout_constraintBottom_toTopOf="@id/descriptionViewID"
         />
 
     <TextView
@@ -65,9 +65,9 @@ android:layout_height="wrap_content" >
         android:maxLines="1"
         android:text="{ Description }"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/textViewTitle"
-        app:layout_constraintRight_toRightOf="@id/textViewTitle"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintLeft_toLeftOf="@id/titleViewID"
+        app:layout_constraintRight_toRightOf="@id/titleViewID"
+        app:layout_constraintTop_toBottomOf="@id/titleViewID"
         />
 
     <Button
@@ -79,7 +79,7 @@ android:layout_height="wrap_content" >
         android:gravity="center"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewLogo"
+        app:layout_constraintTop_toTopOf="@id/adLogoImageViewID"
         />
 
 
@@ -109,7 +109,7 @@ Configure the data to be displayed in the Custom Native Layout based on the layo
 
 !> If the id of each View in adview_container cannot be identified properly, the ad may not be displayed correctly.
 
-?> mediaContainerView must be composed of one of the GroupViews and must contain imageViewAD. We also recommend using a FrameLayout for the layout.<br>
+?> mediaViewContainerID must be composed of one of the GroupViews and must contain adImageViewID. We also recommend using a FrameLayout for the layout.<br>
 This is because each external SDK that provides Native AD through mediation has different requirements.
 
 ```java
@@ -119,14 +119,14 @@ nativeAdView = new MobwithNativeAdView(
                         YOUR_UNIT_ID,       //Issued ad Unit Id
                         (FrameLayout) findViewById(R.id.adview_container),  //ContainerView (ViewGroup) that will display the ad; FrameLayout is recommended 
                         R.layout.custom_native_ad_view, //Custom NativeAd layout ID implemented by the publisher
-                        R.id.mediaContainerView,    //ViewGroup ID wrapping the ImageView that displays the ad image (FrameLayout recommended)
-                        R.id.imageViewAD,
-                        R.id.imageViewLogo,
-                        R.id.textViewTitle,
-                        R.id.textViewDesc,
-                        R.id.buttonGo,
-                        R.id.infoViewLayout,
-                        R.id.imageViewInfo);
+                        R.id.mediaViewContainerID,    //ViewGroup ID wrapping the ImageView that displays the ad image (FrameLayout recommended)
+                        R.id.adImageViewID,
+                        R.id.adLogoImageViewID,
+                        R.id.titleViewID,
+                        R.id.descriptionViewID,
+                        R.id.gotoSiteButtonID,
+                        R.id.infoLogoViewContainerID,
+                        R.id.infoLogoImageViewID);
 
 nativeAdView.setUnitId(YOUR_UNIT_ID);   // The UNIT_ID issued for each ad view must be set. This is required.
 nativeAdView.setAdListener(new iBannerCallback() {
@@ -196,7 +196,7 @@ nativeAdView.performAdClicked();
 ## Main Ad Image ScaleType
 
 This feature lets you directly specify the ScaleType for the main ad image (prevents image distortion).<br>
-When set to `true`, the ScaleType you specify is applied to the main image view (`R.id.imageViewAd`).
+When set to `true`, the ScaleType you specify is applied to the main image view (`R.id.adImageViewID`).
 
 ```java
 ....
@@ -206,10 +206,11 @@ nativeAdView.useImageViewScaleType(true);
 
 ## House Banner Feature
 
-?> Supported in SDK 1.0.116 and above.
+?> Supported in SDK 1.0.116 and above.<br>
+From SDK 1.0.117, the house banner is displayed as an icon and text instead of an image.
 
-Displays a house banner image from the moment the ad request completes until the actual ad is shown. (Default: `false`)<br>
-When set to `true`, a house banner image is displayed in the container that shows the ad, and it disappears once the actual ad is shown.<br>
+Displays a house banner from the moment the ad request completes until the actual ad is shown. (Default: `false`)<br>
+When set to `true`, a house banner (Coupang icon and text) is displayed in the container that shows the ad, and it disappears once the actual ad is shown.<br>
 When set to `false`, a house banner that is already displayed is removed immediately.
 
 ```java
@@ -217,8 +218,6 @@ When set to `false`, a house banner that is already displayed is removed immedia
 nativeAdView.setUseHouseBanner(true);
 ....
 ```
-
-?> `onAdClicked()` is called when the house banner is clicked.
 
 !> If no ad is filled (no fill/failure), `result` in `onLoadedAdInfo` is delivered as `false`, and the house banner stays displayed.
 
@@ -257,25 +256,25 @@ nativeAdView = new MobwithNativeAdView(
                         (FrameLayout) findViewById(R.id.adview_container),
                         new NativeAdViewItemModel(  //Direct ad native layout
                             R.layout.custom_native_ad_view,
-                            R.id.mediaContainerView,    //FrameLayout is recommended. (Media (photo, video) ads may not display if a different layout is used.)
-                            R.id.imageViewAD,
-                            R.id.imageViewLogo,
-                            R.id.textViewTitle,
-                            R.id.textViewDesc,
-                            R.id.buttonGo,
-                            R.id.infoViewLayout,
-                            R.id.imageViewInfo
+                            R.id.mediaViewContainerID,    //FrameLayout is recommended. (Media (photo, video) ads may not display if a different layout is used.)
+                            R.id.adImageViewID,
+                            R.id.adLogoImageViewID,
+                            R.id.titleViewID,
+                            R.id.descriptionViewID,
+                            R.id.gotoSiteButtonID,
+                            R.id.infoLogoViewContainerID,
+                            R.id.infoLogoImageViewID
                         ),
                         new NativeAdViewItemModel(  //Network ad native layout
                             R.layout.custom_native_ad_view_2,
-                            R.id.mediaContainerView,    //FrameLayout is recommended. (Media (photo, video) ads may not display if a different layout is used.)
-                            R.id.imageViewAD,
-                            R.id.imageViewLogo,
-                            R.id.textViewTitle,
-                            R.id.textViewDesc,
-                            R.id.buttonGo,
-                            R.id.infoViewLayout,
-                            R.id.imageViewInfo
+                            R.id.mediaViewContainerID,    //FrameLayout is recommended. (Media (photo, video) ads may not display if a different layout is used.)
+                            R.id.adImageViewID,
+                            R.id.adLogoImageViewID,
+                            R.id.titleViewID,
+                            R.id.descriptionViewID,
+                            R.id.gotoSiteButtonID,
+                            R.id.infoLogoViewContainerID,
+                            R.id.infoLogoImageViewID
                         )
 );
 nativeAdView.setUnitId(YOUR_UNIT_ID);

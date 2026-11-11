@@ -37,7 +37,7 @@ android:layout_height="wrap_content" >
         android:background="#ffffccff"
         android:layout_marginTop="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mediaContainerView"
+        app:layout_constraintTop_toBottomOf="@id/mediaViewContainerID"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
         />
@@ -52,10 +52,10 @@ android:layout_height="wrap_content" >
         android:text="{ Title }"
         android:textColor="#ff00ff"
         android:textStyle="italic"
-        app:layout_constraintLeft_toRightOf="@id/imageViewLogo"
-        app:layout_constraintTop_toTopOf="@id/imageViewLogo"
-        app:layout_constraintRight_toLeftOf="@id/buttonGo"
-        app:layout_constraintBottom_toTopOf="@id/textViewDesc"
+        app:layout_constraintLeft_toRightOf="@id/adLogoImageViewID"
+        app:layout_constraintTop_toTopOf="@id/adLogoImageViewID"
+        app:layout_constraintRight_toLeftOf="@id/gotoSiteButtonID"
+        app:layout_constraintBottom_toTopOf="@id/descriptionViewID"
         />
 
     <TextView
@@ -65,9 +65,9 @@ android:layout_height="wrap_content" >
         android:maxLines="1"
         android:text="{ Description }"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/textViewTitle"
-        app:layout_constraintRight_toRightOf="@id/textViewTitle"
-        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintLeft_toLeftOf="@id/titleViewID"
+        app:layout_constraintRight_toRightOf="@id/titleViewID"
+        app:layout_constraintTop_toBottomOf="@id/titleViewID"
         />
 
     <Button
@@ -79,7 +79,7 @@ android:layout_height="wrap_content" >
         android:gravity="center"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageViewLogo"
+        app:layout_constraintTop_toTopOf="@id/adLogoImageViewID"
         />
 
 
@@ -109,7 +109,7 @@ android:layout_height="wrap_content" >
 
 !> adview_container 내 각 View의 id가 정상적으로 확인되지 않을 경우, 광고가 정상적으로 노출되지 않을 수 있습니다.
 
-?> mediaContainerView는 반드시 GroupView 중 하나로 구성되어야 하며, imageViewAD를 포함하는 구조여야 합니다. 또한 레이아웃은 FrameLayout 사용을 권장합니다.<br>
+?> mediaViewContainerID는 반드시 GroupView 중 하나로 구성되어야 하며, adImageViewID를 포함하는 구조여야 합니다. 또한 레이아웃은 FrameLayout 사용을 권장합니다.<br>
 미디에이션을 지원하는 외부 SDK 중 Native AD를 제공하는 각 SDK마다 요구하는 규격이 다르기 때문입니다.
 
 ```java
@@ -119,14 +119,14 @@ nativeAdView = new MobwithNativeAdView(
                         YOUR_UNIT_ID,       //발급받은 광고 Unit Id
                         (FrameLayout) findViewById(R.id.adview_container),  //광고를 보여줄 ContainerView(ViewGroup) FrameLayout 사용 권장 
                         R.layout.custom_native_ad_view, //매체사에서 구현 한 Custom NativeAd 레이아웃 ID
-                        R.id.mediaContainerView,    //광고 Image를 표시할 ImageView를 감싸는 ViewGroup ID (FrameLayout 사용 권장)
-                        R.id.imageViewAD,
-                        R.id.imageViewLogo,
-                        R.id.textViewTitle,
-                        R.id.textViewDesc,
-                        R.id.buttonGo,
-                        R.id.infoViewLayout,
-                        R.id.imageViewInfo);
+                        R.id.mediaViewContainerID,    //광고 Image를 표시할 ImageView를 감싸는 ViewGroup ID (FrameLayout 사용 권장)
+                        R.id.adImageViewID,
+                        R.id.adLogoImageViewID,
+                        R.id.titleViewID,
+                        R.id.descriptionViewID,
+                        R.id.gotoSiteButtonID,
+                        R.id.infoLogoViewContainerID,
+                        R.id.infoLogoImageViewID);
 
 nativeAdView.setUnitId(YOUR_UNIT_ID);   // 각 광고 뷰 당 발급받은 UNIT_ID 값을 필수로 넣어주어야 합니다.
 nativeAdView.setAdListener(new iBannerCallback() {
@@ -196,7 +196,7 @@ nativeAdView.performAdClicked();
 ## 메인 광고 이미지 ScaleType 적용 기능
 
 광고의 메인 이미지에 직접 ScaleType을 지정하기 위한 기능입니다. (이미지 깨짐 현상 방지)<br>
-`true`로 설정하면 메인 이미지뷰(`R.id.imageViewAd`)에 사용자가 직접 지정한 ScaleType이 적용됩니다.
+`true`로 설정하면 메인 이미지뷰(`R.id.adImageViewID`)에 사용자가 직접 지정한 ScaleType이 적용됩니다.
 
 ```java
 ....
@@ -206,10 +206,11 @@ nativeAdView.useImageViewScaleType(true);
 
 ## 하우스 배너 기능
 
-?> SDK 1.0.116 이상에서 지원합니다.
+?> SDK 1.0.116 이상에서 지원합니다.<br>
+SDK 1.0.117부터 하우스 배너는 이미지 대신 아이콘과 문구로 표시됩니다.
 
-광고 요청이 완료된 시점부터 실제 광고가 송출되기 전까지 하우스 배너 이미지를 표시하는 기능입니다. (기본값 `false`)<br>
-`true`로 설정하면 광고를 표시하는 컨테이너에 하우스 배너 이미지가 표시되고, 실제 광고가 송출되면 사라집니다.<br>
+광고 요청이 완료된 시점부터 실제 광고가 송출되기 전까지 하우스 배너를 표시하는 기능입니다. (기본값 `false`)<br>
+`true`로 설정하면 광고를 표시하는 컨테이너에 하우스 배너(쿠팡 아이콘과 문구)가 표시되고, 실제 광고가 송출되면 사라집니다.<br>
 `false`로 설정하면 이미 표시 중인 하우스 배너도 즉시 제거됩니다.
 
 ```java
@@ -217,8 +218,6 @@ nativeAdView.useImageViewScaleType(true);
 nativeAdView.setUseHouseBanner(true);
 ....
 ```
-
-?> 하우스 배너를 클릭하면 `onAdClicked()`가 호출됩니다.
 
 !> 광고가 채워지지 않은 경우(노필/실패)에는 `onLoadedAdInfo`의 `result`가 `false`로 전달되며, 하우스 배너는 사라지지 않고 그대로 유지됩니다.
 
@@ -257,25 +256,25 @@ nativeAdView = new MobwithNativeAdView(
                         (FrameLayout) findViewById(R.id.adview_container),
                         new NativeAdViewItemModel(  //직광고 native layout
                             R.layout.custom_native_ad_view,
-                            R.id.mediaContainerView,    //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
-                            R.id.imageViewAD,
-                            R.id.imageViewLogo,
-                            R.id.textViewTitle,
-                            R.id.textViewDesc,
-                            R.id.buttonGo,
-                            R.id.infoViewLayout,
-                            R.id.imageViewInfo
+                            R.id.mediaViewContainerID,    //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
+                            R.id.adImageViewID,
+                            R.id.adLogoImageViewID,
+                            R.id.titleViewID,
+                            R.id.descriptionViewID,
+                            R.id.gotoSiteButtonID,
+                            R.id.infoLogoViewContainerID,
+                            R.id.infoLogoImageViewID
                         ),
                         new NativeAdViewItemModel(  //네트워크 광고 native layout
                             R.layout.custom_native_ad_view_2,
-                            R.id.mediaContainerView,    //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
-                            R.id.imageViewAD,
-                            R.id.imageViewLogo,
-                            R.id.textViewTitle,
-                            R.id.textViewDesc,
-                            R.id.buttonGo,
-                            R.id.infoViewLayout,
-                            R.id.imageViewInfo
+                            R.id.mediaViewContainerID,    //FrameLayout 사용을 권장합니다. (다른 Layout을 사용 시 미디어(사진, 동영상) 광고가 노출 되지 않을 수 있습니다.)
+                            R.id.adImageViewID,
+                            R.id.adLogoImageViewID,
+                            R.id.titleViewID,
+                            R.id.descriptionViewID,
+                            R.id.gotoSiteButtonID,
+                            R.id.infoLogoViewContainerID,
+                            R.id.infoLogoImageViewID
                         )
 );
 nativeAdView.setUnitId(YOUR_UNIT_ID);

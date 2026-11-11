@@ -2,7 +2,11 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.116 <span class="release-date">2026-11-10</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.117 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Changed the house banner design of the native ad view (displayed as an icon and text; click action removed).
+
+### 1.0.116 <span class="release-date">2026-11-10</span> <!-- {docsify-ignore} -->
 
 - Added `setUseHouseBanner()` to the native ad view to set whether to use the house banner.
 
