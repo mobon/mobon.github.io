@@ -2,7 +2,11 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.119 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.120 <span class="release-date">2026-11-12</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Reduced the SDK library (AAR) size by optimizing internal resources (5.2MB → 3.3MB).
+
+### 1.0.119 <span class="release-date">2026-11-11</span> <!-- {docsify-ignore} -->
 
 - Changed the house banner design of the native ad view.
 

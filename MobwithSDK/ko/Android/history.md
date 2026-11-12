@@ -2,7 +2,11 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.119 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.120 <span class="release-date">2026-11-12</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 내부 리소스 최적화로 SDK 라이브러리(AAR) 용량 감소 (5.2MB → 3.3MB)
+
+### 1.0.119 <span class="release-date">2026-11-11</span> <!-- {docsify-ignore} -->
 
 - 네이티브 광고 뷰의 하우스 배너 버그 수정
 
