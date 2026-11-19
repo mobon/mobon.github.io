@@ -2,7 +2,12 @@
 
 iOS SDK의 버전별 변경 이력입니다.
 
-### 1.3.39 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.39 (추가) <span class="release-date">2026-11-19</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- MobWithAdFitAdapter SPM 1.0.0 배포 (AdFit SDK 3.22.7 / MobWith SDK 1.3.39, [Adapter Compatibility](/iOS/adapter_compatibility.md) 참고)
+- AdFit Adapter는 이후 SPM으로만 배포
+
+### 1.3.39 <span class="release-date">2026-11-11</span> <!-- {docsify-ignore} -->
 
 - 기타 기능 안정화 및 마이너 오류 수정
 

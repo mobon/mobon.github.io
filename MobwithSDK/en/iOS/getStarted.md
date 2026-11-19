@@ -6,7 +6,8 @@ This page describes the supported environment, latest version, and integration s
 
 | Item | Requirement |
 |---|---|
-| Deployment Target | iOS 15.6 or higher |
+| Deployment Target (CocoaPods) | iOS 15.6 or higher |
+| Deployment Target (SPM) | iOS 15.0 or higher |
 | Xcode | Latest version (Xcode 26.0 / Swift 5.3) |
 
 ?> The MobWithAD SDK was developed in Swift. To use it in a Swift-based project, please be sure to use the latest version of Xcode.<br>
@@ -18,6 +19,8 @@ For Objective-C projects, please refer to the additional settings in [Project Co
 |---|---|---|
 | SPM | 1.3.39 | [Install Using SPM](/iOS/installation_base?id=install-using-swift-package-manager-spm) |
 | CocoaPods | 1.3.39 | [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods) |
+
+!> As the official CocoaPods repository is ending support, distribution via CocoaPods will be discontinued in the future. For new integrations, we recommend installing with SPM. For details, see [Install Using CocoaPods](/iOS/installation_base?id=install-using-cocoapods).
 
 For the change history of each version, please refer to [History](/iOS/history.md).
 

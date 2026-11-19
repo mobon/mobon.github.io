@@ -54,17 +54,26 @@ else {
 
 ## Other Linker 설정 <!-- {docsify-ignore} -->
 
-설정을 정상적으로 하더라도 프레임워크 설정이 제대로 반영되지 않는 오류가 발생할 수 있습니다.<br>
-이 경우 Build Settings > Other Linker Flags에 플래그를 추가해야 합니다. 대표적으로 추가해야 할 값은 아래와 같습니다.
+SDK 설치 방식에 따라 앱 Target의 Build Settings > Other Linker Flags에 플래그를 추가해야 합니다.<br>
+플래그가 없으면 빌드는 되더라도 프레임워크가 앱에 제대로 포함되지 않을 수 있습니다.
+
+| 설치 방식 | 추가할 값 |
+|---|---|
+| SPM | **`-ObjC`** |
+| CocoaPods | **`$(inherited)`** (나머지 플래그는 CocoaPods가 설정) |
+| 수동 설치 | **`-ObjC`** |
+
+Build Settings 탭에서 All을 선택하고 검색창에 `Other Linker Flags`를 입력하면 항목을 찾을 수 있습니다. 값을 더블클릭한 뒤 **+** 버튼을 눌러 한 줄씩 추가합니다.
 
 ```text
-$(inherited)
 -ObjC
--all_load
 ```
 
-`$(inherited)`는 부모 프로젝트의 설정값을 상속받겠다는 의미이며, 신규 프로젝트에는 기본으로 설정되어 있습니다.<br>
-오래된 프로젝트나 임의로 수정한 프로젝트에서는 이 값이 누락되어 있을 수 있으며, 이로 인해 앱 빌드에 실패할 수 있습니다.
+!> CocoaPods로 설치한 경우 Other Linker Flags에 **`$(inherited)`가 반드시 있어야** 합니다.<br>
+`$(inherited)`는 상위 설정(Project 설정, xcconfig 등)의 값을 이어받는 값으로, CocoaPods는 이 값을 통해 필요한 플래그를 적용합니다. 이 값이 없으면 링크 오류가 발생할 수 있습니다.
+
+?> SPM·수동 설치에서는 `$(inherited)`가 없어도 되지만, 이미 있다면 그대로 두시기 바랍니다.<br>
+설정 후에도 링크 오류가 발생한다면 `$(inherited)`나 `-all_load`를 함께 추가해 보시기 바랍니다.
 
 ## Objective-C 프로젝트 <!-- {docsify-ignore} -->
 

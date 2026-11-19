@@ -54,17 +54,26 @@ else {
 
 ## Other Linker Setup <!-- {docsify-ignore} -->
 
-Even when configured correctly, an error may occur where the framework settings are not applied properly.<br>
-In such cases, add flags to Build Settings > Other Linker Flags. The values that typically need to be added are as follows.
+Depending on how you install the SDK, you need to add flags to Build Settings > Other Linker Flags of your app target.<br>
+Without these flags, the framework may not be included in the app correctly even if the build succeeds.
+
+| Installation Method | Values to Add |
+|---|---|
+| SPM | **`-ObjC`** |
+| CocoaPods | **`$(inherited)`** (other flags are set by CocoaPods) |
+| Manual Installation | **`-ObjC`** |
+
+In the Build Settings tab, select All and enter `Other Linker Flags` in the search field to find the setting. Double-click the value, then click the **+** button to add each value on its own line.
 
 ```text
-$(inherited)
 -ObjC
--all_load
 ```
 
-`$(inherited)` means inheriting the parent project's settings, and it is set by default for new projects.<br>
-For older projects, or projects modified manually, this value may be missing, which can cause the app build to fail.
+!> If you installed with CocoaPods, Other Linker Flags **must include `$(inherited)`**.<br>
+`$(inherited)` inherits values from higher-level settings (project settings, xcconfig, etc.), and CocoaPods applies the flags it needs through this value. Without it, link errors may occur.
+
+?> For SPM and manual installation, `$(inherited)` is not required, but if it is already there, please leave it as is.<br>
+If link errors still occur after setup, try adding `$(inherited)` or `-all_load` as well.
 
 ## Objective-C Projects <!-- {docsify-ignore} -->
 

@@ -2,7 +2,12 @@
 
 Version history of the iOS SDK.
 
-### 1.3.39 <span class="release-date">2026-11-11</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.3.39 (Additional) <span class="release-date">2026-11-19</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Released MobWithAdFitAdapter SPM 1.0.0 (AdFit SDK 3.22.7 / MobWith SDK 1.3.39, see [Adapter Compatibility](/iOS/adapter_compatibility.md))
+- The AdFit Adapter will be distributed via SPM only from now on
+
+### 1.3.39 <span class="release-date">2026-11-11</span> <!-- {docsify-ignore} -->
 
 - General stability improvements and minor bug fixes
 

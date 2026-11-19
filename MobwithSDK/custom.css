@@ -729,6 +729,234 @@ body .markdown-section p.tip {
     color: var(--release-deprecated-text);
 }
 
+/* 문서 제목 옆 상태 배지 : <span class="title-badge deprecated" data-label="표시 문구"></span>
+   글자를 span 안에 쓰면 섹션 링크 id가 바뀌므로 data-label 값을 CSS로 표시 */
+.markdown-section .title-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.5em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.markdown-section .title-badge::after {
+    content: attr(data-label);
+}
+
+.markdown-section .title-badge.deprecated {
+    border: 1px solid var(--release-deprecated-border);
+    color: var(--release-deprecated-text);
+}
+
+/* 정보 카드 (info-card : Adapter 정보, 설치 방식 등) */
+.markdown-section .info-card {
+    margin: 16px 0 20px;
+    background-color: var(--doc-box-bg);
+    border: 1px solid var(--doc-box-border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.markdown-section .info-card p {
+    margin: 0;
+}
+
+.markdown-section .info-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--doc-box-border);
+}
+
+.markdown-section .info-card-name {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: var(--doc-box-text);
+}
+
+.markdown-section .info-card-desc {
+    margin-top: 2px !important;
+    font-size: 0.86em;
+    color: var(--doc-box-muted);
+}
+
+.markdown-section .info-card-version {
+    flex: none;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background-color: var(--doc-box-accent);
+    color: var(--doc-box-on-accent);
+    font-size: 0.78em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.markdown-section .info-card-meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 10px 24px;
+    margin: 0;
+    padding: 16px 20px;
+    font-size: 0.9em;
+}
+
+.markdown-section .info-card-meta dt {
+    color: var(--doc-box-muted);
+    font-weight: 500;
+}
+
+.markdown-section .info-card-meta dd {
+    margin: 0;
+    color: var(--doc-box-text);
+    word-break: break-all;
+}
+
+.markdown-section .info-card-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px 16px;
+}
+
+.markdown-section .info-card-links a {
+    padding: 6px 14px;
+    border: 1px solid var(--doc-box-border);
+    border-radius: 6px;
+    color: var(--doc-box-text);
+    font-size: 0.86em;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.markdown-section .info-card-links a.info-card-main {
+    border-color: var(--doc-box-accent);
+    background-color: var(--doc-box-accent);
+    color: var(--doc-box-on-accent);
+}
+
+.markdown-section .info-card-links a:hover {
+    border-color: var(--doc-box-accent);
+    color: var(--doc-box-accent);
+}
+
+.markdown-section .info-card-links a.info-card-main:hover {
+    color: var(--doc-box-on-accent);
+    opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+    .markdown-section .info-card-meta {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .markdown-section .info-card-meta dd {
+        margin-bottom: 8px;
+    }
+}
+
+.markdown-section .info-card-meta code {
+    margin: 0;
+    padding: 3px 8px;
+    font-size: 0.92em;
+    white-space: normal;
+}
+
+.markdown-section .info-card-tag {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 2px 8px;
+    border: 1px solid var(--doc-box-border);
+    border-radius: 4px;
+    color: var(--doc-box-muted);
+    font-size: 0.75em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+}
+
+/* 카드 다음 호환성 표 : 버전·날짜 줄바꿈 방지 */
+.markdown-section .info-card + table th,
+.markdown-section .info-card + table td:nth-child(1),
+.markdown-section .info-card + table td:nth-child(2),
+.markdown-section .info-card + table td:last-child {
+    white-space: nowrap;
+}
+
+/* 배지 : 배포 중단 예정 등 (테두리형, 회색) */
+.markdown-section .info-card-version.deprecated {
+    background-color: transparent;
+    border: 1px solid var(--release-deprecated-border);
+    color: var(--release-deprecated-text);
+}
+
+/* 정보 카드 여러 장을 가로로 배치 (설치 방식 비교 등) */
+.markdown-section .info-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    margin: 16px 0 20px;
+}
+
+.markdown-section .info-card-grid .info-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.markdown-section .info-card-grid .info-card-head {
+    padding: 14px 16px;
+}
+
+.markdown-section .info-card-grid .info-card-meta {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 14px 16px;
+    font-size: 0.86em;
+}
+
+.markdown-section .info-card-grid .info-card-meta dd {
+    margin-bottom: 8px;
+}
+
+.markdown-section .info-card-grid .info-card-links {
+    margin-top: auto;
+    padding: 0 16px 16px;
+}
+
+/* Adapter Compatibility 이전 버전 접기 (details.compat-older) */
+.markdown-section details.compat-older {
+    margin: 12px 0 0;
+    border: 1px solid var(--box-border);
+    border-radius: 6px;
+    background-color: var(--box-bg);
+}
+
+.markdown-section details.compat-older > summary {
+    padding: 10px 14px;
+    color: var(--text-muted);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.markdown-section details.compat-older[open] > summary {
+    border-bottom: 1px solid var(--box-border);
+}
+
+.markdown-section details.compat-older > table {
+    margin: 12px 14px;
+    width: calc(100% - 28px);
+}
+
 .markdown-section h3:has(.release-date) + ul {
     margin-top: 0;
     margin-bottom: 0;

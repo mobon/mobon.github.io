@@ -29,6 +29,7 @@
   - [Getting Started](iOS/getStarted.md)
   - SDK Installation
     - [SDK Installation](iOS/installation_base.md)
+    - [Adapter Compatibility](iOS/adapter_compatibility.md)
     - [Project Configuration](iOS/installation_other.md)
     - [SDK Initialization](iOS/installation_init.md)
   - [Ad formats](iOS/usage.md)

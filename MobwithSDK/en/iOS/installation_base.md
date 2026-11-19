@@ -3,17 +3,30 @@
 This page describes how to install the MobWith SDK in your app project.<br>
 Choose one of the following installation methods: SPM, CocoaPods, or manual installation.
 
-| Installation Method | Base Framework | Mediation Adapters |
-|---|---|---|
-| SPM | Supported | Not supported (add them via manual installation) |
-| CocoaPods | Supported | Supported |
-| Manual Installation | Supported | Supported |
+<div class="info-card-grid">
+  <div class="info-card">
+    <div class="info-card-head"><p class="info-card-name">SPM</p><span class="info-card-version">Recommended</span></div>
+    <dl class="info-card-meta"><dt>Base Framework</dt><dd>Supported</dd><dt>Mediation Adapters</dt><dd>AdFit supported<br>More Adapters to be added gradually</dd></dl>
+    <div class="info-card-links"><a class="info-card-main" href="#/iOS/installation_base?id=install-using-swift-package-manager-spm">Install with SPM</a></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-head"><p class="info-card-name">CocoaPods</p><span class="info-card-version deprecated">Sunsetting</span></div>
+    <dl class="info-card-meta"><dt>Base Framework</dt><dd>Supported</dd><dt>Mediation Adapters</dt><dd>Supported</dd></dl>
+    <div class="info-card-links"><a href="#/iOS/installation_base?id=install-using-cocoapods">Install with CocoaPods</a></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-head"><p class="info-card-name">Manual Installation</p></div>
+    <dl class="info-card-meta"><dt>Base Framework</dt><dd>Supported</dd><dt>Mediation Adapters</dt><dd>Supported</dd></dl>
+    <div class="info-card-links"><a href="#/iOS/installation_base?id=manual-installation">Install manually</a></div>
+  </div>
+</div>
 
-## Install Using Swift Package Manager (SPM) <!-- {docsify-ignore} -->
+## Install Using Swift Package Manager (SPM)
 
-Swift Package Manager (SPM) currently supports installation of the base framework only.
+You can use Swift Package Manager (SPM) to install the base framework and some mediation Adapters (AdFit).
 
-?> If you install the SDK using SPM, install each mediation Adapter manually by referring to Installing Adapter Frameworks in [Manual Installation](/iOS/installation_base?id=manual-installation) below.
+?> Other Adapters will be added to SPM gradually. If you need an Adapter that is not yet available via SPM, please wait for SPM support, or install the SDK and Adapters with [CocoaPods](/iOS/installation_base?id=install-using-cocoapods) for the time being. If you need support urgently, please contact us.<br>
+For the current support status, see [Adapter Compatibility](/iOS/adapter_compatibility.md).
 
 Use the following Git repository URL to add the package.
 
@@ -34,7 +47,33 @@ If it was not added automatically, click the **+** button to add the framework.
 
 ![Framework added to the target](../../img/spm_add_to_target.png)
 
-## Install Using CocoaPods <!-- {docsify-ignore} -->
+#### <span class="step-label">STEP 3</span>Add mediation Adapters
+
+Add a package using the Git URL of the Adapter you want to use. When you add an Adapter, compatible versions of the MobWith SDK and the mediation target SDK are installed with it.
+
+```text
+# MobWithAdFitAdapter (1.0.0 or higher)
+https://github.com/mobon/MobWithAdFitAdapter_iOS
+```
+
+For the MobWith SDK and mediation target SDK versions compatible with each Adapter version, see [Adapter Compatibility](/iOS/adapter_compatibility.md).
+
+!> If the MobWithAdSDK_SPM version added to your app is outside the Adapter's supported range, the package cannot be resolved.
+
+#### <span class="step-label">STEP 4</span>Set Other Linker Flags
+
+**Add `-ObjC`** to Build Settings > Other Linker Flags of your app target.<br>
+Without this value, the framework may not be included in the app correctly even if the build succeeds. For details, see [Other Linker Setup](/iOS/installation_other?id=other-linker-setup).
+
+```text
+-ObjC
+```
+
+## Install Using CocoaPods<span class="title-badge deprecated" data-label="Sunsetting"></span>
+
+!> **Sunsetting** : As the official CocoaPods repository (Trunk) becomes read-only on December 2, 2026 ([CocoaPods announcement](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)), we have decided to discontinue distributing the MobWith SDK via CocoaPods in the future.<br>
+The base framework will continue to be distributed via CocoaPods for the time being, and mediation Adapters are gradually moving to SPM. Versions that have already been released can still be installed.<br>
+We apologize for any inconvenience. For new integrations, we recommend [Install Using SPM](/iOS/installation_base?id=install-using-swift-package-manager-spm).
 
 !> Starting from version 1.3.0, the way CocoaPods and the SDKs for mediation are applied has changed.<br>
 In particular, note that the pod name has **changed from `MobWithAD` to `MobWithAdSDK`**.
@@ -62,7 +101,7 @@ pod 'MobWithAdSDK', '1.3.39'
 Add the mediation Adapters you use to your `Podfile`. You must specify the same source as MobWithAdSDK.
 
 ```ruby
-# AdFit Adapter
+# AdFit Adapter (last CocoaPods version; later versions are distributed via SPM only)
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.34'
 
 # AdMob Adapter
@@ -98,7 +137,7 @@ pod 'MobWithAdPopcornAdapter', '3.3.2.1.3.34'
 
 ##### Adapter Version Rule
 
-Adapter versions follow the rule below.
+Adapters distributed via CocoaPods follow the version rule below. SPM Adapters use their own versioning starting from 1.0.0, so see [Adapter Compatibility](/iOS/adapter_compatibility.md).
 
 ```text
 [Version of the mediation target SDK].[Version of the MobWith SDK]
@@ -141,7 +180,7 @@ pod 'BidmadSDK/core', '= 6.13.6'
 ?> If you installed the pods before adding the content above, you must reset the pod-related content and reinstall for the change to take effect.<br>
 (Delete the Pods folder, remove Podfile.lock, clear the contents of the DerivedData folder, etc.)
 
-## Manual Installation <!-- {docsify-ignore} -->
+## Manual Installation
 
 When installing the SDK manually, you must apply all of the items below.
 
@@ -149,13 +188,22 @@ When installing the SDK manually, you must apply all of the items below.
 
 #### <span class="step-label">STEP 1</span>Install the base framework
 
-Download `MobWithADSDKFramework.xcframework` from [MobWithAdSDK_iOS](https://github.com/mobon/MobWithAdSDK_iOS).<br>
+Download `MobWithADSDKFramework.xcframework.zip` for the version you want from Releases in [MobWithAdSDK_SPM](https://github.com/mobon/MobWithAdSDK_SPM), unzip it, and use the resulting `MobWithADSDKFramework.xcframework`.<br>
 Drag and drop the downloaded framework onto the General > Embedded Binaries section of your app project.
+
+?> For earlier versions that have no `.zip` file in Releases, download `MobWithADSDKFramework.xcframework` from [MobWithAdSDK_iOS](https://github.com/mobon/MobWithAdSDK_iOS).
 
 #### <span class="step-label">STEP 2</span>Install Adapter frameworks
 
 Download the frameworks you need from the Adapter download links below, then install the main SDK for each Adapter by referring to its SDK installation guide.<br>
-To choose a version, refer to the Tags tab in the branch selection menu of the download page.
+The download method depends on the Adapter version.
+
+| Type | How to Download |
+|---|---|
+| AdFit 1.0.0 or higher | Download the `[Adapter name].xcframework.zip` file (e.g. `MobWithAdFitAdapter.xcframework.zip`) for the version you want from Releases on the download page, unzip it, and use the resulting `.xcframework`. |
+| Other Adapters | Select a version in the Tags tab of the branch selection menu on the download page, then download the `.xcframework`. |
+
+?> All frameworks released in the future (including the base framework) will be provided as a `[framework name].xcframework.zip` file per version in Releases.
 
 | Adapter | Adapter Download | SDK Installation Guide |
 |---|---|---|
@@ -168,7 +216,7 @@ To choose a version, refer to the Tags tab in the branch selection menu of the d
 | Pangle | [MobWithPangleAdapter_iOS](https://github.com/mobon/MobWithPangleAdapter_iOS) | [Pangle SDK](https://www.pangleglobal.com/integration/integrate-pangle-sdk-for-ios) |
 | InMobi | [MobWithInMobiAdapter_iOS](https://github.com/mobon/MobWithInMobiAdapter_iOS) | [InMobi SDK](https://support.inmobi.com/monetize/sdk-documentation/ios-guidelines/overview-ios-guidelines#option-1--integration-via-cocoapods) |
 
-?> For AdFit and Cauly, you can also download the SDK matching each version from the Adapter download page.
+?> For Cauly and AdFit (3.21.24.1.3.34 or lower), you can also download the SDK matching each version from the Adapter download page. For AdFit 1.0.0 or higher, install the AdFit SDK by referring to its SDK installation guide.
 
 ---
 

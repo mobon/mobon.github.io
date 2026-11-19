@@ -3,17 +3,30 @@
 MobWith SDK를 앱 프로젝트에 설치하는 방법을 안내합니다.<br>
 SPM, CocoaPods, 수동 설치 중 한 가지 방식을 선택하여 설치합니다.
 
-| 설치 방식 | 기본 프레임워크 | 미디에이션 Adapter |
-|---|---|---|
-| SPM | 지원 | 미지원 (수동 설치로 추가) |
-| CocoaPods | 지원 | 지원 |
-| 수동 설치 | 지원 | 지원 |
+<div class="info-card-grid">
+  <div class="info-card">
+    <div class="info-card-head"><p class="info-card-name">SPM</p><span class="info-card-version">권장</span></div>
+    <dl class="info-card-meta"><dt>기본 프레임워크</dt><dd>지원</dd><dt>미디에이션 Adapter</dt><dd>AdFit 지원<br>그 외 Adapter 순차 추가 예정</dd></dl>
+    <div class="info-card-links"><a class="info-card-main" href="#/iOS/installation_base?id=spm을-이용하여-설치">SPM 설치 방법</a></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-head"><p class="info-card-name">CocoaPods</p><span class="info-card-version deprecated">배포 중단 예정</span></div>
+    <dl class="info-card-meta"><dt>기본 프레임워크</dt><dd>지원</dd><dt>미디에이션 Adapter</dt><dd>지원</dd></dl>
+    <div class="info-card-links"><a href="#/iOS/installation_base?id=cocoapods를-이용하여-설치">CocoaPods 설치 방법</a></div>
+  </div>
+  <div class="info-card">
+    <div class="info-card-head"><p class="info-card-name">수동 설치</p></div>
+    <dl class="info-card-meta"><dt>기본 프레임워크</dt><dd>지원</dd><dt>미디에이션 Adapter</dt><dd>지원</dd></dl>
+    <div class="info-card-links"><a href="#/iOS/installation_base?id=수동-설치">수동 설치 방법</a></div>
+  </div>
+</div>
 
-## SPM을 이용하여 설치 <!-- {docsify-ignore} -->
+## SPM을 이용하여 설치
 
-Swift Package Manager(SPM)는 현재 기본 프레임워크의 설치만 지원합니다.
+Swift Package Manager(SPM)로 기본 프레임워크와 일부 미디에이션 Adapter(AdFit)를 설치할 수 있습니다.
 
-?> SPM으로 SDK를 설치한 경우, 미디에이션을 위한 각 Adapter는 아래 [수동 설치](/iOS/installation_base?id=수동-설치)의 Adapter 프레임워크 설치를 참고하여 수동으로 설치해 주세요.
+?> 나머지 Adapter는 SPM으로 순차 추가할 예정입니다. 아직 SPM으로 제공되지 않는 Adapter가 필요하다면 SPM 지원을 기다리거나, 당분간 [CocoaPods](/iOS/installation_base?id=cocoapods를-이용하여-설치)로 SDK와 Adapter를 설치해 주세요. 빠르게 지원이 필요한 경우 별도로 문의 바랍니다.<br>
+지원 현황은 [Adapter Compatibility](/iOS/adapter_compatibility.md)를 참고 바랍니다.
 
 Package 추가에 사용할 Git 주소는 아래와 같습니다.
 
@@ -34,7 +47,33 @@ Targets > Frameworks, Libraries, and Embedded Content에 MobWithADSDK 프레임�
 
 ![타깃에 프레임워크가 포함된 화면](../../img/spm_add_to_target.png)
 
-## CocoaPods를 이용하여 설치 <!-- {docsify-ignore} -->
+#### <span class="step-label">STEP 3</span>미디에이션 Adapter 추가
+
+사용할 Adapter의 Git 주소로 Package를 추가합니다. Adapter를 추가하면 호환되는 MobWith SDK와 미디에이션 대상 SDK가 함께 설치됩니다.
+
+```text
+# MobWithAdFitAdapter (1.0.0 이상)
+https://github.com/mobon/MobWithAdFitAdapter_iOS
+```
+
+Adapter 버전별로 호환되는 MobWith SDK와 미디에이션 대상 SDK 버전은 [Adapter Compatibility](/iOS/adapter_compatibility.md)를 참고 바랍니다.
+
+!> 앱에 추가한 MobWithAdSDK_SPM 버전이 Adapter의 사용 가능 범위를 벗어나면 Package를 가져올 수 없습니다.
+
+#### <span class="step-label">STEP 4</span>Other Linker Flags 설정
+
+앱 Target의 Build Settings > Other Linker Flags에 **`-ObjC`를 추가**합니다.<br>
+이 값이 없으면 빌드는 되더라도 프레임워크가 앱에 제대로 포함되지 않을 수 있습니다. 자세한 내용은 [Other Linker 설정](/iOS/installation_other?id=other-linker-설정)을 참고 바랍니다.
+
+```text
+-ObjC
+```
+
+## CocoaPods를 이용하여 설치<span class="title-badge deprecated" data-label="배포 중단 예정"></span>
+
+!> **배포 중단 예정** : CocoaPods 공식 저장소(Trunk)가 2026년 12월 2일부터 읽기 전용으로 전환됨에 따라([CocoaPods 공지](https://blog.cocoapods.org/CocoaPods-Specs-Repo/)), MobWith SDK도 향후 CocoaPods를 통한 배포를 중단하기로 하였습니다.<br>
+기본 프레임워크는 당분간 CocoaPods로도 함께 배포하며, 미디에이션 Adapter는 SPM으로 순차 전환하고 있습니다. 이미 배포된 버전은 계속 설치하실 수 있습니다.<br>
+이용에 불편을 드려 양해 부탁드리며, 새로 연동하시는 경우 [SPM을 이용하여 설치](/iOS/installation_base?id=spm을-이용하여-설치)를 권장드립니다.
 
 !> 1.3.0 버전부터 CocoaPods 및 미디에이션을 위한 SDK 적용 방법이 변경되었습니다.<br>
 특히 pod 이름이 기존 `MobWithAD`에서 **`MobWithAdSDK`로 변경**되었으니 주의 바랍니다.
@@ -62,7 +101,7 @@ pod 'MobWithAdSDK', '1.3.39'
 사용할 미디에이션 Adapter를 `Podfile`에 추가합니다. MobWithAdSDK와 같은 source를 지정해야 합니다.
 
 ```ruby
-# AdFit Adapter
+# AdFit Adapter (CocoaPods 마지막 버전, 이후 버전은 SPM으로만 배포)
 pod 'MobWithAdFitAdapter', '3.21.24.1.3.34'
 
 # AdMob Adapter
@@ -98,7 +137,7 @@ pod 'MobWithAdPopcornAdapter', '3.3.2.1.3.34'
 
 ##### Adapter 버전 규칙
 
-Adapter의 버전은 아래 규칙을 따릅니다.
+CocoaPods로 배포되는 Adapter의 버전은 아래 규칙을 따릅니다. SPM Adapter는 1.0.0부터 별도 버전을 사용하므로 [Adapter Compatibility](/iOS/adapter_compatibility.md)를 참고 바랍니다.
 
 ```text
 [미디에이션 대상 SDK의 버전].[MobWith SDK의 버전]
@@ -141,7 +180,7 @@ pod 'BidmadSDK/core', '= 6.13.6'
 ?> 위 내용을 추가하기 전에 pod를 설치했다면, pod 관련 내용을 초기화한 뒤 다시 설치해야 정상적으로 반영됩니다.<br>
 (Pods 폴더 삭제, Podfile.lock 제거, DerivedData 폴더 내용 삭제 등)
 
-## 수동 설치 <!-- {docsify-ignore} -->
+## 수동 설치
 
 SDK를 수동으로 설치하는 경우 아래 항목을 모두 적용해 주셔야 합니다.
 
@@ -149,13 +188,22 @@ SDK를 수동으로 설치하는 경우 아래 항목을 모두 적용해 주셔
 
 #### <span class="step-label">STEP 1</span>기본 프레임워크 설치
 
-[MobWithAdSDK_iOS](https://github.com/mobon/MobWithAdSDK_iOS)에서 `MobWithADSDKFramework.xcframework`를 다운로드합니다.<br>
+[MobWithAdSDK_SPM](https://github.com/mobon/MobWithAdSDK_SPM)의 Releases에서 사용할 버전의 `MobWithADSDKFramework.xcframework.zip`을 다운로드한 뒤, 압축을 풀어 나오는 `MobWithADSDKFramework.xcframework`를 사용합니다.<br>
 다운로드한 Framework를 앱 프로젝트의 General > Embedded Binaries 항목으로 끌어다 놓습니다.
+
+?> Releases에 `.zip` 파일이 없는 이전 버전은 [MobWithAdSDK_iOS](https://github.com/mobon/MobWithAdSDK_iOS)에서 `MobWithADSDKFramework.xcframework`를 다운로드합니다.
 
 #### <span class="step-label">STEP 2</span>Adapter 프레임워크 설치
 
 아래 Adapter 다운로드 링크에서 필요한 프레임워크를 다운로드한 뒤, SDK 설치 가이드를 참고하여 각 Adapter의 메인 SDK를 설치합니다.<br>
-버전은 다운로드 페이지의 브랜치 선택 창에서 Tags 탭을 참고하시기 바랍니다.
+다운로드 방법은 Adapter 버전에 따라 다릅니다.
+
+| 구분 | 다운로드 방법 |
+|---|---|
+| AdFit 1.0.0 이상 | 다운로드 페이지의 Releases에서 사용할 버전의 `[Adapter 이름].xcframework.zip` 파일(예: `MobWithAdFitAdapter.xcframework.zip`)을 다운로드한 뒤, 압축을 풀어 나오는 `.xcframework`를 사용합니다. |
+| 그 외 Adapter | 다운로드 페이지의 브랜치 선택 창에서 Tags 탭으로 버전을 선택한 뒤 `.xcframework`를 다운로드합니다. |
+
+?> 앞으로 배포되는 프레임워크(기본 프레임워크 포함)는 모두 Releases에 버전별 `[프레임워크 이름].xcframework.zip` 파일로 제공됩니다.
 
 | Adapter | Adapter 다운로드 | SDK 설치 가이드 |
 |---|---|---|
@@ -168,7 +216,7 @@ SDK를 수동으로 설치하는 경우 아래 항목을 모두 적용해 주셔
 | Pangle | [MobWithPangleAdapter_iOS](https://github.com/mobon/MobWithPangleAdapter_iOS) | [Pangle SDK](https://www.pangleglobal.com/integration/integrate-pangle-sdk-for-ios) |
 | InMobi | [MobWithInMobiAdapter_iOS](https://github.com/mobon/MobWithInMobiAdapter_iOS) | [InMobi SDK](https://support.inmobi.com/monetize/sdk-documentation/ios-guidelines/overview-ios-guidelines#option-1--integration-via-cocoapods) |
 
-?> AdFit, Cauly는 Adapter 다운로드 페이지에서 각 버전에 맞는 SDK도 함께 다운로드할 수 있습니다.
+?> Cauly와 AdFit(3.21.24.1.3.34 이하)은 Adapter 다운로드 페이지에서 각 버전에 맞는 SDK도 함께 다운로드할 수 있습니다. AdFit 1.0.0 이상은 SDK 설치 가이드를 참고하여 AdFit SDK를 설치해 주세요.
 
 ---
 
