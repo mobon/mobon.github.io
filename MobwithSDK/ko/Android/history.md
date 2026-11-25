@@ -2,7 +2,11 @@
 
 Android SDK의 버전별 변경 이력입니다.
 
-### 1.0.122 <span class="release-date">2026-11-23</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.123 <span class="release-date">2026-11-25</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- 네이티브 광고에서 광고 뷰가 그려지지 않았는데 로드 성공으로 처리되던 문제 수정
+
+### 1.0.122 <span class="release-date">2026-11-23</span> <!-- {docsify-ignore} -->
 
 - HybridBannerBridge OOM 버그 수정
 
@@ -26,7 +30,7 @@ Android SDK의 버전별 변경 이력입니다.
 
 - 네이티브 광고 뷰의 하우스 배너 디자인 변경 (아이콘과 문구로 표시, 클릭 시 동작 제거)
 
-### 1.0.116 <span class="release-date">2026-11\-10</span> <!-- {docsify-ignore} -->
+### 1.0.116 <span class="release-date">2026-11-10</span> <!-- {docsify-ignore} -->
 
 - 네이티브 광고 뷰에 하우스 배너 사용 여부 설정 `setUseHouseBanner()` 추가
 

@@ -2,7 +2,11 @@
 
 This page lists the version history of the Android SDK.
 
-### 1.0.122 <span class="release-date">2026-11-23</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+### 1.0.123 <span class="release-date">2026-11-25</span><span class="release-badge">Latest</span> <!-- {docsify-ignore} -->
+
+- Fixed an issue where a native ad was reported as loaded even though the ad view was not rendered.
+
+### 1.0.122 <span class="release-date">2026-11-23</span> <!-- {docsify-ignore} -->
 
 - Fixed an OOM bug in HybridBannerBridge.
 
